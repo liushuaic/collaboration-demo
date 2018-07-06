@@ -14,9 +14,4 @@ public class ZhjController {
     private IZhjService zhjService;
 
 
-    public  void testls(){}
-
-    public static void main(String[] args) {
-        System.out.println("hhhhhhhhh");
-    }
 }
