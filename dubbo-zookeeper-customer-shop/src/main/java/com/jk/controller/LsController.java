@@ -20,8 +20,8 @@ public class LsController {
 
     @RequestMapping("queryUserList")
     @ResponseBody
-    public List<User> queryUserList(){
-        List<User> list = lsService.queryUserList();
+    public List<User> queryUserList(User user){
+        List<User> list = lsService.queryUserList(user);
         return list;
     }
 

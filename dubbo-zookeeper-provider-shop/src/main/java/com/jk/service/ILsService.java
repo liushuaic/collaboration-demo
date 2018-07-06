@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ILsService {
 
-    List<User> queryUserList();
+    List<User> queryUserList(User user);
 
 }

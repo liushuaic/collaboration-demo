@@ -14,7 +14,7 @@ public class LsServiceImpl implements ILsService {
     @Autowired
     private LsMapper lsMapper;
 
- public List<User> queryUserList() {
-        return lsMapper.queryUserList();
+ public List<User> queryUserList(User user) {
+        return lsMapper.queryUserList(user);
     }
 }
