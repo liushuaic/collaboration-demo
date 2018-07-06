@@ -22,6 +22,9 @@ public class UserController {
        return userlist;
     }
 
+    public void  hahaa(){
+
+    }
     public void haha(){
 
     }
