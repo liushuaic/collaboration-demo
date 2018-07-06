@@ -13,7 +13,5 @@ public class ZhjController {
     @Resource
     private IZhjService zhjService;
 
-    public static void main(String[] args) {
-        System.out.println("hhhhhhhhh");
-    }
+
 }
