@@ -21,4 +21,9 @@ public class UserController {
        List<User> userlist = userService.queryUser();
        return userlist;
     }
+
+    public void haha(){
+
+    }
+
 }
