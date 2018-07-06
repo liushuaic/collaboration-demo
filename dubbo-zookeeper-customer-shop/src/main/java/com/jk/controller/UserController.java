@@ -16,16 +16,12 @@ public class UserController {
     @Resource
     private IUserService userService;
     @RequestMapping("queryUser")
+    @ResponseBody
     public List<User> queryUser(){
        List<User> userlist = userService.queryUser();
        return userlist;
     }
 
-    public void  hahaa(){
 
-    }
-    public void haha(){
-
-    }
 
 }
