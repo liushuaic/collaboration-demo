@@ -25,5 +25,9 @@ public class LsController {
         return list;
     }
 
+    public static void  main(String [] g){
+        System.out.println("chaifuyou小哥哥到此一游");
+    }
+
 
 }
