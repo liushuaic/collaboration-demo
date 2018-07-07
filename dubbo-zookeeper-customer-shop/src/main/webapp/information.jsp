@@ -1,0 +1,81 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2018\7\7 0007
+  Time: 21:50
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+     <table>
+         <tr>
+             <td>类名</td>
+             <td>注释</td>
+         </tr>
+         <tr>
+             <td>Product</td>
+             <td>商品表</td>
+         </tr>
+         <tr>
+           <td>ProductCategory</td>
+           <td>商品分类表</td>
+        </tr>
+         <tr>
+             <td>ProductImages</td>
+             <td>商品图片表</td>
+         </tr>
+         <tr>
+             <td>Brand</td>
+             <td>商品品牌表</td>
+         </tr>
+         <tr>
+             <td>Review</td>
+             <td>商品评论表</td>
+         </tr>
+         <tr>
+             <td>Tag</td>
+             <td>标签表</td>
+         </tr>
+         <tr>
+             <td>Member</td>
+             <td>会员主表</td>
+         </tr>
+         <tr>
+             <td>Specification</td>
+             <td>规格表</td>
+         </tr>
+         <tr>
+             <td>Promotion</td>
+             <td>促销表</td>
+         </tr>
+         <tr>
+             <td>？？</td>
+             <td>购物车表</td>
+         </tr>
+         <tr>
+             <td>？？</td>
+             <td>购物车项表</td>
+         </tr>
+         <tr>
+             <td>MemberRank</td>
+             <td>会员价格表</td>
+         </tr>
+         <tr>
+             <td>Order</td>
+             <td>订单表</td>
+         </tr>
+         <tr>
+             <td>Parameter</td>
+             <td>商品参数表</td>
+         </tr>
+         <tr>
+             <td>Consultation</td>
+             <td>咨询表</td>
+         </tr>
+     </table>
+</body>
+</html>
