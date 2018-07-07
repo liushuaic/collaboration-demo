@@ -24,7 +24,7 @@ public class LsController {
         return list;
     }
 
-    public void test(){}
+
 
     
 
