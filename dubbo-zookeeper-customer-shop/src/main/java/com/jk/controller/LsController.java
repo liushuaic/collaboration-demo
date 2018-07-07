@@ -19,14 +19,13 @@ public class LsController {
     private ILsService lsService;
 
     @RequestMapping("queryUserList")
+    @ResponseBody
     public List<User> queryUserList(User user){
         List<User> list = lsService.queryUserList(user);
         return list;
     }
 
-    public void test(){}
 
-    
 
 
 
