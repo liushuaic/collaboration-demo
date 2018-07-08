@@ -101,8 +101,6 @@ public class Member implements Serializable{
     /** 会员注册项值9 */
     private String attributeValue9;
 
-
-
     /** 地区 ？？ area*/
     private String area;
 
@@ -115,29 +113,8 @@ public class Member implements Serializable{
     /** 订单项关联id  OrderItem*/
     private String orderitemsid ;
 
-    /** 预存款关联id  */
-    private String depositsid;
-
-    /** 收款单关联id */
-    private String paymentsid;
-
-    /** 优惠码关联id */
-    private String couponcodesid ;
-
-    /** 收货地址关联id */
-    private String receiversid;
-
     /** 评论关联id */
     private String  reviewsid ;
-
-    /** 咨询关联id */
-    private String  consultationsid;
-
-    /** 收藏商品关联id */
-    private String  productsid ;
-
-    /** 到货通知关联id */
-    private String  productnotifiesid;
 
     /** 消息关联id  Message*/
     private String  messagesid ;
@@ -406,68 +383,12 @@ public class Member implements Serializable{
         this.orderitemsid = orderitemsid;
     }
 
-    public String getDepositsid() {
-        return depositsid;
-    }
-
-    public void setDepositsid(String depositsid) {
-        this.depositsid = depositsid;
-    }
-
-    public String getPaymentsid() {
-        return paymentsid;
-    }
-
-    public void setPaymentsid(String paymentsid) {
-        this.paymentsid = paymentsid;
-    }
-
-    public String getCouponcodesid() {
-        return couponcodesid;
-    }
-
-    public void setCouponcodesid(String couponcodesid) {
-        this.couponcodesid = couponcodesid;
-    }
-
-    public String getReceiversid() {
-        return receiversid;
-    }
-
-    public void setReceiversid(String receiversid) {
-        this.receiversid = receiversid;
-    }
-
     public String getReviewsid() {
         return reviewsid;
     }
 
     public void setReviewsid(String reviewsid) {
         this.reviewsid = reviewsid;
-    }
-
-    public String getConsultationsid() {
-        return consultationsid;
-    }
-
-    public void setConsultationsid(String consultationsid) {
-        this.consultationsid = consultationsid;
-    }
-
-    public String getProductsid() {
-        return productsid;
-    }
-
-    public void setProductsid(String productsid) {
-        this.productsid = productsid;
-    }
-
-    public String getProductnotifiesid() {
-        return productnotifiesid;
-    }
-
-    public void setProductnotifiesid(String productnotifiesid) {
-        this.productnotifiesid = productnotifiesid;
     }
 
     public String getMessagesid() {
@@ -514,14 +435,7 @@ public class Member implements Serializable{
                 ", memberrankid='" + memberrankid + '\'' +
                 ", cartitemsid='" + cartitemsid + '\'' +
                 ", orderitemsid='" + orderitemsid + '\'' +
-                ", depositsid='" + depositsid + '\'' +
-                ", paymentsid='" + paymentsid + '\'' +
-                ", couponcodesid='" + couponcodesid + '\'' +
-                ", receiversid='" + receiversid + '\'' +
                 ", reviewsid='" + reviewsid + '\'' +
-                ", consultationsid='" + consultationsid + '\'' +
-                ", productsid='" + productsid + '\'' +
-                ", productnotifiesid='" + productnotifiesid + '\'' +
                 ", messagesid='" + messagesid + '\'' +
                 '}';
     }
