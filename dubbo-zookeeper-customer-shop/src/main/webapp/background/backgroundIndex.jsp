@@ -44,6 +44,7 @@ $().ready(function() {
 
 });
 </script>
+
 </head>
 <body>
 	<script type="text/javascript">
@@ -105,25 +106,25 @@ $().ready(function() {
 				<dl id="product" class="default">
 					<dt>商品管理</dt>
 						<dd>
-							<a href="../product/list.jhtml" target="iframe">商品管理</a>
+							<a href="../zhjController/queryProduct.jhtml" target="iframe">商品管理</a>
 						</dd>
 						<dd>
-							<a href="../product_category/list.jhtml" target="iframe">商品分类</a>
+							<a href="../zhjController/queryProductCategoryList.jhtml" target="iframe">商品分类</a>
 						</dd>
 						<dd>
-							<a href="../parameter_group/list.jhtml" target="iframe">商品参数</a>
+							<a href="../zhjController/list.jhtml" target="iframe">商品参数</a>
 						</dd>
 						<dd>
-							<a href="../attribute/list.jhtml" target="iframe">商品属性</a>
+							<a href="../zhjController/list.jhtml" target="iframe">商品属性</a>
 						</dd>
 						<dd>
-							<a href="../specification/list.jhtml" target="iframe">规格管理</a>
+							<a href="../zhjController/list.jhtml" target="iframe">规格管理</a>
 						</dd>
 						<dd>
-							<a href="../brand/list.jhtml" target="iframe">品牌管理</a>
+							<a href="../zhjController/list.jhtml" target="iframe">品牌管理</a>
 						</dd>
 						<dd>
-							<a href="../product_notify/list.jhtml" target="iframe">到货通知</a>
+							<a href="../zhjController/list.jhtml" target="iframe">到货通知</a>
 						</dd>
 				</dl>
 				<dl id="order">
@@ -288,5 +289,6 @@ $().ready(function() {
 			</td>
 		</tr>
 	</table>
+
 </body>
 </html>
