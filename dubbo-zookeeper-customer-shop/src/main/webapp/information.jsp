@@ -53,7 +53,7 @@
              <td>促销表</td>
          </tr>
          <tr>
-             <td>？？</td>
+             <td>Cart</td>
              <td>购物车表</td>
          </tr>
          <tr>
@@ -76,6 +76,129 @@
              <td>Consultation</td>
              <td>咨询表</td>
          </tr>
+         <tr>
+             <td>PaymentMethod</td>
+             <td>支付方式表</td>
+         </tr>
+         <tr>
+             <td>ShippingMethod</td>
+             <td>配送方式表</td>
+         </tr>
+         <tr>
+             <td>DeliveryCorp</td>
+             <td>物流公司表</td>
+         </tr>
+         <tr>
+             <td>Role</td>
+             <td>角色表</td>
+         </tr>
+         <tr>
+             <td>Admin</td>
+             <td>管理员表</td>
+         </tr>
+         <tr>
+             <td>CouponCode</td>
+             <td>优惠码表</td>
+         </tr>
+         <tr>
+             <td>Coupon</td>
+             <td>优惠券表</td>
+         </tr>
+         <tr>
+             <td>OrderItem</td>
+             <td>订单项表</td>
+         </tr>
+         <tr>
+             <td>OrderLog</td>
+             <td>订单日志表</td>
+         </tr>
+         <tr>
+             <td>Deposit</td>
+             <td>预存款表</td>
+         </tr>
+         <tr>
+             <td>Payment</td>
+             <td>收款单表</td>
+         </tr>
+         <tr>
+             <td>Refunds</td>
+             <td>退款单表</td>
+         </tr>
+         <tr>
+             <td>Shipping</td>
+             <td>发货单表</td>
+         </tr>
+         <tr>
+             <td>Returns</td>
+             <td>退货单表</td>
+         </tr>
+         <tr>
+             <td>Receiver</td>
+             <td>收货地址表</td>
+         </tr>
+         <tr>
+             <td>Area</td>
+             <td>地区表</td>
+         </tr>
+         <tr>
+             <td>DeliveryCenter</td>
+             <td>发货点表</td>
+         </tr>
+         <tr>
+             <td>ProductNotify</td>
+             <td>到货通知表</td>
+         </tr>
+         <tr>
+             <td>Message</td>
+             <td>消息表</td>
+         </tr>
+         <tr>
+             <td>Seo</td>
+             <td>Seo设置表</td>
+         </tr>
+         <tr>
+             <td>Log</td>
+             <td>日志管理表</td>
+         </tr>
+         <tr>
+             <td>MemberAttribute</td>
+             <td>会员注册项表</td>
+         </tr>
+         <tr>
+             <td>Navigation</td>
+             <td>导航管理表</td>
+         </tr>
+         <tr>
+             <td>FriendLink</td>
+             <td>友情链接表</td>
+         </tr>
+         <tr>
+             <td>AdvertisementPosition</td>
+             <td>广告位表</td>
+         </tr>
+         <tr>
+             <td>Advertisement</td>
+             <td>广告管理表</td>
+         </tr>
+         <tr>
+             <td>Article</td>
+             <td>文章表</td>
+         </tr>
+         <tr>
+             <td>ArticleCategory</td>
+             <td>文章分类表</td>
+         </tr>
+         <tr>
+             <td>DeliveryTemplate</td>
+             <td>快递单模板表</td>
+         </tr>
+         <tr>
+             <td>Attribute</td>
+             <td>商品属性表</td>
+         </tr>
+
+
+
      </table>
 </body>
 </html>
