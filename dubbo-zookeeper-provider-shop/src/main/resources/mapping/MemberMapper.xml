@@ -38,13 +38,13 @@
         INSERT INTO T_MemberRank
         VALUES (
             #{mrid,jdbcType=VARCHAR},
-            #{mrname,jdbcType=VARCHAR},
+            #{amount,jdbcType=DOUBLE},
             #{isdefault,jdbcType=VARCHAR},
             #{isspecial,jdbcType=VARCHAR},
             #{membersid,jdbcType=VARCHAR},
+            #{mrname,jdbcType=VARCHAR},
             #{promotionsid,jdbcType=VARCHAR},
-            #{scale,jdbcType=DOUBLE},
-            #{amount,jdbcType=DOUBLE}
+            #{scale,jdbcType=DOUBLE}
         )
     </insert>
     <update id="updateMember">
