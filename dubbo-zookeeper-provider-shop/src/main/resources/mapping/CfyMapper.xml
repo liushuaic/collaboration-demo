@@ -11,11 +11,11 @@
      istop = #{istop},articlecategoryid=#{articlecategoryid},tagsid=#{tagsid} WHERE arid = #{arid}
 </update>
 
-<select id="queryAtricle" resultType="com.jk.model.Atricle">
+<select id="queryAtricle" resultType="com.jk.model.Article">
     SELECT  * FROM t_article
 </select>
 
-<select id="huixianArticle" resultType="com.jk.model.Atricle">
+<select id="huixianArticle" resultType="com.jk.model.Article">
     SELECT  * FROM t_article where arid = #{id}
 </select>
 
