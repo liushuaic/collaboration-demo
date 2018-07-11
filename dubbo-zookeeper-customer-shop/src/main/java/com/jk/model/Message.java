@@ -27,7 +27,7 @@ public class Message implements Serializable {
     /** 收件人已读  1 yes 2 no */
     private String receiverread;
 
-    /** 发件人删除 * 1 yes 2 no /
+    // 发件人删除 1 yes 2 no
     private String senderdelete;
 
     /** 收件人删除  1 yes 2 no */
@@ -38,6 +38,27 @@ public class Message implements Serializable {
 
     /** 收件人 */
     private String receiver;
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "mid='" + mid + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", ip='" + ip + '\'' +
+                ", isdraft='" + isdraft + '\'' +
+                ", senderread='" + senderread + '\'' +
+                ", receiverread='" + receiverread + '\'' +
+                ", senderdelete='" + senderdelete + '\'' +
+                ", receiverdelete='" + receiverdelete + '\'' +
+                ", sender='" + sender + '\'' +
+                ", receiver='" + receiver + '\'' +
+                '}';
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public String getMid() {
         return mid;
@@ -95,6 +116,14 @@ public class Message implements Serializable {
         this.receiverread = receiverread;
     }
 
+    public String getSenderdelete() {
+        return senderdelete;
+    }
+
+    public void setSenderdelete(String senderdelete) {
+        this.senderdelete = senderdelete;
+    }
+
     public String getReceiverdelete() {
         return receiverdelete;
     }
@@ -120,18 +149,17 @@ public class Message implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return "Message{" +
-                "mid='" + mid + '\'' +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", ip='" + ip + '\'' +
-                ", isdraft='" + isdraft + '\'' +
-                ", senderread='" + senderread + '\'' +
-                ", receiverread='" + receiverread + '\'' +
-                ", receiverdelete='" + receiverdelete + '\'' +
-                ", sender='" + sender + '\'' +
-                ", receiver='" + receiver + '\'' +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Message)) return false;
+
+        Message message = (Message) o;
+
+        return mid.equals(message.mid);
+    }
+
+    @Override
+    public int hashCode() {
+        return mid.hashCode();
     }
 }
