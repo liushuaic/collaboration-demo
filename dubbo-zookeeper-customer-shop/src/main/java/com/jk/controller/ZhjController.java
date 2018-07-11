@@ -47,17 +47,6 @@ public class ZhjController {
         List<ProductCategory> list  =   queryProductCategory(pid);
         return list;
     }
-   /*  private   List<ProductCategory>    queryProductCategory( String pid){
-         List<ProductCategory> list=zhjService.queryProductCategory(pid);
-         for (ProductCategory category : list) {
-             String id = category.getId();
-             List<ProductCategory> mcateList = queryProductCategory(id);
-             if (mcateList!=null && mcateList.size()>0) {
-                 category.setChlidren(mcateList);
-             }
-         }
-         return list;
-    }*/
 
     private List<ProductCategory> queryProductCategory(String pid) {
         List<ProductCategory> list=zhjService.queryProductCategory(pid);

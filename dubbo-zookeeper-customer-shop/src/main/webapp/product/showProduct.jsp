@@ -101,7 +101,10 @@
                         return row.ismarketable==1?"√":"×";
                     }
                 },
-                {field:'acto',title:'操作',width:120}
+                {field:'acto',title:'操作',width:120,
+                 formatter: function (value, row, index) {
+                     return "<a href=''>修改</a>  <a href=''>删除</a>";
+                 }}
             ]]
         });
     }

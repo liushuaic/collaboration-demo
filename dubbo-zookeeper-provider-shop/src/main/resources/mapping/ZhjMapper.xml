@@ -2,5 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.ZhjMapper">
 
+    <select id="queryProductList" resultType="com.jk.model.Product">
+       select b.* from
+        ( select a.* ,rownum rm from
+        (SELECT  p.*,pc.text from t_product p , t_productcategory pc where p.productcategoryid = pc.id order by sales ) a
+         where rownum &lt;=#{end} ) b
+        where b.rm &gt;#{start}
+    </select>
+
+    <select id="queryCount" resultType="long">
+        select count(*) from t_product p , t_productcategory pc where p.productcategoryid = pc.id
+    </select>
+
+    <select id="queryProductCategory" resultType="com.jk.model.ProductCategory">
+        select * from  t_productcategory where pid=#{pid}
+    </select>
 
 </mapper>

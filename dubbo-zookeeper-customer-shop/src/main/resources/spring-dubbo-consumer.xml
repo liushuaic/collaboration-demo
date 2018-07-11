@@ -31,4 +31,5 @@
 	<dubbo:reference id="seoService" interface="com.jk.service.ISeoService" timeout="60000"/>
 	 <dubbo:reference id="userService" interface="com.jk.service.IUserService" timeout="60000"/>
 	 <dubbo:reference id="zhjService" interface="com.jk.service.IZhjService" timeout="60000"/>
+	<dubbo:reference id="cfyService" interface="com.jk.service.ICfyService" timeout="60000"/>
 </beans>  
