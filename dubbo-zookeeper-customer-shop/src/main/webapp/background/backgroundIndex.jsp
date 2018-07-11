@@ -130,7 +130,7 @@ $().ready(function() {
 				<dl id="order">
 					<dt>订单管理</dt>
 						<dd>
-							<a href="../order/list.jhtml" target="iframe">订单管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/orderList.jhtml" target="iframe">订单管理</a>
 						</dd>
 						<dd>
 							<a href="../payment/list.jhtml" target="iframe">收款管理</a>

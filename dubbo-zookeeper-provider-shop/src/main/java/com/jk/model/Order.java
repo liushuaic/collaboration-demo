@@ -1,5 +1,7 @@
 package com.jk.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -75,6 +77,10 @@ public class Order implements Serializable{
     /** 到期时间 */
     private Date expire;
 
+    /**创建日期*/
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date createdatetime;
+
     /** 锁定到期时间 */
     private Date lockexpire;
 
@@ -129,6 +135,13 @@ public class Order implements Serializable{
     /** 退货单Returns */
     private String  returnsid ;
 
+    /**打印*/
+    private String dayin;
+
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public String getOrderid() {
         return orderid;
@@ -314,6 +327,14 @@ public class Order implements Serializable{
         this.expire = expire;
     }
 
+    public Date getCreatedatetime() {
+        return createdatetime;
+    }
+
+    public void setCreatedatetime(Date createdatetime) {
+        this.createdatetime = createdatetime;
+    }
+
     public Date getLockexpire() {
         return lockexpire;
     }
@@ -458,6 +479,14 @@ public class Order implements Serializable{
         this.returnsid = returnsid;
     }
 
+    public String getDayin() {
+        return dayin;
+    }
+
+    public void setDayin(String dayin) {
+        this.dayin = dayin;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -484,6 +513,7 @@ public class Order implements Serializable{
                 ", memo='" + memo + '\'' +
                 ", promotion='" + promotion + '\'' +
                 ", expire=" + expire +
+                ", createdatetime='" + createdatetime + '\'' +
                 ", lockexpire=" + lockexpire +
                 ", isallocatedstock='" + isallocatedstock + '\'' +
                 ", paymentmethodname='" + paymentmethodname + '\'' +
@@ -502,6 +532,22 @@ public class Order implements Serializable{
                 ", refundsid='" + refundsid + '\'' +
                 ", shippingsid='" + shippingsid + '\'' +
                 ", returnsid='" + returnsid + '\'' +
+                ", dayin='" + dayin + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Order)) return false;
+
+        Order order = (Order) o;
+
+        return orderid.equals(order.orderid);
+    }
+
+    @Override
+    public int hashCode() {
+        return orderid.hashCode();
     }
 }
