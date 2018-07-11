@@ -64,7 +64,7 @@
     <script src="<%=request.getContextPath() %>/js/bootstrap-fileinput/js/fileinput.js"></script>
     <script src="<%=request.getContextPath() %>/js/bootstrap-fileinput/js/locales/zh.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/CodeSeven-toastr-61c48a6/toastr.js"></script>
-s
+
 
     <script>
     $(function(){
@@ -82,24 +82,26 @@ s
             checkOnSelect:false,
             selectOnCheck:false,
             remoteSort: false,
-            columns:[[ // rownumbers:true, //显示行号列
-                {field:'sn',title:' 序号  ',width:200,
+            columns:[[
+                {field:'userchek',checkbox:true},
+                // rownumbers:true, //显示行号列
+                {field:'sn',title:' 序号  ',width:120,
                     formatter: function(value,row,index){
                         index++;
                         return index;
                     }
                 },
-                {field:'name',title:'名称',width:200,sortable:true},
-                {field:'text',title:'商品分类',width:200},
-                {field:'price',title:'销售价',width:200},
-                {field:'cost',title:'成本价',width:200},
-                {field:'stock',title:'库存',width:200},
-                {field:'ismarketable',title:'是否上架',width:200,
+                {field:'name',title:'名称',width:150,sortable:true},
+                {field:'text',title:'商品分类',width:150},
+                {field:'price',title:'销售价',width:100},
+                {field:'cost',title:'成本价',width:120},
+                {field:'stock',title:'库存',width:120},
+                {field:'ismarketable',title:'是否上架',width:120,
                     formatter: function(value,row,index){
                         return row.ismarketable==1?"√":"×";
                     }
                 },
-                {field:'acto',title:'操作',width:200}
+                {field:'acto',title:'操作',width:120}
             ]]
         });
     }
