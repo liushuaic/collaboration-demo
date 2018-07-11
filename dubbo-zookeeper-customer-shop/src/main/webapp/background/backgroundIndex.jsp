@@ -97,7 +97,7 @@ $().ready(function() {
 					<strong>admin</strong>
 					您好!
 					<a href="../profile/edit.jhtml" target="iframe">[账号设置]</a>
-					<a href="../logout.jsp" target="_top">[注销]</a>
+					<a href="<%=request.getContextPath()%>/logout.jsp" target="_top">[注销]</a>
 				</div>
 			</th>
 		</tr>
@@ -106,25 +106,25 @@ $().ready(function() {
 				<dl id="product" class="default">
 					<dt>商品管理</dt>
 						<dd>
-							<a href="../zhjController/queryProduct.jhtml" target="iframe">商品管理</a>
+							<a href="<%=request.getContextPath()%>/zhjController/queryProduct.jhtml" target="iframe">商品管理</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/queryProductCategoryList.jhtml" target="iframe">商品分类</a>
+							<a href="<%=request.getContextPath()%>/zhjController/toCategoryPage.jhtml" target="iframe">商品分类</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">商品参数</a>
+							<a href="<%=request.getContextPath()%>/zhjController/list.jhtml" target="iframe">商品参数</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">商品属性</a>
+							<a href="<%=request.getContextPath()%>/zhjController/list.jhtml" target="iframe">商品属性</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">规格管理</a>
+							<a href="<%=request.getContextPath()%>/zhjController/list.jhtml" target="iframe">规格管理</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">品牌管理</a>
+							<a href="<%=request.getContextPath()%>/zhjController/list.jhtml" target="iframe">品牌管理</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">到货通知</a>
+							<a href="<%=request.getContextPath()%>/zhjController/list.jhtml" target="iframe">到货通知</a>
 						</dd>
 				</dl>
 				<dl id="order">
@@ -154,138 +154,139 @@ $().ready(function() {
 				<dl id="member">
 					<dt>会员管理</dt>
 						<dd>
-							<a href="../member/list.jhtml" target="iframe">会员管理</a>
+							<a href="<%=request.getContextPath()%>/member/list.jhtml" target="iframe">会员管理</a>
 						</dd>
 						<dd>
-							<a href="../member_rank/list.jhtml" target="iframe">会员等级</a>
+							<a href="<%=request.getContextPath()%>/member_rank/list.jhtml" target="iframe">会员等级</a>
 						</dd>
 						<dd>
-							<a href="../member_attribute/list.jhtml" target="iframe">会员注册项</a>
+							<a href="<%=request.getContextPath()%>/member_attribute/list.jhtml" target="iframe">会员注册项</a>
 						</dd>
 						<dd>
-							<a href="../review/list.jhtml" target="iframe">评论管理</a>
+							<a href="<%=request.getContextPath()%>/review/list.jhtml" target="iframe">评论管理</a>
 						</dd>
 						<dd>
-							<a href="../consultation/list.jhtml" target="iframe">咨询管理</a>
+							<a href="<%=request.getContextPath()%>/consultation/list.jhtml" target="iframe">咨询管理</a>
 						</dd>
 				</dl>
 				<dl id="content">
 					<dt>内容管理</dt>
-						<dd>
-							<a href="../navigation/list.jhtml" target="iframe">导航管理</a>
-						</dd>
-						<dd>
-							<a href="../article/list.jhtml" target="iframe">文章管理</a>
-						</dd>
-						<dd>
-							<a href="../article_category/list.jhtml" target="iframe">文章分类</a>
-						</dd>
-						<dd>
-							<a href="../tag/list.jhtml" target="iframe">标签管理</a>
-						</dd>
-						<dd>
-							<a href="../friend_link/list.jhtml" target="iframe">友情链接</a>
-						</dd>
-						<dd>
-							<a href="../ad_position/list.jhtml" target="iframe">广告位</a>
-						</dd>
-						<dd>
-							<a href="../ad/list.jhtml" target="iframe">广告管理</a>
-						</dd>
-						<dd>
-							<a href="../template/list.jhtml" target="iframe">模板管理</a>
-						</dd>
-						<dd>
-							<a href="../cache/clear.jhtml" target="iframe">缓存管理</a>
-						</dd>
-						<dd>
-							<a href="../static/build.jhtml" target="iframe">静态化管理</a>
-						</dd>
-						<dd>
-							<a href="../index/build.jhtml" target="iframe">索引管理</a>
-						</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/cfyjsp/content/navigation.jsp" target="iframe">导航管理</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/cfyjsp/article/queryArticle.jsp" target="iframe">文章管理</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/article_category/list.jhtml" target="iframe">文章分类</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/tag/list.jhtml" target="iframe">标签管理</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/friend_link/list.jhtml" target="iframe">友情链接</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/ad_position/list.jhtml" target="iframe">广告位</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/ad/list.jhtml" target="iframe">广告管理</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/template/list.jhtml" target="iframe">模板管理</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/cache/clear.jhtml" target="iframe">缓存管理</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/static/build.jhtml" target="iframe">静态化管理</a>
+					</dd>
+					<dd>
+						<a href="<%=request.getContextPath()%>/index/build.jhtml" target="iframe">索引管理</a>
+					</dd>
 				</dl>
 				<dl id="marketing">
 					<dt>营销管理</dt>
 						<dd>
-							<a href="../promotion/list.jhtml" target="iframe">促销管理</a>
+							<a href="<%=request.getContextPath()%>/promotion/list.jsp" target="iframe">促销管理</a>
 						</dd>
 						<dd>
-							<a href="../coupon/list.jhtml" target="iframe">优惠券管理</a>
+							<a href="<%=request.getContextPath()%>/coupon/list.jhtml" target="iframe">优惠券管理</a>
 						</dd>
 						<dd>
 							<a href="<%=request.getContextPath()%>/seo/list.jsp" target="iframe">SEO设置</a>
 						</dd>
 						<dd>
-							<a href="../sitemap/build.jhtml" target="iframe">Sitemap管理</a>
+							<a href="<%=request.getContextPath()%>/sitemap/build.jhtml" target="iframe">Sitemap管理</a>
 						</dd>
 				</dl>
 				<dl id="statistics">
 					<dt>统计报表</dt>
 						<dd>
-							<a href="../statistics/view.jhtml" target="iframe">访问统计</a>
+							<a href="<%=request.getContextPath()%>/statistics/view.jhtml" target="iframe">访问统计</a>
 						</dd>
 						<dd>
-							<a href="../statistics/setting.jhtml" target="iframe">统计设置</a>
+							<a href="<%=request.getContextPath()%>/statistics/setting.jhtml" target="iframe">统计设置</a>
 						</dd>
 						<dd>
-							<a href="../sales/view.jhtml" target="iframe">销售统计</a>
+							<a href="<%=request.getContextPath()%>/sales/view.jhtml" target="iframe">销售统计</a>
 						</dd>
 						<dd>
-							<a href="../sales_ranking/list.jhtml" target="iframe">销售排行</a>
+							<a href="<%=request.getContextPath()%>/sales_ranking/list.jhtml" target="iframe">销售排行</a>
 						</dd>
 						<dd>
-							<a href="../purchase_ranking/list.jhtml" target="iframe">消费排行</a>
+							<a href="<%=request.getContextPath()%>/purchase_ranking/list.jhtml" target="iframe">消费排行</a>
 						</dd>
 						<dd>
-							<a href="../deposit/list.jhtml" target="iframe">预存款</a>
+							<a href="<%=request.getContextPath()%>/deposit/list.jhtml" target="iframe">预存款</a>
 						</dd>
 				</dl>
 				<dl id="system">
 					<dt>系统设置</dt>
 						<dd>
-							<a href="../setting/edit.jhtml" target="iframe">系统设置</a>
+							<a href="<%=request.getContextPath()%>/setting/edit.jhtml" target="iframe">系统设置</a>
 						</dd>
 						<dd>
-							<a href="../area/list.jhtml" target="iframe">地区管理</a>
+							<a href="<%=request.getContextPath()%>/area/list.jhtml" target="iframe">地区管理</a>
 						</dd>
 						<dd>
-							<a href="../payment_method/list.jhtml" target="iframe">支付方式</a>
+							<a href="<%=request.getContextPath()%>/payment_method/list.jhtml" target="iframe">支付方式</a>
 						</dd>
 						<dd>
-							<a href="../shipping_method/list.jhtml" target="iframe">配送方式</a>
+							<a href="<%=request.getContextPath()%>/shipping_method/list.jhtml" target="iframe">配送方式</a>
 						</dd>
 						<dd>
-							<a href="../delivery_corp/list.jhtml" target="iframe">物流公司</a>
+							<a href="<%=request.getContextPath()%>/delivery_corp/list.jhtml" target="iframe">物流公司</a>
 						</dd>
 						<dd>
-							<a href="../payment_plugin/list.jhtml" target="iframe">支付插件</a>
+							<a href="<%=request.getContextPath()%>/payment_plugin/list.jhtml" target="iframe">支付插件</a>
 						</dd>
 						<dd>
-							<a href="../storage_plugin/list.jhtml" target="iframe">存储插件</a>
+							<a href="<%=request.getContextPath()%>/storage_plugin/list.jhtml" target="iframe">存储插件</a>
 						</dd>
 						<dd>
-							<a href="../admin/list.jhtml" target="iframe">管理员</a>
+							<a href="<%=request.getContextPath()%>/admin/list.jhtml" target="iframe">管理员</a>
 						</dd>
 						<dd>
-							<a href="../role/list.jhtml" target="iframe">角色管理</a>
+							<a href="<%=request.getContextPath()%>/role/list.jhtml" target="iframe">角色管理</a>
 						</dd>
 						<dd>
-							<a href="../message/send.jhtml" target="iframe">发送消息</a>
+							<a href="<%=request.getContextPath()%>/message/send.jhtml" target="iframe">发送消息</a>
 						</dd>
 						<dd>
-							<a href="../message/list.jhtml" target="iframe">消息列表</a>
+							<a href="<%=request.getContextPath()%>/message/list.jhtml" target="iframe">消息列表</a>
 						</dd>
 						<dd>
-							<a href="../message/draft.jhtml" target="iframe">草稿箱</a>
+							<a href="<%=request.getContextPath()%>/message/draft.jhtml" target="iframe">草稿箱</a>
 						</dd>
 						<dd>
-							<a href="../log/list.jhtml" target="iframe">日志管理</a>
+							<a href="<%=request.getContextPath()%>/log/list.jhtml" target="iframe">日志管理</a>
 						</dd>
 				</dl>
 			</td>
 			<td>
-				<iframe id="iframe" name="iframe" src="index.jhtml" frameborder="0"></iframe>
+				<iframe id="iframe" name="iframe" src="<%=request.getContextPath()%>/lsJsp/gm.jsp" frameborder="0"></iframe>
+
 			</td>
 		</tr>
 	</table>
