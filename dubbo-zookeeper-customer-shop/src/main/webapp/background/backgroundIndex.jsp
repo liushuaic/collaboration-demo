@@ -214,7 +214,7 @@ $().ready(function() {
 							<a href="../coupon/list.jhtml" target="iframe">优惠券管理</a>
 						</dd>
 						<dd>
-							<a href="../seo/list.jhtml" target="iframe">SEO设置</a>
+							<a href="<%=request.getContextPath()%>/seo/list.jsp" target="iframe">SEO设置</a>
 						</dd>
 						<dd>
 							<a href="../sitemap/build.jhtml" target="iframe">Sitemap管理</a>
