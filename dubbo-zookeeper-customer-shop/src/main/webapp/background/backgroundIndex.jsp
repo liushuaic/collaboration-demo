@@ -153,8 +153,8 @@ $().ready(function() {
 				</dl>
 				<dl id="member">
 					<dt>会员管理</dt>
-						<dd>
-							<a href="<%=request.getContextPath()%>/member/list.jhtml" target="iframe">会员管理</a>
+					    <dd>
+							<a href="<%=request.getContextPath()%>/memberrank.jsp" target="iframe">会员等级</a>
 						</dd>
 						<dd>
 							<a href="<%=request.getContextPath()%>/member_rank/list.jhtml" target="iframe">会员等级</a>

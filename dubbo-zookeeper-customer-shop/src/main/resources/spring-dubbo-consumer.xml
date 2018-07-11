@@ -27,9 +27,11 @@
      <!-- 使用zookeeper注册中心发现暴露的服务地址 -->    
      <dubbo:registry address="zookeeper://127.0.0.1:2181" />
 	 <dubbo:reference id="lsService" interface="com.jk.service.ILsService" timeout="60000"/>
-	<dubbo:reference id="promotionService" interface="com.jk.service.IPromotionService" timeout="60000"/>
-	<dubbo:reference id="seoService" interface="com.jk.service.ISeoService" timeout="60000"/>
+	 <dubbo:reference id="promotionService" interface="com.jk.service.IPromotionService" timeout="60000"/>
+	 <dubbo:reference id="seoService" interface="com.jk.service.ISeoService" timeout="60000"/>
 	 <dubbo:reference id="userService" interface="com.jk.service.IUserService" timeout="60000"/>
 	 <dubbo:reference id="zhjService" interface="com.jk.service.IZhjService" timeout="60000"/>
-	<dubbo:reference id="cfyService" interface="com.jk.service.ICfyService" timeout="60000"/>
+	 <dubbo:reference id="cfyService" interface="com.jk.service.ICfyService" timeout="60000"/>
+	 <dubbo:reference id="service" interface="com.jk.service.IMemberService" timeout="60000"/>
+
 </beans>  
