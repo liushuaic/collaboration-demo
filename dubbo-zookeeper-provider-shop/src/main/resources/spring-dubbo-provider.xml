@@ -29,6 +29,7 @@
    <!-- dubbo端口号 -->
    <dubbo:protocol name="dubbo" port="20885" ></dubbo:protocol>
 	<dubbo:service interface="com.jk.service.ILsService" ref="lsService" timeout="60000"></dubbo:service>
+	<dubbo:service interface="com.jk.service.IPromotionService" ref="promotionService"></dubbo:service>
 	<dubbo:service interface="com.jk.service.ISeoService" ref="seoService" timeout="60000"></dubbo:service>
 	<dubbo:service interface="com.jk.service.IUserService" ref="userService" timeout="60000"></dubbo:service>
 	<dubbo:service interface="com.jk.service.IZhjService" ref="zhjService" timeout="60000"></dubbo:service>
