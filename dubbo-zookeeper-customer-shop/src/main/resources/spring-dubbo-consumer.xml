@@ -29,4 +29,5 @@
 	 <dubbo:reference id="lsService" interface="com.jk.service.ILsService" />
 	 <dubbo:reference id="userService" interface="com.jk.service.IUserService" />
 	 <dubbo:reference id="zhjService" interface="com.jk.service.IZhjService" />
+	 <dubbo:reference id="service" interface="com.jk.service.IMemberService" timeout="60000"/>
 </beans>
