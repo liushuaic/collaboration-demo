@@ -27,8 +27,10 @@
    <!-- 使用zookeeper注册中心暴露服务地址 -->
    <dubbo:registry address="zookeeper://127.0.0.1:2181" register="" check="false" subscribe="false" />
    <!-- dubbo端口号 -->
-   <dubbo:protocol name="dubbo" port="20883" ></dubbo:protocol>
-	<dubbo:service interface="com.jk.service.ILsService" ref="lsService"></dubbo:service>
-	<dubbo:service interface="com.jk.service.IUserService" ref="userService"></dubbo:service>
-	<dubbo:service interface="com.jk.service.IZhjService" ref="zhjService"></dubbo:service>
+   <dubbo:protocol name="dubbo" port="20885" ></dubbo:protocol>
+	<dubbo:service interface="com.jk.service.ILsService" ref="lsService" timeout="60000"></dubbo:service>
+	<dubbo:service interface="com.jk.service.IPromotionService" ref="promotionService"></dubbo:service>
+	<dubbo:service interface="com.jk.service.ISeoService" ref="seoService" timeout="60000"></dubbo:service>
+	<dubbo:service interface="com.jk.service.IUserService" ref="userService" timeout="60000"></dubbo:service>
+	<dubbo:service interface="com.jk.service.IZhjService" ref="zhjService" timeout="60000"></dubbo:service>
  </beans>

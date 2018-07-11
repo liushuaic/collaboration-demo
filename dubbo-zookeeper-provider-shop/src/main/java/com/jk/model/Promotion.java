@@ -1,7 +1,6 @@
 package com.jk.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Promotion implements Serializable{
 
@@ -17,10 +16,10 @@ public class Promotion implements Serializable{
     private String protitle;
 
     /** 起始日期 */
-    private Date begindate;
+    private String begindate;
 
     /** 结束日期 */
-    private Date enddate;
+    private String enddate;
 
     /** 最小商品数量 */
     private Integer minimumquantity;
@@ -88,19 +87,19 @@ public class Promotion implements Serializable{
         this.protitle = protitle;
     }
 
-    public Date getBegindate() {
+    public String getBegindate() {
         return begindate;
     }
 
-    public void setBegindate(Date begindate) {
+    public void setBegindate(String begindate) {
         this.begindate = begindate;
     }
 
-    public Date getEnddate() {
+    public String getEnddate() {
         return enddate;
     }
 
-    public void setEnddate(Date enddate) {
+    public void setEnddate(String enddate) {
         this.enddate = enddate;
     }
 
