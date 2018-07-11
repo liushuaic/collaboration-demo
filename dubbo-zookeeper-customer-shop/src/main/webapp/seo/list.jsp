@@ -21,6 +21,7 @@
 </div>
 <div id="where">
     <a href="javascript:Edit('edit')" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">编辑</a>
+    <a href="javascript:seoshuaxin()" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true">刷新</a>
 </div>
 <div id="dig"></div>
 <script type="text/javascript">
@@ -90,6 +91,13 @@
                 }
             }]
         })
+    }
+    //刷新
+    function seoshuaxin() {
+        //刷新整个页面
+        /*location.reload()*/
+        //刷新当前页面
+        $("#show").datagrid('reload');
     }
 </script>
 </body>
