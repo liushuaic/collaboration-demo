@@ -6,32 +6,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
-    <link rel="stylesheet" href="<%=path%>/js/bootstrap3/css/bootstrap.css">
-    <link rel="stylesheet" href="<%=path%>/js/bootstrap3/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="<%=path%>/js/bootstrap-table/bootstrap-table.css">
-    <link rel="stylesheet" href="<%=path%>/js/bootstrap-dialog/dist/css/bootstrap-dialog.css" >
-    <link rel="stylesheet" href="<%=path%>/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
-    <link rel="stylesheet" type="text/css" href="<%=path%>/js/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="<%=path%>/js/easyui/themes/icon.css">
-    <link href="<%=path%>/js/CodeSeven-toastr-50092cc/build/toastr.css" rel="stylesheet" type="text/css" />
-    <script src="<%=path%>/js/jquery-3.2.1/jquery-3.2.1.js"></script>
-    <script src="<%=path%>/js/bootstrap3/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="<%=path%>/bootstrap/bootstrap3/css/bootstrap.css">
+    <link rel="stylesheet" href="<%=path%>/bootstrap/bootstrap3/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="<%=path%>/bootstrap/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="<%=path%>/bootstrap/bootstrap-dialog/dist/css/bootstrap-dialog.css" >
+    <link rel="stylesheet" href="<%=path%>/bootstrap/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="<%=path%>/bootstrap/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="<%=path%>/bootstrap/easyui/themes/icon.css">
+    <link href="<%=path%>/bootstrap/CodeSeven-toastr-50092cc/build/toastr.css" rel="stylesheet" type="text/css" />
+    <script src="<%=path%>/bootstrap/jquery-3.2.1/jquery-3.2.1.js"></script>
+    <script src="<%=path%>/bootstrap/bootstrap3/js/bootstrap.js"></script>
     <!-- bootstrap-table -->
-    <script src="<%=path%>/js/bootstrap-table/bootstrap-table.js"></script>
-    <script src="<%=path%>/js/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="<%=path%>/bootstrap/bootstrap-table/bootstrap-table.js"></script>
+    <script src="<%=path%>/bootstrap/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
     <!-- bootbox -->
-    <script src="<%=path%>/js/bootstrap-bootbox/bootbox.js"></script>
+    <script src="<%=path%>/bootstrap/bootstrap-bootbox/bootbox.js"></script>
     <!-- 时间插件 -->
-    <script src="<%=path%>/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-    <script src="<%=path%>/js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="<%=path%>/bootstrap/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="<%=path%>/bootstrap/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
     <!-- dialog -->
-    <script src="<%=path%>/js/bootstrap-dialog/dist/js/bootstrap-dialog.js"></script>
+    <script src="<%=path%>/bootstrap/bootstrap-dialog/dist/js/bootstrap-dialog.js"></script>
     <%-- easyui --%>
-    <script type="text/javascript" src="<%=path%>/js/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="<%=path%>/js/easyui/locale/easyui-lang-zh_CN.js"></script>
-    <script type="text/javascript" src="<%=path%>/js/kindeditor-4.1.10/kindeditor.js" charset="utf-8"></script>
-    <script type="text/javascript" src="<%=path%>/js/kindeditor-4.1.10/lang/zh_CN.js" charset="utf-8"></script>
-    <script src="<%=path%>/js/CodeSeven-toastr-50092cc/build/toastr.min.js"></script>
+    <script type="text/javascript" src="<%=path%>/bootstrap/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="<%=path%>/bootstrap/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="<%=path%>/bootstrap/kindeditor-4.1.10/kindeditor.js" charset="utf-8"></script>
+    <script type="text/javascript" src="<%=path%>/bootstrap/kindeditor-4.1.10/lang/zh_CN.js" charset="utf-8"></script>
+    <script src="<%=path%>/bootstrap/CodeSeven-toastr-50092cc/build/toastr.min.js"></script>
     <style type="text/css">
         a:hover {color:red; text-decoration:none;}
     </style>
