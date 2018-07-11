@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
    <table id="catid"></table>
 
    <script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.min.js"></script>
@@ -36,10 +37,10 @@
             columns: [[
                 {field: 'userchek', checkbox: true},
                 {title: '名称', field: 'text', width: 180},
-                {title: '页面标题', field: 'seotitle', width: 60, align: 'right'},
-                {  title: '操作', field: 'effective', width: 80,
+                {title: '页面关键字', field: 'seoKeywords', width: 180, align: 'right'},
+                {  title: '操作', field: 'effective', width: 180,
                     formatter: function (value, row, index) {
-
+                         return "<a href=''>修改</a>  <a href=''>删除</a>";
                     }
                 }
             ]]
