@@ -30,5 +30,6 @@
    <dubbo:protocol name="dubbo" port="20883" ></dubbo:protocol>
 	<dubbo:service interface="com.jk.service.ILsService" ref="lsService"></dubbo:service>
 	<dubbo:service interface="com.jk.service.IUserService" ref="userService"></dubbo:service>
+	<dubbo:service interface="com.jk.service.ICfyService" ref="cfyService"></dubbo:service>
 	<dubbo:service interface="com.jk.service.IZhjService" ref="zhjService"></dubbo:service>
  </beans>

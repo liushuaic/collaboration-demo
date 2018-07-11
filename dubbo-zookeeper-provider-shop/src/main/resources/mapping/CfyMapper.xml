@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.CfyMapper">
+
+<delete id="deleteArticle">
+    DELETE t_article WHERE arid = #{id}
+</delete>
+
+<update id="updateArticle">
+    UPDATE t_article SET arid=#{arid},title=#{title},author=#{author},content=#{content},seotitle=#{seotitle},seokeywords=#{seokeywords},seodescription=#{seodescription},ispublication=#{ispublication},
+     istop = #{istop},articlecategoryid=#{articlecategoryid},tagsid=#{tagsid} WHERE arid = #{arid}
+</update>
+
+<select id="queryAtricle" resultType="com.jk.model.Atricle">
+    SELECT  * FROM t_article
+</select>
+
+<select id="huixianArticle" resultType="com.jk.model.Atricle">
+    SELECT  * FROM t_article where arid = #{id}
+</select>
+
+<insert id="saveArticle">
+    INSERT INTO t_article arid,title,author,content,seotitle,seokeywords,seodescription,ispublication,istop,articlecategoryid,tagsid
+    VALUES (#{arid},#{title},#{author},#{content},#{seotitle},#{seokeywords},#{seodescription},#{ispublication},#{istop},#{articlecategoryid},#{tagsid})
+</insert>
+
+<select id="queryNavigation" resultType="com.jk.model.Navigation">
+    SELECT  * FROM T_NAVIGATION
+</select>
+
+<delete id="deleteNavigation" >
+    DELETE    T_NAVIGATION where nid = #{id}
+</delete>
+
+ <select id="huixianNavigation" resultType="com.jk.model.Navigation">
+     SELECT  * from T_NAVIGATION where nid = #{id}
+ </select>
+
+<update id="updateNavigation">
+    UPDATE T_NAVIGATION  SET name = #{NAME},position = ${position},url = #{url},isblanktarget=#{isblanktarget} WHERE nid = #{id}
+</update>
+
+<insert id="saveNav">
+    INSERT  INTO T_NAVIGATION VALUES (#{nid},#{name},#{position},#{url},$#{isblanktarget})
+</insert>
+</mapper>

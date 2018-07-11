@@ -171,10 +171,10 @@ $().ready(function() {
 				<dl id="content">
 					<dt>内容管理</dt>
 						<dd>
-							<a href="../navigation/list.jhtml" target="iframe">导航管理</a>
+							<a href="../cfyjsp/content/navigation.jsp" target="iframe">导航管理</a>
 						</dd>
 						<dd>
-							<a href="../article/list.jhtml" target="iframe">文章管理</a>
+							<a href="../cfyjsp/article/queryArticle.jsp" target="iframe">文章管理</a>
 						</dd>
 						<dd>
 							<a href="../article_category/list.jhtml" target="iframe">文章分类</a>
@@ -222,7 +222,7 @@ $().ready(function() {
 				<dl id="statistics">
 					<dt>统计报表</dt>
 						<dd>
-							<a href="../statistics/view.jhtml" target="iframe">访问统计</a>
+							<a href="../cfyjsp/queryAccess.jhtml" target="iframe">访问统计</a>
 						</dd>
 						<dd>
 							<a href="../statistics/setting.jhtml" target="iframe">统计设置</a>
