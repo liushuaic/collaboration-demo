@@ -126,8 +126,8 @@ public class Product implements Serializable {
 
     /** 商品分类关联id  productcategory*/
     private String productcategoryid;
-
-
+     /* 业务字段 商品分类 名称*/
+    private  String text;
     /** 品牌id  brand*/
     private String  brandid;
 
@@ -585,6 +585,15 @@ public class Product implements Serializable {
         this.parameterid = parameterid;
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+
     @Override
     public String toString() {
         return "Product{" +
@@ -627,6 +636,7 @@ public class Product implements Serializable {
                 ", attributevalue2='" + attributevalue2 + '\'' +
                 ", attributevalue3='" + attributevalue3 + '\'' +
                 ", productcategoryid='" + productcategoryid + '\'' +
+                ", text='" + text + '\'' +
                 ", brandid='" + brandid + '\'' +
                 ", productimagesid='" + productimagesid + '\'' +
                 ", reviewsid='" + reviewsid + '\'' +
