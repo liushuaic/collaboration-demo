@@ -55,45 +55,44 @@
     }
 
     $(function(){
-        alert("1");
-
-           alert("2");
-        $('#audtable').datagrid({
-            url:'<%=request.getContextPath()%>/cfyController/queryNavigation.jhtml',
-            singleSelect:true,
-            checkOnSelect:false,
-            selectOnCheck:false,
-            // pagination:true,//开启分页
+        cc();
+    })
+    function cc(){
+    $('#audtable').datagrid({
+        url:'<%=request.getContextPath()%>/cfyController/queryNavigation.jhtml',
+        singleSelect:true,
+        checkOnSelect:false,
+        selectOnCheck:false,
+        // pagination:true,//开启分页
 //		    pagePosition:'both',//分页工具栏显示位置   加上这个分页就显示在上面
-            //    pageNumber:1,//初始化页码
-            // pageSize:10,//每页条数
-            // pageList:[5,8,10],//每页条数的下拉选项
+        //    pageNumber:1,//初始化页码
+        // pageSize:10,//每页条数
+        // pageList:[5,8,10],//每页条数的下拉选项
 // 		  queryParams: {
 // 			  ptname: $("#uname").val(),
 // 	                  mindate: $("#aa").datebox("getValue"),
 // 	    		maxdate: $("#audtable").datebox("getValue"),
 // 		},
 
-            columns:[[
-                {field:'check',checkbox:true},
-                {field:'name',title:'名称',width:70},
-                {field:'position',title:'位置',width:150,
-                    formatter:function(value,row,index){
-                        return row.position==1?"顶部":""||row.position==2?"中间":""||row.position==3?"底部":"";
-                    }
-                },
-                {field:'url',title:'链接地址',width:150},
-                {field:'isblanktarget',title:'是否新窗口打开',width:150},
-                {field:'remarks',title:'操作',width:180,
-                    formatter:function () {
-                        return   "<a id=\'#2\' href=\'#\' class=\'easyui-linkbutton\'  onclick=\'binaji()\'>[编辑]</a>";
-                    }
+        columns:[[
+            {field:'check',checkbox:true},
+            {field:'name',title:'名称',width:70},
+            {field:'position',title:'位置',width:150,
+                formatter:function(value,row,index){
+                    return row.position==1?"顶部":""||row.position==2?"中间":""||row.position==3?"底部":"";
                 }
-            ]]
-        });
+            },
+            {field:'url',title:'链接地址',width:150},
+            {field:'isblanktarget',title:'是否新窗口打开',width:150},
+            {field:'remarks',title:'操作',width:180,
+                formatter:function () {
+                    return   "<a id=\'#2\' href=\'#\' class=\'easyui-linkbutton\'  onclick=\'binaji()\'>[编辑]</a>";
+                }
+            }
+        ]]
+    });
+    }
 
-    })
-    
     function binaji() {
         var tyid="'"+id+"'"
         $('#hx').dialog({
