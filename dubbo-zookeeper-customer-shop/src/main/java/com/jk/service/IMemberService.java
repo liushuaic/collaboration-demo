@@ -17,4 +17,6 @@ public interface IMemberService {
     void updateMember(MemberRank memberRank);
 
     void delMember(String ids);
+
+    List<Member> queryRememberList();
 }

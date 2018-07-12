@@ -89,7 +89,7 @@
                     }
                 }},
                 {field:'ss',title:'操作',width:225,formatter:function(value,row,index){
-                    return '<a href="javascript:updateMemberRank('+row.mrid+')">[编辑]</a>';
+                    return '<a href="javascript:update()">[编辑]</a>';
                 }},
             ]
         })

@@ -22,13 +22,19 @@ public class Member implements Serializable{
     private String email;
 
     /** 积分 */
-    private Long point;
+    private Integer point;
 
     /** 消费金额 */
     private String amount;
 
     /** 余额 */
     private String balance;
+
+    /** 创建日期 */
+    private String createdate;
+
+    /** 会员等级 memberRank */
+    private String memberrankid;
 
     /** 是否启用 1 启用  2 不启用*/
     private String isenabled;
@@ -40,10 +46,10 @@ public class Member implements Serializable{
     private Integer loginfailurecount;
 
     /** 锁定日期 */
-    private Date lockeddate;
+    private String lockeddate;
 
     /** 最后登录日期 */
-    private Date logindate;
+    private String logindate;
 
 /* 个人资料 */
 
@@ -54,7 +60,7 @@ public class Member implements Serializable{
     private String gender;
 
     /** 出生日期 */
-    private Date birth;
+    private String birth;
 
     /** 地址 */
     private String address;
@@ -104,9 +110,6 @@ public class Member implements Serializable{
     /** 地区 ？？ area*/
     private String area;
 
-    /** 会员等级 memberRank */
-    private String memberrankid;
-
     /** 购物车项关联id  CartItem*/
     private String cartitemsid ;
 
@@ -151,12 +154,20 @@ public class Member implements Serializable{
         this.email = email;
     }
 
-    public Long getPoint() {
+    public Integer getPoint() {
         return point;
     }
 
-    public void setPoint(Long point) {
+    public void setPoint(Integer point) {
         this.point = point;
+    }
+
+    public String getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
     }
 
     public String getAmount() {
@@ -173,6 +184,14 @@ public class Member implements Serializable{
 
     public void setBalance(String balance) {
         this.balance = balance;
+    }
+
+    public String getMemberrankid() {
+        return memberrankid;
+    }
+
+    public void setMemberrankid(String memberrankid) {
+        this.memberrankid = memberrankid;
     }
 
     public String getIsenabled() {
@@ -199,19 +218,19 @@ public class Member implements Serializable{
         this.loginfailurecount = loginfailurecount;
     }
 
-    public Date getLockeddate() {
+    public String getLockeddate() {
         return lockeddate;
     }
 
-    public void setLockeddate(Date lockeddate) {
+    public void setLockeddate(String lockeddate) {
         this.lockeddate = lockeddate;
     }
 
-    public Date getLogindate() {
+    public String getLogindate() {
         return logindate;
     }
 
-    public void setLogindate(Date logindate) {
+    public void setLogindate(String logindate) {
         this.logindate = logindate;
     }
 
@@ -231,11 +250,11 @@ public class Member implements Serializable{
         this.gender = gender;
     }
 
-    public Date getBirth() {
+    public String getBirth() {
         return birth;
     }
 
-    public void setBirth(Date birth) {
+    public void setBirth(String birth) {
         this.birth = birth;
     }
 
@@ -359,14 +378,6 @@ public class Member implements Serializable{
         this.area = area;
     }
 
-    public String getMemberrankid() {
-        return memberrankid;
-    }
-
-    public void setMemberrankid(String memberrankid) {
-        this.memberrankid = memberrankid;
-    }
-
     public String getCartitemsid() {
         return cartitemsid;
     }
@@ -409,14 +420,16 @@ public class Member implements Serializable{
                 ", point=" + point +
                 ", amount='" + amount + '\'' +
                 ", balance='" + balance + '\'' +
+                ", createdate='" + createdate + '\'' +
+                ", memberrankid='" + memberrankid + '\'' +
                 ", isenabled='" + isenabled + '\'' +
                 ", islocked='" + islocked + '\'' +
                 ", loginfailurecount=" + loginfailurecount +
-                ", lockeddate=" + lockeddate +
-                ", logindate=" + logindate +
+                ", lockeddate='" + lockeddate + '\'' +
+                ", logindate='" + logindate + '\'' +
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
-                ", birth=" + birth +
+                ", birth='" + birth + '\'' +
                 ", address='" + address + '\'' +
                 ", zipcode='" + zipcode + '\'' +
                 ", phone='" + phone + '\'' +
@@ -432,7 +445,6 @@ public class Member implements Serializable{
                 ", attributeValue8='" + attributeValue8 + '\'' +
                 ", attributeValue9='" + attributeValue9 + '\'' +
                 ", area='" + area + '\'' +
-                ", memberrankid='" + memberrankid + '\'' +
                 ", cartitemsid='" + cartitemsid + '\'' +
                 ", orderitemsid='" + orderitemsid + '\'' +
                 ", reviewsid='" + reviewsid + '\'' +
