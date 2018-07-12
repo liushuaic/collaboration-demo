@@ -28,11 +28,11 @@ public class LsServiceImpl implements ILsService {
      * @return
      * @throws Exception
      */
-    public JSONObject queryOrderList(int page, int rows) throws Exception {
-        long total = lsMapper.queryOrderCount();
+    public JSONObject queryOrderList(int page, int rows,Order order) throws Exception {
+        long total = lsMapper.queryOrderCount(order);
         int strat = (page - 1) * rows;
         int end = strat + rows;
-        List<Order> list = lsMapper.queryOrderList(strat,end);
+        List<Order> list = lsMapper.queryOrderList(strat,end,order);
         JSONObject json = new JSONObject();
         json.put("total",total);
         json.put("rows",list);
