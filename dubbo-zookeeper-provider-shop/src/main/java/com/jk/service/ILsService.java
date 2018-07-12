@@ -21,4 +21,34 @@ public interface ILsService {
      */
     public JSONObject queryOrderList(int page, int rows,Order order) throws Exception;
 
+    /**
+     * 收款管理
+     * @param page
+     * @param rows
+     * @return
+     * @throws Exception
+     */
+    JSONObject queryPaymentList(int page, int rows) throws Exception;
+
+    /**
+     * 退款管理
+     */
+    JSONObject queryRefundsList(int page, int rows) throws Exception;
+
+    /**
+     * 发货管理
+     * @param page
+     * @param rows
+     * @return
+     * @throws Exception
+     */
+    JSONObject queryShippingList(int page, int rows) throws Exception;
+
+
+    /**
+     * 退货管理
+     */
+    JSONObject queryReturnsList(int page, int rows) throws Exception;
+
+
 }

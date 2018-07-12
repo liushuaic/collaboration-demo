@@ -133,16 +133,16 @@ $().ready(function() {
 							<a href="<%=request.getContextPath()%>/lsController/orderList.jhtml" target="iframe">订单管理</a>
 						</dd>
 						<dd>
-							<a href="../payment/list.jhtml" target="iframe">收款管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryPayment.jhtml" target="iframe">收款管理</a>
 						</dd>
 						<dd>
-							<a href="../refunds/list.jhtml" target="iframe">退款管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryRefunds.jhtml" target="iframe">退款管理</a>
 						</dd>
 						<dd>
-							<a href="../shipping/list.jhtml" target="iframe">发货管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryShipping.jhtml" target="iframe">发货管理</a>
 						</dd>
 						<dd>
-							<a href="../returns/list.jhtml" target="iframe">退货管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryReturns.jhtml" target="iframe">退货管理</a>
 						</dd>
 						<dd>
 							<a href="../delivery_center/list.jhtml" target="iframe">发货点管理</a>
@@ -285,7 +285,7 @@ $().ready(function() {
 				</dl>
 			</td>
 			<td>
-				<iframe id="iframe" name="iframe" src="index.jhtml" frameborder="0"></iframe>
+				<iframe id="iframe" name="iframe" src="<%=request.getContextPath()%>/lsJsp/gm.jsp" frameborder="0"></iframe>
 			</td>
 		</tr>
 	</table>

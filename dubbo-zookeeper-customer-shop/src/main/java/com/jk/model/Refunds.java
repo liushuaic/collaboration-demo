@@ -1,6 +1,7 @@
 package com.jk.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 
 /* 退款单 */
@@ -41,6 +42,45 @@ public class Refunds implements Serializable {
     /** 订单 */
     private String orderid;
 
+    /**订单业务字段*/
+    private String ordercode;
+    /**创建日期*/
+    private Date createdatetime;
+
+    @Override
+    public String toString() {
+        return "Refunds{" +
+                "reid='" + reid + '\'' +
+                ", refucode='" + refucode + '\'' +
+                ", method='" + method + '\'' +
+                ", paymentmethod='" + paymentmethod + '\'' +
+                ", bank='" + bank + '\'' +
+                ", account='" + account + '\'' +
+                ", amount=" + amount +
+                ", payee='" + payee + '\'' +
+                ", operator='" + operator + '\'' +
+                ", memo='" + memo + '\'' +
+                ", orderid='" + orderid + '\'' +
+                ", ordercode='" + ordercode + '\'' +
+                ", createdatetime=" + createdatetime +
+                '}';
+    }
+
+    public String getOrdercode() {
+        return ordercode;
+    }
+
+    public void setOrdercode(String ordercode) {
+        this.ordercode = ordercode;
+    }
+
+    public Date getCreatedatetime() {
+        return createdatetime;
+    }
+
+    public void setCreatedatetime(Date createdatetime) {
+        this.createdatetime = createdatetime;
+    }
 
     public String getReid() {
         return reid;
@@ -130,20 +170,4 @@ public class Refunds implements Serializable {
         this.orderid = orderid;
     }
 
-    @Override
-    public String toString() {
-        return "Refunds{" +
-                "reid='" + reid + '\'' +
-                ", refucode='" + refucode + '\'' +
-                ", method='" + method + '\'' +
-                ", paymentmethod='" + paymentmethod + '\'' +
-                ", bank='" + bank + '\'' +
-                ", account='" + account + '\'' +
-                ", amount=" + amount +
-                ", payee='" + payee + '\'' +
-                ", operator='" + operator + '\'' +
-                ", memo='" + memo + '\'' +
-                ", orderid='" + orderid + '\'' +
-                '}';
-    }
 }

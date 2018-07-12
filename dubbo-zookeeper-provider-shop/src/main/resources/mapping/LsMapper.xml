@@ -23,4 +23,64 @@
 
       </select>
 
+
+    <select id="queryPaymentcount" resultType="long">
+      select count(*) from t_payment tp,t_order tor,t_member tm where tp.orderid=tor.orderid and tp.memberid=tm.memberid
+    </select>
+
+    <select id="queryRefundscount" resultType="long">
+        select count(*) from t_refunds tr,t_order tor where tr.orderid = tor.orderid
+    </select>
+
+    <select id="queryShippingcount" resultType="long">
+        select count(*) from t_shipping ts,t_deliverycorp td where ts.deliveryid=td.dcid
+    </select>
+
+    <select id="queryReturnscount" resultType="long">
+        select count(*) from t_returns tr,t_order td where tr.orderid=td.orderid
+    </select>
+
+
+
+    <select id="queryPaymentList" resultType="com.jk.model.Payment">
+        select * from
+        (
+        select a.*,rownum rn from
+        (
+        select tp.*,tor.ordercode,tm.username from t_payment tp,t_order tor,t_member tm where tp.orderid=tor.orderid and tp.memberid=tm.memberid
+        ) a where rownum &lt;=#{end}
+        ) b where b.rn &gt;#{start}
+    </select>
+
+    <select id="queryRefundsList" resultType="com.jk.model.Refunds">
+        select * from
+        (
+        select a.*,rownum rn from
+        (
+        select tr.*,tor.ordercode from t_refunds tr,t_order tor where tr.orderid = tor.orderid
+        )a where rownum &lt;#{end}
+        )b where b.rn &gt;#{start}
+    </select>
+
+    <select id="queryShippingList" resultType="com.jk.model.Shipping">
+        select * from
+        (
+        select a.*,rownum rn from
+        (
+        select * from t_shipping ts,t_deliverycorp td where ts.deliveryid=td.dcid
+        )a where rownum &lt;#{end}
+        )b where b.rn &gt;#{start}
+    </select>
+
+    <select id="queryReturnsList" resultType="com.jk.model.Returns">
+        select * from
+        (
+        select a.*,rownum rn from
+        (
+        select tr.*,td.ordercode from t_returns tr,t_order td where tr.orderid=td.orderid
+        )a where rownum &lt;#{end}
+        )b where b.rn &gt;#{start}
+    </select>
+
+
 </mapper>
