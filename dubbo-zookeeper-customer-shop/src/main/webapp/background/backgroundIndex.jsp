@@ -109,7 +109,7 @@ $().ready(function() {
 							<a href="../zhjController/queryProduct.jhtml" target="iframe">商品管理</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/queryProductCategoryList.jhtml" target="iframe">商品分类</a>
+							<a href="../zhjController/toCategoryPage.jhtml" target="iframe">商品分类</a>
 						</dd>
 						<dd>
 							<a href="../zhjController/list.jhtml" target="iframe">商品参数</a>
