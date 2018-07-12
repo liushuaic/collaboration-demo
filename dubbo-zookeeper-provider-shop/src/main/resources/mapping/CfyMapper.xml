@@ -20,7 +20,7 @@
 </select>
 
 <insert id="saveArticle">
-    INSERT INTO t_article arid,title,author,content,seotitle,seokeywords,seodescription,ispublication,istop,articlecategoryid,tagsid
+    INSERT INTO t_article (arid,title,author,content,seotitle,seokeywords,seodescription,ispublication,istop,articlecategoryid,tagsid)
     VALUES (#{arid},#{title},#{author},#{content},#{seotitle},#{seokeywords},#{seodescription},#{ispublication},#{istop},#{articlecategoryid},#{tagsid})
 </insert>
 
@@ -37,10 +37,10 @@
  </select>
 
 <update id="updateNavigation">
-    UPDATE T_NAVIGATION  SET name = #{NAME},position = ${position},url = #{url},isblanktarget=#{isblanktarget} WHERE nid = #{id}
+    UPDATE T_NAVIGATION  SET name = #{NAME},position = #{position},url = #{url},isblanktarget=#{isblanktarget} WHERE nid = #{id}
 </update>
 
 <insert id="saveNav">
-    INSERT  INTO T_NAVIGATION VALUES (#{nid},#{name},#{position},#{url},$#{isblanktarget})
+    INSERT  INTO T_NAVIGATION VALUES (#{nid},#{name},#{position},#{url},#{isblanktarget})
 </insert>
 </mapper>
