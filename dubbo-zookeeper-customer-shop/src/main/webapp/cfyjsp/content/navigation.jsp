@@ -132,7 +132,6 @@
             count++;
         }
         str=arr.substring(1);
-        alert(str);
         if (str != null || str != "") {
             alert(1);
             $.ajax({
@@ -155,10 +154,6 @@
     function shuaxin(){
         cc();
     }
-    
-      function querynaviga() {
-
-      }
 
 </script>
 </body>
