@@ -55,7 +55,9 @@
     }
 
     $(function(){
-       function cc() {
+        alert("1");
+
+           alert("2");
         $('#audtable').datagrid({
             url:'<%=request.getContextPath()%>/cfyController/queryNavigation.jhtml',
             singleSelect:true,
@@ -89,7 +91,7 @@
                 }
             ]]
         });
-       }
+
     })
     
     function binaji() {
