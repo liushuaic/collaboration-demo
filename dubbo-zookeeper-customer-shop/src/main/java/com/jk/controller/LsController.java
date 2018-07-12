@@ -49,8 +49,8 @@ public class LsController {
      */
     @RequestMapping("queryOrderList")
     @ResponseBody
-    public JSONObject queryOrderList(int page, int rows) throws Exception{
-        JSONObject orderList = lsService.queryOrderList(page,rows);
+    public JSONObject queryOrderList(Order order,int page, int rows) throws Exception{
+        JSONObject orderList = lsService.queryOrderList(page,rows,order);
           return orderList;
     }
 

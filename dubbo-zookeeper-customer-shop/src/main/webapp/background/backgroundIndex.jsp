@@ -109,7 +109,7 @@ $().ready(function() {
 							<a href="../zhjController/queryProduct.jhtml" target="iframe">商品管理</a>
 						</dd>
 						<dd>
-							<a href="../zhjController/queryProductCategoryList.jhtml" target="iframe">商品分类</a>
+							<a href="../zhjController/toCategoryPage.jhtml" target="iframe">商品分类</a>
 						</dd>
 						<dd>
 							<a href="../zhjController/list.jhtml" target="iframe">商品参数</a>
@@ -157,7 +157,7 @@ $().ready(function() {
 							<a href="../member/list.jhtml" target="iframe">会员管理</a>
 						</dd>
 						<dd>
-							<a href="../member_rank/list.jhtml" target="iframe">会员等级</a>
+							<a href="../memberrank.jsp" target="iframe">会员等级</a>
 						</dd>
 						<dd>
 							<a href="../member_attribute/list.jhtml" target="iframe">会员注册项</a>
@@ -172,10 +172,10 @@ $().ready(function() {
 				<dl id="content">
 					<dt>内容管理</dt>
 						<dd>
-							<a href="../navigation/list.jhtml" target="iframe">导航管理</a>
+							<a href="../cfyjsp/content/navigation.jsp" target="iframe">导航管理</a>
 						</dd>
 						<dd>
-							<a href="../article/list.jhtml" target="iframe">文章管理</a>
+							<a href="../cfyjsp/article/queryArticle.jsp" target="iframe">文章管理</a>
 						</dd>
 						<dd>
 							<a href="../article_category/list.jhtml" target="iframe">文章分类</a>
@@ -223,7 +223,7 @@ $().ready(function() {
 				<dl id="statistics">
 					<dt>统计报表</dt>
 						<dd>
-							<a href="../statistics/view.jhtml" target="iframe">访问统计</a>
+							<a href="../cfyjsp/queryAccess.jhtml" target="iframe">访问统计</a>
 						</dd>
 						<dd>
 							<a href="../statistics/setting.jhtml" target="iframe">统计设置</a>

@@ -16,8 +16,9 @@ public interface ILsService {
      * @param
      * @param page
      * @param rows
+     * @param order
      * @return
      * @throws Exception
      */
-    public JSONObject queryOrderList(int page, int rows) throws Exception;
+    public JSONObject queryOrderList(int page, int rows, Order order) throws Exception;
 }

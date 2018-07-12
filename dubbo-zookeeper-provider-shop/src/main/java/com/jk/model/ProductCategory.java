@@ -1,6 +1,8 @@
 package com.jk.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductCategory implements Serializable {
 
@@ -26,6 +28,8 @@ public class ProductCategory implements Serializable {
 
     /** 页面描述 */
     private String seoDescription;
+
+    private List<ProductCategory> children=new ArrayList<ProductCategory>();
 
     public String getId() {
         return id;
@@ -83,6 +87,14 @@ public class ProductCategory implements Serializable {
         this.seoDescription = seoDescription;
     }
 
+    public List<ProductCategory> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<ProductCategory> children) {
+        this.children = children;
+    }
+
     @Override
     public String toString() {
         return "ProductCategory{" +
@@ -93,6 +105,7 @@ public class ProductCategory implements Serializable {
                 ", seoTitle='" + seoTitle + '\'' +
                 ", seoKeywords='" + seoKeywords + '\'' +
                 ", seoDescription='" + seoDescription + '\'' +
+                ", children=" + children +
                 '}';
     }
 }
