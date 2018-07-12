@@ -11,8 +11,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dubbo-zookeeper-customer-shop" target="1.5" />
-      <module name="dubbo-zookeeper-provider-shop" target="1.5" />
+      <module name="dubbo-zookeeper-customer-shop" target="1.8" />
+      <module name="dubbo-zookeeper-provider-shop" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
