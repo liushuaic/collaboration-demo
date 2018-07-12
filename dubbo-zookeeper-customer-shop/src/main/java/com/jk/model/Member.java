@@ -22,7 +22,7 @@ public class Member implements Serializable{
     private String email;
 
     /** 积分 */
-    private Long point;
+    private Integer point;
 
     /** 消费金额 */
     private String amount;
@@ -31,7 +31,7 @@ public class Member implements Serializable{
     private String balance;
 
     /** 创建日期 */
-    private String date;
+    private String createdate;
 
     /** 会员等级 memberRank */
     private String memberrankid;
@@ -154,12 +154,20 @@ public class Member implements Serializable{
         this.email = email;
     }
 
-    public Long getPoint() {
+    public Integer getPoint() {
         return point;
     }
 
-    public void setPoint(Long point) {
+    public void setPoint(Integer point) {
         this.point = point;
+    }
+
+    public String getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
     }
 
     public String getAmount() {
@@ -176,14 +184,6 @@ public class Member implements Serializable{
 
     public void setBalance(String balance) {
         this.balance = balance;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getMemberrankid() {
@@ -420,7 +420,7 @@ public class Member implements Serializable{
                 ", point=" + point +
                 ", amount='" + amount + '\'' +
                 ", balance='" + balance + '\'' +
-                ", date='" + date + '\'' +
+                ", createdate='" + createdate + '\'' +
                 ", memberrankid='" + memberrankid + '\'' +
                 ", isenabled='" + isenabled + '\'' +
                 ", islocked='" + islocked + '\'' +

@@ -1,5 +1,6 @@
 package com.jk.controller;
 
+import com.jk.model.Member;
 import com.jk.model.MemberRank;
 import com.jk.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +68,12 @@ public class MemberController {
             map.put("success",false);
         }
         return map;
+    }
+
+    @RequestMapping("queryRememberList")
+    @ResponseBody
+    public List<Member> queryRememberList(){
+        List<Member> mlist = service.queryRememberList();
+        return mlist;
     }
 }

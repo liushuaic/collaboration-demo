@@ -18,4 +18,6 @@ public interface MemberMapper {
     void updateMember(MemberRank memberRank);
 
     void delMember(@Param("ids") String ids);
+
+    List<Member> queryRememberList();
 }

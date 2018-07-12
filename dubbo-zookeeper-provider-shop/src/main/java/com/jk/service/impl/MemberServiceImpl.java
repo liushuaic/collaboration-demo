@@ -49,4 +49,9 @@ public class MemberServiceImpl implements IMemberService{
     public void delMember(String ids) {
         mapper.delMember(ids);
     }
+
+    @Override
+    public List<Member> queryRememberList() {
+        return mapper.queryRememberList();
+    }
 }
