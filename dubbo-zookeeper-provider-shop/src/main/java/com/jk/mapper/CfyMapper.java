@@ -11,7 +11,7 @@ public interface CfyMapper {
 
     void deleteNavigation(@Param("id") String id);
 
-    Navigation huixianNavigation(@Param("id") String id);
+    Navigation huixianNavigation(@Param("id")String id);
 
     void updateNavigation(Navigation navigation);
 
@@ -21,9 +21,9 @@ public interface CfyMapper {
 
     void saveArticle(Article article);
 
-    Article huixianArticle(@Param("id") String id);
+    Article huixianArticle(@Param("id")String id);
 
     void updateArticle(Article article);
 
-    void deleteArticle(@Param("id") String id);
+    void deleteArticle(@Param("id")String id);
 }
