@@ -2,6 +2,7 @@ package com.jk.model;
 
 import java.io.Serializable;
 
+//导航管理表
 public class Navigation implements Serializable {
 
     private static final long serialVersionUID = 7281064274400628905L;

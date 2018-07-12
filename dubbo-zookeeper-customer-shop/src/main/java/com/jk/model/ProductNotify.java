@@ -22,6 +22,13 @@ public class ProductNotify implements Serializable {
     /** 商品 */
     private String  productid;
 
+    /* 业务字段*/
+    /** 用户名 */
+    private String username;
+    /** 商品名称 */
+    private String name;
+
+
     public String getProid() {
         return proid;
     }
@@ -62,6 +69,22 @@ public class ProductNotify implements Serializable {
         this.productid = productid;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "ProductNotify{" +
@@ -70,6 +93,8 @@ public class ProductNotify implements Serializable {
                 ", hassent='" + hassent + '\'' +
                 ", memberid='" + memberid + '\'' +
                 ", productid='" + productid + '\'' +
+                ", username='" + username + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

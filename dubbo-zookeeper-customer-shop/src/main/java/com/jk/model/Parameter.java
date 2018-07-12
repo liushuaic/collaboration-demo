@@ -19,7 +19,10 @@ public class Parameter implements Serializable{
     private String parameters;
 
     /* 排序 */
-    private String order;
+    private String orders;
+
+    /** 分类业务字段*/
+    private String text;
 
     public String getParid() {
         return parid;
@@ -53,12 +56,20 @@ public class Parameter implements Serializable{
         this.parameters = parameters;
     }
 
-    public String getOrder() {
-        return order;
+    public String getOrders() {
+        return orders;
     }
 
-    public void setOrder(String order) {
-        this.order = order;
+    public void setOrders(String orders) {
+        this.orders = orders;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     @Override
@@ -68,7 +79,8 @@ public class Parameter implements Serializable{
                 ", paraname='" + paraname + '\'' +
                 ", productcategoryid='" + productcategoryid + '\'' +
                 ", parameters='" + parameters + '\'' +
-                ", order='" + order + '\'' +
+                ", orders='" + orders + '\'' +
+                ", text='" + text + '\'' +
                 '}';
     }
 }
