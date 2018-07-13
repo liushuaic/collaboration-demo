@@ -121,6 +121,9 @@ public class Member implements Serializable{
     /** 消息关联id  Message*/
     private String  messagesid ;
 
+    /** 会员等级 */
+    private String mrname;
+
     public String getMemberid() {
         return memberid;
     }
@@ -139,6 +142,14 @@ public class Member implements Serializable{
 
     public String getPassword() {
         return password;
+    }
+
+    public String getMrname() {
+        return mrname;
+    }
+
+    public void setMrname(String mrname) {
+        this.mrname = mrname;
     }
 
     public void setPassword(String password) {
@@ -448,6 +459,7 @@ public class Member implements Serializable{
                 ", orderitemsid='" + orderitemsid + '\'' +
                 ", reviewsid='" + reviewsid + '\'' +
                 ", messagesid='" + messagesid + '\'' +
+                ", mrname='" + mrname + '\'' +
                 '}';
     }
 }

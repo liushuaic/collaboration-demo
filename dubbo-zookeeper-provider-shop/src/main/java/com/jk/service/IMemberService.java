@@ -6,9 +6,7 @@ import com.jk.model.MemberRank;
 import java.util.List;
 
 public interface IMemberService {
-    List<MemberRank> queryMenberList(Integer page, Integer rows, MemberRank memberRank);
-
-    List<MemberRank> queryMenberCount(MemberRank memberRank);
+    List<MemberRank> queryMenberList();
 
     MemberRank queryMemberById(String id);
 

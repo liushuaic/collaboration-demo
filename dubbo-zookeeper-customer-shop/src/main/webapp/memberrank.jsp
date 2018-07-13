@@ -57,31 +57,22 @@
             pageList:[5, 10, 20, 50],
             pageSize:5,
             striped:true,                    //是否显示行间隔色
+            search:true,
+            searchOnEnterKey:true,
             height:500,
-            showColumns:false,//是否显示内容列下拉框
-            showToggle:false,//是否显示切换试图（table/card）按钮
-            showPaginationSwitch:false,//是否显示数据条数选择框
-            showRefresh:false,//是否显示刷新按钮
+            showColumns:true,//是否显示内容列下拉框
+            showToggle:true,//是否显示切换试图（table/card）按钮
+            showPaginationSwitch:true,//是否显示数据条数选择框
+            paginationHAlign:false,
+            showRefresh:true,//是否显示刷新按钮
             detailView:false,//设置为true 可以显示详细页面模式。
             showFooter:false,//是否显示列脚clickToSelect: true, //是否启用点击选中行
-            sidePagination:'server',//分页方式：client客户端分页，server服务端分页（* striped:true,
-            queryParams:function(){
-                /* var searchBrand = $('#searchBrand').val(); */
-                return {
-                    page: this.pageNumber,
-                    rows: this.pageSize,
-                };
-            },
             columns:[
                 {checkbox:true},
                 {field:'mrname',title:'名称',align:'center',width:225},
                 {field:'scale',title:'优惠比例',width:225},
                 {field:'amount',title:'消费金额',width:225},
                 {field:'isdefault',title:'是否默认',width:225,formatter:function(value,row,index){
-                    /*
-                    * value == 1 不是 默认
-                    * value == 2 默认
-                    * */
                     if (value == null){
                         return "否";
                     }else{

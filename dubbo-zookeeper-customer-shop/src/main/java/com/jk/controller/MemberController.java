@@ -22,17 +22,29 @@ public class MemberController {
 
     @RequestMapping("queryMenberList")
     @ResponseBody
-    public  Map<String ,Object> queryMenberList(Integer page, Integer rows, MemberRank memberRank){
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("total", service.queryMenberCount(memberRank).size());
-        map.put("rows", service.queryMenberList(page,rows,memberRank));
-        return map;
+    public  List<MemberRank> queryMenberList(){
+        return service.queryMenberList();
     }
+
+    @RequestMapping("queryMenberList1")
+    @ResponseBody
+    public  List<MemberRank> queryMenberList1(){
+        return service.queryMenberList();
+    }
+
     @RequestMapping("toAddMember")
     public ModelAndView toAddMember(String id){
         ModelAndView mav = new ModelAndView("addMember");
         if (id != null && id != ""){
             mav.addObject("mr",service.queryMemberById(id));
+        }
+        return mav;
+    }
+    @RequestMapping("toAddRemember")
+    public ModelAndView toAddRemember(String id){
+        ModelAndView mav = new ModelAndView("addRemember");
+        if (id != null && id != ""){
+            mav.addObject("me",service.queryMemberById(id));
         }
         return mav;
     }
@@ -72,7 +84,7 @@ public class MemberController {
 
     @RequestMapping("queryRememberList")
     @ResponseBody
-    public List<Member> queryRememberList(){
+    public  List<Member> queryRememberList(){
         List<Member> mlist = service.queryRememberList();
         return mlist;
     }
