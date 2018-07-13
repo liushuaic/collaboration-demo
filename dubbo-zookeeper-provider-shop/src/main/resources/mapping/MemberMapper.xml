@@ -60,15 +60,7 @@
     </resultMap>
 
     <select id="queryMenberList" resultMap="mr">
-        SELECT * FROM (
-            SELECT A.*,ROWNUM RN FROM (
-                SELECT * FROM T_MemberRank
-            )A
-        )WHERE RN BETWEEN #{begin} AND #{end}
-    </select>
-
-    <select id="queryMenberCount" resultMap="mr">
-        SELECT * FROM T_MemberRank
+            SELECT * FROM T_MemberRank
     </select>
 
     <select id="queryMemberById" resultMap="mr">
@@ -104,6 +96,7 @@
     </delete>
 
     <select id="queryRememberList" resultMap="me">
-        SELECT * FROM T_Member
+                select me.*,mr.mrname from t_Member me
+                left join t_memberrank mr on mr.mrid = me.memberrankid
     </select>
 </mapper>
