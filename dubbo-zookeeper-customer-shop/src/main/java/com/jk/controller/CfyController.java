@@ -1,7 +1,9 @@
 package com.jk.controller;
 
 import com.jk.model.Article;
+import com.jk.model.ArticleCategory;
 import com.jk.model.Navigation;
+import com.jk.model.Tag;
 import com.jk.service.ICfyService;
 import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/cfyController")
@@ -18,6 +22,23 @@ public class CfyController {
     @Autowired
     private ICfyService cfyService;
 
+    //查询 标签管理
+    @RequestMapping("/queryLabel")
+    @ResponseBody
+    public List<Tag> queryLabel(){
+        List<Tag> list=cfyService.queryLabel();
+        return list;
+    }
+
+    //查询 文章分类
+    @RequestMapping("/queryAtricleCategory")
+    @ResponseBody
+    public List<ArticleCategory> queryAtricleCategory(){
+        List<ArticleCategory> list=cfyService.queryAtricleCategory();
+        return list;
+    }
+
+    //删除 文章管理
     @RequestMapping("/deleteArticle")
     @ResponseBody
     public String deleteArticle(String id){
@@ -38,24 +59,33 @@ public class CfyController {
     public ModelAndView huixianArticle(String id){
         ModelAndView mav=new ModelAndView();
         Article list=cfyService.huixianArticle(id);
-        mav.addObject("lsit",list);
-        mav.setViewName("cfyjsp/article/queryArticle");
+        mav.addObject("list",list);
+        mav.setViewName("cfyjsp/article/huixian");
         return mav;
     }
 
     //x新增 文章管理
     @RequestMapping("/saveArticle")
     @ResponseBody
-    public  String saveArticle(Article article){
-        cfyService.saveArticle(article);
-        return "success";
+    public Map<String ,Object> saveArticle(Article article){
+        Map<String ,Object> map = new HashMap<String ,Object>();
+        try {
+            cfyService.saveArticle(article);
+            map.put("success",true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getMessage();
+            e.getLocalizedMessage();
+            map.put("success",false);
+        }
+        return map;
     }
 
     //查询 文章管理
     @RequestMapping("/queryAtricle")
     @ResponseBody
-    public List<Article> queryAtricle(){
-        List<Article> list = cfyService.queryAtricle();
+    public List<Article> queryAtricle(String title){
+        List<Article> list = cfyService.queryAtricle(title);
         return list;
     }
 

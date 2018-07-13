@@ -14,10 +14,10 @@
 
 <form id="updateNav_form">
     <input type="hidden" value="${list.nid }" name="nid">
-     名称:<input value="${list.ptname }" name="ptname" class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:150px">  <br><br>
+     名称:<input value="${list.name }" name="name" class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:150px">  <br><br>
      位置:<input type="radio" name="position" ${list.position==1?"checked":""} value="1">顶部
           <input type="radio" name="position"  ${list.position==2?"checked":""} value="2">中间
-          <input type="radio" name="position"  ${list.position==3?"checked":""} value="3"><br><br>
+          <input type="radio" name="position"  ${list.position==3?"checked":""} value="3">底部<br><br>
    链接地址：<input value="${list.url }" name="url" class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:150px"><br><br>
     是否打开新窗口：<input type="checkbox" name="isblanktarget" ckecked value="1"  ${list.isblanktarget.indexOf('1') > -1 ? "checked" : "" } >
 
