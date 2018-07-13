@@ -2,8 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.CfyMapper">
 
+<select id="queryLabel" resultType="com.jk.model.Tag">
+    SELECT * FROM t_Tag
+</select>
+
+<select id="queryAtricleCategory" resultType="com.jk.model.ArticleCategory"    >
+    SELECT * FROM t_ArticleCategory
+</select>
+
 <delete id="deleteArticle">
-    DELETE t_article WHERE arid = #{id}
+    DELETE t_article WHERE arid = ${id}
 </delete>
 
 <update id="updateArticle">
@@ -12,11 +20,14 @@
 </update>
 
 <select id="queryAtricle" resultType="com.jk.model.Article">
-    SELECT  * FROM t_article
+    select * from t_article WHERE 1 = 1
+    <if test=" #{title} != null and #{title} != '' ">
+        and title like '%${title}%'
+    </if>
 </select>
 
 <select id="huixianArticle" resultType="com.jk.model.Article">
-    SELECT  * FROM t_article where arid = #{id}
+    SELECT  * FROM t_article where arid = ${id}
 </select>
 
 <insert id="saveArticle">
@@ -29,15 +40,15 @@
 </select>
 
 <delete id="deleteNavigation" >
-    DELETE    T_NAVIGATION where nid = #{id}
+    DELETE    T_NAVIGATION where nid = ${id}
 </delete>
 
  <select id="huixianNavigation" resultType="com.jk.model.Navigation">
-     SELECT  * from T_NAVIGATION where nid = #{id}
+     SELECT  * from T_NAVIGATION where nid = ${id}
  </select>
 
 <update id="updateNavigation">
-    UPDATE T_NAVIGATION  SET name = #{NAME},position = #{position},url = #{url},isblanktarget=#{isblanktarget} WHERE nid = #{id}
+    UPDATE T_NAVIGATION  SET name = #{name},position = #{position},url = #{url},isblanktarget=#{isblanktarget} WHERE nid = #{nid}
 </update>
 
 <insert id="saveNav">

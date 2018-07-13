@@ -2,7 +2,9 @@ package com.jk.service.impl;
 
 import com.jk.mapper.CfyMapper;
 import com.jk.model.Article;
+import com.jk.model.ArticleCategory;
 import com.jk.model.Navigation;
+import com.jk.model.Tag;
 import com.jk.service.ICfyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,8 +40,8 @@ public class CfyServiceImpl implements ICfyService {
         cfyMapper.saveNav(navigation);
     }
 
-    public List<Article> queryAtricle() {
-        return cfyMapper.queryAtricle();
+    public List<Article> queryAtricle(String title) {
+        return cfyMapper.queryAtricle(title);
     }
 
     public void saveArticle(Article article) {
@@ -58,5 +60,13 @@ public class CfyServiceImpl implements ICfyService {
 
     public void deleteArticle(String id) {
         cfyMapper.deleteArticle(id);
+    }
+
+    public List<ArticleCategory> queryAtricleCategory() {
+        return cfyMapper.queryAtricleCategory();
+    }
+
+    public List<Tag> queryLabel() {
+        return cfyMapper.queryLabel();
     }
 }
