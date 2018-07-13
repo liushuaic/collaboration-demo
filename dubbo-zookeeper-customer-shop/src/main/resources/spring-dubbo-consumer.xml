@@ -33,4 +33,5 @@
 	 <dubbo:reference id="service" interface="com.jk.service.IMemberService" timeout="60000"/>
 	 <dubbo:reference id="promotionService" interface="com.jk.service.IPromotionService" timeout="60000"/>
 	<dubbo:reference id="cfyService" interface="com.jk.service.ICfyService" timeout="60000"/>
+	<dubbo:reference id="couponService" interface="com.jk.service.ICouponService" timeout="60000"/>
 </beans>

@@ -3,4 +3,48 @@
 <mapper namespace="com.jk.mapper.CouponMapper">
 
 
+    <select id="getCouponCount" resultType="long">
+        select count(*) from t_coupon u
+    </select>
+
+    <select id="getCoupon" resultType="com.jk.model.Coupon">
+        select * from (
+        select a.*,rownum rn  from (
+        select * from t_coupon u
+        )a  where rownum &lt;=#{end}
+        )b where b.rn &gt;#{start}
+    </select>
+    <delete id="delCoupon" >
+        DELETE  FROM t_coupon WHERE couid in (${ids})
+    </delete>
+    <insert id="addCoupon" parameterType="com.jk.model.Coupon">
+        insert into t_coupon
+        values
+        ( #{couid},
+        #{begindate},
+        #{enddate},
+        #{introduction},
+        #{isEnabled},
+        #{isexchange},
+        #{maximumprice},
+        #{maximumquantity},
+        #{minimumprice},
+        #{minimumquantity},
+        #{name},
+        #{point},
+        #{priceexpression}
+        )
+    </insert>
+    <!--<select id="toUpdateSeo" resultType="com.jk.model.Promotion">
+        select * from t_seo where seoid = #{seoid}
+    </select>
+
+    <update id="updateSeo" parameterType="com.jk.model.Promotion">
+        update t_seo set
+          type = #{type},
+          title = #{title},
+          keywords = #{keywords},
+         description = #{description}
+        where seoid = #{seoid}
+    </update-->
 </mapper>
