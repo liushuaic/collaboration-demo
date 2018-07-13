@@ -208,16 +208,16 @@ $().ready(function() {
 				<dl id="marketing">
 					<dt>营销管理</dt>
 						<dd>
-							<a href="../promotion/list.jhtml" target="iframe">促销管理</a>
+							<a href="<%=request.getContextPath()%>/promotion/list.jsp" target="iframe">促销管理</a>
 						</dd>
 						<dd>
-							<a href="../coupon/list.jhtml" target="iframe">优惠券管理</a>
+							<a href="<%=request.getContextPath()%>/coupon/list.jsp" target="iframe">优惠券管理</a>
 						</dd>
 						<dd>
 							<a href="<%=request.getContextPath()%>/seo/list.jsp" target="iframe">SEO设置</a>
 						</dd>
 						<dd>
-							<a href="../sitemap/build.jhtml" target="iframe">Sitemap管理</a>
+							<a href="<%=request.getContextPath()%>/sitemap/build.jsp" target="iframe">Sitemap管理</a>
 						</dd>
 				</dl>
 				<dl id="statistics">

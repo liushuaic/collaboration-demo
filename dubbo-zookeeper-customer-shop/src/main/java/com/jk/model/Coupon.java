@@ -1,5 +1,7 @@
 package com.jk.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,9 +17,11 @@ public class Coupon implements Serializable{
     private String name;
 
     /** 使用起始日期 */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date begindate;
 
     /** 使用结束日期 */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date enddate;
 
     /** 最小商品数量 */

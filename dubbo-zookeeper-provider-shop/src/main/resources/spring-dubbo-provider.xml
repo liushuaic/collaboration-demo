@@ -35,4 +35,5 @@
 	<dubbo:service interface="com.jk.service.IZhjService" ref="zhjService" timeout="60000"></dubbo:service>
 	<dubbo:service interface="com.jk.service.ICfyService" ref="cfyService" timeout="60000"></dubbo:service>
 	<dubbo:service interface="com.jk.service.IMemberService" ref="service" timeout="60000"></dubbo:service>
- </beans>
+	<dubbo:service interface="com.jk.service.ICouponService" ref="couponService" timeout="60000"></dubbo:service>
+</beans>
