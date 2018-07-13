@@ -19,16 +19,48 @@
         <result column="promotionsid" property="promotionsid"></result>
     </resultMap>
 
-    <select id="queryMenberList" resultMap="mr">
-        SELECT * FROM (
-            SELECT A.*,ROWNUM RN FROM (
-                SELECT * FROM T_MemberRank
-            )A
-        )WHERE RN BETWEEN #{begin} AND #{end}
-    </select>
+    <resultMap type="com.jk.model.Member" id="me">
+        <id column="memberid" property="memberid"/>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="email" property="email"></result>
+        <result column="point" property="point"></result>
+        <result column="amount" property="amount"></result>
+        <result column="balance" property="balance"></result>
+        <result column="createdate" property="createdate"></result>
+        <result column="memberrankid" property="memberrankid"></result>
+        <result column="isenabled" property="isenabled"></result>
+        <result column="islocked" property="islocked"></result>
+        <result column="loginfailurecount" property="loginfailurecount"></result>
+        <result column="lockeddate" property="lockeddate"></result>
+        <result column="logindate" property="logindate"></result>
+        <result column="name" property="name"></result>
+        <result column="gender" property="gender"></result>
+        <result column="birth" property="birth"></result>
+        <result column="address" property="address"></result>
+        <result column="zipcode" property="zipcode"></result>
+        <result column="phone" property="phone"></result>
+        <result column="mobile" property="mobile"></result>
+        <result column="attributeValue0" property="attributeValue0"></result>
+        <result column="attributeValue1" property="attributeValue1"></result>
+        <result column="attributeValue2" property="attributeValue2"></result>
+        <result column="attributeValue3" property="attributeValue3"></result>
+        <result column="attributeValue4" property="attributeValue4"></result>
+        <result column="attributeValue5" property="attributeValue5"></result>
+        <result column="attributeValue6" property="attributeValue6"></result>
+        <result column="attributeValue7" property="attributeValue7"></result>
 
-    <select id="queryMenberCount" resultMap="mr">
-        SELECT * FROM T_MemberRank
+        <result column="attributeValue8" property="attributeValue8"></result>
+        <result column="attributeValue9" property="attributeValue9"></result>
+        <result column="area" property="area"></result>
+        <result column="cartitemsid" property="cartitemsid"></result>
+        <result column="orderitemsid" property="orderitemsid"></result>
+        <result column="reviewsid" property="reviewsid"></result>
+        <result column="messagesid" property="messagesid"></result>
+    </resultMap>
+
+    <select id="queryMenberList" resultMap="mr">
+            SELECT * FROM T_MemberRank
     </select>
 
     <select id="queryMemberById" resultMap="mr">
@@ -62,4 +94,9 @@
     <delete id="delMember">
         delete from T_MemberRank where mrid in (${ids})
     </delete>
+
+    <select id="queryRememberList" resultMap="me">
+                select me.*,mr.mrname from t_Member me
+                left join t_memberrank mr on mr.mrid = me.memberrankid
+    </select>
 </mapper>

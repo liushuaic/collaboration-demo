@@ -5,7 +5,8 @@ import java.io.Serializable;
 public class Tag implements Serializable{
 
     private static final long serialVersionUID = -8788517401281343932L;
-
+    //主键ID
+    private String tid;
     /** 名称 */
     private String tagname;
 

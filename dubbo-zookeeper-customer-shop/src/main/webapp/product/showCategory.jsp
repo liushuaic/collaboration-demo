@@ -8,7 +8,8 @@
 </head>
 
 <body>
-
+<a href="javascript:addcategory()" class="easyui-linkbutton" iconCls="icon-add">新增</a>
+<a href="javascript:reloadcategory()" class="easyui-linkbutton" iconCls="icon-edit">刷新</a>
    <table id="catid"></table>
 
    <script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.min.js"></script>
@@ -37,16 +38,24 @@
             columns: [[
                 {field: 'userchek', checkbox: true},
                 {title: '名称', field: 'text', width: 180},
-                {title: '页面关键字', field: 'seoKeywords', width: 180, align: 'right'},
+                {title: '页面关键字', field: 'seoKeywords', width: 180},
                 {  title: '操作', field: 'effective', width: 180,
                     formatter: function (value, row, index) {
-                         return "<a href=''>修改</a>  <a href=''>删除</a>";
+                        return "<a href=''>[查看]</a>  <a href=''>[修改]</a>   <a href=''>[删除]</a> ";
                     }
                 }
             ]]
         })
     }
 
+
+    function addcategory(){
+       location.href="<%=request.getContextPath()%>/zhjController/toAddProductCategoryPage.jhtml";
+    }
+
+    function reloadcategory(){
+        tree()
+    }
 </script>
 </body>
 </html>

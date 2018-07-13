@@ -1,6 +1,7 @@
 package com.jk.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /* 退货单 */
 public class Returns implements Serializable {
@@ -28,6 +29,17 @@ public class Returns implements Serializable {
     /** 发货人 */
     private String shipper;
 
+    /**创建日期*/
+    private Date createdatetime;
+
+    public Date getCreatedatetime() {
+        return createdatetime;
+    }
+
+    public void setCreatedatetime(Date createdatetime) {
+        this.createdatetime = createdatetime;
+    }
+
     /** 地区 */
     private String area;
 
@@ -48,6 +60,38 @@ public class Returns implements Serializable {
 
     /** 订单 */
     private String  orderid;
+    /**订单名称业务字段*/
+    private String ordercode;
+
+    @Override
+    public String toString() {
+        return "Returns{" +
+                "reid='" + reid + '\'' +
+                ", returnsn='" + returnsn + '\'' +
+                ", shippingmethod='" + shippingmethod + '\'' +
+                ", deliverycorp='" + deliverycorp + '\'' +
+                ", trackingno='" + trackingno + '\'' +
+                ", freight=" + freight +
+                ", shipper='" + shipper + '\'' +
+                ", createdatetime=" + createdatetime +
+                ", area='" + area + '\'' +
+                ", address='" + address + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", phone='" + phone + '\'' +
+                ", operator='" + operator + '\'' +
+                ", memo='" + memo + '\'' +
+                ", orderid='" + orderid + '\'' +
+                ", ordercode='" + ordercode + '\'' +
+                '}';
+    }
+
+    public String getOrdercode() {
+        return ordercode;
+    }
+
+    public void setOrdercode(String ordercode) {
+        this.ordercode = ordercode;
+    }
 
     public String getReid() {
         return reid;
@@ -161,23 +205,4 @@ public class Returns implements Serializable {
         this.orderid = orderid;
     }
 
-    @Override
-    public String toString() {
-        return "Returns{" +
-                "reid='" + reid + '\'' +
-                ", returnsn='" + returnsn + '\'' +
-                ", shippingmethod='" + shippingmethod + '\'' +
-                ", deliverycorp='" + deliverycorp + '\'' +
-                ", trackingno='" + trackingno + '\'' +
-                ", freight=" + freight +
-                ", shipper='" + shipper + '\'' +
-                ", area='" + area + '\'' +
-                ", address='" + address + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", phone='" + phone + '\'' +
-                ", operator='" + operator + '\'' +
-                ", memo='" + memo + '\'' +
-                ", orderid='" + orderid + '\'' +
-                '}';
-    }
 }

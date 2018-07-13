@@ -1,6 +1,7 @@
 package com.jk.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /*  发货单 */
 public class Shipping implements Serializable {
@@ -19,6 +20,11 @@ public class Shipping implements Serializable {
     /** 物流公司关联id  */
     private String deliveryid;
 
+    /**创建日期*/
+    private Date createdatetime;
+
+    /**物流公司名称业务字段*/
+    private String dcname;
     /** 运单号 */
     private String trackingno;
 
@@ -67,6 +73,14 @@ public class Shipping implements Serializable {
 
     public String getShippingmethod() {
         return shippingmethod;
+    }
+
+    public String getDcname() {
+        return dcname;
+    }
+
+    public void setDcname(String dcname) {
+        this.dcname = dcname;
     }
 
     public void setShippingmethod(String shippingmethod) {
@@ -161,6 +175,7 @@ public class Shipping implements Serializable {
         this.orderid = orderid;
     }
 
+
     @Override
     public String toString() {
         return "Shipping{" +
@@ -168,6 +183,8 @@ public class Shipping implements Serializable {
                 ", shipsn='" + shipsn + '\'' +
                 ", shippingmethod='" + shippingmethod + '\'' +
                 ", deliveryid='" + deliveryid + '\'' +
+                ", createdatetime=" + createdatetime +
+                ", dcname='" + dcname + '\'' +
                 ", trackingno='" + trackingno + '\'' +
                 ", freight=" + freight +
                 ", consignee='" + consignee + '\'' +
@@ -179,5 +196,13 @@ public class Shipping implements Serializable {
                 ", memo='" + memo + '\'' +
                 ", orderid='" + orderid + '\'' +
                 '}';
+    }
+
+    public Date getCreatedatetime() {
+        return createdatetime;
+    }
+
+    public void setCreatedatetime(Date createdatetime) {
+        this.createdatetime = createdatetime;
     }
 }

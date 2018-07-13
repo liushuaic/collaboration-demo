@@ -17,16 +17,9 @@ public class MemberServiceImpl implements IMemberService{
     private MemberMapper mapper;
 
     @Override
-    public List<MemberRank> queryMenberList(Integer page, Integer rows, MemberRank memberRank) {
-        Integer begin = (page - 1) * rows + 1;
-        Integer end = page * rows;
-        List<MemberRank> memberRanks = mapper.queryMenberList(begin, end, memberRank);
+    public List<MemberRank> queryMenberList() {
+        List<MemberRank> memberRanks = mapper.queryMenberList();
         return memberRanks;
-    }
-
-    @Override
-    public List<MemberRank> queryMenberCount(MemberRank memberRank) {
-        return mapper.queryMenberCount(memberRank);
     }
 
     @Override
@@ -48,5 +41,10 @@ public class MemberServiceImpl implements IMemberService{
     @Override
     public void delMember(String ids) {
         mapper.delMember(ids);
+    }
+
+    @Override
+    public List<Member> queryRememberList() {
+        return mapper.queryRememberList();
     }
 }

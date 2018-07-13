@@ -40,6 +40,39 @@ public class LsController {
    }
 
     /**
+     * 收款管理
+     */
+
+    @RequestMapping("queryPayment")
+    public String queryReceipt(){
+        return "lsJsp/showPayment";
+    }
+
+    /**
+     * 退款管理
+     */
+    @RequestMapping("queryRefunds")
+    private String queryRefunds(){
+        return "lsJsp/showRefunds";
+    }
+
+    /**
+     * 发货管理
+     */
+    @RequestMapping("queryShipping")
+     private String queryDeliveryCorp(){
+         return "lsJsp/showShipping";
+     }
+
+    /**
+     * 退货管理
+     */
+      @RequestMapping("queryReturns")
+      public String queryReturns(){
+          return "lsJsp/showReturns";
+      }
+
+    /**
      * 查询订单列表信息
      * @param
      * @param page
@@ -54,7 +87,49 @@ public class LsController {
           return orderList;
     }
 
+    /**
+     * 收款管理
+     */
+    @RequestMapping("queryPaymentList")
+    @ResponseBody
+    public JSONObject queryPaymentList(int page,int rows) throws Exception{
+        JSONObject paymentList = lsService.queryPaymentList(page,rows);
+       return paymentList;
+    }
 
+    /**
+     * 退款管理
+     */
 
+    @RequestMapping("queryRefundsList")
+    @ResponseBody
+    public JSONObject queryRefundsList(int page,int rows) throws Exception{
+        JSONObject refundsList = lsService.queryRefundsList(page,rows);
+        return refundsList;
+    }
+
+    /**
+     * 发货管理
+     * @param page
+     * @param rows
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("queryShippingList")
+    @ResponseBody
+    public JSONObject queryShippingList(int page,int rows) throws Exception{
+        JSONObject shippingList = lsService.queryShippingList(page,rows);
+        return shippingList;
+    }
+
+    /**
+     * 退货管理
+     */
+    @RequestMapping("queryReturnsList")
+    @ResponseBody
+    public JSONObject queryReturnsList(int page,int rows) throws Exception{
+        JSONObject returnslist = lsService.queryReturnsList(page,rows);
+        return returnslist;
+    }
 
 }

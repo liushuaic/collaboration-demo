@@ -7,9 +7,8 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface MemberMapper {
-    List<MemberRank> queryMenberList(@Param("begin") Integer begin, @Param("end") Integer end, @Param("memberRank") MemberRank memberRank);
+    List<MemberRank> queryMenberList();
 
-    List<MemberRank> queryMenberCount(MemberRank memberRank);
 
     MemberRank queryMemberById(@Param("id") String id);
 
@@ -18,4 +17,6 @@ public interface MemberMapper {
     void updateMember(MemberRank memberRank);
 
     void delMember(@Param("ids") String ids);
+
+    List<Member> queryRememberList();
 }

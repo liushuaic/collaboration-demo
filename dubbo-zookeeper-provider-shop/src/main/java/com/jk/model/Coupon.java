@@ -1,5 +1,7 @@
 package com.jk.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,44 +10,46 @@ public class Coupon implements Serializable{
 
     private static final long serialVersionUID = -9152689147085913464L;
 
-    /* id */
-    private  String couid;
 
-    /** 名称 */
-    private String name;
+    private  String couid;/* id */
 
-    /** 使用起始日期 */
-    private Date begindate;
 
-    /** 使用结束日期 */
-    private Date enddate;
+    private String name;/** 名称 */
 
-    /** 最小商品数量 */
-    private Integer minimumquantity;
 
-    /** 最大商品数量 */
-    private Integer maximumquantity;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date begindate; /** 使用起始日期 */
 
-    /** 最小商品价格 */
-    private Double minimumprice;
 
-    /** 最大商品价格 */
-    private Double maximumprice;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date enddate; /** 使用结束日期 */
 
-    /** 价格运算表达式 */
-    private String priceexpression;
 
-    /** 是否启用 1 yes 2 no */
-    private String isEnabled;
+    private Integer minimumquantity; /** 最小商品数量 */
 
-    /** 是否允许积分兑换 1 yes 2 no */
-    private String isexchange;
 
-    /** 积分兑换数 */
-    private Long point;
+    private Integer maximumquantity; /** 最大商品数量 */
 
-    /** 介绍 */
-    private String introduction;
+
+    private Double minimumprice;/** 最小商品价格 */
+
+
+    private Double maximumprice;/** 最大商品价格 */
+
+
+    private String priceexpression;/** 价格运算表达式 */
+
+
+    private String isEnabled;/** 是否启用 1 yes 2 no */
+
+
+    private String isexchange;/** 是否允许积分兑换 1 yes 2 no */
+
+
+    private Long point;/** 积分兑换数 */
+
+
+    private String introduction;/** 介绍 */
 
     public String getCouid() {
         return couid;

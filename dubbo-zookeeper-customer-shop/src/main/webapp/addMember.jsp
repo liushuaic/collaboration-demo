@@ -23,52 +23,21 @@
 <form method="post" id="myForm">
     <table align="center">
         <input type="hidden" value="${mr.mrid}" name="mrid"/>
-        <%--<div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">名称</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" value="${mr.mrname}" name="mrname" id="inputEmail3" style="width: 200px">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword3" class="col-sm-4 control-label">优惠比列</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" value="${mr.scale}" name="scale" id="inputPassword3" style="width: 200px">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputAmount3" class="col-sm-4 control-label">消费金额</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" id="disabled" value="${mr.amount}" name="amount" id="inputAmount3" style="width: 200px">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputAmount3" class="col-sm-4 control-label">设置</label>
-            <div class="col-sm-8">
-                <input type="checkbox" value="1" ${mr.isdefault == '1'? "checked":""} name="isdefault">是否默认
-                <input type="checkbox" value="1" ${mr.isspecial == '2'? "checked":""} id="wzw" onclick="test()" name="isspecial">是否特殊
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-4 col-sm-8">
-                <button type="submit" class="btn btn-default">确定</button>
-                <button type="button" onclick="tiao()" class="btn btn-default">返回</button>
-            </div>
-        </div>--%>
         <tr>
-            <td>名称:</td>
+            <td>会员名称:</td>
             <td>
                 <input type="text" class="form-control" name="mrname" value="${mr.mrname}">
             </td>
         </tr>
         <tr>
-            <td>密码:</td>
+            <td>优惠比例:</td>
             <td>
                 <input type="text" class="form-control" name="scale" value="${mr.scale}">
             </td>
         </tr>
 
         <tr>
-            <td>昵称:</td>
+            <td>消费金额:</td>
             <td><input type="text" class="form-control" id="disabled" value="${mr.amount}" name="amount"></td>
         </tr>
         <tr>

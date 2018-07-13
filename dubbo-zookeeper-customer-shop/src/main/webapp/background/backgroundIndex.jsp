@@ -105,27 +105,27 @@ $().ready(function() {
 			<td id="menu" class="menu">
 				<dl id="product" class="default">
 					<dt>商品管理</dt>
-						<dd>
-							<a href="../zhjController/queryProduct.jhtml" target="iframe">商品管理</a>
-						</dd>
-						<dd>
-							<a href="../zhjController/toCategoryPage.jhtml" target="iframe">商品分类</a>
-						</dd>
-						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">商品参数</a>
-						</dd>
-						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">商品属性</a>
-						</dd>
-						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">规格管理</a>
-						</dd>
-						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">品牌管理</a>
-						</dd>
-						<dd>
-							<a href="../zhjController/list.jhtml" target="iframe">到货通知</a>
-						</dd>
+					<dd>
+						<a href="../zhjController/queryProduct.jhtml" target="iframe">商品管理</a>
+					</dd>
+					<dd>
+						<a href="../zhjController/toCategoryPage.jhtml" target="iframe">商品分类</a>
+					</dd>
+					<dd>
+						<a href="../product/showParameter.jsp" target="iframe">商品参数</a>
+					</dd>
+					<dd>
+						<a href="../product/showAttribute.jsp" target="iframe">商品属性</a>
+					</dd>
+					<dd>
+						<a href="../product/showSpecification.jsp" target="iframe">规格管理</a>
+					</dd>
+					<dd>
+						<a href="../product/showBrand.jsp" target="iframe">品牌管理</a>
+					</dd>
+					<dd>
+						<a href="../product/showProductNotify.jsp" target="iframe">到货通知</a>
+					</dd>
 				</dl>
 				<dl id="order">
 					<dt>订单管理</dt>
@@ -133,16 +133,16 @@ $().ready(function() {
 							<a href="<%=request.getContextPath()%>/lsController/orderList.jhtml" target="iframe">订单管理</a>
 						</dd>
 						<dd>
-							<a href="../payment/list.jhtml" target="iframe">收款管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryPayment.jhtml" target="iframe">收款管理</a>
 						</dd>
 						<dd>
-							<a href="../refunds/list.jhtml" target="iframe">退款管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryRefunds.jhtml" target="iframe">退款管理</a>
 						</dd>
 						<dd>
-							<a href="../shipping/list.jhtml" target="iframe">发货管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryShipping.jhtml" target="iframe">发货管理</a>
 						</dd>
 						<dd>
-							<a href="../returns/list.jhtml" target="iframe">退货管理</a>
+							<a href="<%=request.getContextPath()%>/lsController/queryReturns.jhtml" target="iframe">退货管理</a>
 						</dd>
 						<dd>
 							<a href="../delivery_center/list.jhtml" target="iframe">发货点管理</a>
@@ -154,7 +154,7 @@ $().ready(function() {
 				<dl id="member">
 					<dt>会员管理</dt>
 						<dd>
-							<a href="../member/list.jhtml" target="iframe">会员管理</a>
+							<a href="../member.jsp" target="iframe">会员管理</a>
 						</dd>
 						<dd>
 							<a href="../memberrank.jsp" target="iframe">会员等级</a>
@@ -208,16 +208,16 @@ $().ready(function() {
 				<dl id="marketing">
 					<dt>营销管理</dt>
 						<dd>
-							<a href="../promotion/list.jhtml" target="iframe">促销管理</a>
+							<a href="<%=request.getContextPath()%>/promotion/list.jsp" target="iframe">促销管理</a>
 						</dd>
 						<dd>
-							<a href="../coupon/list.jhtml" target="iframe">优惠券管理</a>
+							<a href="<%=request.getContextPath()%>/coupon/list.jsp" target="iframe">优惠券管理</a>
 						</dd>
 						<dd>
 							<a href="<%=request.getContextPath()%>/seo/list.jsp" target="iframe">SEO设置</a>
 						</dd>
 						<dd>
-							<a href="../sitemap/build.jhtml" target="iframe">Sitemap管理</a>
+							<a href="<%=request.getContextPath()%>/sitemap/build.jsp" target="iframe">Sitemap管理</a>
 						</dd>
 				</dl>
 				<dl id="statistics">
@@ -285,7 +285,7 @@ $().ready(function() {
 				</dl>
 			</td>
 			<td>
-				<iframe id="iframe" name="iframe" src="index.jhtml" frameborder="0"></iframe>
+				<iframe id="iframe" name="iframe" src="<%=request.getContextPath()%>/lsJsp/gm.jsp" frameborder="0"></iframe>
 			</td>
 		</tr>
 	</table>
