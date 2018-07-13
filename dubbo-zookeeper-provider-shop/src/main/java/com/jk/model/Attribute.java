@@ -22,6 +22,8 @@ public class Attribute  implements Serializable{
     /** 可选项 */
     private String  options ;
 
+    /* 业务字段  分类名称*/
+    private String   text;
     public String getAtid() {
         return atid;
     }
@@ -62,6 +64,14 @@ public class Attribute  implements Serializable{
         this.options = options;
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
     @Override
     public String toString() {
         return "Attribute{" +
@@ -70,6 +80,7 @@ public class Attribute  implements Serializable{
                 ", propertyindex=" + propertyindex +
                 ", productcategoryid='" + productcategoryid + '\'' +
                 ", options='" + options + '\'' +
+                ", text='" + text + '\'' +
                 '}';
     }
 }

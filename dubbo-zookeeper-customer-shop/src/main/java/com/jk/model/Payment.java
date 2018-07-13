@@ -1,5 +1,7 @@
 package com.jk.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -45,8 +47,14 @@ public class Payment implements Serializable {
     private String operator;
 
     /** 付款日期 */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date paymentdate;
 
+    /**
+     * 创建日期
+     */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date createdatetime;
     /** 备注 */
     private String memo;
 
@@ -54,6 +62,7 @@ public class Payment implements Serializable {
  /*   private String paymentPluginId;*/
 
     /** 到期时间 */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date expire;
 
     /** 预存款 */
@@ -61,9 +70,18 @@ public class Payment implements Serializable {
 
     /** 会员 */
     private String  memberid;
-
+    /**
+     * 会员业务字段
+     */
+    private  String username;
     /** 订单 */
     private String  orderid;
+
+    /**
+     * 订单业务字段
+     * @return
+     */
+   private String  ordercode;
 
     public String getPaid() {
         return paid;
@@ -209,6 +227,30 @@ public class Payment implements Serializable {
         this.orderid = orderid;
     }
 
+    public Date getCreatedatetime() {
+        return createdatetime;
+    }
+
+    public void setCreatedatetime(Date createdatetime) {
+        this.createdatetime = createdatetime;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getOrdercode() {
+        return ordercode;
+    }
+
+    public void setOrdercode(String ordercode) {
+        this.ordercode = ordercode;
+    }
+
     @Override
     public String toString() {
         return "Payment{" +
@@ -225,11 +267,16 @@ public class Payment implements Serializable {
                 ", payer='" + payer + '\'' +
                 ", operator='" + operator + '\'' +
                 ", paymentdate=" + paymentdate +
+                ", createdatetime=" + createdatetime +
                 ", memo='" + memo + '\'' +
                 ", expire=" + expire +
                 ", deposit=" + deposit +
                 ", memberid='" + memberid + '\'' +
+                ", username='" + username + '\'' +
                 ", orderid='" + orderid + '\'' +
+                ", ordercode='" + ordercode + '\'' +
                 '}';
     }
+
+
 }

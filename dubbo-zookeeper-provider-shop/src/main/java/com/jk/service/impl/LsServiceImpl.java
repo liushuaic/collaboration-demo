@@ -2,8 +2,7 @@ package com.jk.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jk.mapper.LsMapper;
-import com.jk.model.Order;
-import com.jk.model.User;
+import com.jk.model.*;
 import com.jk.service.ILsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +27,7 @@ public class LsServiceImpl implements ILsService {
      * @return
      * @throws Exception
      */
-    public JSONObject queryOrderList(int page, int rows,Order order) throws Exception {
+    public JSONObject queryOrderList(int page, int rows, Order order) throws Exception {
         long total = lsMapper.queryOrderCount(order);
         int strat = (page - 1) * rows;
         int end = strat + rows;
@@ -39,9 +38,70 @@ public class LsServiceImpl implements ILsService {
         return json;
     }
 
+    /**
+     * 收款管理
+     * @param page
+     * @param rows
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public JSONObject queryPaymentList(int page, int rows) throws Exception {
+        long total = lsMapper.queryPaymentcount();
+        int start = ( page - 1) * rows;
+        int end = start + rows;
+        List<Payment> list = lsMapper.queryPaymentList(start,end);
+        JSONObject json = new JSONObject();
+        json.put("total",total);
+        json.put("rows",list);
+        return json;
+    }
 
+    /**
+     * 退款管理
+     */
+    @Override
+    public JSONObject queryRefundsList(int page, int rows) throws Exception {
+        long total = lsMapper.queryRefundscount();
+        int start = ( page - 1) * rows;
+        int end = start + rows;
+        List<Refunds> list = lsMapper.queryRefundsList(start,end);
+        JSONObject json = new JSONObject();
+        json.put("total",total);
+        json.put("rows",list);
+        return json;
+    }
 
+    /**
+     * 发货管理
+     * @param page
+     * @param rows
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public JSONObject queryShippingList(int page, int rows) throws Exception {
+        long total = lsMapper.queryShippingcount();
+        int start = ( page - 1) * rows;
+        int end = start + rows;
+        List<Shipping> list = lsMapper.queryShippingList(start,end);
+        JSONObject json = new JSONObject();
+        json.put("total",total);
+        json.put("rows",list);
+        return json;
+    }
 
+    @Override
+    public JSONObject queryReturnsList(int page, int rows) throws Exception {
+        long total = lsMapper.queryReturnscount();
+        int start = ( page - 1) * rows;
+        int end = start + rows;
+        List<Returns> list = lsMapper.queryReturnsList(start,end);
+        JSONObject json = new JSONObject();
+        json.put("total",total);
+        json.put("rows",list);
+        return json;
+    }
 
 
 }

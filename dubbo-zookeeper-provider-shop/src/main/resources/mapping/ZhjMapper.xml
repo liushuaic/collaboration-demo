@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.ZhjMapper">
 
+    <!--商品列表查询-->
     <select id="queryProductList" resultType="com.jk.model.Product">
        select b.* from
         ( select a.* ,rownum rm from
@@ -10,12 +11,90 @@
         where b.rm &gt;#{start}
     </select>
 
+
+    <!--商品总条数-->
     <select id="queryCount" resultType="long">
         select count(*) from t_product p , t_productcategory pc where p.productcategoryid = pc.id
     </select>
 
+    <!--商品分类列表查询-->
     <select id="queryProductCategory" resultType="com.jk.model.ProductCategory">
         select * from  t_productcategory where pid=#{pid}
     </select>
 
+    <!--商品参数总条数-->
+    <select id="queryParamCount" resultType="long">
+        select count(*) from t_parameter p , t_productcategory pc where p.productcategoryid = pc.id
+    </select>
+
+    <!--商品参数列表查询-->
+    <select id="queryPamaterList" resultType="com.jk.model.Parameter">
+        select b.* from
+        ( select a.* ,rownum rm from
+        (SELECT  p.*,pc.text from t_parameter p , t_productcategory pc where p.productcategoryid = pc.id order by orders ) a
+        where rownum &lt;=#{end} ) b
+        where b.rm &gt;#{start}
+    </select>
+
+    <!--商品属性总条数-->
+    <select id="queryAttributeCount" resultType="long">
+        select count(*) from t_attribute p , t_productcategory pc where p.productcategoryid = pc.id
+    </select>
+
+    <!--商品参数列表查询-->
+    <select id="queryAttribute" resultType="com.jk.model.Attribute">
+        select b.* from
+        ( select a.* ,rownum rm from
+        (SELECT  p.*,pc.text from t_attribute p , t_productcategory pc where p.productcategoryid = pc.id order by propertyindex ) a
+        where rownum &lt;=#{end} ) b
+        where b.rm &gt;#{start}
+    </select>
+
+   <!--规格总条数-->
+    <select id="querySpecificationCount" resultType="long">
+        select count(*) from t_specification s , t_product p where s.productsid = p.sn
+    </select>
+
+    <!--规格列表查询-->
+    <select id="querySpecificationList" resultType="com.jk.model.Specification">
+        select b.* from
+        ( select a.* ,rownum rm from
+        (SELECT  s.* from t_specification s ,  t_product p where s.productsid = p.sn order by s.spename ) a
+        where rownum &lt;=#{end} ) b
+        where b.rm &gt;#{start}
+    </select>
+
+    <!--品牌总条数-->
+    <select id="queryBrandCount" resultType="long">
+        select count(*) from t_brand
+    </select>
+
+    <!--规格列表查询-->
+    <select id="queryBrandList" resultType="com.jk.model.Brand">
+
+        select * from
+          ( select a.*,rownum rn from
+             (  select * from t_brand order by brandname ) a
+                 where rownum &lt;=${end}
+              ) b where rn &gt;${start}
+
+    </select>
+
+    <!--商品到货通知总条数-->
+    <select id="queryProductNotifyCount" resultType="long">
+      select  count(*) from t_productnotify p ,t_member m ,t_product pr where p.memberid=m.memberid and p.productid=pr.sn
+    </select>
+
+    <select id="queryProductNotifyList" resultType="com.jk.model.ProductNotify">
+
+       select * from
+       (select  a.*,rownum rn from
+       (select  p.*,m.username,pr.name from t_productnotify p ,t_member m ,t_product pr where p.memberid=m.memberid and p.productid=pr.sn order by p.hassent ) a
+       where rownum &lt;=${end} ) where rn &gt;${start}
+
+    </select>
+
+     <select id="queryBrand" resultType="com.jk.model.Brand">
+         select * from t_brand
+     </select>
 </mapper>

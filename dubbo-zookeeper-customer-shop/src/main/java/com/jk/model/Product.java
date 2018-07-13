@@ -26,6 +26,20 @@ public class Product implements Serializable {
     /** 市场价 */
     private Double marketprice;
 
+    /**
+     * 数量
+     */
+     private String shuliang;
+
+    /**
+     * 已发货数量
+     */
+    private String fahuoshuliang;
+
+    /**
+     * 已退货数量
+     */
+    private String tuihuoshuliang;
 
 
     /** 单位 */
@@ -603,6 +617,9 @@ public class Product implements Serializable {
                 ", price=" + price +
                 ", cost=" + cost +
                 ", marketprice=" + marketprice +
+                ", shuliang='" + shuliang + '\'' +
+                ", fahuoshuliang='" + fahuoshuliang + '\'' +
+                ", tuihuoshuliang='" + tuihuoshuliang + '\'' +
                 ", unit='" + unit + '\'' +
                 ", weight=" + weight +
                 ", stock=" + stock +
@@ -652,4 +669,33 @@ public class Product implements Serializable {
                 ", consultationsid='" + consultationsid + '\'' +
                 '}';
     }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getShuliang() {
+        return shuliang;
+    }
+
+    public void setShuliang(String shuliang) {
+        this.shuliang = shuliang;
+    }
+
+    public String getFahuoshuliang() {
+        return fahuoshuliang;
+    }
+
+    public void setFahuoshuliang(String fahuoshuliang) {
+        this.fahuoshuliang = fahuoshuliang;
+    }
+
+    public String getTuihuoshuliang() {
+        return tuihuoshuliang;
+    }
+
+    public void setTuihuoshuliang(String tuihuoshuliang) {
+        this.tuihuoshuliang = tuihuoshuliang;
+    }
+
 }

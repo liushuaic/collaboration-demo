@@ -20,7 +20,7 @@ public class Order implements Serializable{
     /** 支付状态 1 未支付  2 部分支付 3 部分退款  4 已退款*/
     private String paymentstatus;
 
-    /** 配送状态 1 未发货 2 部分发货  3 已发货 4 部分退货  5 已退货   */
+    /** 配送状态 1 未发货 2 部分发货  3 已发货 4 部分退货  5 已退货 */
     private String shippingstatus;
 
     /** 支付手续费 */

@@ -131,12 +131,44 @@
                     return flag;
                 }
             },
-            {field:'createdatetime',title:'创建日期',width:100,sortable:true},
-            {field:'dayin',title:'打印',width:100},
-            {field:'pricz',title:'操作',width:100}
+            {field:'createdatetime',title:'创建日期',width:100,sortable:true,
+               formatter:function(index,row,value){
+                var date = new Date(row.createdatetime);
+                return date.toLocaleDateString();
+               }
+            },
+            {field:'dayin',title:'打印',width:100,
+              formatter:function(index,row,value){
+                return "<select id='' class='easyui-combobox'>" +
+                    "<option value=''>-请选择-</option>" +
+                    "<option value=''>订单</option>" +
+                    "<option value=''>购物单</option>" +
+                    "<option value=''>配送单</option>" +
+                    "<option value=''>快递单</option>"
+                    "</select>";
+              }
+            },
+            {field:'pricz',title:'操作',width:100,
+             formatter:function(index,row,value){
+                return "<a href='javascript:chakan(\""+row.orderid+"\")'>[查看]</a><a href='javascript:bianji()'>[编辑]</a>";
+             }
+            }
         ]]
     });
       }
+
+
+      function chakan(id){
+       location.href="<%=request.getContextPath()%>/lsJsp/orderDetail.jsp";
+      }
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>

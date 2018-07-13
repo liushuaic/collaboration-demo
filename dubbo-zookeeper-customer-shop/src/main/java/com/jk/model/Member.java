@@ -2,6 +2,10 @@ package com.jk.model;
 
 import java.io.Serializable;
 
+/**
+ * 会员表
+ */
+
 public class Member implements Serializable{
 
     private static final long serialVersionUID = 7928722219648579695L;
