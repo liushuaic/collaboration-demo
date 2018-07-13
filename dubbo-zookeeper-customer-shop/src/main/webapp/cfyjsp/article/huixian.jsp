@@ -5,6 +5,7 @@
 </head>
 <body>
 <form id="updateArt_form">
+    <input type="hidden" value="${list.arid }" name="arid">
     标题:<input   name="title" value="${list.title}" class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:150px">  <br><br>
     文章分类:<select name="articlecategoryid">
     <option value="1" ${list.articlecategoryid ==1?"selected":""}>商场动态</option>
