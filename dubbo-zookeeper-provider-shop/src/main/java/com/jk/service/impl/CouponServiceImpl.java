@@ -50,4 +50,28 @@ public class CouponServiceImpl implements ICouponService{
 		}
 		couponMapper.addCoupon(coupon);
 	}
+
+	@Override
+	public Coupon toUpdateCoupon(String couid) {
+		return couponMapper.toUpdateCoupon(couid);
+	}
+
+	@Override
+	public void updateCoupon(Coupon coupon) {
+
+		if (coupon.getIsEnabled() == null || "".equals(coupon.getIsEnabled())){
+			coupon.setIsEnabled("0");
+		}
+		if (coupon.getIsexchange() == null || "".equals(coupon.getIsexchange())){
+			coupon.setIsexchange("0");
+		}
+		couponMapper.updateCoupon(coupon);
+	}
+
+	@Override
+	public List<Coupon> coudaochu() {
+		return couponMapper.coudaochu();
+	}
+
+
 }
