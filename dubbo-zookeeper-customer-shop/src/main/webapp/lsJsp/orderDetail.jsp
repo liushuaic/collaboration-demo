@@ -119,39 +119,76 @@
                 </tr>
             </table>
         </div>
-        <div title="<a href='javascript:shangpinxinxi()'>商品信息</a>" style="overflow:auto;padding:20px;display:none;">
-            <table id="spxx"></table>
-            <script>
-                function shangpinxinxi(){
-                    $('#spxx').datagrid({
-                        url:'<%=request.getContextPath()%>/lsController/queryShangPin.jhtml',
-                        columns:[[
-                            {field:'sn',title:'商品编号',width:150},
-                            {field:'name',title:'商品名称',width:200},
-                            {field:'marketprice',title:'商品价格',width:150,align:'right'},
-                            {field:'shuliang',title:'数量',width:150},
-                            {field:'fahuoshuliang',title:'已发货数量',width:150},
-                            {field:'tuihuoshuliang',title:'已退货数量',width:150},
-                            {field:'name',title:'小计',width:150}
-                        ]]
-                    });
-                }
-            </script>
+        <div title="商品信息"><br>
+            <table border="1" bordercolor="dcdcdc" bgcolor="#dcdcdc">
+                <tr>
+                    <td width="180px">商品编号</td>
+                    <td width="180px">商品名称</td>
+                    <td width="180px">商品价格</td>
+                    <td width="180px">数量</td>
+                    <td width="200px">已发货数量</td>
+                    <td width="200px">已退货数量</td>
+                    <td width="200px">小计</td>
+                </tr>
+            </table>
         </div>
-        <div title="<a href='javascript:shoukuanxinxi()'>收款信息</a>" style="padding:20px;display:none;">
-
+        <div title="收款信息" style="padding:20px;display:none;">
+            <table border="1" bordercolor="dcdcdc" bgcolor="#dcdcdc">
+                <tr>
+                    <td width="240px">编号</td>
+                    <td width="240px">方式</td>
+                    <td width="240px">支付方式</td>
+                    <td width="240px">付款金额</td>
+                    <td width="240px">状态</td>
+                    <td width="240px">付款日期</td>
+                </tr>
+            </table>
         </div>
-        <div title="<a href='javascript:fahuoxinxi()'>发货信息</a>" style="padding:20px;display:none;">
-
+        <div title="发货信息" style="padding:20px;display:none;">
+            <table border="1" bordercolor="dcdcdc" bgcolor="#dcdcdc">
+                <tr>
+                <tr>
+                    <td width="240px">编号</td>
+                    <td width="240px">配送方式</td>
+                    <td width="240px">物流公司</td>
+                    <td width="240px">运单号</td>
+                    <td width="240px">收货人</td>
+                    <td width="240px">创建日期</td>
+                </tr>
+                </tr>
+            </table>
         </div>
-        <div title="<a href='javascript:tuikuanxinxi()'>退款信息</a>" style="padding:20px;display:none;">
-
+        <div title="退款信息" style="padding:20px;display:none;">
+            <table border="1" bordercolor="dcdcdc" bgcolor="#dcdcdc">
+                <tr>
+                    <td width="250px">编号</td>
+                    <td width="250px">方式</td>
+                    <td width="250px">支付方式</td>
+                    <td width="250px">退款金额</td>
+                    <td width="250px">创建日期</td>
+                </tr>
+            </table>
         </div>
-        <div title="<a href='javascript:tuihuoxinxi()'>退货信息</a>" style="padding:20px;display:none;">
-
+        <div title="退货信息" style="padding:20px;display:none;">
+            <table border="1" bordercolor="dcdcdc" bgcolor="#dcdcdc">
+                <tr>
+                    <td width="240px">编号</td>
+                    <td width="240px">配送方式</td>
+                    <td width="240px">物流公司</td>
+                    <td width="240px">运单号</td>
+                    <td width="240px">发货人</td>
+                    <td width="200px">创建日期</td>
+                </tr>
+            </table>
         </div>
-        <div title="<a href='javascript:dingdanxinxi()'>订单日志</a>" style="padding:20px;display:none;">
-
+        <div title="订单日志" style="padding:20px;display:none;">
+            <table border="1" bordercolor="dcdcdc" bgcolor="#dcdcdc">
+                <tr>
+                    <td width="400px">订单创建</td>
+                    <td width="600px">会员</td>
+                    <td width="300px">创建日期</td>
+                </tr>
+            </table>
         </div>
     </div>
 

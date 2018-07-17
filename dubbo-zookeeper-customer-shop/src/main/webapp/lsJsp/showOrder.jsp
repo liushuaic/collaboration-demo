@@ -10,18 +10,30 @@
 <head>
     <title>Title</title>
 </head>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/default/easyui.css"/>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/icon.css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap3/css/bootstrap.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap3/css/bootstrap-theme.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootStrap-addTabs/bootstrap.addtabs.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-treeview/bootstrap-treeview.min.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-table/bootstrap-table.css">
+<script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootstrap3/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootStrap-addTabs/bootstrap.addtabs.min.js"></script>
+<script src="<%=request.getContextPath()%>/bootstrap/bootstrap-table/bootstrap-table.js"></script>
+<script src="<%=request.getContextPath()%>/bootstrap/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="<%=request.getContextPath()%>/bootstrap/bootstrap-bootbox/bootbox.js"></script>
+<%--<link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/default/easyui.css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/icon.css"/>--%>
 <body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.min.js"></script>
+<%--<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.min.js"></script>
 <!-- 引入EasyUI -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.easyui.min.js"></script>
 <!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/util-js.js"></script>
 <a href="javascript:del()" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">删除</a>
-<a href="javascript:reload()" class="easyui-linkbutton" data-options="iconCls:'icon-reload'">刷新</a>
-<select id="cc" class="easyui-combobox" style="width: 100px">
+<a href="javascript:reload()" class="easyui-linkbutton" data-options="iconCls:'icon-reload'">刷新</a>--%>
+<%--<select id="cc" class="easyui-combobox" style="width: 100px">
     <option value="0">订单删选</option>
     <option value="1">未确认</option>
     <option value="2">已确认</option>
@@ -39,34 +51,50 @@
     <option value="12">部分退货</option>
     <option value="13">已退货</option>
 
-</select>
-
+</select>--%>
+<div id="toolbar">
+   <button onclick="refresh()" class="btn btn-info">
+        <i class="glyphicon glyphicon-refresh"></i>
+        刷新
+    </button>
+    <button onclick="delAllUser()" class="btn btn-danger">
+        <i class="glyphicon glyphicon-trash"></i>
+        删除
+    </button>
+    <button onclick="updateUser()" class="btn btn-warning">
+        <i class="glyphicon glyphicon-pencil"></i>
+        修改
+    </button>
+</div>
 <table id="orderTable"></table>
 <script>
-
-    function reload(){
+    function refresh(){
         location.reload();
     }
-
    $(function () {
        query();
    })
       function query(){
-    $('#orderTable').datagrid({
+    $('#orderTable').bootstrapTable({
         url:'<%=request.getContextPath()%>/lsController/queryOrderList.jhtml',
-        remoteSort:false,
-        singleSelect:true,
-        checkOnSelect:false,
-        selectOnCheck:false,
-        pagination:true,
-        pageSize:10,
-        pageNumber:1,
-        pageList:[10,20,30,40],
-        queryParams: {
-            areaname: $("#cc").val(),
-        },
+        toolbar:'#toolbar',
+        //是否显示搜索框  //获取数据地址
+        striped:true,
+        search:true,
+        searchOnEnterKey:true,
 
-        columns:[[
+        showHeader:true,
+        showColumns:true,//显示你想要的字段
+        showRefresh:true,//刷新
+        showToggle:true,//切换xian
+        showPaginationSwitch:true,//是否显示分页
+
+        paginationHAlign:"right",
+        pagination: true,		   //开启分页
+        pageNumber:1,              //初始化加载第几页,默认第1页
+        pageSize: 3,               //每页几条数据,超过总条数右下角将没分页
+        pageList: [3, 4, 6, 8],    //每页条数,设置为All将展示全部记录,超过总条数底部将不显示条数下拉框
+        columns:[
             {field:'orcode',checkbox:true},
             {field:'ordercode',title:'订单编号',width:100,sortable:true},
             {field:'amountpaid',title:'订单金额',width:100},
@@ -132,28 +160,28 @@
                 }
             },
             {field:'createdatetime',title:'创建日期',width:100,sortable:true,
-               formatter:function(index,row,value){
-                var date = new Date(row.createdatetime);
-                return date.toLocaleDateString();
-               }
+                formatter:function(index,row,value){
+                    var date = new Date(row.createdatetime);
+                    return date.toLocaleDateString();
+                }
             },
             {field:'dayin',title:'打印',width:100,
-              formatter:function(index,row,value){
-                return "<select id='' class='easyui-combobox'>" +
-                    "<option value=''>-请选择-</option>" +
-                    "<option value=''>订单</option>" +
-                    "<option value=''>购物单</option>" +
-                    "<option value=''>配送单</option>" +
-                    "<option value=''>快递单</option>"
+                formatter:function(index,row,value){
+                    return "<select id='' class='easyui-combobox'>" +
+                        "<option value=''>-请选择-</option>" +
+                        "<option value=''>订单</option>" +
+                        "<option value=''>购物单</option>" +
+                        "<option value=''>配送单</option>" +
+                        "<option value=''>快递单</option>"
                     "</select>";
-              }
+                }
             },
             {field:'pricz',title:'操作',width:100,
-             formatter:function(index,row,value){
-                return "<a href='javascript:chakan(\""+row.orderid+"\")'>[查看]</a><a href='javascript:bianji()'>[编辑]</a>";
-             }
+                formatter:function(index,row,value){
+                    return "<a href='javascript:chakan(\""+row.orderid+"\")'>[查看]</a><a href='javascript:bianji()'>[编辑]</a>";
+                }
             }
-        ]]
+       ]
     });
       }
 
@@ -161,11 +189,6 @@
       function chakan(id){
        location.href="<%=request.getContextPath()%>/lsJsp/orderDetail.jsp";
       }
-
-
-
-
-
 
 
 

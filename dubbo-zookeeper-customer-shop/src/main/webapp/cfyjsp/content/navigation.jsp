@@ -85,15 +85,15 @@
             {field:'url',title:'链接地址',width:150},
             {field:'isblanktarget',title:'是否新窗口打开',width:150},
             {field:'remarks',title:'操作',width:180,
-                formatter:function () {
-                    return   "<a id=\'#2\' href=\'#\' class=\'easyui-linkbutton\'  onclick=\'binaji()\'>[编辑]</a>";
+                formatter:function (value,row,index) {
+                    return   "<a id=\'#2\' href=\'#\' class=\'easyui-linkbutton\'  onclick=\'binaji(\""+row.nid+"\")\'>[编辑]</a>";
                 }
             }
         ]]
     });
     }
 
-    function binaji() {
+    function binaji(id) {
         var tyid="'"+id+"'"
         $('#hx').dialog({
             title: '修改',

@@ -17,7 +17,13 @@
 <div>
     <div style="margin-left:10px"><a id="" href="#" class="easyui-linkbutton" data-options="iconCls:''" onclick="tianjiaArt()">添加</a>
         <a id="#" href="#" class="easyui-linkbutton" data-options="iconCls:''" onclick="shanchu()">删除</a>
-        <a id="#1" href="#" class="easyui-linkbutton" data-options="iconCls:''" onclick="shuaxin()">刷新</a>
+        <a id="#1" href="#" class="easyui-linkbutton" data-options="iconCls:''" onclick="shuaxin()">刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        标题:<input  id="uname" name="uname" class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:150px">&nbsp;
+        <a   class="easyui-linkbutton" data-options="iconCls:''" onclick="dd()">查询</a>
+    </div>
+    <div >
+
     </div>
 </div>
 <table id="arttable"></table>
@@ -37,18 +43,22 @@
             //    pageNumber:1,//初始化页码
             // pageSize:10,//每页条数
             // pageList:[5,8,10],//每页条数的下拉选项
-// 		  queryParams: {
-// 			  ptname: $("#uname").val(),
+ 		  queryParams: {
+              title: $("#uname").val(),
 // 	                  mindate: $("#aa").datebox("getValue"),
 // 	    		maxdate: $("#audtable").datebox("getValue"),
-// 		},
-
+ 		},
             columns:[[
                 {field:'check',checkbox:true},
                 {field:'title',title:'标题',width:70},
                 {field:'articlecategoryid',title:'文章分类',width:150,
                     formatter:function(value,row,index){
                         return row.articlecategoryid==1?"商场动态":""||row.articlecategoryid==2?"活动促销":""||row.articlecategoryid==3?"购物指南":""||row.articlecategoryid==4?"支付方式":""||row.articlecategoryid==5?"配送方式":""||row.articlecategoryid==6?"售后服务":""||row.articlecategoryid==7?"关于我们":"";
+                    }
+                },
+                {field:'ispublication',title:'是否发布',width:150,
+                    formatter:function(value,row,index){
+                        return row.ispublication==1?"√":"×";
                     }
                 },
                 {field:'author',title:'作者',width:150},
@@ -59,14 +69,14 @@
                 {field:'seokeywords',title:'页面关键字',width:150},
                 {field:'seodescription',title:'页面描述',width:150},
                 {field:'remarks',title:'操作',width:180,
-                    formatter:function () {
-                        return   "<a id=\'#2\' href=\'#\' class=\'easyui-linkbutton\'  onclick=\'binaji()\'>[编辑]</a>";
+                    formatter:function (value,row,index) {
+                        return   "<a id=\'#2\' href=\'#\' class=\'easyui-linkbutton\'  onclick=\'binaji(\""+row.arid+"\")\'>[编辑]</a>";
                     }
                 }
             ]]
         });
     }
-    function binaji() {
+    function binaji(id) {
         var tyid="'"+id+"'"
         $('#hxdiv').dialog({
             title: '修改',
@@ -105,9 +115,7 @@
             count++;
         }
         str=arr.substring(1);
-        alert(str);
         if (str != null || str != "") {
-            alert(1);
             $.ajax({
                 url:'<%=request.getContextPath()%>/cfyController/deleteArticle.jhtml',
                 type:"post",
@@ -133,7 +141,7 @@
         $('#savediv').dialog({
             title: '新增',
             width: 400,
-            height: 200,
+            height: 600,
             closed: false,
             cache: false,
             href: '<%=request.getContextPath()%>/cfyjsp/article/saveart.jsp',
