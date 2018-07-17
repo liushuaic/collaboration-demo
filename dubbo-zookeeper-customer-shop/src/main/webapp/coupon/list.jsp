@@ -24,6 +24,7 @@
     <a href="javascript:couEdit('couedit')" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">编辑</a>
     <a href="javascript:del()"  class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" >删除</a>
     <a href="javascript:coushuaxin()" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true">刷新</a>
+    <a href="<%=request.getContextPath()%>/couponController/coudaochu.jhtml" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">导出</a>
 </div>
 <div id="coudig"></div>
 <script type="text/javascript">
@@ -103,15 +104,15 @@
 
         if(ii=="couedit"){
             title="修改类型";
-            var arr = $("#proshow").datagrid("getSelections");
+            var arr = $("#coushow").datagrid("getSelections");
             if(arr.length!=1){
                 $.messager.alert("警告","请选择一行数据进行修改！");
                 return;
             }else{
-                href="<%=request.getContextPath()%>/couponController/toUpdateSeo.jhtml?seoid="+arr[0].seoid;
+                href="<%=request.getContextPath()%>/couponController/toUpdateCoupon.jhtml?couid="+arr[0].couid;
             }
         }
-        $('#dig').dialog({
+        $('#coudig').dialog({
             title:title,
             width:650,
             height:500,
@@ -122,8 +123,8 @@
             buttons:[{
                 text:'保存',
                 handler:function(){
-                    $("#fff").form('submit',{
-                        url:"<%=request.getContextPath()%>/couponController/updateSeo.jhtml",
+                    $("#couaddOrupdate").form('submit',{
+                        url:"<%=request.getContextPath()%>/couponController/updateCoupon.jhtml",
                         success:function(data){
     						// var data = eval("("+data+")");
      						 // if(data.success){
