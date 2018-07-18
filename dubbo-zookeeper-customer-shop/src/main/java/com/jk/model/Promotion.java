@@ -58,6 +58,8 @@ public class Promotion implements Serializable{
 
     /** 允许参与商品分类关联id */
     private String  productcategoriesid;
+    /** 允许参与商品分类关联id */
+    private String  brandsid;
 
 
     public static long getSerialVersionUID() {
@@ -192,6 +194,14 @@ public class Promotion implements Serializable{
         this.productcategoriesid = productcategoriesid;
     }
 
+    public String getBrandsid() {
+        return brandsid;
+    }
+
+    public void setBrandsid(String brandsid) {
+        this.brandsid = brandsid;
+    }
+
     @Override
     public String toString() {
         return "Promotion{" +
@@ -211,6 +221,7 @@ public class Promotion implements Serializable{
                 ", introduction='" + introduction + '\'' +
                 ", memberranksid='" + memberranksid + '\'' +
                 ", productcategoriesid='" + productcategoriesid + '\'' +
+                ", brandsid='" + brandsid + '\'' +
                 '}';
     }
 }

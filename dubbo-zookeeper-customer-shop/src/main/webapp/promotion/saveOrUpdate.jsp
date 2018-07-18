@@ -17,56 +17,58 @@
     <link rel="stylesheet" type="text/css" href="../EasyUI/themes/icon.css">
 </head>
 <body>
+
     <form id="proaddOrupdate" method="post">
-        <%--<input type="hidden" name="proid" />--%>
+        <input type="hidden" name="proid" value="${pro.proid}"/>
         <div class="easyui-tabs" >
             <div title="基本信息" style="padding:20px;">
+               ${pro.brandsid}
                 <table>
                     <tr>
                         <td>名称:</td>
-                        <td><input class="easyui-textbox" name="proname" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="proname" value="${pro.proname}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>标题:</td>
-                        <td><input class="easyui-textbox" name="protitle" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="protitle" value="${pro.protitle}" style="width:200px" /></td>
                     </tr>
                    <tr>
                         <td>使用起始日期:</td>
-                        <td><input class="easyui-datebox" name="begindate" style="width:200px" /></td>
+                        <td><input class="easyui-datebox" name="begindate" value="${pro.begindate}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>使用结束日期:</td>
-                        <td><input class="easyui-datebox" name="enddate" style="width:200px" /></td>
+                        <td><input class="easyui-datebox" name="enddate" value="${pro.enddate}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>最小商品数量:</td>
-                        <td><input class="easyui-textbox" name="minimumquantity" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="minimumquantity" value="${pro.minimumquantity}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>最大商品数量:</td>
-                        <td><input class="easyui-textbox" name="maximumquantity" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="maximumquantity" value="${pro.maximumquantity}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>最小商品价格:</td>
-                        <td><input class="easyui-textbox" name="minimumprice" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="minimumprice" value="${pro.minimumprice}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>最大商品价格:</td>
-                        <td><input class="easyui-textbox" name="maximumprice" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="maximumprice" value="${pro.maximumprice}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>价格运算表达式:</td>
-                        <td><input class="easyui-textbox" name="priceexpression" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="priceexpression" value="${pro.priceexpression}" style="width:200px" /></td>
                     </tr>
                     <tr>
                         <td>积分运算表达式:</td>
-                        <td><input class="easyui-textbox" name="pointexpression" style="width:200px" /></td>
+                        <td><input class="easyui-textbox" name="pointexpression" value="${pro.pointexpression}" style="width:200px" /></td>
                     </tr>
                    <tr>
                         <td>允许参加会员等级:</td>
                         <td>
                             <c:forEach items="${memberList}" var="memberList">
-                                <input type="checkbox"  name="memberranksid" value="${memberList.mrid}" />${memberList.mrname}
+                                <input type="checkbox"  name="memberranksid" value="${memberList.mrid}" ${memberList.mrid==pro.memberranksid?"checked":""}/>${memberList.mrname}
                             </c:forEach>
                         </td>
                     </tr>
@@ -74,7 +76,7 @@
                         <td>允许商品分类:</td>
                         <td>
                             <c:forEach items="${proList}" var="proList">
-                                <input type="checkbox" name="productcategoriesid" value="${proList.id}" />${proList.text}
+                                <input type="checkbox" name="productcategoriesid" value="${proList.id}" ${proList.id==pro.productcategoriesid?"checked":""}/>${proList.text}
                             </c:forEach>
                         </td>
                     </tr>
@@ -82,22 +84,22 @@
                         <td>允许参与品牌:</td>
                         <td>
                             <c:forEach items="${brandList}" var="brandList">
-                                <input type="checkbox" name="brandsid" value="${brandList.brandid}" />${brandList.brandname}
+                                <input type="checkbox" name="brandsid" value="${brandList.brandid}" ${brandList.brandid==pro.brandsid?"checked":""}/>${brandList.brandname}
                             </c:forEach>
                         </td>
                     </tr>
                     <tr>
                         <td>设置:</td>
                         <td>
-                            <input type="checkbox" name="isfreeshipping" value="1" />是否免运费
-                            <input type="checkbox" name="iscouponallowed" value="2" />是否允许使用优惠券
+                            <input type="checkbox" name="isfreeshipping" value="1" ${pro.isfreeshipping==1?'checked':''}/>是否免运费
+                            <input type="checkbox" name="iscouponallowed" value="2" ${pro.iscouponallowed==2?'checked':''}/>是否允许使用优惠券
                         </td>
                     <tr>
                 </table>
             </div>
             <div title="介绍" style="padding:20px;">
 
-                <td ><textarea id="editor_id" name="introduction"></textarea></td>
+                <td ><textarea id="editor_id" name="introduction">${pro.introduction}</textarea></td>
 
             </div>
         </div>

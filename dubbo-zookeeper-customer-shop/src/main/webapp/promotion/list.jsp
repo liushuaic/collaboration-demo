@@ -61,7 +61,7 @@
         $('#prodig').dialog({
             title:title,
             width:650,
-            height:550,
+            height:500,
             closed:false,
             cache:false,
             href:href,
@@ -100,10 +100,10 @@
                 $.messager.alert("警告","请选择一行数据进行修改！");
                 return;
             }else{
-                href="<%=request.getContextPath()%>/promotionController/toUpdatePro.jhtml?seoid="+arr[0].seoid;
+                href="<%=request.getContextPath()%>/promotionController/toUpdatePro.jhtml?proid="+arr[0].proid;
             }
         }
-        $('#dig').dialog({
+        $('#prodig').dialog({
             title:title,
             width:650,
             height:500,
@@ -114,7 +114,7 @@
             buttons:[{
                 text:'保存',
                 handler:function(){
-                    $("#fff").form('submit',{
+                    $("#proaddOrupdate").form('submit',{
                         url:"<%=request.getContextPath()%>/promotionController/updatePro.jhtml",
                         success:function(data){
     						// var data = eval("("+data+")");

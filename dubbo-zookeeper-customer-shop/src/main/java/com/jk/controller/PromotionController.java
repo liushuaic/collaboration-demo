@@ -48,6 +48,7 @@ public class PromotionController {
 		return "promotion/saveOrUpdate";
 	}
 
+	//查询之
 	//查询复选框
 	@RequestMapping("getMember")
 //	@ResponseBody
@@ -74,23 +75,49 @@ public class PromotionController {
 		return mv;
 	}
 
+	//修改之
+	//查询复选框
+	@RequestMapping("toUpdatePro")
+	public String  toUpdatePro(Model model,String proid){
+		//会员等级
+		List<MemberRank> memberList = promotionService.getMember();
+		//商品分类
+		List<ProductCategory> proList = promotionService.getpro();
+		//品牌
+		List<Brand> brandList = promotionService.getBrand();
+		//修改回显
+		Promotion pro = promotionService.toUpdatePro(proid);
+		//会员等级
+		model.addAttribute("memberList", memberList);
+		//商品分类
+		model.addAttribute("proList",proList);
+		//品牌
+		model.addAttribute("brandList",brandList);
+		//修改回显
+		model.addAttribute("pro", pro);
+		return "promotion/saveOrUpdate";
+	}
 
-
-	/*//修改之回显
-	@RequestMapping("toUpdateCoupon")
-	@ResponseBody
-	public ModelAndView toUpdateCoupon(String couid){
-		ModelAndView mv= new ModelAndView();
-		Coupon cou = promotionService.toUpdateCoupon(couid);
-		mv.addObject("cou", cou);
-		mv.setViewName("coupon/addCoupon");
+	//修改
+	@RequestMapping("updatePro")
+	public ModelAndView updatePro(Promotion promotion){
+		ModelAndView mv = new ModelAndView("promotion/list");
+		promotionService.updatePro(promotion);
 		return mv;
 	}
-	//修改
-	@RequestMapping("updateCoupon")
-	public ModelAndView updateCoupon(Coupon coupon){
-		ModelAndView mv = new ModelAndView("coupon/list");
-		promotionService.updateCoupon(coupon);
+
+	/*
+	//修改之回显
+	@RequestMapping("toUpdatePro")
+	@ResponseBody
+	public ModelAndView toUpdatePro(String proid){
+		ModelAndView mv= new ModelAndView();
+		Promotion pro = promotionService.toUpdatePro(proid);
+		mv.addObject("pro", pro);
+		mv.setViewName("promotion/saveOrUpdate");
 		return mv;
-	}*/
+	}
+	*/
+
+
 }

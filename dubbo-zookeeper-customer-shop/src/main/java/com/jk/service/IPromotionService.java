@@ -20,4 +20,8 @@ public interface IPromotionService {
 	List<Brand> getBrand();
 
 	void addPro(Promotion promotion);
+
+	Promotion toUpdatePro(String proid);
+
+	void updatePro(Promotion promotion);
 }
