@@ -22,4 +22,9 @@ public interface PromotionMapper {
 	List<Brand> getBrand();
 
 	void addPro(Promotion promotion);
+
+
+	Promotion toUpdatePro(@Param("proid") String proid);
+
+	void updatePro(Promotion promotion);
 }

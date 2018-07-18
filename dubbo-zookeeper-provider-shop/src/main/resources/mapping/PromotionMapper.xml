@@ -44,30 +44,35 @@
         #{priceexpression},
         #{productcategoriesid},
         #{proname},
-        #{protitle}
+        #{protitle},
+        #{brandsid}
         )
     </insert>
 
 
-   <!-- <select id="toUpdateCoupon" resultType="com.jk.model.Coupon">
-        select * from t_pomotion where couid = #{couid}
+   <select id="toUpdatePro" resultType="com.jk.model.Promotion">
+        select * from t_pomotion where proid = #{proid}
     </select>
 
-    <update id="updateCoupon" parameterType="com.jk.model.Coupon">
-        update t_pomotion set
-        begindate = #{begindate},
-        enddate = #{enddate},
-        introduction = #{introduction},
-        isEnabled = #{isEnabled},
-        isexchange = #{isexchange},
-        maximumprice = #{maximumprice},
-        maximumquantity = #{maximumquantity},
-        minimumprice = #{minimumprice},
-        minimumquantity = #{minimumquantity},
-        name = #{name},
-        point = #{point},
-        priceexpression = #{priceexpression}
-        where couid = #{couid}
-    </update>-->
+   <update id="updatePro" parameterType="com.jk.model.Promotion">
+         update t_pomotion set
+         begindate = #{begindate},
+         enddate = #{enddate},
+         introduction = #{introduction},
+         iscouponallowed = #{iscouponallowed},
+         isfreeshipping = #{isfreeshipping},
+         maximumprice = #{maximumprice},
+         maximumquantity = #{maximumquantity},
+         memberranksid = #{memberranksid},
+         minimumprice = #{minimumprice},
+         minimumquantity = #{minimumquantity},
+         pointexpression = #{pointexpression},
+         priceexpression = #{priceexpression},
+         productcategoriesid = #{productcategoriesid},
+         proname = #{proname},
+         protitle = #{protitle},
+         brandsid = #{brandsid}
+         where proid = #{proid}
+   </update>
 
 </mapper>

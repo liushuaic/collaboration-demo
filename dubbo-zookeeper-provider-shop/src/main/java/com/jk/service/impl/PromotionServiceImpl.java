@@ -66,4 +66,22 @@ public class PromotionServiceImpl implements IPromotionService{
 		}
 		promotionMapper.addPro(promotion);
 	}
+
+	@Override
+	public Promotion toUpdatePro(String proid) {
+		return promotionMapper.toUpdatePro(proid);
+	}
+
+	@Override
+	public void updatePro(Promotion promotion) {
+		if (promotion.getIsfreeshipping() == null || "".equals(promotion.getIsfreeshipping())){
+			promotion.setIsfreeshipping("0");
+		}
+		if (promotion.getIscouponallowed() == null || "".equals(promotion.getIscouponallowed())){
+			promotion.setIscouponallowed("0");
+		}
+		promotionMapper.updatePro(promotion);
+	}
+
+
 }
