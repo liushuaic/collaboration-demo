@@ -1,5 +1,7 @@
 package com.jk.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -17,9 +19,11 @@ public class Promotion implements Serializable{
     private String protitle;
 
     /** 起始日期 */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date begindate;
 
     /** 结束日期 */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date enddate;
 
     /** 最小商品数量 */
@@ -54,15 +58,13 @@ public class Promotion implements Serializable{
 
     /** 允许参与商品分类关联id */
     private String  productcategoriesid;
+    /** 允许参与商品分类关联id */
+    private String  brandsid;
 
-    /** 允许参与商品 */
-    private String  productsid ;
 
-    /** 允许参与品牌 */
-    private String  brandsid ;
-
-    /** 赠送优惠券关联id Coupon */
-    private String  couponsid;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public String getProid() {
         return proid;
@@ -192,28 +194,12 @@ public class Promotion implements Serializable{
         this.productcategoriesid = productcategoriesid;
     }
 
-    public String getProductsid() {
-        return productsid;
-    }
-
-    public void setProductsid(String productsid) {
-        this.productsid = productsid;
-    }
-
     public String getBrandsid() {
         return brandsid;
     }
 
     public void setBrandsid(String brandsid) {
         this.brandsid = brandsid;
-    }
-
-    public String getCouponsid() {
-        return couponsid;
-    }
-
-    public void setCouponsid(String couponsid) {
-        this.couponsid = couponsid;
     }
 
     @Override
@@ -235,9 +221,7 @@ public class Promotion implements Serializable{
                 ", introduction='" + introduction + '\'' +
                 ", memberranksid='" + memberranksid + '\'' +
                 ", productcategoriesid='" + productcategoriesid + '\'' +
-                ", productsid='" + productsid + '\'' +
                 ", brandsid='" + brandsid + '\'' +
-                ", couponsid='" + couponsid + '\'' +
                 '}';
     }
 }

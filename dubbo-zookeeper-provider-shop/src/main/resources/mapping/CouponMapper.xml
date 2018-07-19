@@ -35,16 +35,27 @@
         #{priceexpression}
         )
     </insert>
-    <!--<select id="toUpdateSeo" resultType="com.jk.model.Promotion">
-        select * from t_seo where seoid = #{seoid}
+    <select id="toUpdateCoupon" resultType="com.jk.model.Coupon">
+        select * from t_coupon where couid = #{couid}
     </select>
 
-    <update id="updateSeo" parameterType="com.jk.model.Promotion">
-        update t_seo set
-          type = #{type},
-          title = #{title},
-          keywords = #{keywords},
-         description = #{description}
-        where seoid = #{seoid}
-    </update-->
+    <update id="updateCoupon" parameterType="com.jk.model.Coupon">
+        update t_coupon set
+          begindate = #{begindate},
+          enddate = #{enddate},
+          introduction = #{introduction},
+          isEnabled = #{isEnabled},
+          isexchange = #{isexchange},
+          maximumprice = #{maximumprice},
+          maximumquantity = #{maximumquantity},
+          minimumprice = #{minimumprice},
+          minimumquantity = #{minimumquantity},
+          name = #{name},
+          point = #{point},
+          priceexpression = #{priceexpression}
+        where couid = #{couid}
+    </update>
+    <select id="coudaochu" resultType="com.jk.model.Coupon">
+        select * from t_coupon
+    </select>
 </mapper>
