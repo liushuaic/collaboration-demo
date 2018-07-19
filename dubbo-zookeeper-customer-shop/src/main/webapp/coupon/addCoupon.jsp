@@ -67,7 +67,7 @@
             </div>
             <div title="介绍" style="padding:20px;">
 
-                <td ><textarea id="editor_id" name="introduction">${cou.introduction}"</textarea></td>
+                <td ><textarea id="editor_id" name="introduction">${cou.introduction}</textarea></td>
 
             </div>
         </div>

@@ -22,7 +22,6 @@
         <input type="hidden" name="proid" value="${pro.proid}"/>
         <div class="easyui-tabs" >
             <div title="基本信息" style="padding:20px;">
-               ${pro.brandsid}
                 <table>
                     <tr>
                         <td>名称:</td>
