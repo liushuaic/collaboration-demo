@@ -81,7 +81,7 @@
                     }
                 }},
                 {field:'ss',title:'操作',width:225,formatter:function(value,row,index){
-                    return "<a class=\"btn btn-success\" href='javascript:queryInfo("+row.memberid+")'>查看</a>";
+                    return "<a class='btn btn-success' href='javascript:queryInfo(\""+row.memberid+"\")'>查看</a>";
                 }},
             ]
         })
