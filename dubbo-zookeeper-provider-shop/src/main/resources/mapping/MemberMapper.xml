@@ -49,7 +49,6 @@
         <result column="attributeValue5" property="attributeValue5"></result>
         <result column="attributeValue6" property="attributeValue6"></result>
         <result column="attributeValue7" property="attributeValue7"></result>
-
         <result column="attributeValue8" property="attributeValue8"></result>
         <result column="attributeValue9" property="attributeValue9"></result>
         <result column="area" property="area"></result>
@@ -57,6 +56,9 @@
         <result column="orderitemsid" property="orderitemsid"></result>
         <result column="reviewsid" property="reviewsid"></result>
         <result column="messagesid" property="messagesid"></result>
+        <result column="loginip" property="loginip"></result>
+        <result column="lastloginip" property="lastloginip"></result>
+
     </resultMap>
 
     <select id="queryMenberList" resultMap="mr">
@@ -66,6 +68,11 @@
     <select id="queryMemberById" resultMap="mr">
         SELECT * FROM T_MemberRank where mrid = #{id}
     </select>
+
+    <select id="queryRememberById" resultMap="me">
+        SELECT * FROM T_Member where memberid = #{id}
+    </select>
+
     <insert id="addMember">
         INSERT INTO T_MemberRank
         VALUES (
@@ -95,8 +102,32 @@
         delete from T_MemberRank where mrid in (${ids})
     </delete>
 
+    <delete id="delRemember">
+        delete from T_Member where memberid in (${ids})
+    </delete>
+
     <select id="queryRememberList" resultMap="me">
                 select me.*,mr.mrname from t_Member me
                 left join t_memberrank mr on mr.mrid = me.memberrankid
     </select>
+
+    <insert id="addRemember">
+          INSERT INTO T_Member (memberid,username,password,email,point,balance,createdate,memberrankid,isenabled,name,gender,birth,area,address,loginip) VALUES (
+          #{memberid,jdbcType=VARCHAR},
+          #{username,jdbcType=VARCHAR},
+          #{password,jdbcType=VARCHAR},
+          #{email,jdbcType=VARCHAR},
+          #{point,jdbcType=INTEGER},
+          #{balance,jdbcType=VARCHAR},
+          #{createdate,jdbcType=VARCHAR},
+          #{memberrankid,jdbcType=VARCHAR},
+          #{isenabled,jdbcType=VARCHAR},
+          #{name,jdbcType=VARCHAR},
+          #{gender,jdbcType=VARCHAR},
+          #{birth,jdbcType=VARCHAR},
+          #{area,jdbcType=VARCHAR},
+          #{address,jdbcType=VARCHAR},
+          #{loginip,jdbcType=VARCHAR}
+          )
+    </insert>
 </mapper>

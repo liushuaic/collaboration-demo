@@ -154,10 +154,10 @@ $().ready(function() {
 				<dl id="member">
 					<dt>会员管理</dt>
 						<dd>
-							<a href="../member.jsp" target="iframe">会员管理</a>
+							<a href="../wzw/member.jsp" target="iframe">会员管理</a>
 						</dd>
 						<dd>
-							<a href="../memberrank.jsp" target="iframe">会员等级</a>
+							<a href="../wzw/memberrank.jsp" target="iframe">会员等级</a>
 						</dd>
 						<dd>
 							<a href="../member_attribute/list.jhtml" target="iframe">会员注册项</a>

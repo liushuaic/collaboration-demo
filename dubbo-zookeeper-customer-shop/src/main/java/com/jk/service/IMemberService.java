@@ -17,4 +17,10 @@ public interface IMemberService {
     void delMember(String ids);
 
     List<Member> queryRememberList();
+
+    void addRemember(Member member);
+
+    Member queryRememberById(String id);
+
+    void delRemember(String ids);
 }

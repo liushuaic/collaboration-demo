@@ -2,7 +2,7 @@ package com.jk.model;
 
 import java.io.Serializable;
 
-public class Member implements Serializable{
+public class Member implements Serializable {
 
     private static final long serialVersionUID = 7928722219648579695L;
 
@@ -11,118 +11,200 @@ public class Member implements Serializable{
 
 /*基本信息*/
 
-    /** 用户名 */
+    /**
+     * 用户名
+     */
     private String username;
 
-    /** 密码 */
+    /**
+     * 密码
+     */
     private String password;
 
-    /** E-mail */
+    /**
+     * E-mail
+     */
     private String email;
 
-    /** 积分 */
+    /**
+     * 积分
+     */
     private Integer point;
 
-    /** 消费金额 */
+    /**
+     * 消费金额
+     */
     private String amount;
 
-    /** 余额 */
+    /**
+     * 余额
+     */
     private String balance;
 
-    /** 创建日期 */
+    /**
+     * 创建日期
+     */
     private String createdate;
 
-    /** 会员等级 memberRank */
+    /**
+     * 会员等级 memberRank
+     */
     private String memberrankid;
 
-    /** 是否启用 1 启用  2 不启用*/
+    /**
+     * 是否启用 1 启用  2 不启用
+     */
     private String isenabled;
 
-    /** 是否锁定 1 锁定 2 不锁定*/
+    /**
+     * 是否锁定 1 锁定 2 不锁定
+     */
     private String islocked;
 
-    /** 连续登录失败次数 */
+    /**
+     * 连续登录失败次数
+     */
     private Integer loginfailurecount;
 
-    /** 锁定日期 */
+    /**
+     * 锁定日期
+     */
     private String lockeddate;
 
-    /** 最后登录日期 */
+    /**
+     * 最后登录日期
+     */
     private String logindate;
 
 /* 个人资料 */
 
-    /** 姓名 */
+    /**
+     * 姓名
+     */
     private String name;
 
-    /** 性别 1 男  2 女*/
+    /**
+     * 性别 1 男  2 女
+     */
     private String gender;
 
-    /** 出生日期 */
+    /**
+     * 出生日期
+     */
     private String birth;
 
-    /** 地址 */
+    /**
+     * 地址
+     */
     private String address;
 
-    /** 邮编 */
+    /**
+     * 邮编
+     */
     private String zipcode;
 
-    /** 电话 */
+    /**
+     * 电话
+     */
     private String phone;
 
-    /** 手机 */
+    /**
+     * 手机
+     */
     private String mobile;
 
 
 /*会员注册项值？？？？*/
 
-    /** 会员注册项值0 */
+    /**
+     * 会员注册项值0
+     */
     private String attributeValue0;
 
-    /** 会员注册项值1 */
+    /**
+     * 会员注册项值1
+     */
     private String attributeValue1;
 
-    /** 会员注册项值2 */
+    /**
+     * 会员注册项值2
+     */
     private String attributeValue2;
 
-    /** 会员注册项值3 */
+    /**
+     * 会员注册项值3
+     */
     private String attributeValue3;
 
-    /** 会员注册项值4 */
+    /**
+     * 会员注册项值4
+     */
     private String attributeValue4;
 
-    /** 会员注册项值5 */
+    /**
+     * 会员注册项值5
+     */
     private String attributeValue5;
 
-    /** 会员注册项值6 */
+    /**
+     * 会员注册项值6
+     */
     private String attributeValue6;
 
-    /** 会员注册项值7 */
+    /**
+     * 会员注册项值7
+     */
     private String attributeValue7;
 
-    /** 会员注册项值8 */
+    /**
+     * 会员注册项值8
+     */
     private String attributeValue8;
 
-    /** 会员注册项值9 */
+    /**
+     * 会员注册项值9
+     */
     private String attributeValue9;
 
-    /** 地区 ？？ area*/
+    /**
+     * 地区 ？？ area
+     */
     private String area;
 
-    /** 购物车项关联id  CartItem*/
-    private String cartitemsid ;
+    /**
+     * 购物车项关联id  CartItem
+     */
+    private String cartitemsid;
 
-    /** 订单项关联id  OrderItem*/
-    private String orderitemsid ;
+    /**
+     * 订单项关联id  OrderItem
+     */
+    private String orderitemsid;
 
-    /** 评论关联id */
-    private String  reviewsid ;
+    /**
+     * 评论关联id
+     */
+    private String reviewsid;
 
-    /** 消息关联id  Message*/
-    private String  messagesid ;
+    /**
+     * 消息关联id  Message
+     */
+    private String messagesid;
 
-    /** 会员等级 */
+    /**
+     * 会员等级
+     */
     private String mrname;
+
+    /**
+     * 登录ip
+     */
+    private String loginip;
+
+    /**
+     * 最后登录IP
+     */
+    private String lastloginip;
 
     public String getMemberid() {
         return memberid;
@@ -420,6 +502,22 @@ public class Member implements Serializable{
         this.messagesid = messagesid;
     }
 
+    public String getLoginip() {
+        return loginip;
+    }
+
+    public void setLoginip(String loginip) {
+        this.loginip = loginip;
+    }
+
+    public String getLastloginip() {
+        return lastloginip;
+    }
+
+    public void setLastloginip(String lastloginip) {
+        this.lastloginip = lastloginip;
+    }
+
     @Override
     public String toString() {
         return "Member{" +
@@ -460,6 +558,8 @@ public class Member implements Serializable{
                 ", reviewsid='" + reviewsid + '\'' +
                 ", messagesid='" + messagesid + '\'' +
                 ", mrname='" + mrname + '\'' +
+                ", loginip='" + loginip + '\'' +
+                ", lastloginip='" + lastloginip + '\'' +
                 '}';
     }
 }
