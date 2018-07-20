@@ -19,4 +19,10 @@ public interface MemberMapper {
     void delMember(@Param("ids") String ids);
 
     List<Member> queryRememberList();
+
+    void addRemember(Member member);
+
+    Member queryRememberById(@Param("id") String id);
+
+    void delRemember(@Param("ids")String ids);
 }

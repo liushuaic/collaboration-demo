@@ -14,4 +14,10 @@ public interface CouponMapper {
 	void delCoupon(@Param("ids") String ids);
 
 	void addCoupon(Coupon coupon);
+
+	Coupon toUpdateCoupon(@Param("couid") String couid);
+
+	void updateCoupon(Coupon coupon);
+
+	List<Coupon> coudaochu();
 }

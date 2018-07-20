@@ -16,12 +16,12 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/kindeditor/kindeditor.js" charset="utf-8"></script>
 
 <body>
-<div  class="easyui-panel" title="SEO设置列表"data-options="fit:'true'">
+<div  class="easyui-panel" title="促销列表"data-options="fit:'true'">
     <div id="proshow"></div>
 </div>
 <div id="prowhere">
-    <%--<a href="javascript:addOrEdit('add')" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
-    <a href="javascript:proEdit('proedit')" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">编辑</a>--%>
+    <a href="javascript:addOrEdit('add')" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+    <a href="javascript:proEdit('proedit')" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">编辑</a>
     <a href="javascript:del()"  class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" >删除</a>
     <a href="javascript:proshuaxin()" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true">刷新</a>
 </div>
@@ -50,23 +50,15 @@
     })
 
 </script>
-<!-- 修改 -->
+<!-- 新增 -->
 <script type="text/javascript">
-    function proEdit(ii){
-        var title="";
-        var href ="";
-
-        if(ii=="proedit"){
-            title="修改类型";
-            var arr = $("#proshow").datagrid("getSelections");
-            if(arr.length!=1){
-                $.messager.alert("警告","请选择一行数据进行修改！");
-                return;
-            }else{
-                href="<%=request.getContextPath()%>/seoController/toUpdateSeo.jhtml?seoid="+arr[0].seoid;
-            }
+    function addOrEdit(tt){
+        var title= "";
+        if(tt=="add"){
+            title="新增信息";
+            href="<%=request.getContextPath()%>/promotionController/getMember.jhtml";
         }
-        $('#dig').dialog({
+        $('#prodig').dialog({
             title:title,
             width:650,
             height:500,
@@ -77,8 +69,53 @@
             buttons:[{
                 text:'保存',
                 handler:function(){
-                    $("#fff").form('submit',{
-                        url:"<%=request.getContextPath()%>/seoController/updateSeo.jhtml",
+                    $("#proaddOrupdate").form('submit',{
+                        url:"<%=request.getContextPath()%>/promotionController/addPro.jhtml",
+                        success:function(data){
+//     						 var data = eval("("+data+")");
+//     						  if(data.success){
+                            $('#prodig').dialog("close")
+                            $('#proshow').datagrid('load');
+//     						  }else{
+//     							  $.messager.alert("提示",data.msg);
+//     						  }
+                        }
+                    })
+                }
+            }]
+        })
+    }
+</script>
+
+<!-- 修改 -->
+<script type="text/javascript">
+    function proEdit(ii){
+        var title="";
+        var href ="";
+
+        if(ii=="proedit"){
+            title="编辑信息";
+            var arr = $("#proshow").datagrid("getSelections");
+            if(arr.length!=1){
+                $.messager.alert("警告","请选择一行数据进行修改！");
+                return;
+            }else{
+                href="<%=request.getContextPath()%>/promotionController/toUpdatePro.jhtml?proid="+arr[0].proid;
+            }
+        }
+        $('#prodig').dialog({
+            title:title,
+            width:650,
+            height:500,
+            closed:false,
+            cache:false,
+            href:href,
+            modal:true,
+            buttons:[{
+                text:'保存',
+                handler:function(){
+                    $("#proaddOrupdate").form('submit',{
+                        url:"<%=request.getContextPath()%>/promotionController/updatePro.jhtml",
                         success:function(data){
     						// var data = eval("("+data+")");
      						 // if(data.success){
@@ -113,7 +150,7 @@
             //批量删除
             var arr= $("#proshow").datagrid("getSelections");
             for (var i = 0; i < arr.length; i++) {
-                ids += ","+arr[i].proid;
+                ids += ",'"+arr[i].proid+"'";
             }
             //截取
             ids=ids.substr(1);

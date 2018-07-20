@@ -193,7 +193,6 @@
             }
         }
         ids = ids.substr(1)
-
         Ewin.confirm({message:"确认要删除选择的数据吗？"}).on(function (r){
             if (r == true){
                 $.ajax({

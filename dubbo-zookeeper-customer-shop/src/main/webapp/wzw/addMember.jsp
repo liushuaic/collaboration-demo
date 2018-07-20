@@ -51,7 +51,7 @@
 </form>
 <script type="text/javascript">
     function tiao(){
-        location.href="../memberrank.jsp";
+        location.href="memberrank.jsp";
     }
     var info = $("#wzw").is(":checked");
     if(info == true){

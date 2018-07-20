@@ -2,14 +2,14 @@ package com.jk.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jk.mapper.PromotionMapper;
-import com.jk.model.Promotion;
-import com.jk.model.Seo;
+import com.jk.model.*;
 import com.jk.service.IPromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.convert.LongToBooleanConverter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service("promotionService")
 public class PromotionServiceImpl implements IPromotionService{
@@ -38,4 +38,50 @@ public class PromotionServiceImpl implements IPromotionService{
 	public void delPromotion(String ids) {
 		promotionMapper.delPromotion(ids);
 	}
+
+	@Override
+	public List<MemberRank> getMember() {
+		return promotionMapper.getMember();
+	}
+
+	@Override
+	public List<ProductCategory> getpro() {
+		return promotionMapper.getpro();
+	}
+
+	@Override
+	public List<Brand> getBrand() {
+		return promotionMapper.getBrand();
+	}
+
+	@Override
+	public void addPro(Promotion promotion) {
+		promotion.setProid(UUID.randomUUID().toString());
+		if (promotion.getIsfreeshipping() == null || "".equals(promotion.getIsfreeshipping())){
+
+			promotion.setIsfreeshipping("0");
+		}
+		if (promotion.getIscouponallowed() == null || "".equals(promotion.getIscouponallowed())){
+			promotion.setIscouponallowed("0");
+		}
+		promotionMapper.addPro(promotion);
+	}
+
+	@Override
+	public Promotion toUpdatePro(String proid) {
+		return promotionMapper.toUpdatePro(proid);
+	}
+
+	@Override
+	public void updatePro(Promotion promotion) {
+		if (promotion.getIsfreeshipping() == null || "".equals(promotion.getIsfreeshipping())){
+			promotion.setIsfreeshipping("0");
+		}
+		if (promotion.getIscouponallowed() == null || "".equals(promotion.getIscouponallowed())){
+			promotion.setIscouponallowed("0");
+		}
+		promotionMapper.updatePro(promotion);
+	}
+
+
 }

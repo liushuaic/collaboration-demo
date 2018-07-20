@@ -16,11 +16,17 @@ public class Consultation implements Serializable{
     /** 回复内容 */
     private String replycontent;
 
+    /** 是否回复 */
+    private String isback;
+
     /** 是否显示  1 显示 2 不显示 */
     private String isshow;
 
     /** IP */
     private String ip;
+
+    /** 创建日期 */
+    private String createdate;
 
     /** 会员 */
     private String memberid;
@@ -84,14 +90,32 @@ public class Consultation implements Serializable{
         this.productid = productid;
     }
 
+    public String getIsback() {
+        return isback;
+    }
+
+    public void setIsback(String isback) {
+        this.isback = isback;
+    }
+
+    public String getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
+    }
+
     @Override
     public String toString() {
         return "Consultation{" +
                 "consuid='" + consuid + '\'' +
                 ", content='" + content + '\'' +
                 ", replycontent='" + replycontent + '\'' +
+                ", isback='" + isback + '\'' +
                 ", isshow='" + isshow + '\'' +
                 ", ip='" + ip + '\'' +
+                ", createdate='" + createdate + '\'' +
                 ", memberid='" + memberid + '\'' +
                 ", productid='" + productid + '\'' +
                 '}';
