@@ -13,6 +13,6 @@
 <body>
 <br><br>
 <center>
-<img src="<%=request.getContextPath()%>/images/gm.jpg" width="950px" height="500px"></center>
+<img src="<%=request.getContextPath()%>/images/gm.jpg" width="900px" height="450px"></center>
 </body>
 </html>

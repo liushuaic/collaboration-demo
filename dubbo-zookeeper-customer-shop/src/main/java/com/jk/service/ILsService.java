@@ -1,6 +1,7 @@
 package com.jk.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.jk.model.Admin;
 import com.jk.model.Order;
 import com.jk.model.User;
 
@@ -14,13 +15,13 @@ public interface ILsService {
     /**
      * 查询订单列表信息
      * @param
-     * @param page
-     * @param rows
-     * @param order
+     * @param
+     * @param
+     * @param
      * @return
      * @throws Exception
      */
-    public JSONObject queryOrderList(int page, int rows, Order order) throws Exception;
+    public List<Order> queryOrderList() throws Exception;
 
     /**
      * 收款管理
@@ -57,4 +58,12 @@ public interface ILsService {
      * @throws Exception
      */
     JSONObject queryReturnsList(int page, int rows) throws Exception;
+
+    /**
+     * 登陆
+     * @param admin
+     * @return
+     * @throws Exception
+     */
+    JSONObject login(Admin admin) throws Exception;
 }
