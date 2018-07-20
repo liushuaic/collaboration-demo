@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -124,5 +125,12 @@ public class ZhjController {
         String pid="0";
         List<ProductCategory> list  =   queryProductCategory(pid);
         return list;
+    }
+
+    @RequestMapping("loginOut")
+    public  String loginOut(HttpServletRequest request){
+        request.getSession().removeAttribute("loginAdmin");
+
+        return "background/mihulogin";
     }
 }
