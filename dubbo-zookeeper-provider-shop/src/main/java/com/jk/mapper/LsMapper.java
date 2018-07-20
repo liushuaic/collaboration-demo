@@ -9,25 +9,17 @@ public interface LsMapper{
 
     List<User> queryUserList(User user);
 
-    /**
-     * 查询订单列表总条数
-     * @param
-     * @param order
-     * @return
-     * @throws Exception
-     */
-    public long queryOrderCount(Order order) throws Exception;
 
     /**
      * 查询订单列表信息
      * @param
-     * @param strat
-     * @param end
-     * @param order
+     * @param
+     * @param
+     * @param
      * @return
      * @throws Exception
      */
-     public List<Order> queryOrderList(@Param("strat") int strat, @Param("end") int end,@Param("order") Order order) throws Exception;
+     public List<Order> queryOrderList() throws Exception;
 
     /**
      * 收款管理分页总条数
@@ -92,4 +84,12 @@ public interface LsMapper{
      * @throws Exception
      */
     List<Returns> queryReturnsList(@Param("start")int start,@Param("end") int end) throws Exception;
+
+    /**
+     * 登陆
+     * @param username
+     * @return
+     * @throws Exception
+     */
+    List<Admin> queryAdminByName(@Param("username") String username) throws Exception;
 }

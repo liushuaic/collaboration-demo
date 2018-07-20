@@ -19,6 +19,12 @@ public class LsServiceImpl implements ILsService {
         return lsMapper.queryUserList(user);
     }
 
+    @Override
+    public List<Order> queryOrderList() throws Exception {
+        List<Order> list = lsMapper.queryOrderList();
+        return list;
+    }
+
     /**
      * 查询订单列表信息
      *
@@ -27,16 +33,7 @@ public class LsServiceImpl implements ILsService {
      * @return
      * @throws Exception
      */
-    public JSONObject queryOrderList(int page, int rows, Order order) throws Exception {
-        long total = lsMapper.queryOrderCount(order);
-        int strat = (page - 1) * rows;
-        int end = strat + rows;
-        List<Order> list = lsMapper.queryOrderList(strat,end,order);
-        JSONObject json = new JSONObject();
-        json.put("total",total);
-        json.put("rows",list);
-        return json;
-    }
+
 
     /**
      * 收款管理
@@ -101,6 +98,29 @@ public class LsServiceImpl implements ILsService {
         json.put("total",total);
         json.put("rows",list);
         return json;
+    }
+
+    /**
+     * 登陆
+     * @param admin
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public JSONObject login(Admin admin) throws Exception {
+        JSONObject jsonObj = new JSONObject();
+        Integer flag = 0;
+        List<Admin> adminlist = lsMapper.queryAdminByName(admin.getUsername());
+        if(adminlist != null && adminlist.size() > 0){
+            flag = 1;
+            Admin newadmin  = adminlist.get(0);
+            if(admin.getPassword().equals(newadmin.getPassword())){
+                flag = 2;
+                jsonObj.put("newadmin", newadmin);
+            }
+        }
+        jsonObj.put("flag", flag);
+        return jsonObj;
     }
 
 

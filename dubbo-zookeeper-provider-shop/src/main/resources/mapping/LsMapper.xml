@@ -6,21 +6,8 @@
       select * from t_user
   </select>
 
-      <select id="queryOrderCount" resultType="long">
-         select count(*) from t_order
-      </select>
-
       <select id="queryOrderList" resultType="com.jk.model.Order">
-          select * from
-          (
-          select a.*, rownum rn from
-          (
           select * from t_order
-
-          )a where rownum &lt;=#{end}
-
-          )b where b.rn &gt;#{strat}
-
       </select>
 
 
@@ -81,6 +68,15 @@
         )a where rownum &lt;#{end}
         )b where b.rn &gt;#{start}
     </select>
+
+    <select id="queryAdminByName" resultType="com.jk.model.Admin">
+        select * from t_admin where username = #{username}
+    </select>
+
+
+
+
+
 
 
 </mapper>
