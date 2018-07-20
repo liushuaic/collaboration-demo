@@ -116,8 +116,8 @@
                 <tr>
                     <td align="right">姓别:</td>
                     <td>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="男" ${me.gender == 男 ?"checked":""} />&nbsp;&nbsp;&nbsp;男
-                        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="女" ${me.gender == 女 ?"checked":""} />&nbsp;&nbsp;&nbsp;女
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="男" ${me.gender == '男' ?"checked":""} />&nbsp;&nbsp;&nbsp;男
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="女" ${me.gender == '女' ?"checked":""} />&nbsp;&nbsp;&nbsp;女
                     </td>
                 </tr>
                 <tr>
@@ -180,12 +180,14 @@
         </div>
     </div>
 </form>
+<input type="hidden" id="type" value="${me.memberrankid }"/>
 <script type="application/javascript">
 
     $("#show").combobox({
         url:"../memberrank/queryMenberList2.jhtml",
         valueField:'mrid',
-        textField:'mrname'
+        textField:'mrname',
+        value:$("#type").val()
     })
 
 

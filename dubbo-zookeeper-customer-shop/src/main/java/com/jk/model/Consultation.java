@@ -34,6 +34,12 @@ public class Consultation implements Serializable{
     /** 商品 */
     private String productid;
 
+    /** 商品名称 */
+    private String name;
+
+    /** 会员名称 */
+    private String mrname;
+
     public String getConsuid() {
         return consuid;
     }
@@ -106,6 +112,22 @@ public class Consultation implements Serializable{
         this.createdate = createdate;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMrname() {
+        return mrname;
+    }
+
+    public void setMrname(String mrname) {
+        this.mrname = mrname;
+    }
+
     @Override
     public String toString() {
         return "Consultation{" +
@@ -118,6 +140,8 @@ public class Consultation implements Serializable{
                 ", createdate='" + createdate + '\'' +
                 ", memberid='" + memberid + '\'' +
                 ", productid='" + productid + '\'' +
+                ", name='" + name + '\'' +
+                ", mrname='" + mrname + '\'' +
                 '}';
     }
 }

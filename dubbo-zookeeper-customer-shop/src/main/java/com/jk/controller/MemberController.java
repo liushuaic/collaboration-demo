@@ -123,4 +123,27 @@ public class MemberController {
         }
         return map;
     }
+
+    @RequestMapping("updateRemember")
+    @ResponseBody
+    public Map<String ,Object> updateRemember(Member member){
+        Map<String ,Object> map = new HashMap<String,Object>();
+        try {
+            service.updateRemember(member);
+            map.put("success",true);
+        } catch (Exception e) {
+            System.out.println( e.getLocalizedMessage());
+            System.out.println( e.getMessage());
+            map.put("success",false);
+        }
+        return map;
+    }
+
+    @RequestMapping("queryInfo")
+    @ResponseBody
+    public  ModelAndView queryInfo(String id){
+        ModelAndView mav = new ModelAndView("wzw/info");
+        mav.addObject("mm", service.queryInfo(id));
+        return mav;
+    }
 }

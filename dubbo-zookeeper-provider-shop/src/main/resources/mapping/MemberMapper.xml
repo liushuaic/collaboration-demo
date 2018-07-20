@@ -65,6 +65,12 @@
             SELECT * FROM T_MemberRank
     </select>
 
+    <select id="queryInfo" resultMap="me">
+        SELECT t1.*,t2.mrname FROM T_Member t1
+          left join t_memberrank t2 on t1.memberrankid = t2.mrid
+          where memberid = #{id}
+    </select>
+
     <select id="queryMemberById" resultMap="mr">
         SELECT * FROM T_MemberRank where mrid = #{id}
     </select>
@@ -130,4 +136,18 @@
           #{loginip,jdbcType=VARCHAR}
           )
     </insert>
+    <update id="updateRemember">
+        update T_Member set
+         password = #{password,jdbcType=VARCHAR},
+         email = #{email,jdbcType=VARCHAR},
+         point = point + #{point,jdbcType=INTEGER},
+         balance = balance + #{balance,jdbcType=VARCHAR},
+         memberrankid = #{memberrankid,jdbcType=VARCHAR},
+         isenabled = #{isenabled,jdbcType=VARCHAR},
+         name = #{name,jdbcType=VARCHAR},
+         gender = #{gender,jdbcType=VARCHAR},
+         birth = #{birth,jdbcType=VARCHAR},
+         area = #{area,jdbcType=VARCHAR},
+         address = #{address,jdbcType=VARCHAR} where memberid = #{memberid}
+    </update>
 </mapper>

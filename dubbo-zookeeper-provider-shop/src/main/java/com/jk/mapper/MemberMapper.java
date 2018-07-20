@@ -25,4 +25,8 @@ public interface MemberMapper {
     Member queryRememberById(@Param("id") String id);
 
     void delRemember(@Param("ids")String ids);
+
+    void updateRemember(Member member);
+
+    Member queryInfo(@Param("id")String id);
 }

@@ -160,13 +160,10 @@ $().ready(function() {
 							<a href="../wzw/memberrank.jsp" target="iframe">会员等级</a>
 						</dd>
 						<dd>
-							<a href="../member_attribute/list.jhtml" target="iframe">会员注册项</a>
+							<a href="../wzw/pinglun.jsp" target="iframe">评论管理</a>
 						</dd>
 						<dd>
-							<a href="../review/list.jhtml" target="iframe">评论管理</a>
-						</dd>
-						<dd>
-							<a href="../consultation/list.jhtml" target="iframe">咨询管理</a>
+							<a href="../wzw/zixunguanli.jsp" target="iframe">咨询管理</a>
 						</dd>
 				</dl>
 				<dl id="content">

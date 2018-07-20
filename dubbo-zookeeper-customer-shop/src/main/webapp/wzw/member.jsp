@@ -41,7 +41,7 @@
     <div data-options="region:'east',title:'角色管理列表'" collapsible="false" style="width: 100%">
         <div id="m-where">
             <a href="javascript:add()" class="btn btn-success" data-options="iconCls:'icon-add',plain:true">添加</a>
-            <a href="javascript:update()" class="btn btn-success" data-options="iconCls:'icon-edit',plain:true">修改</a>
+            <a href="javascript:update()" class="btn btn-info" data-options="iconCls:'icon-edit',plain:true">修改</a>
             <a href="javascript:remove()" class="btn btn-warning" data-options="iconCls:'icon-remove',plain:true">删除</a>
         </div>
         <table id="m-tabs" class="text-nowrap"></table>
@@ -151,8 +151,8 @@
                 }, {
                     label: '保存',
                     action: function (dialogItself) {
-                        $("#myForm").form('submit',{
-                            url: "<%=request.getContextPath()%>/memberrank/addMember.jhtml",
+                        $("#myMember").form('submit',{
+                            url: "<%=request.getContextPath()%>/memberrank/updateRemember.jhtml",
                             type: "post",
                             dataType: "text",
                             async: false,
@@ -203,9 +203,9 @@
                     dataType:"json",
                     success:function(data){
                         if(data=="success"){
-                            location.reload();
+                            $('#m-tabs').bootstrapTable("load");
                         }else{
-                            location.reload();
+                            $('#m-tabs').bootstrapTable("load");
                         }
                     },
                 })
@@ -214,7 +214,47 @@
     }
 
     function queryInfo(id){
-        alert("\'"+id+"\'");
+        BootstrapDialog.show({
+            type: BootstrapDialog.TYPE_SUCCESS,
+            title: "修改",
+            message: $("<div></div>").load("<%=request.getContextPath()%>/memberrank/queryInfo.jhtml?id=" + id),
+            //size : BootstrapDialog.SIZE_SMALL,//size为小，默认的对话框比较宽
+            buttons: [{// 设置关闭按钮
+                label: '关闭',
+                action: function (dialogItself) {
+                    dialogItself.close();
+                },
+            }, {
+                label: '保存',
+                action: function (dialogItself) {
+                    $("#myMember").form('submit',{
+                        url: "<%=request.getContextPath()%>/memberrank/updateRemember.jhtml",
+                        type: "post",
+                        dataType: "text",
+                        async: false,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            data = eval("("+data+")");
+                            if (data.success) {
+                                toastr.success("修改成功","成功");
+                                dialogItself.close();
+                                $('#m-tabs').bootstrapTable("load");
+                            } else {
+                                toastr.error("修改失败","失败");
+                                dialogItself.close();
+                                $('#m-tabs').bootstrapTable("load");
+                            }
+                        },
+                        error: function () {
+                            alert("修改失败")
+                        }
+                    })
+                }
+            }
+            ]
+        });
     }
 
     toastr.options = {

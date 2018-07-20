@@ -24,4 +24,8 @@ public interface IMemberService {
     Member queryRememberById(String id);
 
     void delRemember(String ids);
+
+    void updateRemember(Member member);
+
+    Member queryInfo(String id);
 }

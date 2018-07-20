@@ -41,7 +41,7 @@
     <div data-options="region:'east',title:'角色管理列表'" collapsible="false" style="width: 100%">
         <div id="where">
             <a href="javascript:add()" class="btn btn-success" data-options="iconCls:'icon-add',plain:true">添加</a>
-            <a href="javascript:update()" class="btn btn-success" data-options="iconCls:'icon-edit',plain:true">修改</a>
+            <a href="javascript:update()" class="btn btn-info" data-options="iconCls:'icon-edit',plain:true">修改</a>
             <a href="javascript:remove()" class="btn btn-warning" data-options="iconCls:'icon-remove',plain:true">删除</a>
         </div>
         <table id="tabs" class="text-nowrap"></table>

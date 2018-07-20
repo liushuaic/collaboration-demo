@@ -53,13 +53,13 @@
                 <tr>
                     <td align="right"><font color="red">*</font>用户名:</td>
                     <td>
-                        <input type="text" class="form-control" name="username" value="${mr.mrname}" style="width: 100%">
+                        <input type="text" class="form-control" name="username" style="width: 100%">
                     </td>
                 </tr>
                 <tr>
                     <td align="right"><font color="red">*</font>密码:</td>
                     <td>
-                        <input type="password" id="pwd2" class="form-control" name="password" value="${mr.mrname}" style="width: 100%">
+                        <input type="password" id="pwd2" class="form-control" name="password" style="width: 100%">
                     </td>
                 </tr>
                 <tr>

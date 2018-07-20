@@ -76,4 +76,14 @@ public class MemberServiceImpl implements IMemberService{
     public void delRemember(String ids) {
         mapper.delRemember(ids);
     }
+
+    @Override
+    public void updateRemember(Member member) {
+        mapper.updateRemember(member);
+    }
+
+    @Override
+    public Member queryInfo(String id) {
+        return mapper.queryInfo(id);
+    }
 }
