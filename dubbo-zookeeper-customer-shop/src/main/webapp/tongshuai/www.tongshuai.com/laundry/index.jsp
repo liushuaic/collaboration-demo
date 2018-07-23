@@ -48,7 +48,29 @@
         .displayFilter{color: #ccc;cursor: default;}
     </style>
 </head>
+<script type="text/javascript" src="../../../EasyUI/jquery.min.js"></script>
+<script>
+    $(function () {
+        $("#logoutDiv").show();
+        $("#loginDiv").hide();
+        if('${loginAdmin.username}'.length>0){
+            $("#logoutDiv").hide();
+            $("#loginDiv").show();
+        }
+    })
 
+    function outLogin(){
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zhjController/loginOut.jhtml",
+            type:"post",
+            success:function(data){
+                if(data==1){
+                    location.href="";
+                }
+            }
+        })
+    }
+</script>
 <body>
 <div class="o_body">
     <div class="o_main">
@@ -95,18 +117,18 @@
                 </li>
                 <li class="nav-column js_column" column='1'>
 
-                    <a href="../life/index.htm" tppabs="http://www.tongshuai.com/life/">
+                    <a href="../life/index.jsp" tppabs="http://www.tongshuai.com/life/">
                         <div class="nav-column-box2"></div>
                         <img src="../../image.tongshuai.com/tongshuai/images/nav-life.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-life.gif" class="o_lg-hide" />
                     </a>
                 </li>
                 <li class="nav-column js_column" column='2'>
-                    <a href="../member/index.htm" tppabs="http://www.tongshuai.com/member/">
+                    <a href="../member/index.jsp" tppabs="http://www.tongshuai.com/member/">
                         <div class="nav-column-box3"></div>
                     </a>
                 </li>
                 <li class="nav-column js_column" column='3'>
-                    <a href="../service/index.htm" tppabs="http://www.tongshuai.com/service/">
+                    <a href="../service/index.jsp" tppabs="http://www.tongshuai.com/service/">
                         <div class="nav-column-box4"></div>
                     </a>
                 </li>
@@ -128,30 +150,32 @@
                         </ul>
                     </div>
                 </div>
-                <div class="nav-user" id="header_logoutDiv">
-                    <a class="login" id="header_login">登录</a>
+                <div class="nav-user" id="logoutDiv">
+                    <a class="login" href="../../user.tongshuai.com/login.jsp">登录</a>
                     <span class="line"></span>
                     <a class="login" id="header_reg">注册</a>
-                    <a class="nav-chart" href="../cart/index.htm" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
+                    <a class="nav-chart" href="../cart/index.jsp" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
                 </div>
-                <div class="nav-user o_df-hide" id="header_loginDiv">
+                <div class="nav-user" id="loginDiv">
                     <div class="login nav-zindex1">
                         <span class="o_df-hide js_userNews"></span>
+                        <font color="#228b22">${loginAdmin.username}</font>
                         <i class="iconfont icon-arrow-sanjiao-down-s nav-userdown"></i>
                         <i class="iconfont icon-arrow-sanjiao-up-s nav-userup"></i>
+
                         <ul class="nav-user-column">
-                            <li><a href="javascript:if(confirm('http://user.tongshuai.com/user/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/user/'" tppabs="http://user.tongshuai.com/user/">个人中心</a></li>
-                            <li><a href="javascript:if(confirm('http://user.tongshuai.com/message/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/message/'" tppabs="http://user.tongshuai.com/message/">消息<i class="point o_df-hide js_userNews"></i></a></li>
-                            <li><a href="javascript:if(confirm('http://user.tongshuai.com/order/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/order/'" tppabs="http://user.tongshuai.com/order/" target="_blank">我的订单</a></li>
+                            <li><a href="http://user.tongshuai.com/user/">个人中心</a></li>
+                            <li><a href="http://user.tongshuai.com/message/">消息<i class="point o_df-hide js_userNews"></i></a></li>
+                            <li><a href="http://user.tongshuai.com/order/" target="_blank">我的订单</a></li>
                             <!--<li><a href="javascript:;">我的优惠券</a></li>-->
-                            <li><a href="javascript:if(confirm('http://user.tongshuai.com/collection/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/collection/'" tppabs="http://user.tongshuai.com/collection/">关注的产品</a></li>
+                            <li><a href="http://user.tongshuai.com/collection/">关注的产品</a></li>
                             <!--<li><a href="javascript:;">我的产品</a></li>-->
                             <li class="nav-quip">
-                                <a href="javascript:;" id="header_logout">退出登录</a>
+                                <a href="javascript:outLogin();" id="header_logout">退出登录</a>
                             </li>
                         </ul>
                     </div>
-                    <a class="nav-chart" href="../cart/index.htm" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
+                    <a class="nav-chart" href="../cart/index.jsp" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
                 </div>
             </div>
             <!-- 用户信息栏 sf/xl分辨率 END -->
@@ -186,7 +210,7 @@
                         <!-- 已登录展示 END -->
                     </li>
                     <li>
-                        <a class="js_nav-chart2" href="../cart/index.htm" tppabs="http://www.tongshuai.com/cart/">
+                        <a class="js_nav-chart2" href="../cart/index.jsp" tppabs="http://www.tongshuai.com/cart/">
                             <i class="iconfont icon-shoppingcart"></i>
                             <!--<sub></sub>-->
                         </a>
@@ -214,7 +238,7 @@
                         <ul class="nav-mdbox-second js_navMdboxSecond">
 
                             <li>
-                                <a href="../televisions/index.htm" tppabs="http://www.tongshuai.com/televisions/">
+                                <a href="../televisions/index.jsp" tppabs="http://www.tongshuai.com/televisions/">
                                     <div class="nav-mdbox-icon">
                                         <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675979764712.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675979764712.png" alt="" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                                     </div>
@@ -223,7 +247,7 @@
                             </li>
 
                             <li>
-                                <a href="index.htm" tppabs="http://www.tongshuai.com/laundry/">
+                                <a href="index.jsp" tppabs="http://www.tongshuai.com/laundry/">
                                     <div class="nav-mdbox-icon">
                                         <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674326261761.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674326261761.png" alt="" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                                     </div>
@@ -232,7 +256,7 @@
                             </li>
 
                             <li>
-                                <a href="../air_conditioners/index.htm" tppabs="http://www.tongshuai.com/air_conditioners/">
+                                <a href="../air_conditioners/index.jsp" tppabs="http://www.tongshuai.com/air_conditioners/">
                                     <div class="nav-mdbox-icon">
                                         <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675048942901.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675048942901.png" alt="" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                                     </div>
@@ -241,7 +265,7 @@
                             </li>
 
                             <li>
-                                <a href="../cooling/index.htm" tppabs="http://www.tongshuai.com/cooling/">
+                                <a href="../cooling/index.jsp" tppabs="http://www.tongshuai.com/cooling/">
                                     <div class="nav-mdbox-icon">
                                         <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223673848410014.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223673848410014.png" alt="" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                                     </div>
@@ -250,7 +274,7 @@
                             </li>
 
                             <li>
-                                <a href="../freezer/index.htm" tppabs="http://www.tongshuai.com/freezer/">
+                                <a href="../freezer/index.jsp" tppabs="http://www.tongshuai.com/freezer/">
                                     <div class="nav-mdbox-icon">
                                         <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" alt="" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                                     </div>
@@ -259,7 +283,7 @@
                             </li>
 
                             <li>
-                                <a href="../water_heater/index.htm" tppabs="http://www.tongshuai.com/water_heater/">
+                                <a href="../water_heater/index.jsp" tppabs="http://www.tongshuai.com/water_heater/">
                                     <div class="nav-mdbox-icon">
                                         <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" alt="" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                                     </div>
@@ -268,7 +292,7 @@
                             </li>
 
                             <li>
-                                <a href="../cooking_appliances/index.htm" tppabs="http://www.tongshuai.com/cooking_appliances/">
+                                <a href="../cooking_appliances/index.jsp" tppabs="http://www.tongshuai.com/cooking_appliances/">
                                     <div class="nav-mdbox-icon">
                                         <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675683634339.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675683634339.png" alt="" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                                     </div>
@@ -278,9 +302,9 @@
 
                         </ul>
                     </li>
-                    <li><a href="../life/index.htm" tppabs="http://www.tongshuai.com/life/">悠生活<i class="iconfont icon-arrow-line-right"></i></a></li>
-                    <li><a href="../member/index.htm" tppabs="http://www.tongshuai.com/member/">会员<i class="iconfont icon-arrow-line-right"></i></a></li>
-                    <li><a href="../service/index.htm" tppabs="http://www.tongshuai.com/service/">服务<i class="iconfont icon-arrow-line-right"></i></a></li>
+                    <li><a href="../life/index.jsp" tppabs="http://www.tongshuai.com/life/">悠生活<i class="iconfont icon-arrow-line-right"></i></a></li>
+                    <li><a href="../member/index.jsp" tppabs="http://www.tongshuai.com/member/">会员<i class="iconfont icon-arrow-line-right"></i></a></li>
+                    <li><a href="../service/index.jsp" tppabs="http://www.tongshuai.com/service/">服务<i class="iconfont icon-arrow-line-right"></i></a></li>
                 </ul>
             </div>
             <!-- 导航 md End -->
@@ -305,8 +329,8 @@
                         <span>快速链接：</span>
                         <a href="../service/installation_and_maintenance/index.htm" tppabs="http://www.tongshuai.com/service/installation_and_maintenance">在线报修</a>
                         <!--<a href="http://user.tongshuai.com/product_registe">产品注册</a>-->
-                        <a href="../service/help/index.htm" tppabs="http://www.tongshuai.com/service/help">帮助中心</a>
-                        <a href="../contact/index.htm" tppabs="http://www.tongshuai.com/contact">联系我们</a>
+                        <a href="../service/help/index.jsp" tppabs="http://www.tongshuai.com/service/help">帮助中心</a>
+                        <a href="../contact/index.jsp" tppabs="http://www.tongshuai.com/contact">联系我们</a>
                     </div>
                     <ul class="searchresult-result js_searchBox js_searchBox_lg js_searchBox_list_lg">
                         <!--
@@ -326,7 +350,7 @@
             <ul class="o_u o_df_2-2 nav-second o_df-center js_column_show">
 
                 <li class="second-column o_df-center">
-                    <a href="../televisions/index.htm" tppabs="http://www.tongshuai.com/televisions/">
+                    <a href="../televisions/index.jsp" tppabs="http://www.tongshuai.com/televisions/">
                         <div class="second-column-i">
                             <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675979764712.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675979764712.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
@@ -335,7 +359,7 @@
                 </li>
 
                 <li class="second-column o_df-center">
-                    <a href="index.htm" tppabs="http://www.tongshuai.com/laundry/">
+                    <a href="index.jsp" tppabs="http://www.tongshuai.com/laundry/">
                         <div class="second-column-i">
                             <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674326261761.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674326261761.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
@@ -344,7 +368,7 @@
                 </li>
 
                 <li class="second-column o_df-center">
-                    <a href="../air_conditioners/index.htm" tppabs="http://www.tongshuai.com/air_conditioners/">
+                    <a href="../air_conditioners/index.jsp" tppabs="http://www.tongshuai.com/air_conditioners/">
                         <div class="second-column-i">
                             <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675048942901.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675048942901.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
@@ -353,7 +377,7 @@
                 </li>
 
                 <li class="second-column o_df-center">
-                    <a href="../cooling/index.htm" tppabs="http://www.tongshuai.com/cooling/">
+                    <a href="../cooling/index.jsp" tppabs="http://www.tongshuai.com/cooling/">
                         <div class="second-column-i">
                             <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223673848410014.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223673848410014.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
@@ -362,7 +386,7 @@
                 </li>
 
                 <li class="second-column o_df-center">
-                    <a href="../freezer/index.htm" tppabs="http://www.tongshuai.com/freezer/">
+                    <a href="../freezer/index.jsp" tppabs="http://www.tongshuai.com/freezer/">
                         <div class="second-column-i">
                             <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
@@ -371,7 +395,7 @@
                 </li>
 
                 <li class="second-column o_df-center">
-                    <a href="../water_heater/index.htm" tppabs="http://www.tongshuai.com/water_heater/">
+                    <a href="../water_heater/index.jsp" tppabs="http://www.tongshuai.com/water_heater/">
                         <div class="second-column-i">
                             <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
@@ -380,7 +404,7 @@
                 </li>
 
                 <li class="second-column o_df-center">
-                    <a href="../cooking_appliances/index.htm" tppabs="http://www.tongshuai.com/cooking_appliances/">
+                    <a href="../cooking_appliances/index.jsp" tppabs="http://www.tongshuai.com/cooking_appliances/">
                         <div class="second-column-i">
                             <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675683634339.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675683634339.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
@@ -503,49 +527,49 @@
 
 
                             <li>
-                                <a href="../televisions/index.htm" tppabs="http://www.tongshuai.com/televisions/">
+                                <a href="../televisions/index.jsp" tppabs="http://www.tongshuai.com/televisions/">
                                     <img src="../televisions/images/P020170925572468483553.png" tppabs="http://www.tongshuai.com/televisions/images/P020170925572468483553.png"/>
                                     <span>电视</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="index.htm" tppabs="http://www.tongshuai.com/laundry/">
+                                <a href="index.jsp" tppabs="http://www.tongshuai.com/laundry/">
                                     <img src="images/P020170925571955730312.png" tppabs="http://www.tongshuai.com/laundry/images/P020170925571955730312.png"/>
                                     <span>洗衣机</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="../air_conditioners/index.htm" tppabs="http://www.tongshuai.com/air_conditioners/">
+                                <a href="../air_conditioners/index.jsp" tppabs="http://www.tongshuai.com/air_conditioners/">
                                     <img src="../air_conditioners/images/P020170925572252727655.png" tppabs="http://www.tongshuai.com/air_conditioners/images/P020170925572252727655.png"/>
                                     <span>空调</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="../cooling/index.htm" tppabs="http://www.tongshuai.com/cooling/">
+                                <a href="../cooling/index.jsp" tppabs="http://www.tongshuai.com/cooling/">
                                     <img src="../cooling/images/P020170925571335610145.png" tppabs="http://www.tongshuai.com/cooling/images/P020170925571335610145.png"/>
                                     <span>冰箱</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="../freezer/index.htm" tppabs="http://www.tongshuai.com/freezer/">
+                                <a href="../freezer/index.jsp" tppabs="http://www.tongshuai.com/freezer/">
                                     <img src="../freezer/images/P020171101586087833174.png" tppabs="http://www.tongshuai.com/freezer/images/P020171101586087833174.png"/>
                                     <span>冷柜</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="../water_heater/index.htm" tppabs="http://www.tongshuai.com/water_heater/">
+                                <a href="../water_heater/index.jsp" tppabs="http://www.tongshuai.com/water_heater/">
                                     <img src="../water_heater/images/P020170925572321617383.png" tppabs="http://www.tongshuai.com/water_heater/images/P020170925572321617383.png"/>
                                     <span>热水器</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="../cooking_appliances/index.htm" tppabs="http://www.tongshuai.com/cooking_appliances/">
+                                <a href="../cooking_appliances/index.jsp" tppabs="http://www.tongshuai.com/cooking_appliances/">
                                     <img src="../cooking_appliances/images/P020170925572388955321.png" tppabs="http://www.tongshuai.com/cooking_appliances/images/P020170925572388955321.png"/>
                                     <span>厨电</span>
                                 </a>
@@ -1127,9 +1151,9 @@
                             <a class="iconfont js_footmenuShow icon-plus o_df-hide o_sm-show o_xs-show"></a>
                         </div>
                         <div class="foot_linkbox js_footLink">
-                            <a class="foot_link" href="../life/index.htm" tppabs="http://www.tongshuai.com/life/">悠生活</a>
-                            <a class="foot_link" href="../about/brand/index.htm" tppabs="http://www.tongshuai.com/about/brand/">关于统帅</a>
-                            <a class="foot_link" href="../about/news/index.htm" tppabs="http://www.tongshuai.com/about/news/">新闻资讯</a>
+                            <a class="foot_link" href="../life/index.jsp" tppabs="http://www.tongshuai.com/life/">悠生活</a>
+                            <a class="foot_link" href="../about/brand/index.jsp" tppabs="http://www.tongshuai.com/about/brand/">关于统帅</a>
+                            <a class="foot_link" href="../about/news/index.jsp" tppabs="http://www.tongshuai.com/about/news/">新闻资讯</a>
                             <!--  <a class="foot_link">联系我们</a> -->
                         </div>
                     </div>
@@ -1141,19 +1165,19 @@
                         </div>
                         <div class="foot_linkbox js_footLink">
 
-                            <a class="foot_link" href="../televisions/index.htm" tppabs="http://www.tongshuai.com/televisions/">电视</a>
+                            <a class="foot_link" href="../televisions/index.jsp" tppabs="http://www.tongshuai.com/televisions/">电视</a>
 
-                            <a class="foot_link" href="index.htm" tppabs="http://www.tongshuai.com/laundry/">洗衣机</a>
+                            <a class="foot_link" href="index.jsp" tppabs="http://www.tongshuai.com/laundry/">洗衣机</a>
 
-                            <a class="foot_link" href="../air_conditioners/index.htm" tppabs="http://www.tongshuai.com/air_conditioners/">空调</a>
+                            <a class="foot_link" href="../air_conditioners/index.jsp" tppabs="http://www.tongshuai.com/air_conditioners/">空调</a>
 
-                            <a class="foot_link" href="../cooling/index.htm" tppabs="http://www.tongshuai.com/cooling/">冰箱</a>
+                            <a class="foot_link" href="../cooling/index.jsp" tppabs="http://www.tongshuai.com/cooling/">冰箱</a>
 
-                            <a class="foot_link" href="../freezer/index.htm" tppabs="http://www.tongshuai.com/freezer/">冷柜</a>
+                            <a class="foot_link" href="../freezer/index.jsp" tppabs="http://www.tongshuai.com/freezer/">冷柜</a>
 
-                            <a class="foot_link" href="../water_heater/index.htm" tppabs="http://www.tongshuai.com/water_heater/">热水器</a>
+                            <a class="foot_link" href="../water_heater/index.jsp" tppabs="http://www.tongshuai.com/water_heater/">热水器</a>
 
-                            <a class="foot_link" href="../cooking_appliances/index.htm" tppabs="http://www.tongshuai.com/cooking_appliances/">厨电</a>
+                            <a class="foot_link" href="../cooking_appliances/index.jsp" tppabs="http://www.tongshuai.com/cooking_appliances/">厨电</a>
 
                         </div>
                     </div>
@@ -1228,16 +1252,16 @@
             </span>
                     <ul>
                         <li>
-                            <a href="../contact/index.htm" tppabs="http://www.tongshuai.com/contact/">联系我们</a>
+                            <a href="../contact/index.jsp" tppabs="http://www.tongshuai.com/contact/">联系我们</a>
                         </li>
                         <li>
-                            <a href="../service/help/index.htm" tppabs="http://www.tongshuai.com/service/help/">帮助中心</a>
+                            <a href="../service/help/index.jsp" tppabs="http://www.tongshuai.com/service/help/">帮助中心</a>
                         </li>
                         <li>
-                            <a href="../terms/index.htm" tppabs="http://www.tongshuai.com/terms/">服务条款</a>
+                            <a href="../terms/index.jsp" tppabs="http://www.tongshuai.com/terms/">服务条款</a>
                         </li>
                         <li>
-                            <a href="../terms_conditions/index.htm" tppabs="http://www.tongshuai.com/terms_conditions/">法律声明</a>
+                            <a href="../terms_conditions/index.jsp" tppabs="http://www.tongshuai.com/terms_conditions/">法律声明</a>
                         </li>
                     </ul>
                     <div class="footer_middle_copy">

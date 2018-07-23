@@ -128,9 +128,10 @@ public class ZhjController {
     }
 
     @RequestMapping("loginOut")
+    @ResponseBody
     public  String loginOut(HttpServletRequest request){
         request.getSession().removeAttribute("loginAdmin");
 
-        return "background/mihulogin";
+        return "1";
     }
 }

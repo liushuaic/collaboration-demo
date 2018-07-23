@@ -78,7 +78,7 @@
                     购物车
                 </div>
                 <span class="trolley-username js_userName">
-                        <!-- 胖大海 -->
+                         <%--胖大海 --%>
                     </span>
             </div>
         </div>
@@ -130,12 +130,12 @@
         <!-- 商品列表-表头 END -->
 
         <!-- 购物车无商品 -->
-        <div class="o_g empty-trolley-pro-list">
+       <%-- <div class="o_g empty-trolley-pro-list">
             <img src="../../image.tongshuai.com/tongshuai/images/share_nothing.png" tppabs="http://image.tongshuai.com/tongshuai/images/share_nothing.png" alt="" />
             <p>还没有任何商品，快去挑选吧</p>
             <div>
             </div>
-        </div>
+        </div>--%>
 
         <!-- 商品列表 -->
         <div class="o_g">
@@ -146,7 +146,7 @@
                 <!-- 购物车商品列表：数据循环 END -->
 
                 <!-- 单个商品-有货 -->
-                <!-- <div class="trolley-prolist">
+               <div class="trolley-prolist">
                     <div class="o_g trolley-product">
                         <div class="o_u o_df_3-5 o_md_1-2 o_xs_2-2">
                             <div class="l-checkbox trolley-product-check">
@@ -189,10 +189,10 @@
                             <a href="javascript:;" class="trolley-price-edit js_edit" data-oppo='edit'>编辑</a>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <!-- 单个商品-有货 END -->
                 <!-- 单个商品-无货 -->
-                <!-- <div class="trolley-prolist trolley-pro-none">
+               <%-- <div class="trolley-prolist trolley-pro-none">
                     <div class="o_g trolley-product">
                         <div class="o_u o_df_3-5 o_md_1-2">
                             <div class="trolley-product-uncheck">
@@ -227,14 +227,14 @@
                             <a href="javascript:;" class="trolley-price-delete">删除</a>
                         </div>
                     </div>
-                </div> -->
+                </div>--%>
                 <!-- 单个商品-无货 END -->
 
             </div>
         </div>
         <!-- 商品列表 END -->
 
-        <div class="trolley-footer-position">
+
             <!-- 购物车底部 -->
             <div class="o_g trolley-footer l-none js-trolley-footer">
                 <div class="o_u o_df_1-12"></div>
@@ -246,7 +246,7 @@
                 <div class="o_u o_df_3-12 o_lg_1-2 o_md_1-2 o_sm_5-12 o_xs_5-12">
                     <div class="trolley-footer-total">
                         <div class="footer-total-num o_sm-hide o_xs-hide">
-                            共<span>6</span>件商品，已选择<span>0</span>件
+                            共<span> 1 </span>件商品，已选择<span>0</span>件
                         </div>
                         <div class="footer-total-price">
                             <span>合计：</span>￥0
@@ -260,7 +260,7 @@
                 </div>
             </div>
             <!-- 购物车底部 END -->
-
+        <div class="trolley-footer-position">
             <div class="o_g footer">
                 <div class="line-red"></div>
                 <div class="line"></div>
@@ -274,9 +274,9 @@
                                 <a class="iconfont js_footmenuShow icon-plus o_df-hide o_sm-show o_xs-show"></a>
                             </div>
                             <div class="foot_linkbox js_footLink">
-                                <a class="foot_link" href="../life/index.htm" tppabs="http://www.tongshuai.com/life/">悠生活</a>
-                                <a class="foot_link" href="../about/brand/index.htm" tppabs="http://www.tongshuai.com/about/brand/">关于统帅</a>
-                                <a class="foot_link" href="../about/news/index.htm" tppabs="http://www.tongshuai.com/about/news/">新闻资讯</a>
+                                <a class="foot_link" href="../life/index.jsp" tppabs="http://www.tongshuai.com/life/">悠生活</a>
+                                <a class="foot_link" href="../about/brand/index.jsp" tppabs="http://www.tongshuai.com/about/brand/">关于统帅</a>
+                                <a class="foot_link" href="../about/news/index.jsp" tppabs="http://www.tongshuai.com/about/news/">新闻资讯</a>
                                 <!--  <a class="foot_link">联系我们</a> -->
                             </div>
                         </div>
@@ -288,19 +288,19 @@
                             </div>
                             <div class="foot_linkbox js_footLink">
 
-                                <a class="foot_link" href="../televisions/index.htm" tppabs="http://www.tongshuai.com/televisions/">电视</a>
+                                <a class="foot_link" href="../televisions/index.jsp" tppabs="http://www.tongshuai.com/televisions/">电视</a>
 
-                                <a class="foot_link" href="../laundry/index.htm" tppabs="http://www.tongshuai.com/laundry/">洗衣机</a>
+                                <a class="foot_link" href="../laundry/index.jsp" tppabs="http://www.tongshuai.com/laundry/">洗衣机</a>
 
-                                <a class="foot_link" href="../air_conditioners/index.htm" tppabs="http://www.tongshuai.com/air_conditioners/">空调</a>
+                                <a class="foot_link" href="../air_conditioners/index.jsp" tppabs="http://www.tongshuai.com/air_conditioners/">空调</a>
 
-                                <a class="foot_link" href="../cooling/index.htm" tppabs="http://www.tongshuai.com/cooling/">冰箱</a>
+                                <a class="foot_link" href="../cooling/index.jsp" tppabs="http://www.tongshuai.com/cooling/">冰箱</a>
 
-                                <a class="foot_link" href="../freezer/index.htm" tppabs="http://www.tongshuai.com/freezer/">冷柜</a>
+                                <a class="foot_link" href="../freezer/index.jsp" tppabs="http://www.tongshuai.com/freezer/">冷柜</a>
 
-                                <a class="foot_link" href="../water_heater/index.htm" tppabs="http://www.tongshuai.com/water_heater/">热水器</a>
+                                <a class="foot_link" href="../water_heater/index.jsp" tppabs="http://www.tongshuai.com/water_heater/">热水器</a>
 
-                                <a class="foot_link" href="../cooking_appliances/index.htm" tppabs="http://www.tongshuai.com/cooking_appliances/">厨电</a>
+                                <a class="foot_link" href="../cooking_appliances/index.jsp" tppabs="http://www.tongshuai.com/cooking_appliances/">厨电</a>
 
                             </div>
                         </div>
@@ -375,16 +375,16 @@
             </span>
                         <ul>
                             <li>
-                                <a href="../contact/index.htm" tppabs="http://www.tongshuai.com/contact/">联系我们</a>
+                                <a href="../contact/index.jsp" tppabs="http://www.tongshuai.com/contact/">联系我们</a>
                             </li>
                             <li>
-                                <a href="../service/help/index.htm" tppabs="http://www.tongshuai.com/service/help/">帮助中心</a>
+                                <a href="../service/help/index.jsp" tppabs="http://www.tongshuai.com/service/help/">帮助中心</a>
                             </li>
                             <li>
-                                <a href="../terms/index.htm" tppabs="http://www.tongshuai.com/terms/">服务条款</a>
+                                <a href="../terms/index.jsp" tppabs="http://www.tongshuai.com/terms/">服务条款</a>
                             </li>
                             <li>
-                                <a href="../terms_conditions/index.htm" tppabs="http://www.tongshuai.com/terms_conditions/">法律声明</a>
+                                <a href="../terms_conditions/index.jsp" tppabs="http://www.tongshuai.com/terms_conditions/">法律声明</a>
                             </li>
                         </ul>
                         <div class="footer_middle_copy">
@@ -457,7 +457,7 @@
 <script type="text/javascript" src="../../image.tongshuai.com/images/l_base.js" tppabs="http://image.tongshuai.com/images/l_base.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/templete_nav_search.js" tppabs="http://image.tongshuai.com/images/templete_nav_search.js"></script>
 <!--全局cookie start-->
-<div class="o_g footer_cookie js_footer_cookie o_df-hide">
+<%--<div class="o_g footer_cookie js_footer_cookie o_df-hide">
     <div class="bottom_cookie_text">
         <img src="../../image.tongshuai.com/tongshuai/images/cookies_pic.png" tppabs="http://image.tongshuai.com/tongshuai/images/cookies_pic.png" />
         <div class="bottom_box">
@@ -467,7 +467,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>--%>
 <script>
     $(function() {
         var cookieVal = getCookie('authorize');
