@@ -87,6 +87,20 @@ public class ZixunController {
         return map;
     }
 
+    @RequestMapping("delPl")
+    @ResponseBody
+    public Map<String ,Object> delPl(String ids){
+        Map<String ,Object> map = new HashMap<String, Object>();
+        try {
+            zixunService.delPl(ids);
+            map.put("success",true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            map.put("success",false);
+        }
+        return map;
+    }
+
     @RequestMapping("queryPinglunList")
     @ResponseBody
     public List<Review> queryPinglunList(){

@@ -65,4 +65,8 @@
     <update id="updatepl" >
         update t_review set isshow = #{isshow,jdbcType=VARCHAR} where reviewid = #{reviewid}
     </update>
+
+    <delete id="delPl">
+        delete from t_review where reviewid = (${ids})
+    </delete>
 </mapper>

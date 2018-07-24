@@ -136,8 +136,10 @@
           #{loginip,jdbcType=VARCHAR}
           )
     </insert>
+
     <update id="updateRemember">
         update T_Member set
+         username = #{username,jdbcType=VARCHAR},
          password = #{password,jdbcType=VARCHAR},
          email = #{email,jdbcType=VARCHAR},
          point = point + #{point,jdbcType=INTEGER},

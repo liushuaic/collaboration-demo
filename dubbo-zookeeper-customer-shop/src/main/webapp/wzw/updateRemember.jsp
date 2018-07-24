@@ -703,6 +703,12 @@
         $("#dldaddtecityName").val(sheng+shi+xaing);
         dldaddzuzhijigou();
     })
+    $("#birth").datetimepicker({
+        format:"yyyy-mm-dd",//显示格式
+        language: 'zh-CN',//显示中文
+        autoclose: true,//选中自动关闭
+        todayBtn: true,//显示今日按钮
+    })
 </script>
 </body>
 </html>

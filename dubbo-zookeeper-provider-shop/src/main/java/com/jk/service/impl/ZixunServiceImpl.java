@@ -69,4 +69,9 @@ public class ZixunServiceImpl implements IZixunService{
     public void updatepl(Review review) {
         zixunMapper.updatepl(review);
     }
+
+    @Override
+    public void delPl(String ids) {
+        zixunMapper.delPl(ids);
+    }
 }

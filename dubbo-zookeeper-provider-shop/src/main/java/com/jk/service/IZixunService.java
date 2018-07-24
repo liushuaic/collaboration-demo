@@ -31,4 +31,6 @@ public interface IZixunService {
     Review queryPlInfoById(String id);
 
     void updatepl(Review review);
+
+    void delPl(String ids);
 }
