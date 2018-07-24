@@ -175,10 +175,10 @@ $().ready(function() {
 							<a href="../cfyjsp/article/queryArticle.jsp" target="iframe">文章管理</a>
 						</dd>
 						<dd>
-							<a href="../article_category/list.jhtml" target="iframe">文章分类</a>
+							<a href="../cfyjsp/articleCategory/articleCategory.jsp" target="iframe">文章分类</a>
 						</dd>
 						<dd>
-							<a href="../tag/list.jhtml" target="iframe">标签管理</a>
+							<a href="../cfyjsp/label/queryLabel.jsp" target="iframe">标签管理</a>
 						</dd>
 						<dd>
 							<a href="../friend_link/list.jhtml" target="iframe">友情链接</a>
