@@ -100,18 +100,18 @@
                 </li>
                 <li class="nav-column js_column" column='1'>
 
-                    <a href="../life/index.htm" tppabs="http://www.tongshuai.com/life/">
+                    <a href="../life/index.jsp" tppabs="http://www.tongshuai.com/life/">
                         <div class="nav-column-box2"></div>
                         <img src="../../image.tongshuai.com/tongshuai/images/nav-life.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-life.gif" class="o_lg-hide" />
                     </a>
                 </li>
                 <li class="nav-column js_column" column='2'>
-                    <a href="../member/index.htm" tppabs="http://www.tongshuai.com/member/">
+                    <a href="../member/index.jsp" tppabs="http://www.tongshuai.com/member/">
                         <div class="nav-column-box3"></div>
                     </a>
                 </li>
                 <li class="nav-column js_column" column='3'>
-                    <a href="../service/index.htm" tppabs="http://www.tongshuai.com/service/">
+                    <a href="../service/index.jsp" tppabs="http://www.tongshuai.com/service/">
                         <div class="nav-column-box4"></div>
                     </a>
                 </li>

@@ -327,7 +327,7 @@
                 <div class="o_u o_df_8-12 o_xs_10-12 js_searchBox_root">
                     <div class="searchresult-quick js_searchBoxQuick_lg">
                         <span>快速链接：</span>
-                        <a href="../service/installation_and_maintenance/index.<%@attribute name="" type="" required=""%>" tppabs="http://www.tongshuai.com/service/installation_and_maintenance">在线报修</a>
+                        <a href="../service/installation_and_maintenance/index.jsp" tppabs="http://www.tongshuai.com/service/installation_and_maintenance">在线报修</a>
                         <!--<a href="http://user.tongshuai.com/product_registe">产品注册</a>-->
                         <a href="../service/help/index.jsp" tppabs="http://www.tongshuai.com/service/help">帮助中心</a>
                         <a href="../contact/index.jsp" tppabs="http://www.tongshuai.com/contact">联系我们</a>
@@ -743,7 +743,7 @@
                                    data-type="BC/BD-200LFC"
                                    data-chnid="95">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -799,7 +799,7 @@
                                    data-type="FCD-180XLFC"
                                    data-chnid="95">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -855,7 +855,7 @@
                                    data-type="BC/BD-100LFC"
                                    data-chnid="95">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -911,7 +911,7 @@
                                    data-type="FCD-210XLFC"
                                    data-chnid="95">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -1188,11 +1188,11 @@
 			<span class="link">
                 <a href="javascript:if(confirm('https://weibo.com/u/2003689247  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://weibo.com/u/2003689247'" tppabs="https://weibo.com/u/2003689247" class="iconfont icon-share-weibo" target="_blank"></a>
 				<a href="javascript:;"  class="iconfont icon-share-weixin">
-					<div class="l-float-top js_footImgLazy">
-						<img lazy-src="../images/tongshuai_weixin.jpg" tppabs="http://www.tongshuai.com/images/tongshuai_weixin.jpg" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
+                    <div class="l-float-top js_footImgLazy">
+                        <img lazy-src="../images/tongshuai_weixin.jpg" tppabs="http://www.tongshuai.com/images/tongshuai_weixin.jpg" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         <p></p><i></i>
                     </div>
-				</a>
+                </a>
             </span>
                     <ul>
                         <li>
