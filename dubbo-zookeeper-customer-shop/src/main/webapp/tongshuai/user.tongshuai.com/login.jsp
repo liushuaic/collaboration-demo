@@ -117,7 +117,7 @@
                                         </div>
                                         <div class="l-input login-input">
                                             <input type="text" name="password" ph="动态密码" id="mobileCode" maxlength="6"/>
-                                            <a href="javascript:;" class="l-btn-sm l-btn-red l-btn-disable"
+                                            <a href="javascript:1;" class="l-btn-sm l-btn-red l-btn-disable"
                                                id="sendCodeBtn">发送动态密码</a>
                                             <p class="Validform_checktip" id="mobileCode_error"></p>
                                         </div>
