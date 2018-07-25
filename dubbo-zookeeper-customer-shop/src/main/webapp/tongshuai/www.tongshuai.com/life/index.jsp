@@ -142,8 +142,9 @@
                 <div class="nav-user" id="logoutDiv">
                     <a class="login" href="../../user.tongshuai.com/login.jsp">登录</a>
                     <span class="line"></span>
-                    <a class="login" id="header_reg">注册</a>
-                    <a class="nav-chart" href="../cart/index.jsp" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
+
+                    <a class="login" href="../../user.tongshuai.com/reg.jsp">注册</a>
+                    <a class="nav-chart" href="../tongshuai/user.tongshuai.com/reg.jsp" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
                 </div>
                 <div class="nav-user" id="loginDiv">
                     <div class="login nav-zindex1">
@@ -1391,8 +1392,15 @@
     });
 
 </script>
-<script type="text/javascript" src="../../image.tongshuai.com/tongshuai/images/life_style.js" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.js"></script>
+<script type="text/javascript" src="../../image.tongshuai.com/tongshuai/images/life_style.js" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.js">
 
+function chuce() {
+    location.href="<%=request.getContextPath()%>/tongshuai/user.tongshuai.com/reg.jsp";
+}
+$("#header").click(function(){
+    alert(22);
+})
+</script>
 </body>
 
 </html>

@@ -38,4 +38,5 @@
 	<dubbo:service interface="com.jk.service.IZixunService" ref="zixunService" timeout="60000"></dubbo:service>
 	<dubbo:service interface="com.jk.service.ICouponService" ref="couponService" timeout="60000"></dubbo:service>
 	<dubbo:service interface="com.jk.service.ITelevisionService" ref="televisionService" timeout="60000"></dubbo:service>
+	<dubbo:service interface="com.jk.service.IAddressService" ref="addressService" timeout="60000"></dubbo:service>
 </beans>
