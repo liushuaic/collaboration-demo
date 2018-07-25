@@ -143,7 +143,7 @@
                     <a class="login" href="../../user.tongshuai.com/login.jsp">登录</a>
                     <span class="line"></span>
 
-                    <a class="login" href="../../user.tongshuai.com/reg.jsp">注册</a>
+                    <a class="login" href="<%=request.getContextPath()%>/tongshuai/user.tongshuai.com/reg.jsp">注册</a>
                     <a class="nav-chart" href="../tongshuai/user.tongshuai.com/reg.jsp" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
                 </div>
                 <div class="nav-user" id="loginDiv">
