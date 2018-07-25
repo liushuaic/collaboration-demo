@@ -8,8 +8,6 @@ import com.jk.model.Admin;
 import com.jk.model.Order;
 import com.jk.model.User;
 import com.jk.service.ILsService;
-import com.jk.util.ConsConf;
-import com.jk.util.MD5utlis;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -157,38 +155,7 @@ public class LsController {
 
 
 
-   /*
-    @RequestMapping("message")
-    @ResponseBody
-    public void message(String phone,HttpServletRequest request) {
-        HashMap<String, Object> params = new HashMap<String,Object>();
-        Random random = new Random();
-        int nextInt = random.nextInt(999999);
-        request.getSession().setAttribute("message", nextInt);
-        SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
-        String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
-        String accountSid = ConsConf.ACCOUNT_SID;
-        String authToken = ConsConf.AUTH_TOKEN;
-        String md5Sig = accountSid+authToken+date;
-        String sig = MD5utlis.getPwd(md5Sig);
-        params.put("accountSid", ConsConf.ACCOUNT_SID);
-        params.put("smsContent", "【HOPE】您的验证码为:：{"+nextInt+"}，请于2分钟内正确输入，如非本人操作，请忽略此短信。");
-        params.put("to", phone);
-        params.put("timestamp", date);
-        params.put("sig", sig);
-        params.put("respDataType", "JSON");
-        String post = HttpClientUtil.post(ConsConf.REST_URL, params);
 
-        JSONObject parse = (JSONObject) JSON.parse(post);
-
-        String respCode = parse.get("respCode").toString();
-
-        Integer parseInt = Integer.parseInt(respCode);
-
-        redisTemplate.opsForList().leftPush(phone+"message",""+nextInt+"");
-        redisTemplate.expire(phone+"message", 2, TimeUnit.MINUTES);
-    }
-*/
 
 
 
