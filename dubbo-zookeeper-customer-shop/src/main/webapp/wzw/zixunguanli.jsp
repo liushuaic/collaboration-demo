@@ -143,50 +143,6 @@
     function shuaxin() {
         $("#back-tabs").bootstrapTable('refresh');
     }
-    function back(id){
-        BootstrapDialog.show({
-            type: BootstrapDialog.TYPE_SUCCESS,
-            title: "回复",
-            message:$("<div></div>").load("<%=request.getContextPath()%>/zixun/toBack.jhtml?id="+id),
-            //size : BootstrapDialog.SIZE_SMALL,//size为小，默认的对话框比较宽
-            buttons: [{// 设置关闭按钮
-                label: '关闭',
-                action: function (dialogItself) {
-                    dialogItself.close();
-                },
-            }, {
-                label: '保存',
-                action: function (dialogItself) {
-                    $("#back-from").form('submit',{
-                        url: "<%=request.getContextPath()%>/zixun/BackInfo.jhtml",
-                        type: "post",
-                        dataType: "text",
-                        async: false,
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        success: function (data) {
-                            data = eval("("+data+")");
-                            if (data.success) {
-                                toastr.success("修改数据成功");
-                                dialogItself.close();
-                                $("#back-tabs").bootstrapTable('refresh');
-                            } else {
-                                toastr.error("修改数据失败");
-                                dialogItself.close();
-                                // location.reload();
-                                $("#back-tabs").bootstrapTable('refresh');
-                            }
-                        },
-                        error: function () {
-                            alert("修改失败")
-                        }
-                    })
-                }
-            }
-            ]
-        });
-    }
     function remove(id) {
         var ids = "";
         if (id != null && id != "") {

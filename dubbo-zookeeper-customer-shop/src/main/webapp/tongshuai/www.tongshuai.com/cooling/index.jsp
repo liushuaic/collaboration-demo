@@ -178,55 +178,6 @@
                     <a class="nav-chart" href="../cart/index.jsp" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
                 </div>
             </div>
-            <!-- 用户信息栏 sf/xl分辨率 END -->
-            <!-- 用户信息栏 lg分辨率 -->
-            <div class="o_u o_df_5-12 o_xs_1-12 o_df-hide o_md-show o_sm-show o_xs-show js_navSearchLgHide js_ignore"></div>
-            <div class="o_u o_df_3-12 o_md_5-12 o_sm_5-12 o_xs_8-12 o_df-hide o_lg-show o_md-show o_sm-show o_xs-show js_navSearchLgHide">
-                <ul class="nav-search-lg">
-                    <li>
-                        <!-- 未登录展示 -->
-                        <a href="javascript:;" id="header_logoutA">
-                            <i class="iconfont icon-member"></i>
-                            <!--<span></span>-->
-                        </a>
-                        <!-- 未登录展示 END -->
-
-                        <!-- 已登录展示 -->
-                        <div class="user-headimg o_df-hide" id="header_loginDiv2">
-                            <img src="" class="user-img js_userMsgXs" />
-                            <span class="o_df-hide js_userNews"></span>
-                            <ul class="nav-user-column">
-                                <li><a href="javascript:if(confirm('http://user.tongshuai.com/user/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/user/'" tppabs="http://user.tongshuai.com/user/">个人中心</a></li>
-                                <li><a href="javascript:if(confirm('http://user.tongshuai.com/message/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/message/'" tppabs="http://user.tongshuai.com/message/">消息<i class="point o_df-hide js_userNews"></i></a></li>
-                                <li><a href="javascript:if(confirm('http://user.tongshuai.com/order/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/order/'" tppabs="http://user.tongshuai.com/order/" target="_blank">我的订单</a></li>
-                                <!--<li><a href="javascript:;">我的优惠券</a></li>-->
-                                <li><a href="javascript:if(confirm('http://user.tongshuai.com/collection/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/collection/'" tppabs="http://user.tongshuai.com/collection/">关注的产品</a></li>
-                                <!--<li><a href="javascript:;">我的产品</a></li>-->
-                                <li class="nav-quip">
-                                    <a href="javascript:;" id="header_logout2">退出登录</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- 已登录展示 END -->
-                    </li>
-                    <li>
-                        <a class="js_nav-chart2" href="../cart/index.jsp" tppabs="http://www.tongshuai.com/cart/">
-                            <i class="iconfont icon-shoppingcart"></i>
-                            <!--<sub></sub>-->
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="js_search_lg">
-                            <i class="iconfont icon-search"></i>
-                        </a>
-                    </li>
-                    <li class="o_df-hide o_md-show o_sm-show o_xs-show">
-                        <a href="javascript:;">
-                            <i class="iconfont icon-menu js_menuShow"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
             <!-- 用户信息栏 lg分辨率 END -->
             <!-- 导航 md -->
             <div class="o_u o_df_2-2 nav-md js_navMdShow">
@@ -329,7 +280,7 @@
                         <span>快速链接：</span>
                         <a href="../service/installation_and_maintenance/index.htm" tppabs="http://www.tongshuai.com/service/installation_and_maintenance">在线报修</a>
                         <!--<a href="http://user.tongshuai.com/product_registe">产品注册</a>-->
-                        <a href="../service/help/index.<%@attribute name="" type="" required=""%>" tppabs="http://www.tongshuai.com/service/help">帮助中心</a>
+                        <a href="../service/help/index.jsp" tppabs="http://www.tongshuai.com/service/help">帮助中心</a>
                         <a href="../contact/index.jsp" tppabs="http://www.tongshuai.com/contact">联系我们</a>
                     </div>
                     <ul class="searchresult-result js_searchBox js_searchBox_lg js_searchBox_list_lg">
@@ -743,7 +694,7 @@
                                    data-type="BCD-415WLDCXU1"
                                    data-chnid="72">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -799,7 +750,7 @@
                                    data-type="BCD-415WLDCT"
                                    data-chnid="72">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -855,7 +806,7 @@
                                    data-type="BCD-480WLDCD"
                                    data-chnid="72">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -911,7 +862,7 @@
                                    data-type="BCD-480WLDCYU1"
                                    data-chnid="72">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -967,7 +918,7 @@
                                    data-type="BCD-480WLDCP"
                                    data-chnid="72">
                                     <span class="pro-read-font">对比</span>
-                                    <span class="pro-read-i">
+                                        <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
                                 </a>
@@ -1244,11 +1195,11 @@
 			<span class="link">
                 <a href="javascript:if(confirm('https://weibo.com/u/2003689247  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://weibo.com/u/2003689247'" tppabs="https://weibo.com/u/2003689247" class="iconfont icon-share-weibo" target="_blank"></a>
 				<a href="javascript:;"  class="iconfont icon-share-weixin">
-					<div class="l-float-top js_footImgLazy">
-						<img lazy-src="../images/tongshuai_weixin.jpg" tppabs="http://www.tongshuai.com/images/tongshuai_weixin.jpg" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
+                    <div class="l-float-top js_footImgLazy">
+                        <img lazy-src="../images/tongshuai_weixin.jpg" tppabs="http://www.tongshuai.com/images/tongshuai_weixin.jpg" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         <p></p><i></i>
                     </div>
-				</a>
+                </a>
             </span>
                     <ul>
                         <li>
@@ -1502,7 +1453,7 @@
 <script type="text/javascript" src="../../image.tongshuai.com/tongshuai/images/query_product_price.js" tppabs="http://image.tongshuai.com/tongshuai/images/query_product_price.js"></script>
 <script>
 
-    var template_url="index.htm"/*tpa=http://www.tongshuai.com/cooling/*/
+    var template_url="index.jsp"/*tpa=http://www.tongshuai.com/cooling/*/
     var chnlid_owner ='61';
     cur();
     //var pagehtml = createPageHTMLS(1, "INDEX", "SHTML",4,7);

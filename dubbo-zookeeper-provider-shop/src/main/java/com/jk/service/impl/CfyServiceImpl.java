@@ -1,10 +1,7 @@
 package com.jk.service.impl;
 
 import com.jk.mapper.CfyMapper;
-import com.jk.model.Article;
-import com.jk.model.ArticleCategory;
-import com.jk.model.Navigation;
-import com.jk.model.Tag;
+import com.jk.model.*;
 import com.jk.service.ICfyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,5 +65,18 @@ public class CfyServiceImpl implements ICfyService {
 
     public List<Tag> queryLabel() {
         return cfyMapper.queryLabel();
+    }
+
+
+    @Override
+    public Admin queryPhone(String phone) {
+        Admin user=cfyMapper.queryPhone(phone);
+        return user;
+    }
+
+    @Override
+    public void zhucusuccess(Admin user) {
+        user.setAid(UUID.randomUUID().toString());
+        cfyMapper.zhucusuccess(user);
     }
 }

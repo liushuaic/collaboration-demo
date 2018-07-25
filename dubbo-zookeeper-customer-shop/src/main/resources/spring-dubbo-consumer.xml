@@ -36,4 +36,5 @@
 	<dubbo:reference id="couponService" interface="com.jk.service.ICouponService" timeout="60000"/>
 	<dubbo:reference id="zixunService" interface="com.jk.service.IZixunService" timeout="60000"/>
 	<dubbo:reference id="televisionService" interface="com.jk.service.ITelevisionService" timeout="160000"/>
+	<dubbo:reference id="addressService" interface="com.jk.service.IAddressService" timeout="60000"/>
 </beans>

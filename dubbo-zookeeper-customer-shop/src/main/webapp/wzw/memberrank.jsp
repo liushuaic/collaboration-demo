@@ -44,13 +44,13 @@
             <a href="javascript:update()" class="btn btn-info" data-options="iconCls:'icon-edit',plain:true">修改</a>
             <a href="javascript:remove()" class="btn btn-warning" data-options="iconCls:'icon-remove',plain:true">删除</a>
         </div>
-        <table id="tabs" class="text-nowrap"></table>
+        <table id="vip-tabs" class="text-nowrap"></table>
     </div>
 </div>
 <div id="dd"></div>
 <script type="text/javascript">
     $(function(){
-        $('#tabs').bootstrapTable({
+        $('#vip-tabs').bootstrapTable({
             toolbar:'#where',
             url:'<%=request.getContextPath()%>/memberrank/queryMenberList.jhtml',
             pagination: true,
@@ -132,7 +132,7 @@
         });
     }
     function update() {
-        var arr = $("#tabs").bootstrapTable('getSelections');
+        var arr = $("#vip-tabs").bootstrapTable('getSelections');
         if (arr.length != 1) {
             toastr.warning("请选择一行数据!","提醒");
             return;
@@ -159,17 +159,16 @@
                             contentType: false,
                             processData: false,
                             success: function (data) {
-                                data = eval("("+data+")");
-                                if (data.success) {
+                                if (data=="success") {
                                     toastr.success("修改数据成功");
                                     dialogItself.close();
-                                   // location.reload();
-                                    $("#tabs").bootstrapTable('refresh');
+                                    location.reload(),
+                                    $("#vip-tabs").bootstrapTable('refresh');
                                 } else {
                                     toastr.error("修改数据失败");
                                     dialogItself.close();
-                                   // location.reload();
-                                    $("#tabs").bootstrapTable('refresh');
+                                    location.reload(),
+                                    $("#vip-tabs").bootstrapTable('refresh');
                                 }
                             },
                             error: function () {
@@ -187,7 +186,7 @@
         if (id != null && id != "") {
             ids = id
         }else{
-            var arr = $("#tabs").bootstrapTable('getSelections');
+            var arr = $("#vip-tabs").bootstrapTable('getSelections');
             for (var i = 0; i < arr.length; i++) {
                 ids += ",'"+arr[i].mrid+"'";
             }
@@ -202,9 +201,9 @@
                     dataType:"json",
                     success:function(data){
                         if(data=="success"){
-                            $("#tabs").bootstrapTable('refresh');
+                            $("#vip-tabs").bootstrapTable('refresh');
                         }else{
-                            $("#tabs").bootstrapTable('refresh');
+                            $("#vip-tabs").bootstrapTable('refresh');
                         }
                     },
                 })

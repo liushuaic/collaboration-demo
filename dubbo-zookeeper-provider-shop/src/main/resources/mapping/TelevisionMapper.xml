@@ -9,4 +9,33 @@
     <select id="TVShowById" resultType="com.jk.model.Product">
         select * from t_product where sn=#{sn}
     </select>
+
+    <insert id="insertCart">
+        insert into t_cart values(#{cartid},#{userid},#{productid},1,33,#{tempprice})
+    </insert>
+
+    <select id="queryCart" resultType="com.jk.model.Cart">
+        select * from t_cart where productid =#{productid}
+    </select>
+
+    <update id="addCount">
+        UPDATE t_cart set quantity=quantity + 1 where cartid=#{cartid}
+    </update>
+    <select id="queryCartAll" resultType="com.jk.model.Cart">
+        select c.*,p.marketprice,p.name,pc.title from t_cart c ,t_product p ,t_productimages pc where c.productid=p.sn and p.productimagesid=pc.proimgeid
+        and userid=#{userid}
+    </select>
+
+    <update id="minusQuantity">
+        update t_cart set quantity=quantity - 1 where cartid=#{cartid}
+    </update>
+
+    <update id="plusQuantity">
+        update t_cart set quantity=quantity + 1 where cartid=#{cartid}
+    </update>
+
+    <delete id="delCart">
+        delete t_cart where cartid = #{cartid}
+    </delete>
+
 </mapper>

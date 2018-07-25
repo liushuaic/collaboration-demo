@@ -1,26 +1,78 @@
 package com.jk.controller;
 
-import com.jk.model.Article;
-import com.jk.model.ArticleCategory;
-import com.jk.model.Navigation;
-import com.jk.model.Tag;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.jk.model.*;
 import com.jk.service.ICfyService;
+import com.jk.util.ConsConf;
+import com.jk.util.HttpClientUtil;
+import com.jk.util.httpclientConf.Conf;
 import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Controller
 @RequestMapping("/cfyController")
 public class CfyController {
-    @Autowired
+    @Resource
     private ICfyService cfyService;
+//    @Resource
+    private RedisTemplate  redisTemplate;
+
+    public RedisTemplate<String, String> getRedisTemplate() {
+        return redisTemplate;
+    }
+
+    public void setRedisTemplate(RedisTemplate<String, String> redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
+
+    @RequestMapping("/zhucusuccess")
+    @ResponseBody
+    public String zhucusuccess(Admin user){
+        cfyService.zhucusuccess(user);
+        return "1";
+    }
+
+    //获取短信验证码
+    @RequestMapping("/message")
+    @ResponseBody
+    public String message(String phone) {
+        Admin userbean = cfyService.queryPhone(phone);
+        String flag ="-1";
+        if(userbean==null) {
+            flag="0";
+            HashMap<String, Object> params = new HashMap<String,Object>();
+            String verificationCode = Conf.verificationCode();
+            SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
+            String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+            params.put("accountSid",Conf.accountSid);
+            params.put("smsContent", Conf.smsContent(verificationCode));
+            params.put("to", phone);
+            params.put("timestamp", date);
+            params.put("sig", Conf.createCommonParam(Conf.accountSid, Conf.token, date));
+            params.put("respDataType", "JSON");
+            String post = HttpClientUtil.post(ConsConf.REST_URL, params);
+            JSONObject parse = (JSONObject) JSON.parse(post);
+            String respCode = parse.get("respCode").toString();
+            Integer parseInt = Integer.parseInt(respCode);
+            redisTemplate.opsForList().leftPush(phone+"message", ""+verificationCode+"");
+            redisTemplate.expire(phone+"message", 10, TimeUnit.MINUTES);
+        }
+        return flag;
+    }
 
     //查询 标签管理
     @RequestMapping("/queryLabel")

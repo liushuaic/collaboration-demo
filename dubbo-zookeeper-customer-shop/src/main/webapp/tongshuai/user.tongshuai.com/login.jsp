@@ -89,8 +89,8 @@
                                                href="javascript:if(confirm('http://user.tongshuai.com/ids/ts/password_find.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���Ѿ���վ���������ų���������ų���·����ַ��(��ϵͳ�� Teleport Ultra �����ǿ�ѡ��; �μ���Ŀ����, �������ǡ�)  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/ids/ts/password_find.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/'" tppabs="http://user.tongshuai.com/ids/ts/password_find.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/">忘记密码</a>
                                             <p class="Validform_checktip"></p>
                                         </div>
-                                        <a href="" class="l-btn-lg l-btn-red l-btn-disable login-btn"
-                                           id="loginBtn">登录</a>
+                                        <a href="javascript:;" class="l-btn-lg l-btn-red l-btn-disable login-btn"
+                                           id="login">登录</a>
                                         <a href="javascript:;"
                                            class="l-btn-lg l-btn-line1 o_df-hide o_md-show o_sm-show o_xs-show login-btn-line js_loginType"
                                            data-login=1>使用动态密码登录</a>
@@ -167,7 +167,7 @@
 <script type="text/javascript" src="../image.tongshuai.com/images/validform_v5.3.2_min.js" tppabs="http://image.tongshuai.com/images/validform_v5.3.2_min.js"></script>
 <script type="text/javascript">
 
-    $("#loginBtn").click(function(){
+    $("#login").click(function(){
 
         $.ajax({
             url: '<%=request.getContextPath()%>/lsController/login.jhtml',
@@ -175,7 +175,7 @@
             data: $("#login_form_id").serialize(),
             async: true,
             success: function (msg) {
-
+             alert(msg);
                  if(msg==2){
                      location.href="../www.tongshuai.com/life/index.jsp";
                  }
