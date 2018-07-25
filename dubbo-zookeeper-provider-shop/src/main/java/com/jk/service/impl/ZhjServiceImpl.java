@@ -8,7 +8,9 @@ import com.jk.service.IZhjService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service("zhjService")
 public class ZhjServiceImpl implements IZhjService {
@@ -96,5 +98,43 @@ public class ZhjServiceImpl implements IZhjService {
     @Override
     public List<Brand> queryBrand() {
         return zhjMapper.queryBrand();
+    }
+
+    @Override
+    public List querycyhList() {
+        List list = zhjMapper.querycyhList();
+        return list;
+    }
+
+    @Override
+    public void delcyhList(String sn) {
+        List<String> list = new ArrayList<String>();
+        String[] str=sn.split(",");
+        for (String id : str) {
+            list.add(id);
+        }
+        zhjMapper.delcyhList(list);
+    }
+
+    @Override
+    public void addFrom(Product product) {
+        String uuid = UUID.randomUUID().toString();
+        ProductImages productImages = new ProductImages();
+        String uuid2 = UUID.randomUUID().toString();
+        productImages.setProimgeid(uuid2);
+        productImages.setTitle(product.getTitle());
+        product.setProductimagesid(uuid2);
+        product.setSn(uuid);
+        if (product.getIsmarketable()==null){
+            product.setIsmarketable("2");
+        }
+        zhjMapper.addProductImages(productImages);
+        zhjMapper.addFrom(product);
+    }
+
+    @Override
+    public Product querycyhByid(String sn) {
+
+        return zhjMapper.querycyhByid(sn);
     }
 }

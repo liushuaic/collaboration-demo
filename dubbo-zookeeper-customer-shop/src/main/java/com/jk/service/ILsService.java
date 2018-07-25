@@ -3,6 +3,7 @@ package com.jk.service;
 import com.alibaba.fastjson.JSONObject;
 import com.jk.model.Admin;
 import com.jk.model.Order;
+import com.jk.model.Product;
 import com.jk.model.User;
 
 
@@ -66,4 +67,11 @@ public interface ILsService {
      * @throws Exception
      */
     JSONObject login(Admin admin) throws Exception;
+
+    /**
+     * 电视查询
+     * @return
+     * @throws Exception
+     */
+    List<Product> queryProduct() throws Exception;
 }

@@ -92,7 +92,7 @@
             <!-- logo -->
             <div class="o_u o_df_2-12 o_xs_3-12">
                 <a class="nav-logo" href="../index.jsp" tppabs="http://www.tongshuai.com/">
-                    <img src="../../image.tongshuai.com/tongshuai/images/logo.png" tppabs="http://image.tongshuai.com/tongshuai/images/logo.png" />
+                    <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/logo.png" tppabs="http://image.tongshuai.com/tongshuai/images/logo.png" />
                 </a>
             </div>
             <!-- logo END -->
@@ -101,23 +101,23 @@
                 <li class="nav-column js_column" column='0'>
                     <a href="javascript:;">
                         <div class="nav-column-box1"></div>
-                        <img src="../../image.tongshuai.com/tongshuai/images/nav-pro.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-pro.gif" class="o_lg-hide" />
+                        <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/nav-pro.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-pro.gif" class="o_lg-hide" />
                     </a>
                 </li>
                 <li class="nav-column js_column" column='1'>
 
                     <a href="index.jsp" tppabs="http://www.tongshuai.com/life/">
                         <div class="nav-column-box2"></div>
-                        <img src="../../image.tongshuai.com/tongshuai/images/nav-life.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-life.gif" class="o_lg-hide" />
+                        <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/nav-life.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-life.gif" class="o_lg-hide" />
                     </a>
                 </li>
                 <li class="nav-column js_column" column='2'>
-                    <a href="../member/index.jsp" tppabs="http://www.tongshuai.com/member/">
+                    <a href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/member/index.jsp" tppabs="http://www.tongshuai.com/member/">
                         <div class="nav-column-box3"></div>
                     </a>
                 </li>
                 <li class="nav-column js_column" column='3'>
-                    <a href="../service/index.jsp" tppabs="http://www.tongshuai.com/service/">
+                    <a href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/service/index.jsp" tppabs="http://www.tongshuai.com/service/">
                         <div class="nav-column-box4"></div>
                     </a>
                 </li>
@@ -126,8 +126,8 @@
             <!-- 用户信息栏 sf/xl分辨率 -->
             <div class="o_u o_df_2-12 o_lg-hide o_md-hide o_sm-hide o_xs-hide">
                 <div class="nav-search js_hoverLine">
-                    <input type="text" name="" ph="搜索产品、服务、帮助..." value="" phtype=1 class="js_searchHistory" maxlength="25" />
-                    <i class="iconfont icon-search js_jumpto_product_search"></i>
+                    <input id="searchid"  class="easyui-textbox" />
+                    <i class="iconfont icon-search js_jumpto_product_search" id="butSearch"></i>
                     <div class="search-result nav-zindex2 js_searchBox js_searchBox_xl js_searchBox_root">
                         <div class="search-quick js_quick_search">快速链接</div>
                         <div class="search-quick js_quick_search">搜索历史<a href="javascript:void(0);" class="js_delete_history">清空历史</a></div>
@@ -1389,6 +1389,14 @@
         iPhoneUseNativeControls: true,//强制iPhone的本机控件
         AndroidUseNativeControls: true,//强制Android的原生控件
     });
+
+
+    $("#butSearch").click(function(){
+        var arr = $("#searchid").val();
+       location.href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/televisions/query.jsp?searchValue="+arr;
+    })
+
+
 
 </script>
 <script type="text/javascript" src="../../image.tongshuai.com/tongshuai/images/life_style.js" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.js"></script>

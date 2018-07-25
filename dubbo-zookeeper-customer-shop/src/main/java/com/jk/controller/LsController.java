@@ -1,29 +1,29 @@
 package com.jk.controller;
 
-
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jk.model.Admin;
 import com.jk.model.Order;
+import com.jk.model.Product;
 import com.jk.model.User;
 import com.jk.service.ILsService;
-import com.jk.util.ConsConf;
-import com.jk.util.MD5utlis;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.apache.solr.client.solrj.SolrClient;
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrInputDocument;
+import org.apache.solr.common.util.NamedList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
+
 
 @Controller
 @RequestMapping("lsController")
@@ -155,40 +155,64 @@ public class LsController {
         return json.getString("flag");
     }
 
+    /**
+     * 电视查询
+     * @return
+     * @throws Exception
+     */
 
+    // solr 部署的url
+    private static final String url ="http://192.168.3.151:8080/solr";
+    // home
+    private static final String uri = "my_core";
+     @RequestMapping("queryProduct")
+     @ResponseBody
+     public String queryProduct(String searchValue,String sort) throws Exception{
+         List<Product> list = lsService.queryProduct();
+         SolrClient sc = getSolrClient();
+         for(Product product : list){
+             SolrInputDocument doc = new SolrInputDocument();
+             doc.addField("id",product.getSn());
+             doc.addField("name",product.getName());
+             doc.addField("seotitle",product.getSeotitle());
+             doc.addField("title",product.getTitle());
+             doc.addField("marketprice",product.getMarketprice());
+             sc.add(doc);
+             sc.commit();
+         }
+         SolrQuery query = new SolrQuery();
+       /*  query.setHighlight(true);//开启高亮
+         query.setQuery(searchValue);//设置查询关键字
+         query.addHighlightField(searchValue);//高亮字段
+         query.setHighlightSimplePre("<font color='red'>");
+         query.setHighlightSimplePost("</font>");
+         query.setHighlightFragsize(1);*/
+         if(searchValue!=null && !"".equals(searchValue)){
+             query.setQuery(searchValue);
+          }else{
+                        //如果没有查询的关键字，则默认查询所有商品数据：
+             query.setQuery("*:*");
+          }
 
-   /*
-    @RequestMapping("message")
-    @ResponseBody
-    public void message(String phone,HttpServletRequest request) {
-        HashMap<String, Object> params = new HashMap<String,Object>();
-        Random random = new Random();
-        int nextInt = random.nextInt(999999);
-        request.getSession().setAttribute("message", nextInt);
-        SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
-        String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
-        String accountSid = ConsConf.ACCOUNT_SID;
-        String authToken = ConsConf.AUTH_TOKEN;
-        String md5Sig = accountSid+authToken+date;
-        String sig = MD5utlis.getPwd(md5Sig);
-        params.put("accountSid", ConsConf.ACCOUNT_SID);
-        params.put("smsContent", "【HOPE】您的验证码为:：{"+nextInt+"}，请于2分钟内正确输入，如非本人操作，请忽略此短信。");
-        params.put("to", phone);
-        params.put("timestamp", date);
-        params.put("sig", sig);
-        params.put("respDataType", "JSON");
-        String post = HttpClientUtil.post(ConsConf.REST_URL, params);
+         SolrDocumentList results = sc.query(query).getResults();
+       /*  QueryResponse solrQueryuery = solrClient.query(query);
+         SolrDocumentList results = solrQueryuery.getResults();
+         NamedList<Object> response = solrQueryuery.getResponse();
+         NamedList highlighting = (NamedList) response.get("highlighting");
+         for (int i = 0; i <highlighting.size() ; i++) {
+             System.out.println(highlighting.getName(i)+"："+highlighting.getVal(i));
+         }*/
 
-        JSONObject parse = (JSONObject) JSON.parse(post);
+         System.err.println(results);
+         return JSON.toJSONString(results);
+     }
 
-        String respCode = parse.get("respCode").toString();
-
-        Integer parseInt = Integer.parseInt(respCode);
-
-        redisTemplate.opsForList().leftPush(phone+"message",""+nextInt+"");
-        redisTemplate.expire(phone+"message", 2, TimeUnit.MINUTES);
+    public static SolrClient getSolrClient() {
+        return new HttpSolrClient(url + "/" + uri);
     }
-*/
+
+
+
 
 
 

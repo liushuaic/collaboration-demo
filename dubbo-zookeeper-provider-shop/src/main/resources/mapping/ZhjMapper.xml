@@ -10,8 +10,64 @@
          where rownum &lt;=#{end} ) b
         where b.rm &gt;#{start}
     </select>
+    <!--商品列表查询-->
+    <select id="querycyhList" resultType="com.jk.model.Product">
+        SELECT  p.*,pc.text,p.ismarketable from t_product p , t_productcategory pc where p.productcategoryid = pc.id order by sales
+    </select>
+<!--  查询回显-->
+    <select id="querycyhByid" resultType="com.jk.model.Product">
+        SELECT * from t_product  where sn=#{sn}
+    </select>
+    <!--删除-->
+     <delete id="delcyhList" parameterType="java.util.List">
+        delete  from t_product  where sn in
+        <foreach collection="list" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
 
+    </delete>
 
+    <insert id="addFrom">
+        INSERT INTO t_product
+        (sn,
+         productcategoryid,
+        name,
+        price,
+        cost,
+        marketprice,
+        weight,
+        stock,
+        attributevalue1,
+        attributevalue2,
+        attributevalue3,
+        ismarketable,
+        introduction,
+        seotitle,
+        seodescription,
+        productimagesid,
+        createdatetime
+        )
+        VALUES (
+        #{sn,jdbcType=VARCHAR},
+        #{productcategoryid,jdbcType=VARCHAR},
+        #{name,jdbcType=VARCHAR},
+        #{price,jdbcType=DOUBLE},
+        #{cost,jdbcType=DOUBLE},
+        #{marketprice,jdbcType=DOUBLE},
+        #{weight,jdbcType=DOUBLE},
+        #{stock,jdbcType=DOUBLE},
+        #{attributevalue1,jdbcType=VARCHAR},
+        #{attributevalue2,jdbcType=VARCHAR},
+        #{attributevalue3,jdbcType=VARCHAR},
+        #{ismarketable,jdbcType=VARCHAR},
+        #{introduction,jdbcType=VARCHAR},
+        #{seotitle,jdbcType=VARCHAR},
+        #{seodescription,jdbcType=VARCHAR},
+        #{productimagesid,jdbcType=VARCHAR},
+        sysdate
+        )
+
+    </insert>
     <!--商品总条数-->
     <select id="queryCount" resultType="long">
         select count(*) from t_product p , t_productcategory pc where p.productcategoryid = pc.id
@@ -97,4 +153,9 @@
      <select id="queryBrand" resultType="com.jk.model.Brand">
          select * from t_brand
      </select>
+
+    <insert id="addProductImages">
+        insert into t_productImages(proimgeid,title) values(#{proimgeid},#{title})
+    </insert>
+
 </mapper>
