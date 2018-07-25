@@ -1,12 +1,6 @@
 package com.jk.util;
 
 
-import java.net.URI;  
-import java.util.ArrayList;  
-import java.util.HashMap;  
-import java.util.List;  
-import java.util.Set;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -18,18 +12,25 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+import java.net.URI;
+import java.util.ArrayList;  
+import java.util.HashMap;  
+import java.util.List;  
+import java.util.Set;
+
+
 
 public class HttpClientUtil {  
     
   static CloseableHttpClient client = null;
   static {  
-      client = HttpClients.createDefault();  
+      client = HttpClients.createDefault();
   }  
     
  
   public static String get(String url,HashMap<String, Object> params){  
       try {  
-          HttpGet httpGet = new HttpGet();  
+          HttpGet httpGet = new HttpGet();
           Set<String> keySet = params.keySet();  
           StringBuffer stringBuffer = new StringBuffer();  
           stringBuffer.append(url).append("?t=").append(System.currentTimeMillis());  
@@ -37,12 +38,12 @@ public class HttpClientUtil {
               stringBuffer.append("&").append(key).append("=").append(params.get(key));  
           }  
           httpGet.setURI(new URI(stringBuffer.toString()));  
-          CloseableHttpResponse execute = client.execute(httpGet);  
+          CloseableHttpResponse execute = client.execute(httpGet);
           int statusCode = execute.getStatusLine().getStatusCode();  
           if (200 != statusCode) {  
               return "";  
           }  
-          return EntityUtils.toString(execute.getEntity(), "utf-8");  
+          return EntityUtils.toString(execute.getEntity(), "utf-8");
       }catch (Exception e) {  
           e.printStackTrace();  
           return null;  
@@ -63,13 +64,13 @@ public class HttpClientUtil {
       try {  
           HttpPost httpPost = new HttpPost();
           httpPost.setURI(new URI(url));  
-          List<NameValuePair> parameters = new ArrayList<NameValuePair>();  
+          List<NameValuePair> parameters = new ArrayList<NameValuePair>();
           Set<String> keySet = params.keySet();  
           for (String key : keySet) {  
-              NameValuePair e = new BasicNameValuePair(key, params.get(key).toString());  
+              NameValuePair e = new BasicNameValuePair(key, params.get(key).toString());
               parameters.add(e);  
           }  
-          HttpEntity entity = new UrlEncodedFormEntity(parameters , "utf-8");  
+          HttpEntity entity = new UrlEncodedFormEntity(parameters , "utf-8");
           httpPost.setEntity(entity );  
           CloseableHttpResponse execute = client.execute(httpPost);  
           int statusCode = execute.getStatusLine().getStatusCode();  

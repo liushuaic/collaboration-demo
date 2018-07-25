@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/iconfont.css" tppabs="http://image.tongshuai.com/images/iconfont.css">
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_base.css" tppabs="http://image.tongshuai.com/images/l_base.css">
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_module.css" tppabs="http://image.tongshuai.com/images/l_module.css">
-
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/default/easyui.css"/>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/icon.css"/>
     <script type="text/javascript">
         // 站点服务配置
         var siteConfig = {
@@ -765,19 +766,13 @@
                                 </div>
                             </div>
                             <div class="particulars-detail">
-                                <!-- <div class="old-price">￥98034</div> -->
-                                <div class="corrent-price js_price"><sub>￥</sub><span>4399</span></div>
-                                <!--<div class="particulars-capacity">
-                                    <span class="capacity-tit">容量：</span>
-                                    <span class="capacity-box active">798L</span>
-                                    <span class="capacity-box">798L</span>
-                                </div>-->
+
+                                <div class="corrent-price js_price"><sub>￥</sub><span id="price"></span></div>
+
                                 <div class="particulars-delivery">
                                     <div class="delivery-address js-delivery-address">
                                         <%--<span style="color:#ccc;margin-right:5px;">[无货]</span>--%>
-                                        <span style="color:#ccc;margin-right:5px;">剩余:*件</span>
-                                        <span class="address-tit">配送至：</span>
-                                        <span id="address">山东省 青岛市 崂山区<i class="iconfont icon-arrow-line-down"></i></span>
+                                        <span style="margin-right:60px;" >剩余:<font color="red" id="stock"></font>件</span>
                                     </div>
                                    <%-- <div class="delivery-time">
                                         <span>有货</span>
@@ -786,7 +781,8 @@
                                     </div>--%>
                                 </div>
                                 <div class="particulars-btn">
-                                    <a href="javascript:;" class="l-btn-normal l-btn-red l-btn-disable" productId="630">加入购物车</a>
+                                   <%-- <a href="javascript:toCart();">加入购物车</a>--%>
+                                    <input type="button" style="background-color:red;width:120px;height: 40px" value="加入购物车" onclick="toCart()"/>
                                 </div>
                                 <div class="particulars-box">
                                     <!--购买pc-->
@@ -847,12 +843,7 @@
                                     </div>
                                     <span class="icon-font-info">收藏</span>
                                 </div>
-                                <!-- <div class="activity-icon">
-                                     <div class="icon-font">
-                                         <i class="iconfont icon-price-tag-solid1"></i>
-                                     </div>
-                                     <span class="icon-font-info">订阅</span>
-                                 </div>-->
+
                                 <div class="activity-icon">
                                     <div class="icon-font">
                                         <i class="iconfont icon-share-solid"></i>
@@ -1027,27 +1018,7 @@
                 <div class="detail-fontpoint">
                     <div class="swiper-container js_fontSwiper">
                         <div class="swiper-wrapper">
-                            <!--冰箱-->
 
-                            <!--空调-->
-
-                            <!--滚筒洗衣机-->
-
-                            <!--波轮洗衣机-->
-
-                            <!--电热水器-->
-
-                            <!--燃气热水器-->
-
-                            <!--空气能热水器-->
-
-                            <!--吸油烟机-->
-
-                            <!--燃气灶-->
-
-                            <!--冷柜-->
-
-                            <!--电视-->
 
                             <div class="swiper-slide">
                                 <div class="fontpoint-box">
@@ -1203,7 +1174,7 @@
 
 
                                     </div>
-                                    <a href="javascript:;" class="l-btn-normal l-btn-red param-more js_parameterUrl" target="_blank">查看更多</a>
+
                                 </div>
 
                             </div>
@@ -1259,192 +1230,7 @@
             </div>
             <div class="o_u o_df_1-6"></div>
         </div>
-        <!-- 更多选择 END -->
-        <!-- 导航锚点定位-优惠组合 -->
-        <!-- <div class="js_favourable"></div>-->
-        <!-- 导航锚点定位-优惠组合 End -->
-        <!-- 优惠组合 -->
-        <!-- <div class="o_g">
-             <div class="o_u o_df_1-12"></div>
-             <div class="o_u o_df_10-12">
-                 <div class="detail-title">优惠组合</div>
-                 <div class="detail-preferential">
-                     <div class="o_u o_df_2-12 o_lg_3-12 o_md_12-12 o_sm_12-12 o_xs_12-12 main-prd prd-box">
-                         <div class="o_g">
-                             <div class="o_u o_df_12-12 o_md_3-12 o_sm_3-12 o_xs_3-12">
-                                 <img src="http://image.tongshuai.com/tongshuai/images/detail_prd01.png" />
-                             </div>
-                             <div class="o_u o_md_8-12 o_sm_8-12 o_xs_8-12">
-                                 <div class="o_u o_df_12-12 o_md_7-12 o_sm_7-12">
-                                     <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                     <p class="prd-code">BC-93LTMPA</p>
-                                 </div>
-                                 <div class="o_u o_df_12-12 o_md_5-12 o_sm_5-12">
-                                     <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                     <p class="prd-old-prise">¥1599</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="o_u o_df_1-12 o_lg-hide o_md-hide o_sm-hide o_xs-hide"> </div>
-                     <div class="o_u o_df_3-12 o_md_12-12 o_sm_12-12 o_xs_12-12 prd-box">
-                         <div class="o_g">
-                             <div class="o_u o_df_12-12 o_md_3-12 o_sm_3-12 o_xs_3-12">
-                                 <img src="http://image.tongshuai.com/tongshuai/images/detail_prd02.png" />
-                             </div>
-                             <div class="o_u o_md_8-12 o_sm_8-12 o_xs_8-12">
-                                 <div class="o_u o_df_12-12 o_md_7-12 o_sm_7-12">
-                                     <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                     <p class="prd-code">BC-93LTMPA</p>
-                                 </div>
-                                 <div class="o_u o_df_12-12 o_md_5-12 o_sm_5-12">
-                                     <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                     <p class="prd-old-prise">¥1599</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="o_u o_df_3-12 o_md_12-12 o_sm_12-12 o_xs_12-12 prd-box">
-                         <div class="o_g">
-                             <div class="o_u o_df_12-12 o_md_3-12 o_sm_3-12 o_xs_3-12">
-                                 <img src="http://image.tongshuai.com/tongshuai/images/detail_prd02.png" />
-                             </div>
-                             <div class="o_u o_md_8-12 o_sm_8-12 o_xs_8-12">
-                                 <div class="o_u o_df_12-12 o_md_7-12 o_sm_7-12">
-                                     <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                     <p class="prd-code">BC-93LTMPA</p>
-                                 </div>
-                                 <div class="o_u o_df_12-12 o_md_5-12 o_sm_5-12">
-                                     <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                     <p class="prd-old-prise">¥1599</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="o_u o_df_3-12 o_md_12-12 o_sm_12-12 o_xs_12-12 prd-box">
-                         <div class="o_g">
-                             <div class="o_u o_df_12-12 o_md_3-12 o_sm_3-12 o_xs_3-12">
-                                 <img src="http://image.tongshuai.com/tongshuai/images/detail_prd02.png" />
-                             </div>
-                             <div class="o_u o_md_8-12 o_sm_8-12 o_xs_8-12">
-                                 <div class="o_u o_df_12-12 o_md_7-12 o_sm_7-12">
-                                     <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                     <p class="prd-code">BC-93LTMPA</p>
-                                 </div>
-                                 <div class="o_u o_df_12-12 o_md_5-12 o_sm_5-12">
-                                     <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                     <p class="prd-old-prise">¥1599</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="total-prise">
-                         <a href="javascript:;" class="l-btn-normal l-btn-red o_df-right">加入购物车</a>
-                         <p class="o_u o_df-right o_sm-left o_xs_12-12">组合价：<span class="prise">¥4799</span><span class="save">省¥500</span></p>
-                         <div class="o_clear"></div>
-                     </div>
-                 </div>
-                 <div class="detail-preferential">
-                     <div class="o_u o_df_2-12 o_lg_3-12 o_md_12-12 o_sm_12-12 o_xs_12-12 main-prd prd-box">
-                         <div class="o_g">
-                             <div class="o_u o_df_12-12 o_md_3-12 o_sm_3-12 o_xs_3-12">
-                                 <img src="http://image.tongshuai.com/tongshuai/images/detail_prd01.png" />
-                             </div>
-                             <div class="o_u o_md_8-12 o_sm_8-12 o_xs_8-12">
-                                 <div class="o_u o_df_12-12 o_md_7-12 o_sm_7-12">
-                                     <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                     <p class="prd-code">BC-93LTMPA</p>
-                                 </div>
-                                 <div class="o_u o_df_12-12 o_md_5-12 o_sm_5-12">
-                                     <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                     <p class="prd-old-prise">¥1599</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="o_u o_df_10-12 o_lg_9-12 o_md_12-12 o_sm_12-12 o_xs_12-12 prd-box swiper-prd-box">
-                         <div class="swiper-container js_swiperPreferential">
-                             <div class="swiper-wrapper">
-                                 <div class="swiper-slide">
-                                     <div>
-                                         <img src="http://image.tongshuai.com/tongshuai/images/detail_prd02.png" />
-                                     </div>
-                                     <div>
-                                         <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                         <p class="prd-code">BC-93LTMPA</p>
-                                     </div>
-                                     <div>
-                                         <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                         <p class="prd-old-prise">¥1599</p>
-                                     </div>
-                                     <span class="prd-checkbox">
-                                           <input class="js_checkbox" type="checkbox" checked="true" data-notnull="true" value="复选框" />
-                                         </span>
-                                 </div>
-                                 <div class="swiper-slide">
-                                     <div>
-                                         <img src="http://image.tongshuai.com/tongshuai/images/detail_prd02.png" />
-                                     </div>
-                                     <div>
-                                         <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                         <p class="prd-code">BC-93LTMPA</p>
-                                     </div>
-                                     <div>
-                                         <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                         <p class="prd-old-prise">¥1599</p>
-                                     </div>
-                                     <span class="prd-checkbox">
-                                           <input class="js_checkbox" type="checkbox" checked="true" data-notnull="true" value="复选框" />
-                                         </span>
-                                 </div>
-                                 <div class="swiper-slide">
-                                     <div>
-                                         <img src="http://image.tongshuai.com/tongshuai/images/detail_prd02.png" />
-                                     </div>
-                                     <div>
-                                         <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                         <p class="prd-code">BC-93LTMPA</p>
-                                     </div>
-                                     <div>
-                                         <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                         <p class="prd-old-prise">¥1599</p>
-                                     </div>
-                                     <span class="prd-checkbox">
-                                           <input class="js_checkbox" type="checkbox" checked="true" data-notnull="true" value="复选框" />
-                                         </span>
-                                 </div>
-                                 <div class="swiper-slide">
-                                     <div>
-                                         <img src="http://image.tongshuai.com/tongshuai/images/detail_prd02.png" />
-                                     </div>
-                                     <div>
-                                         <p class="prd-name">小型家用冰箱节能电冰箱</p>
-                                         <p class="prd-code">BC-93LTMPA</p>
-                                     </div>
-                                     <div>
-                                         <p class="prd-prise">组合价：<span>¥1799</span></p>
-                                         <p class="prd-old-prise">¥1599</p>
-                                     </div>
-                                     <span class="prd-checkbox">
-                                           <input class="js_checkbox" type="checkbox" checked="true" data-notnull="true" value="复选框" />
-                                         </span>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="total-prise checked-total-prise">
-                         <p class="o_u o_df-left o_sm_12-12 o_xs_12-12">已选择 <span class="prd-num">1</span> 个产品</p>
-                         <a href="javascript:;" class="l-btn-normal l-btn-red o_df-right">加入购物车</a>
-                         <p class="o_u o_df-right o_sm-left o_xs_12-12">组合价：<span class="prise">¥4799</span><span class="save">省¥500</span></p>
-                         <div class="o_clear"></div>
-                     </div>
-                 </div>
-             </div>
-         </div> -->
-        <!-- 优惠组合 END -->
-        <!--<a href="javascript:;" class="js_landBtn"  style="font-size: 14px;">登陆按钮</a>-->
-        <!--激活登陆弹窗按钮添加class js_landBtn -->
-        <!-- 产品对比 -->
+
         <div class="prolist-compare o_lg-hide o_md-hide o_sm-hide  o_xs-hide" style="display: none;" >
             <div class="compare-title">
                 产品对比
@@ -1737,34 +1523,7 @@
         </div>
     </div>
 </div>
-<!-- 配送地址 -->
-<div class="o_g land-shade  land-shade-top js_addShadeTop">
-    <div class="land-box land-box-address js_addContBox">
-        <div class="land-cont-title alert-cont-title o_u">
-            <span>配送至：</span>
-            <i class="js_alertAddress_save">浙江</i>
-            <i class="js_alertAddress_city">杭州市</i>
-            <i class="js_alertAddress_area">西湖区</i>
-            <a href="" class="o_u iconfont icon-close js_addClose"></a>
-        </div>
-        <div class="js_addType" data-alt="1">
-            <div class="land-cont-type-normal o_u o_df_1-3 cur">省份</div>
-            <div class="land-cont-type-phone o_u o_df_1-3">城市</div>
-            <div class="land-cont-type-phone o_u o_df_1-3">县区</div>
-        </div>
-        <div class="js_addInputBox">
-            <div class="land-cont-normal-input o_g land-address-box">
-                <ul class="o_u o_df_11-12  js_alertAddress_save_cont "></ul>
-            </div>
-            <div class="land-cont-normal-input o_g land-address-box">
-                <ul class="o_u o_df_11-12  js_alertAddress_ctiy_cont "></ul>
-            </div>
-            <div class="land-cont-normal-input o_g land-address-box">
-                <ul class="o_u o_df_11-12  js_alertAddress_area_cont "></ul>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!--弹出层2-->
 <div class="pop-up2 js_popUpBox2">
     <span class="iconfont icon-check-mark-solid pop-up2_true js_popUpTrue"></span>
@@ -1774,7 +1533,10 @@
 </div>
 <!--end弹出层2-->
 <!-- 配送地址 end -->
-<script type="text/javascript" src="../../image.tongshuai.com/images/jquery-1.8.3.min.js" tppabs="http://image.tongshuai.com/images/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.easyui.min.js"></script>
+<!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/jquery.cookie.js" tppabs="http://image.tongshuai.com/images/jquery.cookie.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/l_obox.js" tppabs="http://image.tongshuai.com/images/l_obox.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/l_module.js" tppabs="http://image.tongshuai.com/images/l_module.js"></script>
@@ -1910,9 +1672,37 @@
                $("#a3").html(data.attributevalue3);
                $("#size2").html(data.attributevalue2);
                $("#color2").html(data.attributevalue1);
+               $("#stock").html(data.stock);
+               $("#price").html(data.marketprice);
            }
        })
     })
+
+    function toCart(){
+        var id= $("#ids").val(); //productid
+        var userid='${loginAdmin.aid}';
+        // TEMPPRICE
+       var  tempprice=$("#price").html();
+        $.ajax({
+            url:"<%=request.getContextPath()%>/television/insertCart.jhtml",
+            data:{productid:id,userid:userid,tempprice:tempprice},
+            type:"post",
+            success:function(data){
+                $.messager.show({
+
+                    title:'我的消息',
+                    msg:'该宝贝已在购物车等待~~~',
+                    timeout:1000,
+                    showType:'show',
+                    style:{
+                        top:300,
+                    }
+
+                })
+            }
+        })
+
+    }
 </script>
 
 </body>

@@ -36,9 +36,12 @@
             productChannelId: "273690",
         };
     </script>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/default/easyui.css"/>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/icon.css"/>
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/tongshuai/images/product_trolley.css" tppabs="http://image.tongshuai.com/tongshuai/images/product_trolley.css">
     <link rel="preconnect" href="http://www.tongshuai.com/">
 </head>
+
 
 <body>
 <div class="o_body">
@@ -130,7 +133,7 @@
         <!-- 商品列表-表头 END -->
 
         <!-- 购物车无商品 -->
-       <%-- <div class="o_g empty-trolley-pro-list">
+<%--       <div class="o_g empty-trolley-pro-list" id="nopro">
             <img src="../../image.tongshuai.com/tongshuai/images/share_nothing.png" tppabs="http://image.tongshuai.com/tongshuai/images/share_nothing.png" alt="" />
             <p>还没有任何商品，快去挑选吧</p>
             <div>
@@ -138,19 +141,18 @@
         </div>--%>
 
         <!-- 商品列表 -->
-        <div class="o_g">
+        <div class="o_g" >
             <div class="o_u o_df_1-12"></div>
-            <div class="o_u o_df_10-12">
-                <!-- 购物车商品列表：数据循环 -->
-                <div class="js_trolleyListData"></div>
-                <!-- 购物车商品列表：数据循环 END -->
+            <div class="o_u o_df_10-12" id="mn">
+
+                <!-- 购物车商品列表： 数据循环 END -->
 
                 <!-- 单个商品-有货 -->
-               <div class="trolley-prolist">
+               <%--<div class="trolley-prolist">
                     <div class="o_g trolley-product">
                         <div class="o_u o_df_3-5 o_md_1-2 o_xs_2-2">
                             <div class="l-checkbox trolley-product-check">
-                              <input class="js_checkbox js_checkSolo" type="checkbox" data-notnull="true" value="" />
+                              <input class="js_checkbox js_checkSolo" type="checkbox" data-notnull="true" value="" name="ck"/>
                             </div>
                             <div class="trolley-product-img">
                                 <img src="http://image.tongshuai.com/tongshuai/images/compare_goods.PNG" />
@@ -189,46 +191,9 @@
                             <a href="javascript:;" class="trolley-price-edit js_edit" data-oppo='edit'>编辑</a>
                         </div>
                     </div>
-                </div>
-                <!-- 单个商品-有货 END -->
-                <!-- 单个商品-无货 -->
-               <%-- <div class="trolley-prolist trolley-pro-none">
-                    <div class="o_g trolley-product">
-                        <div class="o_u o_df_3-5 o_md_1-2">
-                            <div class="trolley-product-uncheck">
-                              地区<br>无货
-                            </div>
-                            <div class="trolley-product-img">
-                                <img src="http://image.tongshuai.com/tongshuai/images/compare_goods.PNG" />
-                            </div>
-                            <div class="trolley-product-font">
-                              <div class="trolley-middle-box">
-                                    <div class="trolley-middle-inner">
-                                        <p class="trolley-product-zh">统帅天然气统帅天然气统帅天然气</p>
-                                        <p class="trolley-product-en">JIGEJOJ-1</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="o_u o_df_1-10 o_md_1-5">
-                            <div class="trolley-price-only">￥89034</div>
-                        </div>
-                        <div class="o_u o_df_1-10 o_lg_1-5 o_md_1-5 o_df-center opacity-0">
-                            <div class="trolley-number">
-                                <i class="iconfont icon-minus"></i>
-                                <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" ng-pattern="/[^a-zA-Z]/" value="1" readonly="" />
-                                <i class="iconfont icon-plus"></i>
-                            </div>
-                        </div>
-                        <div class="o_u o_df_1-10 o_lg-hide o_md-hide o_sm-hide o_xs-hide">
-                            <div class="trolley-price-total">￥89034</div>
-                        </div>
-                        <div class="o_u o_df_1-10">
-                            <a href="javascript:;" class="trolley-price-delete">删除</a>
-                        </div>
-                    </div>
                 </div>--%>
-                <!-- 单个商品-无货 END -->
+
+
 
             </div>
         </div>
@@ -236,13 +201,9 @@
 
 
             <!-- 购物车底部 -->
-            <div class="o_g trolley-footer l-none js-trolley-footer">
+            <div style="margin-left: 800px" >
                 <div class="o_u o_df_1-12"></div>
-                <div class="o_u o_df_5-12 o_lg_1-12 o_md_1-12 o_sm_1-6 o_xs_1-6">
-                    <div class="l-checkbox trolley-footer-check">
-                        <input class="js_checkbox" type="checkbox" data-notnull="true" value="全选" />
-                    </div>
-                </div>
+
                 <div class="o_u o_df_3-12 o_lg_1-2 o_md_1-2 o_sm_5-12 o_xs_5-12">
                     <div class="trolley-footer-total">
                         <div class="footer-total-num o_sm-hide o_xs-hide">
@@ -259,6 +220,8 @@
                     </div>
                 </div>
             </div>
+
+
             <!-- 购物车底部 END -->
         <div class="trolley-footer-position">
             <div class="o_g footer">
@@ -400,47 +363,7 @@
                 </div>
                 <div class="o_u o_df_1-12"></div>
             </div>
-            <!--<div class="o_g footer member_footer">
-                <div class="o_u o_df_1-12"></div>
-                <div class="o_u o_df_10-12">
-                    <div class="footer_copy">
-                        <span class="link">
-                            <a href="https://weibo.com/u/2003689247" class="iconfont icon-share-weibo" ></a>
-                            <a href="javascript:;"  class="iconfont icon-share-weixin">
-                                 <div class="l-float-top">
-                                    <img src="http://image.tongshuai.com/tongshuai/images/tongshuai_weixin.jpg" />
-                                    <p></p><i></i>
-                                </div>
-                            </a>
 
-                        </span>
-                        <ul>
-                            <li>
-                                <span>联系我们</span>
-                            </li>
-                            <li>
-                                <span>帮助中心</span>
-                            </li>
-                            <li>
-                                <a href="http://www.tongshuai.com/terms/">服务条款</a>
-                            </li>
-                            <li>
-                                <span>法律声明</span>
-                            </li>
-                        </ul>
-                        <div class="footer_middle_copy">
-                            <span class="o_u footer_copy_text">Copyright &copy; 2017 Haier Group Leader. All rights reserved 鲁ICP备09096283</span>
-                            <div class="footer_copy_img_box">
-                                <span class="footer_copy_img1"></span>
-                                <span class="footer_copy_img2"></span>
-                                <a href="http://www.miitbeian.gov.cn/" class="footer_copy_img3" target="_blank"></a>
-                            </div>
-                        </div>
-                        &lt;!&ndash;<span class="copy_service">服务条款33333</span>&ndash;&gt;
-                    </div>
-                </div>
-                <div class="o_u o_df_1-12"></div>
-            </div>-->
             <!--网脉start-->
             <script id="_trs_ta_js" src="../../net.haier.com/c/js/ta.js-mpid=1112&cPrefix=ta.trs.cn-c" tppabs="http://net.haier.com/c/js/ta.js?mpid=1112&cPrefix=ta.trs.cn/c" async="async" defer="defer"></script>
             <!--网脉end-->
@@ -450,7 +373,11 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../../image.tongshuai.com/images/jquery-1.8.3.min.js" tppabs="http://image.tongshuai.com/images/jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.easyui.min.js"></script>
+<!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/jquery.cookie.js" tppabs="http://image.tongshuai.com/images/jquery.cookie.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/l_obox.js" tppabs="http://image.tongshuai.com/images/l_obox.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/l_module.js" tppabs="http://image.tongshuai.com/images/l_module.js"></script>
@@ -469,37 +396,124 @@
     </div>
 </div>--%>
 <script>
+
+   function plus(id){
+       $.ajax({
+           url:"<%=request.getContextPath()%>/television/plusQuantity.jhtml",
+           data:{cartid:id},
+           type:"post",
+           success:function(data){
+               if(data==1){
+                   queryCart();
+               }
+           }
+
+       })
+   }
+
+   function minus(id,quantity){
+       if(quantity>1){
+           $.ajax({
+               url:"<%=request.getContextPath()%>/television/minusQuantity.jhtml",
+               data:{cartid:id},
+               type:"post",
+               success:function(data){
+                   if(data==1){
+                       queryCart();
+                   }
+               }
+
+           })
+       }else{
+           $.messager.show({
+
+               title:'我的消息',
+               msg:'该宝贝不能减少了哟~',
+               timeout:1000,
+               showType:'show',
+               style:{
+                   top:300,
+               }
+
+           })
+       }
+
+   }
+
+   function deleteCart(id){
+       $.messager.confirm('信息', '确定删除该数据么', function(r){
+           if (r){
+               $.ajax({
+                   url : '<%=request.getContextPath()%>/television/delCart.jhtml',
+                   type : "post",
+                   data:{"cartid":id},
+                   success : function(text){
+                       $.messager.show({
+                           title:'消息',
+                           msg:'删除成功',
+                           timeout:1000,
+                           showType:'show',
+                           style:{
+                               top:300,
+                           }
+                       });
+                       queryCart();
+                   }
+               })
+           }
+       });
+   }
+
     $(function() {
-        var cookieVal = getCookie('authorize');
-        if (cookieVal) {
-            $(".js_footer_cookie").addClass("o_df-hide");
-        } else {
-            $(".js_footer_cookie").removeClass("o_df-hide");
-        }
-
-        $(".js_cookies_confirm").on('click', function () {//按钮
-            $(".js_footer_cookie").addClass("o_df-hide");
-            setCookie('authorize','1');
-            $.ajax({
-                type: "post",
-                url: siteConfig.domain + "/interaction-service/userCookieInfo/saveInfo"
-            });
-        })
-        //cookie方法
-        function setCookie(cookieName,value){//设置cookie时间
-            var liveDate = new Date();
-            liveDate.setTime(liveDate.getTime() + 100 * 365 * 24 * 60 * 60);
-            document.cookie=cookieName+"="+value+";path=/;domain=tongshuai.com;expires="+liveDate.toGMTString();
-        }
-
-        function getCookie(name){//获取cookie
-            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-            if(arr=document.cookie.match(reg))
-                return unescape(arr[2]);
-            else
-                return null;
-        }
+        queryCart();
     });
+
+    function queryCart(){
+        var userid='${loginAdmin.aid}';
+        $.ajax({
+            url:"<%=request.getContextPath()%>/television/queryCartAll.jhtml",
+            type:"post",
+            data:{userid:userid},
+            success:function(data){
+                console.info(data);
+                var content="";
+                for(var i=0;i<data.length;i++){
+                    var sn="'"+data[i].cartid+"'";
+                    content+=' <div class="trolley-prolist">';
+                    content +='<div class="o_g trolley-product">  <div class="o_u o_df_3-5 o_md_1-2 o_xs_2-2">  <div class="l-checkbox trolley-product-check">';
+                    /*   content+='<input class="js_checkbox js_checkSolo" type="checkbox" data-notnull="true"  />';*/
+                    content+='<input class="js_checkbox js_checkSolo" type="checkbox" data-notnull="true" value="" />';
+                    content+=' </div> <div class="trolley-product-img">';
+                    content+='<img src="http://image.tongshuai.com/tongshuai/images/compare_goods.PNG" />';
+                    content+='   </div> <div class="trolley-product-font">  <div class="trolley-middle-box"> <div class="trolley-middle-inner js_trolleyFont">';
+                    content+=' <p class="trolley-product-zh">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+data[i].name +'</p>';
+                    content+=' </div><p class="trolley-product-xs">';
+                    content+='<span class=" js_trolleyPrice">'+data[i].marketprice+'</span>';
+                    /*         content+='<a href="javascript:;" class="opacity-0 trolley-xs-delete js_deleteXs">删除</a>';
+                     content +='<a href="javascript:;" class="js_edit" data-oppo="edit">编辑</a>';*/
+                    content+='   </p> </div> </div> </div>';
+                    content+='<div class="o_u o_df_1-10 o_md_1-5 o_sm_1-5 o_xs-hide">';
+                    content+='<div class="trolley-price-now js_trolleyPrice">￥'+data[i].marketprice+'</div>';
+                    content+='<div class="trolley-price-old">￥6690.34</div>';
+                    content+=' </div> <div class="o_u o_df_1-10 o_lg_1-5 o_md_1-5 o_df-center trolley-number-xs"> <div class="trolley-number opacity-0 js_trolleyNumber"><i class="iconfont icon-minus" id="minus" onclick="minus('+sn+','+data[i].quantity+')"></i>';
+                    content+='<input type="text" onkeyup="value=value.replace(/[^\d]/g,"")" ng-pattern="/[^a-zA-Z]/" value="'+data[i].quantity+'" />';
+                    content+='<i class="iconfont icon-plus" onclick="plus('+sn+')"></i>';
+                    /* content+='<a href="javascript:;" class="trolley-price-delete">删除</a>';*/
+                    content+='</div>  </div> <div class="o_u o_df_1-10 o_lg-hide o_md-hide o_sm-hide o_xs-hide">';
+                    content+='<div class="trolley-price-total">￥'+data[i].marketprice*data[i].quantity+'</div>';
+                    content+='</div><div class="o_u o_df_1-10 o_xs-hide">';
+
+                    content+=' <a href="javascript:deleteCart('+sn+');" class="trolley-price-delete">删除</a>';
+                    content+='<a href="javascript:;" class="trolley-price-edit js_edit" data-oppo="edit">编辑</a>';
+
+                    content+='  </div> </div> </div>';
+
+
+                }
+                $("#mn").html(content);
+            }
+        })
+    }
 </script>
 <!--全局cookie end-->
 <script type="text/javascript" src="../../image.tongshuai.com/tongshuai/images/jquery-jtemplates.js" tppabs="http://image.tongshuai.com/tongshuai/images/jquery-jtemplates.js"></script>

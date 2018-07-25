@@ -1142,6 +1142,7 @@
 
                 var content="";
                 for(var i=0;i<data.length;i++){
+                    var sn="'"+data[i].sn+"'";
                     content +=  '<div class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_2-2 o_xs_2-2 js_collectBox">';
                     content +=         ' <div class="prolist-box">';
                     content +=        ' <span class="l-tag-radius l-tag-green pro-tag">人气</span>';
@@ -1155,7 +1156,7 @@
                     content +=       ' <span class="pro-read-i">';
                     content +=      ' <i class="iconfont icon-contrast-solid"></i>';
                     content +=      ' </span> </a> </div>';
-                    content +=      ' <a href="javascript:toDetail('+data[i].sn+')"tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml" class="pro-info-box">';
+                    content +=      ' <a href="javascript:toDetail('+sn+')"tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml" class="pro-info-box">';
                     content +=       ' <img src="../../image.tongshuai.com/tongshuai/televisions/W020171213635291689197_200.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171213635291689197_200.png" />';
                     content +=    ' <div class="pro-info-title">'+ data[i].name+'</div>';
                     content +=   ' <div class="pro-info-mark">'+data[i].seotitle+'</div> ';
