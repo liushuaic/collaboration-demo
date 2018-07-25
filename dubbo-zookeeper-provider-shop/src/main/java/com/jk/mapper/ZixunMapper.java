@@ -28,7 +28,9 @@ public interface ZixunMapper {
 
     List<Review> queryByInfo(@Param("ss") String ss);
 
-    Review queryPlInfoById(String id);
+    Review queryPlInfoById(@Param("id")String id);
 
     void updatepl(Review review);
+
+    void delPl(@Param("ids")String ids);
 }

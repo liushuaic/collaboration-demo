@@ -94,7 +94,7 @@
         BootstrapDialog.show({
             type: BootstrapDialog.TYPE_SUCCESS,
             title: "修改",
-            message: $("<div></div>").load("<%=request.getContextPath()%>/zixun/queryInfoById.jhtml?id=" + id),
+            message: $("<div></div>").load("<%=request.getContextPath()%>/zixun/queryPlInfoById.jhtml?id=" + id),
             //size : BootstrapDialog.SIZE_SMALL,//size为小，默认的对话框比较宽
             buttons: [{// 设置关闭按钮
                 label: '关闭',
@@ -104,8 +104,8 @@
             }, {
                 label: '保存',
                 action: function (dialogItself) {
-                    $("#update-from").form('submit',{
-                        url: "<%=request.getContextPath()%>/zixun/updateInfo.jhtml",
+                    $("#updatepl-from").form('submit',{
+                        url: "<%=request.getContextPath()%>/zixun/updatepl.jhtml",
                         type: "post",
                         dataType: "text",
                         async: false,
@@ -192,14 +192,14 @@
         }else{
             var arr = $("#pl-tabs").bootstrapTable('getSelections');
             for (var i = 0; i < arr.length; i++) {
-                ids += ",'"+arr[i].consuid+"'";
+                ids += ",'"+arr[i].reviewid+"'";
             }
         }
         ids = ids.substr(1)
         Ewin.confirm({message:"确认要删除选择的数据吗？"}).on(function (r){
             if (r == true){
                 $.ajax({
-                    url:"../zixun/delInfo.jhtml",
+                    url:"../zixun/delPl.jhtml",
                     type:"post",
                     data:{"ids":ids},
                     dataType:"json",
