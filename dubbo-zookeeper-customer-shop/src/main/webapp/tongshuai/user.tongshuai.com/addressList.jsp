@@ -7,15 +7,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
 </head>
-
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/js/EasyUI/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/js/EasyUI/themes/icon.css">
-
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.2.1/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/EasyUI/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/EasyUI/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/kindeditor/kindeditor.js" charset="utf-8"></script>
-
 <body>
     <div id="addshow"></div>
 <%--<div id="addwhere">
@@ -28,13 +25,16 @@
 <div id="adddig"></div>
 <a href="javascript:addOrEdit('add')" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">地址新增</a><br>
     <c:forEach items="${addressList}" var="address">
-    <div style="border: solid 1px darkgrey;float: left;margin-left: 5px;width: 230px;height: 120px">
+   <div style="border:solid 1px lightgrey;float: left;margin-left: 10px;width:320px">
         <a href="javascript:addEdit('${address.addid}')" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">编辑</a>
-        <a href="javascript:del('${address.addid}')"  class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" >删除</a> <br>
-        <table>
+        <a href="javascript:del('${address.addid}')"  class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" >删除</a>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <input type="radio"  onclick="defaulte('${address.addid}')" name="adddefault" ${address.adddefault.contains('1')?"checked":""}><br>
+        <table >
            <tr>
                <td>收货人:</td>
-               <td> &nbsp;  ${address.addname} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="1" ${address.adddefault==1?"checked":""}></td>
+            <%--   <td>${address.addname}</td>--%>
+               <td> &nbsp;  ${address.addname}</td>
            </tr>
            <tr>
                <td>手机号:</td>
@@ -42,12 +42,11 @@
            </tr>
            <tr>
                <td>地  &nbsp;&nbsp;址:</td>
-               <td>  &nbsp; ${address.introduction}</td>
+               <td>${address.addprovince}  ${address.addcity}  ${address.addcounty}  ${address.introduction}</td>
            </tr>
         </table>
     </div>
 </c:forEach>
-
 <%--
 <script type="text/javascript">
     // function query1(){
@@ -64,9 +63,7 @@
                 }else {
                     return "×"
                 }
-
             }},
-
         ]],
         fit:true,
         fitColumns:true,
@@ -77,7 +74,6 @@
         pageNumber:1,
         pageList:[3,5,10]
     })
-
 </script>
 --%>
 <!-- 新增 -->
@@ -101,13 +97,10 @@
                 handler:function(){
                     //用户名
                     function t1(){
-
                         var zhengzhe = /^[\u4e00-\u9fa5]{2,}$/;
                         var ming = document.getElementById("name_id").value;
                         var tishi = document.getElementById("span1");
-
                         if(zhengzhe.test(ming)){
-
                             tishi.innerHTML="<font color='green'>√</font>";
                             return true;
                         }else{
@@ -117,38 +110,27 @@
                     }
                     //手机号
                     function t2(){
-
                         var dia = document.getElementById("phone_id").value;
                         var msg2 =  document.getElementById("span2");
                         var reg = /^1[34578]\d{9}$/;
-
                         if(reg.test(dia)){
-
                             msg2.innerHTML = "<font color='green'>√</font>";
                             return true;
                         }else{
                             msg2.innerHTML = "<font color='red'>请正确输入11位手机号码</font>";
                             return false;
                         }
-
                     }
                     if(t1() & t2()){
                         $("#addressForm").form('submit',{
                             url:"<%=request.getContextPath()%>/addressController/addAddress.jhtml",
                             success:function(data){
-//     						 var data = eval("("+data+")");
-//     						  if(data.success){
                                 $('#adddig').dialog("close")
                                 location.reload()
-//     						  }else{
-//     							  $.messager.alert("提示",data.msg);
-//     						  }
                             }
                         })
-
                         return true;
                     }else{
-
                         return false;
                     }
                 }
@@ -156,11 +138,9 @@
         })
     }
 </script>
-
 <!-- 修改 -->
 <script type="text/javascript">
     function addEdit(ii){
-
         $('#adddig').dialog({
             title:"修改类型",
             width:550,
@@ -174,11 +154,9 @@
                 handler:function(){
                     //用户名
                     function t1(){
-
                         var zhengzhe = /^[\u4e00-\u9fa5]{2,}$/;
                         var ming = document.getElementById("name_id").value;
                         var tishi = document.getElementById("span1");
-
                         if(zhengzhe.test(ming)){
 
                             tishi.innerHTML="<font color='green'>√</font>";
@@ -190,11 +168,9 @@
                     }
                     //手机号
                     function t2(){
-
                         var dia = document.getElementById("phone_id").value;
                         var msg2 =  document.getElementById("span2");
                         var reg = /^1[34578]\d{9}$/;
-
                         if(reg.test(dia)){
 
                             msg2.innerHTML = "<font color='green'>√</font>";
@@ -203,7 +179,6 @@
                             msg2.innerHTML = "<font color='red'>请正确输入11位手机号码</font>";
                             return false;
                         }
-
                     }
                     if(t1() & t2()){
                         $("#addressForm").form('submit',{
@@ -243,6 +218,19 @@
                 }else{
                     $.messager.alert("删除失败!");
                 }
+            }
+        })
+    }
+    //默认地址
+    function defaulte(id) {
+        $.ajax({
+            url:"<%=request.getContextPath()%>/addressController/updateAddressId.jhtml",
+            type:"post",
+            data:{"addid":id},
+            dataType:"json",
+            success:function (data) {
+                    //默认成功后刷新页面
+                location.reload()
             }
         })
     }
