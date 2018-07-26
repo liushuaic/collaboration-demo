@@ -4,14 +4,23 @@ import com.alibaba.fastjson.JSONObject;
 import com.jk.model.*;
 import com.jk.service.IZhjService;
 
+import com.jk.util.FileUtillll;
+import com.jk.util.FtpFileUtil;
+import org.apache.solr.client.solrj.SolrClient;
+import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @Controller
@@ -38,6 +47,68 @@ public class ZhjController {
         return json;
     }
 
+    /**  商品管理列表查询  */
+    @RequestMapping("querycyhList")
+    @ResponseBody
+    public List querycyhList(){
+       List Product=zhjService.querycyhList();
+        return Product;
+    }
+    private static final String url ="http://192.168.3.151:8080/solr";
+    // home
+    private static final String uri = "my_core";
+    /**
+     * 删除
+     * @return
+     */
+    @RequestMapping("delcyhList")
+    @ResponseBody
+    public String delcyhList(String sn) throws IOException, SolrServerException {
+        zhjService.delcyhList(sn);
+        return "success";
+    }
+
+    /**
+     * 添加
+     * @return
+     */
+   @RequestMapping("addFrom")
+    @ResponseBody
+    public String addFrom(Product product,HttpServletRequest request, @RequestParam("file") MultipartFile file){
+        String fileName = file.getOriginalFilename();
+        InputStream inputStream= null;
+        try {
+            inputStream = file.getInputStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String filePath=null;
+        Boolean flag= FtpFileUtil.uploadFile(fileName,inputStream);
+        if(flag==true){
+            System.out.println("ftp上传成功！");
+            filePath=fileName;
+        }
+        product.setTitle("ftp://test:123@127.0.0.1/"+fileName);
+         zhjService.addFrom(product);
+        return "1";
+    }
+    /*@RequestMapping("addFrom")
+    @ResponseBody
+    public String uploadUserImg(MultipartFile userimg,HttpServletRequest req){
+        String folderName = "upload";
+        String folderPath = req.getSession()
+                .getServletContext()
+                .getRealPath("/")+folderName+"/";
+        String imgName = FileUtillll.uploadFile(userimg, folderPath, folderName);
+
+        return  imgName;
+    }*/
+    @RequestMapping("querycyhByid")
+    public String querycyhByid(String sn,Model model){
+        Product product=zhjService.querycyhByid(sn);
+        model.addAttribute("product",product);
+       return "product/updateCommodity";
+    }
     /**  跳转到商品分类页面  */
     @RequestMapping("toCategoryPage")
     public String toCategoryPage(){
@@ -134,4 +205,11 @@ public class ZhjController {
 
         return "1";
     }
+
+    public static SolrClient getSolrClient() {
+        return new HttpSolrClient(url + "/" + uri);
+    }
+
+
+
 }

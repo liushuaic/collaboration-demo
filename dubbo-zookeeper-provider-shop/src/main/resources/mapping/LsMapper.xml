@@ -74,7 +74,10 @@
     </select>
 
 
-
+  <select id="queryProduct" resultType="com.jk.model.Product">
+select sn,name,title,seotitle,marketprice,createdatetime from t_product tp,t_productimages tps where tp.productimagesid=tps.proimgeid
+order by createdatetime desc
+  </select>
 
 
 

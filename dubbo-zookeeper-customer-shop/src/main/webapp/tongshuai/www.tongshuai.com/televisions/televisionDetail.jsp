@@ -772,18 +772,20 @@
                                     <span class="capacity-box active">798L</span>
                                     <span class="capacity-box">798L</span>
                                 </div>-->
+
+
                                 <div class="particulars-delivery">
                                     <div class="delivery-address js-delivery-address">
-                                        <%--<span style="color:#ccc;margin-right:5px;">[无货]</span>--%>
+                                        &lt;%&ndash;<span style="color:#ccc;margin-right:5px;">[无货]</span>&ndash;%&gt;
                                         <span style="color:#ccc;margin-right:5px;">剩余:*件</span>
                                         <span class="address-tit">配送至：</span>
                                         <span id="address">山东省 青岛市 崂山区<i class="iconfont icon-arrow-line-down"></i></span>
                                     </div>
-                                   <%-- <div class="delivery-time">
+                                   <div class="delivery-time">
                                         <span>有货</span>
                                         <span>，预计</span>
                                         <span>02月89日（周五）22点送达</span>
-                                    </div>--%>
+                                    </div>
                                 </div>
                                 <div class="particulars-btn">
                                     <a href="javascript:;" class="l-btn-normal l-btn-red l-btn-disable" productId="630">加入购物车</a>
@@ -1793,6 +1795,7 @@
     </div>
 </div>
 <script>
+
     $(function() {
         var cookieVal = getCookie('authorize');
         if (cookieVal) {

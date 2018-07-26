@@ -41,6 +41,16 @@
        introduction = #{introduction}
        where addid = #{addid}
    </update>
+   <update id="updateAddress0" parameterType="com.jk.model.Address">
+        update t_address set
+       adddefault = 0
+       where NOT addid = #{addid}
+   </update>
+   <update id="updateAddress1" parameterType="com.jk.model.Address">
+        update t_address set
+       adddefault = 1
+       where  addid = #{addid}
+   </update>
     <!--
        <select id="getCoupon" resultType="com.jk.model.Coupon">
            select * from (

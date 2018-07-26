@@ -1,5 +1,6 @@
 package com.jk.service;
 
+import com.jk.model.Cart;
 import com.jk.model.Product;
 
 import java.util.List;
@@ -12,4 +13,14 @@ public interface ITelevisionService {
     List<Product> queryTelevisionList(Product tel);
 
     Product TVShowById(String sn);
+
+    void insertCart(Cart cart);
+
+    List<Cart> queryCartAll(String userid);
+
+    void minusQuantity(String cartid);
+
+    void plusQuantity(String cartid);
+
+    void delCart(String cartid);
 }

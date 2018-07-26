@@ -281,8 +281,8 @@ $().ready(function() {
 						</dd>
 				</dl>
 			</td>
-			<td>
-				<iframe id="iframe" name="iframe" src="<%=request.getContextPath()%>/lsJsp/gm.jsp" frameborder="0"></iframe>
+			<td align="center">
+				<iframe id="iframe" name="iframe" src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/about/news/W020180309647616636947.jpg" frameborder="0"></iframe>
 			</td>
 		</tr>
 	</table>

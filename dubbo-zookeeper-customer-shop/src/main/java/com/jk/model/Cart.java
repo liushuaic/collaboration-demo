@@ -25,8 +25,18 @@ public class Cart  implements Serializable {
     /** 最大商品数 */
     public static final Integer MAX_PRODUCT_COUNT = 100;
 
-    /** 会员 */
-    private String memberid;
+    /** 用户id */
+    private String userid;
+
+/*业务字段*/
+    /** 名称 */
+    private String name;
+
+    /** 市场价 */
+    private Double marketprice;
+
+    /*图片路径*/
+    private String title;
 
     public String getCartid() {
         return cartid;
@@ -72,12 +82,36 @@ public class Cart  implements Serializable {
         return MAX_PRODUCT_COUNT;
     }
 
-    public String getMemberid() {
-        return memberid;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setMemberid(String memberid) {
-        this.memberid = memberid;
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getMarketprice() {
+        return marketprice;
+    }
+
+    public void setMarketprice(Double marketprice) {
+        this.marketprice = marketprice;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Override
@@ -88,7 +122,10 @@ public class Cart  implements Serializable {
                 ", productid='" + productid + '\'' +
                 ", tempprice=" + tempprice +
                 ", temppoint=" + temppoint +
-                ", memberid='" + memberid + '\'' +
+                ", userid='" + userid + '\'' +
+                ", name='" + name + '\'' +
+                ", marketprice=" + marketprice +
+                ", title='" + title + '\'' +
                 '}';
     }
 }

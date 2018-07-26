@@ -19,7 +19,7 @@ public class LsServiceImpl implements ILsService {
         return lsMapper.queryUserList(user);
     }
 
-    @Override
+
     public List<Order> queryOrderList() throws Exception {
         List<Order> list = lsMapper.queryOrderList();
         return list;
@@ -42,7 +42,7 @@ public class LsServiceImpl implements ILsService {
      * @return
      * @throws Exception
      */
-    @Override
+
     public JSONObject queryPaymentList(int page, int rows) throws Exception {
         long total = lsMapper.queryPaymentcount();
         int start = ( page - 1) * rows;
@@ -57,7 +57,7 @@ public class LsServiceImpl implements ILsService {
     /**
      * 退款管理
      */
-    @Override
+
     public JSONObject queryRefundsList(int page, int rows) throws Exception {
         long total = lsMapper.queryRefundscount();
         int start = ( page - 1) * rows;
@@ -76,7 +76,7 @@ public class LsServiceImpl implements ILsService {
      * @return
      * @throws Exception
      */
-    @Override
+
     public JSONObject queryShippingList(int page, int rows) throws Exception {
         long total = lsMapper.queryShippingcount();
         int start = ( page - 1) * rows;
@@ -88,7 +88,7 @@ public class LsServiceImpl implements ILsService {
         return json;
     }
 
-    @Override
+
     public JSONObject queryReturnsList(int page, int rows) throws Exception {
         long total = lsMapper.queryReturnscount();
         int start = ( page - 1) * rows;
@@ -106,7 +106,7 @@ public class LsServiceImpl implements ILsService {
      * @return
      * @throws Exception
      */
-    @Override
+
     public JSONObject login(Admin admin) throws Exception {
         JSONObject jsonObj = new JSONObject();
         Integer flag = 0;
@@ -121,6 +121,16 @@ public class LsServiceImpl implements ILsService {
         }
         jsonObj.put("flag", flag);
         return jsonObj;
+    }
+
+    /**
+     * 电视查询
+     * @return
+     * @throws Exception
+     */
+    public List<Product> queryProduct() throws Exception {
+        List<Product> list = lsMapper.queryProduct();
+        return list;
     }
 
 

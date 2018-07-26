@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <jsp:include page="../cfyjsp/article/chajian.jsp"></jsp:include>
+
 <body>
 <table id="paid"></table>
 <script>

@@ -11,10 +11,10 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9; IE=8; IE=7; IE=EDGE">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/iconfont.css" tppabs="http://image.tongshuai.com/images/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_base.css" tppabs="http://image.tongshuai.com/images/l_base.css">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_module.css" tppabs="http://image.tongshuai.com/images/l_module.css">
-    <script type="text/javascript" src="../../../EasyUI/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/iconfont.css" tppabs="http://image.tongshuai.com/images/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_base.css" tppabs="http://image.tongshuai.com/images/l_base.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_module.css" tppabs="http://image.tongshuai.com/images/l_module.css">
+    <script type="text/javascript" src="<%=request.getContextPath()%>/EasyUI/jquery.min.js"></script>
     <script>
         $(function () {
             $("#logoutDiv").show();
@@ -53,9 +53,9 @@
 
     </script>
 
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css" tppabs="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css">
-    <link rel="stylesheet" href="../images/mediaelementplayer.css" tppabs="http://www.tongshuai.com/images/mediaelementplayer.css">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/tongshuai/images/life_style.css" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css" tppabs="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/images/mediaelementplayer.css" tppabs="http://www.tongshuai.com/images/mediaelementplayer.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/life_style.css" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.css">
 
 </head>
 
@@ -379,7 +379,7 @@
                 <li class="second-column o_df-center">
                     <a href="../freezer/index.jsp">
                         <div class="second-column-i">
-                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
+                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
                         <div class="second-column-name">冷柜</div>
                     </a>
@@ -388,7 +388,7 @@
                 <li class="second-column o_df-center">
                     <a href="../water_heater/index.jsp">
                         <div class="second-column-i">
-                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
+                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
                         <div class="second-column-name">热水器</div>
                     </a>
@@ -487,7 +487,7 @@
             <div class="o_u o_df_7-12 o_md_6-12 o_sm_5-12 o_xs_2-2 aboutus_head_banner">
 <%--
                 <img  src="<%=request.getContextPath()%>/images/aboutus_banner_df.png" df="/images/aboutus_banner_df.png" lg="/images/aboutus_banner_lg.png" md="/images/aboutus_banner_md.png" sm="/images/aboutus_banner_md.png" xs="/images/aboutus_banner_xs.png" />
---%>             <img src="../images/aboutus_banner_df.png">
+--%>             <img src="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/images/aboutus_banner_df.png">
             </div>
         </div>
         <!-- 品牌简介banner END -->

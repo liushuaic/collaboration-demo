@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.CfyMapper">
 
+<insert id="zhucusuccess">
+        INSERT INTO t_admin (aid,username,password) VALUES (#{aid},#{username},#{password})
+</insert>
+
+<select id="queryPhone" resultType="com.jk.model.Admin">
+       SELECT * FROM t_admin WHERE phone = #{phone}
+</select>
+
 <select id="queryLabel" resultType="com.jk.model.Tag">
     SELECT * FROM t_Tag
 </select>

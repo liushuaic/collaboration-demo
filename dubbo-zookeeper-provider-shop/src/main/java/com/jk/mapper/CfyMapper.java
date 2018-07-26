@@ -1,9 +1,6 @@
 package com.jk.mapper;
 
-import com.jk.model.Article;
-import com.jk.model.ArticleCategory;
-import com.jk.model.Navigation;
-import com.jk.model.Tag;
+import com.jk.model.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -32,4 +29,10 @@ public interface CfyMapper {
     List<ArticleCategory> queryAtricleCategory();
 
     List<Tag> queryLabel();
+
+    Admin queryPhone(@Param("phone")String phone);
+
+    void zhucusuccess(Admin user);
+
+
 }

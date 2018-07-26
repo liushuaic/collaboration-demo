@@ -62,7 +62,7 @@
                                     <div class="reg-form js_regType_phone">
                                         <div class="reg-input">
                                             <div class="l-input">
-                                                <input type="text" name="username" ph="请输入常用手机号111" maxlength="11"
+                                                <input type="text" name="name" ph="请输入常用手机号111" maxlength="11"
                                                        id="phone"/>
                                                 <i class="iconfont icon-phone-solid"></i>
                                                 <p class="Validform_checktip" id="mobile_error"></p>
@@ -70,8 +70,8 @@
                                         </div>
                                         <div class="reg-input">
                                             <div class="l-input">
-                                                <input type="text" name="password" maxlength="16" ph="6-16位数字、字母或符号的组合"  id="mobilePwd2"/>
-                                                <input type="password" name="password" class="o_df-hide" ph="" maxlength="16" id="mobilePwd"/>
+                                                <input type="text" name="pwd" maxlength="16" ph="6-16位数字、字母或符号的组合"  id="mobilePwd2"/>
+                                                <input type="password" name="userpwd" class="o_df-hide" ph="" maxlength="16" id="mobilePwd"/>
                                                 <i class="iconfont icon-eye-close-solid js_passwordSwitch_mobile"></i>
                                                 <p class="Validform_checktip" id="mobilePwd_error"></p>
                                             </div>
@@ -96,7 +96,7 @@
                                                 <p class="Validform_checktip" id="mobileCode_error"></p>
                                             </div>
                                         </div>
-                                        <a href="javascript:;" id="mobileRegBtn"
+                                        <a href="javascript:zhucesuccess()" id="mobileRegBtn"
                                            class="l-btn-lg l-btn-red l-btn-disable reg-btn">注册</a>
 
                                         <a href="javascript:;"
@@ -115,7 +115,7 @@
                                     <div class="reg-form js_regType_email" style="display: none;">
                                         <div class="reg-input">
                                             <div class="l-input">
-                                                <input type="text" name="username" ph="请输入常用邮箱" maxlength="40"
+                                                <input type="text" name="name" ph="请输入常用邮箱" maxlength="40"
                                                        id="email"/>
                                                 <i class="iconfont icon-member"></i>
                                                 <p class="Validform_checktip" id="email_error"></p>
@@ -123,8 +123,8 @@
                                         </div>
                                         <div class="reg-input">
                                             <div class="l-input">
-                                                <input type="text" name="password" ph="6-16位数字、字母或符号的组合" maxlength="16" id="emailPwd2"/>
-                                                <input type="password" name="password" class="o_df-hide" maxlength="16" id="emailPwd"/>
+                                                <input type="text" name="pwd" ph="6-16位数字、字母或符号的组合" maxlength="16" id="emailPwd2"/>
+                                                <input type="password" name="userpwd" class="o_df-hide" maxlength="16" id="emailPwd"/>
                                                 <i class="iconfont icon-eye-close-solid js_passwordSwitch_email"></i>
                                                 <p class="Validform_checktip" id="emailPwd_error"></p>
                                             </div>
@@ -149,7 +149,7 @@
                                                 <p class="Validform_checktip" id="emailCode_error"></p>
                                             </div>
                                         </div>-->
-                                        <a href="javascript:;" id="emailRegBtn"
+                                        <a href="javascript:zhucesuccess()" id="emailRegBtn"
                                            class="l-btn-lg l-btn-red l-btn-disable reg-btn">注册</a>
                                         <a href="javascript:;"
                                            class="l-btn-lg l-btn-line1 o_df-hide o_md-show o_sm-show o_xs-show reg-btn-line js_regType"
@@ -201,17 +201,41 @@
 <script type="text/javascript">
 
     /**
+     * 注册成功
+     */
+    function zhucesuccess() {
+        alert("注册成功");
+        var pwd=$("#mobilePwd").val();
+        var phone = $("#phone").val();
+        $.ajax({
+            url:"<%=request.getContextPath()%>/cfyController/zhucusuccess.jhtml",
+            type:"post",
+            data:{"username":phone,"password":pwd},
+            success:function (success) {
+               if(success == 1){
+                   location.href="<%=request.getContextPath()%>/tongshuai/user.tongshuai.com/login.jsp";
+               }
+            },
+            error:function () {
+                alert("失败");
+            }
+        })
+    }
+
+    /**
      * 手机验证码获取
      */
     function verification() {
         var phone = $("#phone").val();
-        alert(phone);
         $.ajax({
             url:'<%=request.getContextPath()%>/cfyController/message.jhtml',
             type:"post",
             data:{"phone":phone},
             success:function (flag) {
-                location.href="../tongshuai/user.tongshuai.com/login.jsp";
+                <%--  location.href="<%=request.getContextPath()%>/tongshuai/user.tongshuai.com/login.jsp";  --%>
+                if(flag == -1){
+                    alert("该账号已经被使用过");
+                }
             }
         })
     }
