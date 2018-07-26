@@ -84,7 +84,7 @@ $().ready(function() {
 									<a href="#system">系统</a>
 								</li>
 						<li>
-							<a href="/" target="_blank">首页</a>
+							<a href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/life/index.jsp" target="_blank">首页</a>
 						</li>
 					</ul>
 				</div>
@@ -281,8 +281,8 @@ $().ready(function() {
 						</dd>
 				</dl>
 			</td>
-			<td>
-				<iframe id="iframe" name="iframe" src="<%=request.getContextPath()%>/lsJsp/gm.jsp" frameborder="0"></iframe>
+			<td align="center">
+				<iframe id="iframe" name="iframe" src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/about/news/W020180309647616636947.jpg" frameborder="0"></iframe>
 			</td>
 		</tr>
 	</table>

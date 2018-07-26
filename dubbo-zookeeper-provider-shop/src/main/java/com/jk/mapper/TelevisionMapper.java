@@ -1,6 +1,8 @@
 package com.jk.mapper;
 
+import com.jk.model.Address;
 import com.jk.model.Cart;
+import com.jk.model.Order;
 import com.jk.model.Product;
 import org.apache.ibatis.annotations.Param;
 
@@ -28,4 +30,12 @@ public interface TelevisionMapper {
     void plusQuantity(@Param("cartid")String cartid);
 
     void delCart(@Param("cartid") String cartid);
+
+    Address queeryAddress();
+
+    void insertOrder(Order order);
+
+    Cart queryCartById(@Param("cartid") String s);
+
+    void updateShu(Cart cart);
 }

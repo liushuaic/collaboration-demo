@@ -38,4 +38,66 @@
         delete t_cart where cartid = #{cartid}
     </delete>
 
+    <select id="queeryAddress" resultType="com.jk.model.Address">
+        select * from t_address where adddefault=1
+    </select>
+
+    <insert id="insertOrder">
+        insert into t_order values (
+             #{orderid,jdbcType=VARCHAR},
+             #{address,jdbcType=VARCHAR},
+             #{amountpaid,jdbcType=DOUBLE },
+             #{area,jdbcType=VARCHAR},
+             #{areaname,jdbcType=VARCHAR},
+             #{consignee,jdbcType=VARCHAR},
+             #{couponcodeid,jdbcType=VARCHAR},
+             #{coupondiscount,jdbcType=VARCHAR},
+             #{couponsid,jdbcType=VARCHAR},
+             #{depositsid ,jdbcType=VARCHAR},
+            sysdate,
+              0,
+             0,
+             '1',
+             '1',
+             '1',
+             sysdate,
+             '1',
+               #{memo,jdbcType=VARCHAR},
+               #{offsetamount,jdbcType=VARCHAR},
+               #{operatorid,jdbcType=VARCHAR},
+               #{ordercode,jdbcType=VARCHAR},
+               '1',
+               '1' ,
+              '1',
+              '1',
+           #{paymentmethodname ,jdbcType=VARCHAR},
+           #{paymentsid ,jdbcType=VARCHAR},
+              '1',
+               #{phone,jdbcType=VARCHAR},
+               333,
+               #{promotion,jdbcType=VARCHAR},
+               #{promotiondiscount,jdbcType=DOUBLE},
+               #{refundsid,jdbcType=VARCHAR},
+               #{returnsid,jdbcType=VARCHAR},
+               #{shippingmethodid,jdbcType=VARCHAR},
+               #{shippingmethodname,jdbcType=VARCHAR},
+               #{shippingsid,jdbcType=VARCHAR},
+                  '1',
+                #{tax,jdbcType=DOUBLE},
+                #{zipcode,jdbcType=VARCHAR},
+                sysdate,
+                 #{productid,jdbcType=VARCHAR}
+
+
+
+        )
+    </insert>
+
+    <select id="queryCartById" resultType="com.jk.model.Cart">
+        select * from t_cart where cartid=#{cartid}
+    </select>
+
+    <update id="updateShu">
+         update t_product set stock=stock - #{quantity} where sn=#{productid}
+    </update>
 </mapper>

@@ -588,61 +588,7 @@
                 <div class="prolist-con js_prolistBox">
 
                     <span id="tbody"></span>
-                    <div class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_2-2 o_xs_2-2 js_collectBox">
-                        <div class="prolist-box">
 
-
-                            <span class="l-tag-radius l-tag-green pro-tag">人气</span>
-
-
-
-                            <div class="pro-opporate">
-                                <a class="pro-read js_listCollect" data-productId="630" data-mdm="600000MXE" data-channelName="电视产品">
-                                        <span class="pro-read-i">
-                                            <i class="iconfont icon-price-tag-solid1"></i>
-                                        </span>
-                                    <span class="pro-read-font">收藏</span>
-                                </a>
-                               <%-- <a class="pro-read l-fr js_compareAddProduct" auto="0"
-                                   id="compare_630_top"
-                                   data-id="compare_630_top"
-                                   data-link="http://www.tongshuai.com/televisions/20171214_630.shtml"
-                                   data-thumb="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438.png"
-                                   data-name="统帅随心享"
-                                   data-type="T55FUK"
-                                   data-chnid="94">
-                                    <span class="pro-read-font">对比</span>
-                                        <span class="pro-read-i">
-											<i class="iconfont icon-contrast-solid"></i>
-										</span>
-                                </a>--%>
-                            </div>
-
-                            <%--<a href="http://www.tongshuai.com/televisions/20171214_630.shtml" class="pro-info-box">
-                                <!--<img src="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png" width="200"/>-->
-                                <img src="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png" />
-                                <!-- http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png -->
-
-                                <div class="pro-info-title">
-                                    统帅随心享
-                                </div>
-                                <div class="pro-info-mark">
-                                    T55FUK
-                                </div>
-                                <div class="pro-info-price js_minPrice" sku_value=''>
-                                    ¥<span>4399</span>
-                                </div>
-                                <span class="l-btn-sm l-btn-red pro-info-buy">立即购买</span>
-                                <!--<span class="l-btn-sm l-btn-line2 pro-info-take">订阅</span>-->
-                            </a>--%>
-                            <!--活动暂时隐藏-->
-                            <!-- <div class="pro-activity">
-                                <i class="iconfont icon-arrow-line-left l-fl"></i>
-                                <span>唤醒初夏</span>
-                                <i class="iconfont icon-arrow-line-right l-fr"></i>
-                            </div> -->
-                        </div>
-                    </div>
 
                 </div>
 
@@ -1142,6 +1088,7 @@
 
                 var content="";
                 for(var i=0;i<data.length;i++){
+                    var sn="'"+data[i].sn+"'";
                     content +=  '<div class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_2-2 o_xs_2-2 js_collectBox">';
                     content +=         ' <div class="prolist-box">';
                     content +=        ' <span class="l-tag-radius l-tag-green pro-tag">人气</span>';
@@ -1155,7 +1102,7 @@
                     content +=       ' <span class="pro-read-i">';
                     content +=      ' <i class="iconfont icon-contrast-solid"></i>';
                     content +=      ' </span> </a> </div>';
-                    content +=      ' <a href="javascript:toDetail('+data[i].sn+')"tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml" class="pro-info-box">';
+                    content +=      ' <a href="javascript:toDetail('+sn+')"tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml" class="pro-info-box">';
                     content +=       ' <img src="<%=request.getContextPath()%>/'+data[i].title+'">';
                     content +=    ' <div class="pro-info-title">'+ data[i].name+'</div>';
                     content +=   ' <div class="pro-info-mark">'+data[i].seotitle+'</div> ';

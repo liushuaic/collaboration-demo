@@ -138,6 +138,8 @@ public class Order implements Serializable{
     /**打印*/
     private String dayin;
 
+    private String productid;
+
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -487,6 +489,29 @@ public class Order implements Serializable{
         this.dayin = dayin;
     }
 
+    public String getProductid() {
+        return productid;
+    }
+
+    public void setProductid(String productid) {
+        this.productid = productid;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Order)) return false;
+
+        Order order = (Order) o;
+
+        return orderid.equals(order.orderid);
+    }
+
+    @Override
+    public int hashCode() {
+        return orderid.hashCode();
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -513,7 +538,7 @@ public class Order implements Serializable{
                 ", memo='" + memo + '\'' +
                 ", promotion='" + promotion + '\'' +
                 ", expire=" + expire +
-                ", createdatetime='" + createdatetime + '\'' +
+                ", createdatetime=" + createdatetime +
                 ", lockexpire=" + lockexpire +
                 ", isallocatedstock='" + isallocatedstock + '\'' +
                 ", paymentmethodname='" + paymentmethodname + '\'' +
@@ -533,21 +558,7 @@ public class Order implements Serializable{
                 ", shippingsid='" + shippingsid + '\'' +
                 ", returnsid='" + returnsid + '\'' +
                 ", dayin='" + dayin + '\'' +
+                ", productid='" + productid + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Order)) return false;
-
-        Order order = (Order) o;
-
-        return orderid.equals(order.orderid);
-    }
-
-    @Override
-    public int hashCode() {
-        return orderid.hashCode();
     }
 }

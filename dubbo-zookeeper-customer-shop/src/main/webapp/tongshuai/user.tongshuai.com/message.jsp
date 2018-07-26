@@ -20,9 +20,9 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9; IE=8; IE=7; IE=EDGE">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_base.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_module.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/images/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/images/l_base.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/images/l_module.css">
 
     <script type="text/javascript">
         // 站点服务配置
@@ -37,9 +37,9 @@
             productChannelId: "273690",
         };
     </script>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/jquery.Jcrop.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/member_nav.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/member_myinfo.css">
+    <link rel="stylesheet" href="http://image.tongshuai.com/tongshuai/images/jquery.Jcrop.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/tongshuai/images/member_nav.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/tongshuai/images/member_myinfo.css">
 </head>
 
 <body>
@@ -110,10 +110,10 @@
                 </div>
 
 
-            <!-- 左侧导航 End-->
-            <!-- 右侧内容 START-->
+                <!-- 左侧导航 End-->
+                <!-- 右侧内容 START-->
 
-        </div>
+            </div>
             <div style="float: right; width: 745px;height:590px;border: 1px solid red">
                 <div class="memeber-homenav-top o_df-show o_md-hide o_xs-hide o_sm-hide" style="height: 100px;width:100%">
                     <img src="http://image.tongshuai.com/tongshuai/images/member_home-title.jpg" width="740px" height="100px"/>
@@ -128,21 +128,21 @@
                     </div>
                 </div>
                 <iframe id="iframe" name="iframe" src="" frameborder="0" width="750px" scrolling="no" height="500px"></iframe>
-               <%-- <div class="memeber-homenav-top o_df-show o_md-hide o_xs-hide o_sm-hide" style="float: right; width: 745px;height:490px;border: 1px solid blue">
-&lt;%&ndash;
-                    <img src="http://image.tongshuai.com/tongshuai/index/sybanner/W020180326519864745340.jpg" width="740px" height="490px"/>
-&ndash;%&gt;
-                  <iframe id="iframe" name="iframe" src="http://image.tongshuai.com/tongshuai/index/sybanner/W020180326519864745340.jpg" frameborder="0" width="750px" scrolling="no" height="500px"></iframe>
+                <%-- <div class="memeber-homenav-top o_df-show o_md-hide o_xs-hide o_sm-hide" style="float: right; width: 745px;height:490px;border: 1px solid blue">
+ &lt;%&ndash;
+                     <img src="http://image.tongshuai.com/tongshuai/index/sybanner/W020180326519864745340.jpg" width="740px" height="490px"/>
+ &ndash;%&gt;
+                   <iframe id="iframe" name="iframe" src="http://image.tongshuai.com/tongshuai/index/sybanner/W020180326519864745340.jpg" frameborder="0" width="750px" scrolling="no" height="500px"></iframe>
 
-                </div>--%>
-               <%-- <div style="float: right; width: 745px;height:490px;border: 1px solid blue">
-                   <img src="http://image.tongshuai.com/tongshuai/index/sybanner/W020180326519864745340.jpg" width="745px" height="490px" >
-                </div>--%>
+                 </div>--%>
+                <%-- <div style="float: right; width: 745px;height:490px;border: 1px solid blue">
+                    <img src="http://image.tongshuai.com/tongshuai/index/sybanner/W020180326519864745340.jpg" width="745px" height="490px" >
+                 </div>--%>
             </div>
-        <!-- 右侧内容 End-->
-    </div>
+            <!-- 右侧内容 End-->
+        </div>
 
-</div>
+    </div>
 </div>
 <script type="text/javascript" src="../../image.tongshuai.com/images/jquery-1.8.3.min.js" tppabs="http://image.tongshuai.com/images/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../../image.tongshuai.com/images/jquery.cookie.js" tppabs="http://image.tongshuai.com/images/jquery.cookie.js"></script>
