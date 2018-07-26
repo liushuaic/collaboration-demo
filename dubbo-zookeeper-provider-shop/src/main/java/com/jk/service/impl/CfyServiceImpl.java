@@ -67,6 +67,7 @@ public class CfyServiceImpl implements ICfyService {
         return cfyMapper.queryLabel();
     }
 
+
     @Override
     public Admin queryPhone(String phone) {
         Admin user=cfyMapper.queryPhone(phone);

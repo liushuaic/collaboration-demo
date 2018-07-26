@@ -1,19 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: lenovo
-  Date: 2018/7/20
-  Time: 21:33
+  Date: 2018/7/21
+  Time: 22:41
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html lang="en">
+
 <head>
     <meta charset=utf-8"UTF-8">
-
-
-
-    <title>【统帅电视】智能_LED_4K电视   介绍_价格 - 统帅官网</title>
+    <title>搜索结果 - 统帅官网</title>
     <meta name="keywords" content="【统帅电视】智能_LED_4K电视   介绍_价格 - 统帅官网" />
     <meta name="description" content="【统帅电视】智能_LED_4K电视   介绍_价格 - 统帅官网" />
 
@@ -25,6 +22,12 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9; IE=8; IE=7; IE=EDGE">
+    <script type="text/javascript" src="<%=request.getContextPath()%>/tongshuai/was5/web/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/tongshuai/was5/web/javascript/leader_public_css.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/was5/images/product_list.css" >
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/was5/images/product_search.css" >
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/was5/images/swiper-3.4.2.min.css" >
+
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/iconfont.css" tppabs="http://image.tongshuai.com/images/iconfont.css">
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_base.css" tppabs="http://image.tongshuai.com/images/l_base.css">
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_module.css" tppabs="http://image.tongshuai.com/images/l_module.css">
@@ -42,11 +45,17 @@
             productChannelId: "273690",
         };
     </script>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/default/easyui.css"/>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/EasyUI/themes/icon.css"/>
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css" tppabs="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css">
     <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/tongshuai/images/product_list.css" tppabs="http://image.tongshuai.com/tongshuai/images/product_list.css">
     <style type="text/css">
         .displayFilter{color: #ccc;cursor: default;}
     </style>
+    <!-- 引入EasyUI -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/jquery.easyui.min.js"></script>
+    <!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/EasyUI/locale/easyui-lang-zh_CN.js"></script>
 
     <script type="text/javascript" src="../../../EasyUI/jquery.min.js"></script>
     <script>
@@ -429,133 +438,22 @@
 
                 <img src="../../image.tongshuai.com/tongshuai/televisions/W020171223679137298053.jpg" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171223679137298053.jpg" class="o_u o_df_2-2 js_bannerImg" />
 
-
-                <div class="list-nav-type black">
-
-                    <div class="nav-type-img">
-                        <img src="../../image.tongshuai.com/tongshuai/televisions/W020171223679137664327.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171223679137664327.png" />
-                    </div>
-                    <div class="nav-type-en">TELEVISION</div>
-                    <div class="nav-type-china">电视</div>
-                </div>
-
-
-
-
             </div>
+            <br>
             <div class="o_u o_df_1-12"></div>
-            <div class="o_u o_df_10-12">
-                <div class="list-kind-box">
-                    <div class="list-kind js_showFloatList">
-                        <div class="list-kind-icon">
-
-                            <img src="images/P020170925572468483553.png" tppabs="http://www.tongshuai.com/televisions/images/P020170925572468483553.png"/>
 
 
-                        </div>
-                        <div class="list-kind-font">
+            <input class="easyui-textbox" data-options="prompt:'产品搜索'" value="${param.searchValue}"  iconCls="icon-search" style="height: 25px;width: 260px" id="paramid">
 
-                            <span class="list-kind-china">电视<i class="iconfont icon-arrow-line-down"></i><i class="iconfont icon-arrow-line-up"></i></span>
+<%--                <span>热门搜索：</span>
 
+                <a href="">双开门冰箱</a>
 
-                            <span class="list-kind-english">TELEVISION</span>
+                <a href="">空调</a>
 
-
-
-
-
-                        </div>
-                        <div class="list-kind-line o_md-hide o_sm-hide o_xs-hide"></div>
-                        <ul class="float-list">
-                            <div class="triangle"></div>
+                <a href="">滚筒洗衣机</a>--%>
 
 
-                            <li>
-                                <a href="index.jsp" tppabs="http://www.tongshuai.com/televisions/">
-                                    <img src="images/P020170925572468483553.png" tppabs="http://www.tongshuai.com/televisions/images/P020170925572468483553.png"/>
-                                    <span>电视</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="../laundry/index.jsp" tppabs="http://www.tongshuai.com/laundry/">
-                                    <img src="../laundry/images/P020170925571955730312.png" tppabs="http://www.tongshuai.com/laundry/images/P020170925571955730312.png"/>
-                                    <span>洗衣机</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="../air_conditioners/index.jsp tppabs="http://www.tongshuai.com/air_conditioners/">
-                                    <img src="../air_conditioners/images/P020170925572252727655.png" tppabs="http://www.tongshuai.com/air_conditioners/images/P020170925572252727655.png"/>
-                                    <span>空调</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="../cooling/index.jsp" tppabs="http://www.tongshuai.com/cooling/">
-                                    <img src="../cooling/images/P020170925571335610145.png" tppabs="http://www.tongshuai.com/cooling/images/P020170925571335610145.png"/>
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="../freezer/index.jsp" tppabs="http://www.tongshuai.com/freezer/">
-                                    <img src="../freezer/images/P020171101586087833174.png" tppabs="http://www.tongshuai.com/freezer/images/P020171101586087833174.png"/>
-                                    <span>冷柜</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="../water_heater/index.jsp" tppabs="http://www.tongshuai.com/water_heater/">
-                                    <img src="../water_heater/images/P020170925572321617383.png" tppabs="http://www.tongshuai.com/water_heater/images/P020170925572321617383.png"/>
-                                    <span>热水器</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="../cooking_appliances/index.jsp" tppabs="http://www.tongshuai.com/cooking_appliances/">
-                                    <img src="../cooking_appliances/images/P020170925572388955321.png" tppabs="http://www.tongshuai.com/cooking_appliances/images/P020170925572388955321.png"/>
-                                    <span>厨电</span>
-                                </a>
-                            </li>
-
-
-
-
-                        </ul>
-                    </div>
-                    <div class="list-type o_md-hide o_sm-hide o_xs-hide js_proNameBox">
-
-
-
-                    </div>
-                    <a class="more js_listNavShowMore js_listMobileNavhide" data-flag=0 >
-                        <span class="o_df-hide o_xs-show">展开筛选项</span><span class="o_xs-hide">展开筛选项</span>&nbsp;<i class="iconfont icon-plus"></i>
-                    </a>
-                </div>
-
-
-
-                <!-- sku -->
-
-                <div class="list-filter-select" style="display:none">
-                    <div class="list-select-deletebox">
-                        <a class="list-select-deleteall js_deleteAll">全部删除</a>
-                    </div>
-                    <div class="list-select-bgbox js_filter">
-
-
-                    </div>
-                </div>
-
-                <div class="list-filter js_screenClick">
-
-                    <a class="list-more js_listNavShowMore  js_listNavhide" data-flag=0 >
-                        <span>展开全部筛选项</span>&nbsp;<i class="iconfont icon-plus"></i>
-                    </a>
-                </div>
-                <!-- sku END -->
-            </div>
             <div class="o_u o_df_1-12"></div>
         </div>
         <!-- 导航 列表页 END -->
@@ -588,7 +486,7 @@
                 <div class="prolist-con js_prolistBox">
 
                     <span id="tbody"></span>
-                    <div class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_2-2 o_xs_2-2 js_collectBox">
+                 <%--   <div class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_2-2 o_xs_2-2 js_collectBox">
                         <div class="prolist-box">
 
 
@@ -603,7 +501,7 @@
                                         </span>
                                     <span class="pro-read-font">收藏</span>
                                 </a>
-                               <%-- <a class="pro-read l-fr js_compareAddProduct" auto="0"
+                              &lt;%&ndash;  <a class="pro-read l-fr js_compareAddProduct" auto="0"
                                    id="compare_630_top"
                                    data-id="compare_630_top"
                                    data-link="http://www.tongshuai.com/televisions/20171214_630.shtml"
@@ -612,13 +510,13 @@
                                    data-type="T55FUK"
                                    data-chnid="94">
                                     <span class="pro-read-font">对比</span>
-                                        <span class="pro-read-i">
+                                    <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
-                                </a>--%>
+                                </a>&ndash;%&gt;
                             </div>
 
-                            <%--<a href="http://www.tongshuai.com/televisions/20171214_630.shtml" class="pro-info-box">
+                           &lt;%&ndash; <a href="http://www.tongshuai.com/televisions/20171214_630.shtml" class="pro-info-box">
                                 <!--<img src="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png" width="200"/>-->
                                 <img src="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png" />
                                 <!-- http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png -->
@@ -634,7 +532,7 @@
                                 </div>
                                 <span class="l-btn-sm l-btn-red pro-info-buy">立即购买</span>
                                 <!--<span class="l-btn-sm l-btn-line2 pro-info-take">订阅</span>-->
-                            </a>--%>
+                            </a>&ndash;%&gt;
                             <!--活动暂时隐藏-->
                             <!-- <div class="pro-activity">
                                 <i class="iconfont icon-arrow-line-left l-fl"></i>
@@ -648,7 +546,7 @@
 
             </div>
             <!-- </div> -->
-        </div>
+        </div>--%>
         <!-- 产品列表 END -->
         <!-- 分页 -->
         <div class="o_g product-listpage pageMax o_sm-hide o_xs-hide">
@@ -676,25 +574,24 @@
                         <div class="o_g js_recommend">
 
 
-<%--
+
                             <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171214_629.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171214_629.shtml">
-                                <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" />
+                                <img src="../../image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" />
                                 <div class="recommend-pro-info">
                                     <span class="pro-info-title">统帅随心享</span>
                                     <span class="pro-info-type">T50FUK</span>
                                     <span class="pro-info-price js_minPrice" sku_value=''>￥<span>3999</span></span>
                                 </div>
-                            </a>--%>
+                            </a>
 
-                          <%--  <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171214_630.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171214_630.shtml">
-                                <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/televisions/W020171214534602112438.png"/>
+                            <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171214_630.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171214_630.shtml">
                                 <div class="recommend-pro-info">
                                     <span class="pro-info-title">统帅随心享</span>
                                     <span class="pro-info-type">T55FUK</span>
                                     <span class="pro-info-price js_minPrice" sku_value=''>￥<span>4399</span></span>
                                 </div>
                             </a>
---%>
+
                             <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171213_620.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml">
                                 <img src="../../image.tongshuai.com/tongshuai/televisions/W020171213635291689197.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171213635291689197.png" />
                                 <div class="recommend-pro-info">
@@ -1135,11 +1032,13 @@
 </script>
 <script>
     $(function(){
+       var searchValue = $("#paramid").val();
         $.ajax({
-            url:"<%=request.getContextPath()%>/television/queryTelevisionList.jhtml",
+            url:'<%=request.getContextPath()%>/lsController/queryProduct.jhtml',
             type:"post",
+            data:{searchValue:searchValue},
+            dataType:'json',
             success:function(data){
-
                 var content="";
                 for(var i=0;i<data.length;i++){
                     content +=  '<div class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_2-2 o_xs_2-2 js_collectBox">';
@@ -1156,7 +1055,7 @@
                     content +=      ' <i class="iconfont icon-contrast-solid"></i>';
                     content +=      ' </span> </a> </div>';
                     content +=      ' <a href="javascript:toDetail('+data[i].sn+')"tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml" class="pro-info-box">';
-                    content +=       ' <img src="<%=request.getContextPath()%>/'+data[i].title+'">';
+                    content +=       ' <img src="'+data[i].title+'">';
                     content +=    ' <div class="pro-info-title">'+ data[i].name+'</div>';
                     content +=   ' <div class="pro-info-mark">'+data[i].seotitle+'</div> ';
                     content +=      ' <div class="pro-info-price js_minPrice" > ¥<span>'+data[i].marketprice+'</span> </div>';
@@ -1164,10 +1063,10 @@
                     content +=     ' </div> </div>    ';
 
                 }
-
                 $("#tbody").html(content);
-                $("#total").html(data.length+1);
-
+                $("#total").html(data.length);
+            },
+            error:function(data){
             }
         })
     })
@@ -1175,6 +1074,8 @@
     function  toDetail(id) {
         location.href="televisionDetail.jsp?sn="+id;
     }
+
+
 </script>
 
 

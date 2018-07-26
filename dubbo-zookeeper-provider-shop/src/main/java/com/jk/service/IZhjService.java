@@ -22,4 +22,12 @@ public interface IZhjService {
     JSONObject queryProductNotifyList(int page, int rows, ProductNotify pro);
 
     List<Brand> queryBrand();
+
+    List querycyhList();
+
+    void delcyhList(String sn);
+
+    void addFrom(Product product);
+
+    Product querycyhByid(String sn);
 }

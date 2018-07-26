@@ -1,5 +1,9 @@
 package com.jk.util;
 
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.util.CellRangeAddress;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -7,15 +11,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFRichTextString;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.CellRangeAddress;
-import org.apache.poi.hssf.util.HSSFColor;
 
 /**
  * 导出Excel公共方法
@@ -64,7 +59,7 @@ public class ExportExcel {
             HSSFCellStyle columnTopStyle = this.getColumnTopStyle(workbook);//获取列头样式对象
             HSSFCellStyle style = this.getStyle(workbook);                    //单元格样式对象
             
-            sheet.addMergedRegion(new CellRangeAddress(0, 1, 0, (rowName.length-1)));  
+            sheet.addMergedRegion(new CellRangeAddress(0, 1, 0, (rowName.length-1)));
             cellTiltle.setCellStyle(columnTopStyle);
             cellTiltle.setCellValue(title);
             

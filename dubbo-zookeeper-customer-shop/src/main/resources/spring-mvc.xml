@@ -14,6 +14,22 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/" p:suffix=".jsp" />
 
+	<!-- 配置多媒体解析器 -->
+	<bean id="multipartResolver"
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设定默认编码 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
+
+	<!--&lt;!&ndash; 配置solrServer服务，供数据访问层检索数据使用： &ndash;&gt;
+	<bean id="solrServer" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
+		&lt;!&ndash; 配置构造方法 &ndash;&gt;
+		<constructor-arg value="http://192.168.3.151:8080/solr/my_core"/>
+	</bean>
+-->
+
 	<!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="defaultEncoding">
 			<value>UTF-8</value>

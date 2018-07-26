@@ -13,7 +13,7 @@ public class ProductImages implements Serializable{
     private String productid;
 
     /*图片路径*/
-    private String imageurl;
+    private String title;
 
     public String getProimgeid() {
         return proimgeid;
@@ -32,11 +32,11 @@ public class ProductImages implements Serializable{
     }
 
     public String getImageurl() {
-        return imageurl;
+        return title;
     }
 
     public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
+        this.title = imageurl;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class ProductImages implements Serializable{
         return "ProductImages{" +
                 "proimgeid='" + proimgeid + '\'' +
                 ", productid='" + productid + '\'' +
-                ", imageurl='" + imageurl + '\'' +
+                ", imageurl='" + title + '\'' +
                 '}';
     }
 }

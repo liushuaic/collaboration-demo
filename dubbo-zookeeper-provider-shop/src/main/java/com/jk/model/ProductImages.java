@@ -13,7 +13,16 @@ public class ProductImages implements Serializable{
     private String productid;
 
     /*图片路径*/
-    private String imageurl;
+    private String title;
+
+    @Override
+    public String toString() {
+        return "ProductImages{" +
+                "proimgeid='" + proimgeid + '\'' +
+                ", productid='" + productid + '\'' +
+                ", title='" + title + '\'' +
+                '}';
+    }
 
     public String getProimgeid() {
         return proimgeid;
@@ -31,20 +40,11 @@ public class ProductImages implements Serializable{
         this.productid = productid;
     }
 
-    public String getImageurl() {
-        return imageurl;
+    public String getTitle() {
+        return title;
     }
 
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
-    }
-
-    @Override
-    public String toString() {
-        return "ProductImages{" +
-                "proimgeid='" + proimgeid + '\'' +
-                ", productid='" + productid + '\'' +
-                ", imageurl='" + imageurl + '\'' +
-                '}';
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

@@ -92,4 +92,6 @@ public interface LsMapper{
      * @throws Exception
      */
     List<Admin> queryAdminByName(@Param("username") String username) throws Exception;
+
+    List<Product> queryProduct() throws Exception;
 }
