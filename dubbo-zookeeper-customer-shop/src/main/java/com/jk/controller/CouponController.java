@@ -83,7 +83,7 @@ public class CouponController {
 		System.out.println(list);
 		//poi导出数据
 		String title = "组织机构信息";
-		String[] rowsName = new String[]{"序号","姓名","起始日期","结束日期","最小商品数量","最大商品数量","最小商品价格","最大商品价格","价格运算表达式","是否启用","是否允许积分兑换","积分兑换数","介绍"};
+		String[] rowsName = new String[]{"序号","姓名","起始日期","结束日期","最小商品数量","最大商品数量","最小商品价格","最大商品价格","价格运算表达式","介绍"};
 		List<Object[]>  dataList = new ArrayList<Object[]>();
 		Object[] objs = null;
 		for (int i = 0; i < list.size(); i++) {
@@ -98,10 +98,7 @@ public class CouponController {
 			objs[6] = cou.getMinimumprice();
 			objs[7] = cou.getMaximumprice();
 			objs[8] = cou.getPriceexpression();
-			objs[9] = cou.getIsEnabled();
-			objs[10] = cou.getIsexchange();
-			objs[11] = cou.getPoint();
-			objs[12] = cou.getIntroduction();
+			objs[9] = cou.getIntroduction();
 			dataList.add(objs);
 		}
 		ExportExcel exportExcel = new ExportExcel(title, rowsName, dataList, response);

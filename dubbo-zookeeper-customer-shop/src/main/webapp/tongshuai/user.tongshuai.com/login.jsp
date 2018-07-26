@@ -58,46 +58,50 @@
                                     <div class="login-tit js_loginType_tit">登录统帅</div>
                                     <div class="login-form js_loginType_pc">
                                         <form id="login_form_id">
-                                        <div class="l-input login-input">
-                                            <input type="text" name="username" ph="手机号 / 邮箱 / 用户名"
-                                                   id="loginName" maxlength="40"/>
-                                            <i class="iconfont icon-member"></i>
-                                            <p class="Validform_checktip" id="loginName_error"></p>
-                                        </div>
-                                        <div class="l-input login-input">
-                                            <input type="password" name="password" ph="密码"
-                                                   id="pwd" maxlength="16"/>
-                                            <i class="iconfont icon-lock-solid"></i>
-                                            <p class="Validform_checktip" id="pwd_error"></p>
-                                        </div>
-                                        <div class="l-input login-input o_borderbox o_df-hide">
-                                            <input type="text" class="o_borderbox" name="" ph="图形验证码" maxlength="4"
-                                                   id="sysCode"/>
-                                            <a href="javascript:;" class="exchange" id="exchange">换一换</a>
-                                            <a href="javascript:;" class="l-btn-sm l-btn-red l-btn-disable code">
-                                                <img src="" id="verifyCode"/>
-                                            </a>
-                                            <p class="Validform_checktip" id="sysCode_error"></p>
-                                        </div>
-                                        <div class="login-role">
+                                            <div class="l-input login-input">
+                                                <input onfocus="yonghu()" type="text" name="username" ph="手机号 / 邮箱 / 用户名"
+                                                       id="loginName" maxlength="40"/>
+                                                <i class="iconfont icon-member"></i>
+                                                <p class="Validform_checktip" id="loginName_error"></p>
+                                            </div>
+                                            <br>
+                                            <span id="span1"></span><br>
+                                            <div class="l-input login-input">
+                                                <input onfocus="mima()" type="password" name="password" ph="密码"
+                                                       id="pwd" maxlength="16"/>
+                                                <i class="iconfont icon-lock-solid"></i>
+                                                <p class="Validform_checktip" id="pwd_error"></p>
+                                            </div>
+                                            <br>
+                                            <span id="span2"></span><br>
+                                            <div class="l-input login-input o_borderbox o_df-hide">
+                                                <input type="text" class="o_borderbox" name="" ph="图形验证码" maxlength="4"
+                                                       id="sysCode"/>
+                                                <a href="javascript:;" class="exchange" id="exchange">换一换</a>
+                                                <a href="javascript:;" class="l-btn-sm l-btn-red l-btn-disable code">
+                                                    <img src="" id="verifyCode"/>
+                                                </a>
+                                                <p class="Validform_checktip" id="sysCode_error"></p>
+                                            </div>
+                                            <div class="login-role">
                                                 <span>
                                                   <input class="js_checkbox" type="checkbox" checked="true"
                                                          data-notnull="true" value="2周内免登录" id="twoWeeksLogin">
                                                 </span>
-                                            <i class="iconfont icon-problem-solid l-fr"></i>
-                                            <a class="forget-psw l-fr"
-                                               href="javascript:if(confirm('http://user.tongshuai.com/ids/ts/password_find.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���Ѿ���վ���������ų���������ų���·����ַ��(��ϵͳ�� Teleport Ultra �����ǿ�ѡ��; �μ���Ŀ����, �������ǡ�)  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/ids/ts/password_find.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/'" tppabs="http://user.tongshuai.com/ids/ts/password_find.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/">忘记密码</a>
-                                            <p class="Validform_checktip"></p>
-                                        </div>
-                                        <a href="javascript:;" class="l-btn-lg l-btn-red l-btn-disable login-btn"
-                                           id="login">登录</a>
-                                        <a href="javascript:;"
-                                           class="l-btn-lg l-btn-line1 o_df-hide o_md-show o_sm-show o_xs-show login-btn-line js_loginType"
-                                           data-login=1>使用动态密码登录</a>
-                                        <div class="login-reg">
-                                            <a href="javascript:if(confirm('http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���Ѿ���վ���������ų���������ų���·����ַ��(��ϵͳ�� Teleport Ultra �����ǿ�ѡ��; �μ���Ŀ����, �������ǡ�)  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/'" tppabs="http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/">立即注册</a>
-                                        </div>
-                                        </form>
+                                                <i class="iconfont icon-problem-solid l-fr"></i>
+                                                <a class="forget-psw l-fr"
+                                                   href="http://user.tongshuai.com/ids/ts/password_find.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com">忘记密码</a>
+                                                <p class="Validform_checktip"></p>
+                                            </div>
+                                            <a href="javascript:denglu()" class="">登录</a>
+
+                                            <a href="javascript:;"
+                                               class="l-btn-lg l-btn-line1 o_df-hide o_md-show o_sm-show o_xs-show login-btn-line js_loginType"
+                                               data-login=1>使用动态密码登录</a>
+                                            <div class="login-reg">
+                                                <a href="<%=request.getContextPath()%>/background/zhuce.jsp">立即注册</a>
+                                            </div>
+                                            </form>
                                     </div>
                                     <div class="login-form js_loginType_phone" style='display:none'>
                                         <div class="l-input login-input">
@@ -167,22 +171,61 @@
 <script type="text/javascript" src="../image.tongshuai.com/images/validform_v5.3.2_min.js" tppabs="http://image.tongshuai.com/images/validform_v5.3.2_min.js"></script>
 <script type="text/javascript">
 
-    $("#login").click(function(){
-
+  function denglu(){
         $.ajax({
-            url: '<%=request.getContextPath()%>/lsController/login.jhtml',
-            type: 'post',
-            data: $("#login_form_id").serialize(),
-            async: true,
-            success: function (msg) {
-             alert(msg);
-                 if(msg==2){
-                     location.href="../www.tongshuai.com/life/index.jsp";
-                 }
+            url:'<%=request.getContextPath()%>/lsController/login.jhtml',
+            type:'post',
+            data:$("#login_form_id").serialize(),
+            async:true,
+            success:function(msg){
+                // 0:用户名不存在 1：密码错误 2：登录成功
+                var str = "<font color='red'>登陆成功</font>";
+                if(msg == 0){
+                    str = "<font color='red'>用户不存在！请去注册</font>";
+                    $("#span1").html(str);
+                }
+                if(msg == 1){
+                    str = "<font color='red'>密码错误</font>";
+                    $("#span2").html(str);
+                }
+                if(msg == 2){
+                    location.href="../www.tongshuai.com/life/index.jsp";
+                }
+                $.messager.show({
+                    title:'你有一个新消息',
+                    msg:str,
+                    timeout:2000,// 单位：毫秒
+                    showType:'slide'
+                });
             }
         })
 
-    })
+        }
+
+
+
+  function yonghu(){
+      $("#span1").html("");
+  }
+
+  function mima(){
+      $("#span2").html("");
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 非空校验
