@@ -84,4 +84,11 @@ public class AddressController {
 		addressService.updateAddress(address);
 		return mv;
 	}
+	//默认地址
+	@RequestMapping("updateAddressId")
+	public ModelAndView updateAddressId(String addid){
+		ModelAndView mv = new ModelAndView();
+		addressService.updateAddressId(addid);
+	return mv;
+	}
 }

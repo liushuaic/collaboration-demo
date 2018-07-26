@@ -100,18 +100,18 @@
                 </li>
                 <li class="nav-column js_column" column='1'>
 
-                    <a href="../life/index.htm" tppabs="http://www.tongshuai.com/life/">
+                    <a href="../life/index.jsp" tppabs="http://www.tongshuai.com/life/">
                         <div class="nav-column-box2"></div>
                         <img src="../../image.tongshuai.com/tongshuai/images/nav-life.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-life.gif" class="o_lg-hide" />
                     </a>
                 </li>
                 <li class="nav-column js_column" column='2'>
-                    <a href="../member/index.htm" tppabs="http://www.tongshuai.com/member/">
+                    <a href="../member/index.jsp" tppabs="http://www.tongshuai.com/member/">
                         <div class="nav-column-box3"></div>
                     </a>
                 </li>
                 <li class="nav-column js_column" column='3'>
-                    <a href="../service/index.htm" tppabs="http://www.tongshuai.com/service/">
+                    <a href="../service/index.jsp" tppabs="http://www.tongshuai.com/service/">
                         <div class="nav-column-box4"></div>
                     </a>
                 </li>
@@ -603,7 +603,7 @@
                                         </span>
                                     <span class="pro-read-font">收藏</span>
                                 </a>
-                               <%-- <a class="pro-read l-fr js_compareAddProduct" auto="0"
+                                <a class="pro-read l-fr js_compareAddProduct" auto="0"
                                    id="compare_630_top"
                                    data-id="compare_630_top"
                                    data-link="http://www.tongshuai.com/televisions/20171214_630.shtml"
@@ -615,10 +615,10 @@
                                         <span class="pro-read-i">
 											<i class="iconfont icon-contrast-solid"></i>
 										</span>
-                                </a>--%>
+                                </a>
                             </div>
 
-                            <%--<a href="http://www.tongshuai.com/televisions/20171214_630.shtml" class="pro-info-box">
+                            <a href="http://www.tongshuai.com/televisions/20171214_630.shtml" class="pro-info-box">
                                 <!--<img src="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png" width="200"/>-->
                                 <img src="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png" />
                                 <!-- http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438_200.png -->
@@ -634,7 +634,7 @@
                                 </div>
                                 <span class="l-btn-sm l-btn-red pro-info-buy">立即购买</span>
                                 <!--<span class="l-btn-sm l-btn-line2 pro-info-take">订阅</span>-->
-                            </a>--%>
+                            </a>
                             <!--活动暂时隐藏-->
                             <!-- <div class="pro-activity">
                                 <i class="iconfont icon-arrow-line-left l-fl"></i>
@@ -676,25 +676,25 @@
                         <div class="o_g js_recommend">
 
 
-<%--
+
                             <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171214_629.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171214_629.shtml">
-                                <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" />
+                                <img src="../../image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171214530693552253.png" />
                                 <div class="recommend-pro-info">
                                     <span class="pro-info-title">统帅随心享</span>
                                     <span class="pro-info-type">T50FUK</span>
                                     <span class="pro-info-price js_minPrice" sku_value=''>￥<span>3999</span></span>
                                 </div>
-                            </a>--%>
+                            </a>
 
-                          <%--  <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171214_630.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171214_630.shtml">
-                                <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/televisions/W020171214534602112438.png"/>
+                            <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171214_630.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171214_630.shtml">
+                                <img src="../../image.tongshuai.com/tongshuai/televisions/W020171214534602112438.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171214534602112438.png" />
                                 <div class="recommend-pro-info">
                                     <span class="pro-info-title">统帅随心享</span>
                                     <span class="pro-info-type">T55FUK</span>
                                     <span class="pro-info-price js_minPrice" sku_value=''>￥<span>4399</span></span>
                                 </div>
                             </a>
---%>
+
                             <a class="o_u o_df_1-4 o_lg_1-3 o_md_1-2 o_sm_1-2 o_xs_1-2 o_df-hide" href="20171213_620.shtml.htm" tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml">
                                 <img src="../../image.tongshuai.com/tongshuai/televisions/W020171213635291689197.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171213635291689197.png" />
                                 <div class="recommend-pro-info">
@@ -1156,7 +1156,7 @@
                     content +=      ' <i class="iconfont icon-contrast-solid"></i>';
                     content +=      ' </span> </a> </div>';
                     content +=      ' <a href="javascript:toDetail('+data[i].sn+')"tppabs="http://www.tongshuai.com/televisions/20171213_620.shtml" class="pro-info-box">';
-                    content +=       ' <img src="<%=request.getContextPath()%>/'+data[i].title+'">';
+                    content +=       ' <img src="../../image.tongshuai.com/tongshuai/televisions/W020171213635291689197_200.png" tppabs="http://image.tongshuai.com/tongshuai/televisions/W020171213635291689197_200.png" />';
                     content +=    ' <div class="pro-info-title">'+ data[i].name+'</div>';
                     content +=   ' <div class="pro-info-mark">'+data[i].seotitle+'</div> ';
                     content +=      ' <div class="pro-info-price js_minPrice" > ¥<span>'+data[i].marketprice+'</span> </div>';

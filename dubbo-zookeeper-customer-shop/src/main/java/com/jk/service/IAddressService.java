@@ -5,6 +5,7 @@ import com.jk.model.Address;
 import java.util.List;
 
 public interface IAddressService {
+
 	List<Address> getAddress();
 
 	void delAddress(String ids);
@@ -14,4 +15,6 @@ public interface IAddressService {
 	Address toUpdateAddress(String addid);
 
 	void updateAddress(Address address);
+
+	void updateAddressId(String addid);
 }

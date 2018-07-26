@@ -170,19 +170,19 @@
                             </div>
                         </div>
                         <div class="o_u o_df_1-10 o_md_1-5 o_sm_1-5 o_xs-hide">
-                            <div class="trolley-price-now js_trolleyPrice">￥3800.34</div>
-                            <div class="trolley-price-old">￥3900.34</div>
+                            <div class="trolley-price-now js_trolleyPrice">￥89034</div>
+                            <div class="trolley-price-old">￥890.34</div>
                         </div>
                         <div class="o_u o_df_1-10 o_lg_1-5 o_md_1-5 o_df-center trolley-number-xs">
-                            <%--   <div class="trolley-number opacity-0 js_trolleyNumber">
-                                     <i class="iconfont icon-minus"></i>
-                                    <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" ng-pattern="/[^a-zA-Z]/" value="1" />
-                                    <i class="iconfont icon-plus"></i>
+                            <div class="trolley-number opacity-0 js_trolleyNumber">
+                                <i class="iconfont icon-minus"></i>
+                                <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" ng-pattern="/[^a-zA-Z]/" value="1" />
+                                <i class="iconfont icon-plus"></i>
                                 <a href="javascript:;" class="trolley-price-delete">删除</a>
-                            </div>--%>
+                            </div>
                         </div>
                         <div class="o_u o_df_1-10 o_lg-hide o_md-hide o_sm-hide o_xs-hide">
-                            <div class="trolley-price-total">￥3800.34</div>
+                            <div class="trolley-price-total">￥89034</div>
                         </div>
                         <div class="o_u o_df_1-10 o_xs-hide">
                             <a href="javascript:;" class="trolley-price-delete">删除</a>
@@ -236,12 +236,12 @@
 
 
             <!-- 购物车底部 -->
-            <div>
-                <div></div>
-                <div class="o_u o_df_5-12 o_lg_1-12 o_md_1-12 o_sm_1-6 o_xs_1-12">
-                    <%--<div class="l-checkbox trolley-footer-check">
+            <div class="o_g trolley-footer l-none js-trolley-footer">
+                <div class="o_u o_df_1-12"></div>
+                <div class="o_u o_df_5-12 o_lg_1-12 o_md_1-12 o_sm_1-6 o_xs_1-6">
+                    <div class="l-checkbox trolley-footer-check">
                         <input class="js_checkbox" type="checkbox" data-notnull="true" value="全选" />
-                    </div>--%>
+                    </div>
                 </div>
                 <div class="o_u o_df_3-12 o_lg_1-2 o_md_1-2 o_sm_5-12 o_xs_5-12">
                     <div class="trolley-footer-total">
@@ -253,9 +253,9 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <a href="javascript:;">去结算</a>
+                <div class="o_u o_df_2-12 o_lg_3-12 o_md_3-12 o_sm_1-4 o_xs_1-4">
+                    <div class="trolley-footer-btn">
+                        <a href="javascript:;" class="l-btn-lg l-btn-red">去结算</a>
                     </div>
                 </div>
             </div>
