@@ -1,6 +1,8 @@
 package com.jk.service;
 
+import com.jk.model.Address;
 import com.jk.model.Cart;
+import com.jk.model.Order;
 import com.jk.model.Product;
 
 import java.util.List;
@@ -23,4 +25,8 @@ public interface ITelevisionService {
     void plusQuantity(String cartid);
 
     void delCart(String cartid);
+
+    Address queeryAddress();
+
+    void insertOrder(Order order, String cartid);
 }

@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-public class Product implements Serializable {
+/**
+ *
+ */
+public class Product implements Serializable{
 
-    private static final long serialVersionUID = 3549537193915083636L;
-
+    private static final long serialVersionUID = 7772919076503626026L;
     /** 编号 主键id */
     private String sn;
 
@@ -29,7 +31,7 @@ public class Product implements Serializable {
     /**
      * 数量
      */
-     private String shuliang;
+    private String shuliang;
 
     /**
      * 已发货数量
@@ -83,8 +85,6 @@ public class Product implements Serializable {
 
     /** 页面标题 */
     private String seotitle;
-    /** 图片业务字段 */
-    private String title;
 
     /** 页面关键词 */
     private String seokeywords;
@@ -142,7 +142,7 @@ public class Product implements Serializable {
 
     /** 商品分类关联id  productcategory*/
     private String productcategoryid;
-     /* 业务字段 商品分类 名称*/
+    /* 业务字段 商品分类 名称*/
     private  String text;
     /** 品牌id  brand*/
     private String  brandid;
@@ -153,8 +153,7 @@ public class Product implements Serializable {
     /** 评论id reviews*/
     private String reviewsid;
 
-    /**发布时间*/
-    private Date createdatetime;
+
     /** 标签id  tag*/
     private String tagsid ;
 
@@ -174,73 +173,17 @@ public class Product implements Serializable {
     private String orderitemsid ;
 
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "sn='" + sn + '\'' +
-                ", name='" + name + '\'' +
-                ", fullname='" + fullname + '\'' +
-                ", price=" + price +
-                ", cost=" + cost +
-                ", marketprice=" + marketprice +
-                ", shuliang='" + shuliang + '\'' +
-                ", fahuoshuliang='" + fahuoshuliang + '\'' +
-                ", tuihuoshuliang='" + tuihuoshuliang + '\'' +
-                ", unit='" + unit + '\'' +
-                ", weight=" + weight +
-                ", stock=" + stock +
-                ", allocatedstock=" + allocatedstock +
-                ", stockmemo='" + stockmemo + '\'' +
-                ", point=" + point +
-                ", ismarketable='" + ismarketable + '\'' +
-                ", islist='" + islist + '\'' +
-                ", istop='" + istop + '\'' +
-                ", isgift='" + isgift + '\'' +
-                ", introduction='" + introduction + '\'' +
-                ", memo='" + memo + '\'' +
-                ", keyword='" + keyword + '\'' +
-                ", seotitle='" + seotitle + '\'' +
-                ", title='" + title + '\'' +
-                ", seokeywords='" + seokeywords + '\'' +
-                ", seodescription='" + seodescription + '\'' +
-                ", score=" + score +
-                ", totalscore=" + totalscore +
-                ", scorecount=" + scorecount +
-                ", hits=" + hits +
-                ", weekhits=" + weekhits +
-                ", monthhits=" + monthhits +
-                ", sales=" + sales +
-                ", weeksales=" + weeksales +
-                ", monthsales=" + monthsales +
-                ", weekhitsdate=" + weekhitsdate +
-                ", monthhitsdate=" + monthhitsdate +
-                ", weeksalesdate=" + weeksalesdate +
-                ", monthsalesdate=" + monthsalesdate +
-                ", attributevalue1='" + attributevalue1 + '\'' +
-                ", attributevalue2='" + attributevalue2 + '\'' +
-                ", attributevalue3='" + attributevalue3 + '\'' +
-                ", productcategoryid='" + productcategoryid + '\'' +
-                ", text='" + text + '\'' +
-                ", brandid='" + brandid + '\'' +
-                ", productimagesid='" + productimagesid + '\'' +
-                ", reviewsid='" + reviewsid + '\'' +
-                ", createdatetime=" + createdatetime +
-                ", tagsid='" + tagsid + '\'' +
-                ", memberid='" + memberid + '\'' +
-                ", specificationsid='" + specificationsid + '\'' +
-                ", promotionsid='" + promotionsid + '\'' +
-                ", cartitemsid='" + cartitemsid + '\'' +
-                ", orderitemsid='" + orderitemsid + '\'' +
-                '}';
-    }
+    /** 到货通知    1 已到货 ， 2 未到货*/
+    private String productnotifies ;
 
-    public String getTitle() {
-        return title;
-    }
+    /** 会员价关联id    MemberRank*/
+    private String memberpriceid;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    /** 参数值关联id  ParameterGroup */
+    private String parameterid ;
+
+    /** 咨询 id */
+    private String consultationsid;
 
     public String getSn() {
         return sn;
@@ -282,36 +225,20 @@ public class Product implements Serializable {
         this.cost = cost;
     }
 
+    public String getConsultationsid() {
+        return consultationsid;
+    }
+
+    public void setConsultationsid(String consultationsid) {
+        this.consultationsid = consultationsid;
+    }
+
     public Double getMarketprice() {
         return marketprice;
     }
 
     public void setMarketprice(Double marketprice) {
         this.marketprice = marketprice;
-    }
-
-    public String getShuliang() {
-        return shuliang;
-    }
-
-    public void setShuliang(String shuliang) {
-        this.shuliang = shuliang;
-    }
-
-    public String getFahuoshuliang() {
-        return fahuoshuliang;
-    }
-
-    public void setFahuoshuliang(String fahuoshuliang) {
-        this.fahuoshuliang = fahuoshuliang;
-    }
-
-    public String getTuihuoshuliang() {
-        return tuihuoshuliang;
-    }
-
-    public void setTuihuoshuliang(String tuihuoshuliang) {
-        this.tuihuoshuliang = tuihuoshuliang;
     }
 
     public String getUnit() {
@@ -578,14 +505,6 @@ public class Product implements Serializable {
         this.productcategoryid = productcategoryid;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
     public String getBrandid() {
         return brandid;
     }
@@ -608,14 +527,6 @@ public class Product implements Serializable {
 
     public void setReviewsid(String reviewsid) {
         this.reviewsid = reviewsid;
-    }
-
-    public Date getCreatedatetime() {
-        return createdatetime;
-    }
-
-    public void setCreatedatetime(Date createdatetime) {
-        this.createdatetime = createdatetime;
     }
 
     public String getTagsid() {
@@ -665,4 +576,128 @@ public class Product implements Serializable {
     public void setOrderitemsid(String orderitemsid) {
         this.orderitemsid = orderitemsid;
     }
+
+    public String getProductnotifies() {
+        return productnotifies;
+    }
+
+    public void setProductnotifies(String productnotifies) {
+        this.productnotifies = productnotifies;
+    }
+
+    public String getMemberpriceid() {
+        return memberpriceid;
+    }
+
+    public void setMemberpriceid(String memberpriceid) {
+        this.memberpriceid = memberpriceid;
+    }
+
+    public String getParameterid() {
+        return parameterid;
+    }
+
+    public void setParameterid(String parameterid) {
+        this.parameterid = parameterid;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "sn='" + sn + '\'' +
+                ", name='" + name + '\'' +
+                ", fullname='" + fullname + '\'' +
+                ", price=" + price +
+                ", cost=" + cost +
+                ", marketprice=" + marketprice +
+                ", shuliang='" + shuliang + '\'' +
+                ", fahuoshuliang='" + fahuoshuliang + '\'' +
+                ", tuihuoshuliang='" + tuihuoshuliang + '\'' +
+                ", unit='" + unit + '\'' +
+                ", weight=" + weight +
+                ", stock=" + stock +
+                ", allocatedstock=" + allocatedstock +
+                ", stockmemo='" + stockmemo + '\'' +
+                ", point=" + point +
+                ", ismarketable='" + ismarketable + '\'' +
+                ", islist='" + islist + '\'' +
+                ", istop='" + istop + '\'' +
+                ", isgift='" + isgift + '\'' +
+                ", introduction='" + introduction + '\'' +
+                ", memo='" + memo + '\'' +
+                ", keyword='" + keyword + '\'' +
+                ", seotitle='" + seotitle + '\'' +
+                ", seokeywords='" + seokeywords + '\'' +
+                ", seodescription='" + seodescription + '\'' +
+                ", score=" + score +
+                ", totalscore=" + totalscore +
+                ", scorecount=" + scorecount +
+                ", hits=" + hits +
+                ", weekhits=" + weekhits +
+                ", monthhits=" + monthhits +
+                ", sales=" + sales +
+                ", weeksales=" + weeksales +
+                ", monthsales=" + monthsales +
+                ", weekhitsdate=" + weekhitsdate +
+                ", monthhitsdate=" + monthhitsdate +
+                ", weeksalesdate=" + weeksalesdate +
+                ", monthsalesdate=" + monthsalesdate +
+                ", attributevalue1='" + attributevalue1 + '\'' +
+                ", attributevalue2='" + attributevalue2 + '\'' +
+                ", attributevalue3='" + attributevalue3 + '\'' +
+                ", productcategoryid='" + productcategoryid + '\'' +
+                ", text='" + text + '\'' +
+                ", brandid='" + brandid + '\'' +
+                ", productimagesid='" + productimagesid + '\'' +
+                ", reviewsid='" + reviewsid + '\'' +
+                ", tagsid='" + tagsid + '\'' +
+                ", memberid='" + memberid + '\'' +
+                ", specificationsid='" + specificationsid + '\'' +
+                ", promotionsid='" + promotionsid + '\'' +
+                ", cartitemsid='" + cartitemsid + '\'' +
+                ", orderitemsid='" + orderitemsid + '\'' +
+                ", productnotifies='" + productnotifies + '\'' +
+                ", memberpriceid='" + memberpriceid + '\'' +
+                ", parameterid='" + parameterid + '\'' +
+                ", consultationsid='" + consultationsid + '\'' +
+                '}';
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getShuliang() {
+        return shuliang;
+    }
+
+    public void setShuliang(String shuliang) {
+        this.shuliang = shuliang;
+    }
+
+    public String getFahuoshuliang() {
+        return fahuoshuliang;
+    }
+
+    public void setFahuoshuliang(String fahuoshuliang) {
+        this.fahuoshuliang = fahuoshuliang;
+    }
+
+    public String getTuihuoshuliang() {
+        return tuihuoshuliang;
+    }
+
+    public void setTuihuoshuliang(String tuihuoshuliang) {
+        this.tuihuoshuliang = tuihuoshuliang;
+    }
+
 }

@@ -11,10 +11,10 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9; IE=8; IE=7; IE=EDGE">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/iconfont.css" tppabs="http://image.tongshuai.com/images/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_base.css" tppabs="http://image.tongshuai.com/images/l_base.css">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/images/l_module.css" tppabs="http://image.tongshuai.com/images/l_module.css">
-    <script type="text/javascript" src="../../../EasyUI/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/iconfont.css" tppabs="http://image.tongshuai.com/images/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_base.css" tppabs="http://image.tongshuai.com/images/l_base.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_module.css" tppabs="http://image.tongshuai.com/images/l_module.css">
+    <script type="text/javascript" src="<%=request.getContextPath()%>/EasyUI/jquery.min.js"></script>
     <script>
         $(function () {
             $("#logoutDiv").show();
@@ -53,9 +53,9 @@
 
     </script>
 
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css" tppabs="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css">
-    <link rel="stylesheet" href="../images/mediaelementplayer.css" tppabs="http://www.tongshuai.com/images/mediaelementplayer.css">
-    <link rel="stylesheet" type="text/css" href="../../image.tongshuai.com/tongshuai/images/life_style.css" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css" tppabs="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/images/mediaelementplayer.css" tppabs="http://www.tongshuai.com/images/mediaelementplayer.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/life_style.css" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.css">
 
 </head>
 
@@ -92,7 +92,7 @@
             <!-- logo -->
             <div class="o_u o_df_2-12 o_xs_3-12">
                 <a class="nav-logo" href="../index.jsp" tppabs="http://www.tongshuai.com/">
-                    <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/logo.png" tppabs="http://image.tongshuai.com/tongshuai/images/logo.png" />
+                    <img src="../../image.tongshuai.com/tongshuai/images/logo.png" tppabs="http://image.tongshuai.com/tongshuai/images/logo.png" />
                 </a>
             </div>
             <!-- logo END -->
@@ -101,23 +101,23 @@
                 <li class="nav-column js_column" column='0'>
                     <a href="javascript:;">
                         <div class="nav-column-box1"></div>
-                        <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/nav-pro.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-pro.gif" class="o_lg-hide" />
+                        <img src="../../image.tongshuai.com/tongshuai/images/nav-pro.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-pro.gif" class="o_lg-hide" />
                     </a>
                 </li>
                 <li class="nav-column js_column" column='1'>
 
                     <a href="index.jsp" tppabs="http://www.tongshuai.com/life/">
                         <div class="nav-column-box2"></div>
-                        <img src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/nav-life.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-life.gif" class="o_lg-hide" />
+                        <img src="../../image.tongshuai.com/tongshuai/images/nav-life.gif" tppabs="http://image.tongshuai.com/tongshuai/images/nav-life.gif" class="o_lg-hide" />
                     </a>
                 </li>
                 <li class="nav-column js_column" column='2'>
-                    <a href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/member/index.jsp" tppabs="http://www.tongshuai.com/member/">
+                    <a href="../member/index.jsp" tppabs="http://www.tongshuai.com/member/">
                         <div class="nav-column-box3"></div>
                     </a>
                 </li>
                 <li class="nav-column js_column" column='3'>
-                    <a href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/service/index.jsp" tppabs="http://www.tongshuai.com/service/">
+                    <a href="../service/index.jsp" tppabs="http://www.tongshuai.com/service/">
                         <div class="nav-column-box4"></div>
                     </a>
                 </li>
@@ -126,8 +126,8 @@
             <!-- 用户信息栏 sf/xl分辨率 -->
             <div class="o_u o_df_2-12 o_lg-hide o_md-hide o_sm-hide o_xs-hide">
                 <div class="nav-search js_hoverLine">
-                    <input id="searchid"  class="easyui-textbox" />
-                    <i class="iconfont icon-search js_jumpto_product_search" id="butSearch"></i>
+                    <input type="text" name="" ph="搜索产品、服务、帮助..." value="" phtype=1 class="js_searchHistory" maxlength="25" />
+                    <i class="iconfont icon-search js_jumpto_product_search"></i>
                     <div class="search-result nav-zindex2 js_searchBox js_searchBox_xl js_searchBox_root">
                         <div class="search-quick js_quick_search">快速链接</div>
                         <div class="search-quick js_quick_search">搜索历史<a href="javascript:void(0);" class="js_delete_history">清空历史</a></div>
@@ -143,7 +143,7 @@
                     <a class="login" href="../../user.tongshuai.com/login.jsp">登录</a>
                     <span class="line"></span>
 
-                    <a class="login" href="<%=request.getContextPath()%>/tongshuai/user.tongshuai.com/reg.jsp">注册</a>
+                    <a class="login" href="../../user.tongshuai.com/reg.jsp">注册</a>
                     <a class="nav-chart" href="../tongshuai/user.tongshuai.com/reg.jsp" tppabs="http://www.tongshuai.com/cart/"><i class="iconfont icon-shoppingcart"></i>&nbsp;&nbsp;我的购物车</a>
                 </div>
                 <div class="nav-user" id="loginDiv">
@@ -379,7 +379,7 @@
                 <li class="second-column o_df-center">
                     <a href="../freezer/index.jsp">
                         <div class="second-column-i">
-                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
+                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223674715102970.png" src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
                         <div class="second-column-name">冷柜</div>
                     </a>
@@ -388,7 +388,7 @@
                 <li class="second-column o_df-center">
                     <a href="../water_heater/index.jsp">
                         <div class="second-column-i">
-                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" src="../../image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
+                            <img lazy-src="../../image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" tppabs="http://image.tongshuai.com/tongshuai/navigate/headnav/qcp/W020171223675374488067.png" src="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/img1-1.png" tppabs="http://image.tongshuai.com/tongshuai/images/img1-1.png" />
                         </div>
                         <div class="second-column-name">热水器</div>
                     </a>
@@ -487,7 +487,7 @@
             <div class="o_u o_df_7-12 o_md_6-12 o_sm_5-12 o_xs_2-2 aboutus_head_banner">
 <%--
                 <img  src="<%=request.getContextPath()%>/images/aboutus_banner_df.png" df="/images/aboutus_banner_df.png" lg="/images/aboutus_banner_lg.png" md="/images/aboutus_banner_md.png" sm="/images/aboutus_banner_md.png" xs="/images/aboutus_banner_xs.png" />
---%>             <img src="../images/aboutus_banner_df.png">
+--%>             <img src="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/images/aboutus_banner_df.png">
             </div>
         </div>
         <!-- 品牌简介banner END -->
@@ -1390,14 +1390,6 @@
         iPhoneUseNativeControls: true,//强制iPhone的本机控件
         AndroidUseNativeControls: true,//强制Android的原生控件
     });
-
-
-    $("#butSearch").click(function(){
-        var arr = $("#searchid").val();
-       location.href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/televisions/query.jsp?searchValue="+arr;
-    })
-
-
 
 </script>
 <script type="text/javascript" src="../../image.tongshuai.com/tongshuai/images/life_style.js" tppabs="http://image.tongshuai.com/tongshuai/images/life_style.js">

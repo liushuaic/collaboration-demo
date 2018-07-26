@@ -5,7 +5,6 @@ import com.jk.model.Member;
 import com.jk.model.MemberRank;
 import com.jk.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.net.InetAddress;

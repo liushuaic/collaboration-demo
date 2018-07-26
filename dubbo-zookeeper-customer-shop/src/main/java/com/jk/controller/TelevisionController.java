@@ -1,6 +1,8 @@
 package com.jk.controller;
 
+import com.jk.model.Address;
 import com.jk.model.Cart;
+import com.jk.model.Order;
 import com.jk.model.Product;
 import com.jk.service.ITelevisionService;
 import org.springframework.stereotype.Controller;
@@ -68,6 +70,20 @@ public class TelevisionController {
     @ResponseBody
     public String delCart(String cartid){
         televisionService.delCart(cartid);
+        return "1";
+    }
+
+    @RequestMapping("queeryAddress")
+    @ResponseBody
+    public Address queeryAddress(){
+        Address address= televisionService.queeryAddress();
+        return address;
+    }
+
+    @RequestMapping("insertOrder")
+    @ResponseBody
+    public String insertOrder(Order order,String cartid){
+        televisionService.insertOrder(order,cartid);
         return "1";
     }
 }

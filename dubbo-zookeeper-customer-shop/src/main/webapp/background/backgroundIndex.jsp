@@ -84,7 +84,7 @@ $().ready(function() {
 									<a href="#system">系统</a>
 								</li>
 						<li>
-							<a href="/" target="_blank">首页</a>
+							<a href="<%=request.getContextPath()%>/tongshuai/www.tongshuai.com/life/index.jsp" target="_blank">首页</a>
 						</li>
 					</ul>
 				</div>

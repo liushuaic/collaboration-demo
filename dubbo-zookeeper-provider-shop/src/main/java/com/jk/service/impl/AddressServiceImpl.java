@@ -14,6 +14,8 @@ public class AddressServiceImpl implements IAddressService{
 	@Autowired
 	private AddressMapper addressMapper;
 
+
+
 	@Override
 	public List<Address> getAddress() {
 		return addressMapper.getAddress();
@@ -48,4 +50,12 @@ public class AddressServiceImpl implements IAddressService{
 		}
 		addressMapper.updateAddress(address);
 	}
+
+	@Override
+	public void updateAddressId(String addid) {
+		addressMapper.updateAddress0(addid);
+		addressMapper.updateAddress1(addid);
+
+	}
+
 }
