@@ -80,6 +80,15 @@ order by createdatetime desc
   </select>
 
 
+    <select id="queryOrderAll" resultType="com.jk.model.Order">
+ select tor.*,tad.username,tp.name,tp.weight from t_order tor,t_admin tad,t_product tp where tor.operatorid=tad.aid and tor.productid = tp.sn and tor.orderid=#{orderid} order by tor.createdatetime desc
+     </select>
 
+    <update id="updateStatus">
+       update t_order set orderstatus = 2 where orderid = #{orderid}
+    </update>
 
+    <update id="updateOrderById">
+       update t_order set offsetamount = #{offsetamount},point=#{point},freight=#{freight},paymentmethodname=#{paymentmethodname},shippingmethodname=#{shippingmethodname},consignee=#{consignee},phone=#{phone},memo=#{memo} where orderid=#{orderid}
+    </update>
 </mapper>

@@ -17,7 +17,9 @@ import org.apache.solr.common.SolrInputDocument;
 import org.apache.solr.common.util.NamedList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 
 import javax.annotation.Resource;
@@ -162,7 +164,7 @@ public class LsController {
      */
 
     // solr 部署的url
-    private static final String url ="http://192.168.3.151:8080/solr";
+    private static final String url ="http://192.168.3.168:8080/solr";
     // home
     private static final String uri = "my_core";
      @RequestMapping("queryProduct")
@@ -212,9 +214,49 @@ public class LsController {
     }
 
 
+    /**
+     * 点击编辑时回显
+     */
+    @RequestMapping("queryOrderAll")
+   public ModelAndView queryOrderAll(String orderid) throws Exception{
+        Order list = lsService.queryOrderAll(orderid);
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("order",list);
+        mav.setViewName("lsJsp/dayin/bianji");
+      return mav;
+   }
+
+
+    /**
+     * 点击查看时回显
+     */
+    @RequestMapping("queryOrderChaKan")
+    public ModelAndView queryOrderChaKan(String orderid) throws Exception{
+        Order order = lsService.queryOrderAll(orderid);
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("order",order);
+        mav.setViewName("lsJsp/orderDetail");
+        return mav;
+    }
+
+    /**
+     * 修改编辑状态
+     */
+    @RequestMapping("updateStatus")
+    @ResponseBody
+    public Integer updateStatus(String orderid) throws Exception{
+       Integer i = lsService.updateStatus(orderid);
+        return i;
+    }
 
 
 
+    @RequestMapping("updateOrderById")
+    @ResponseBody
+    public Integer updateOrderById(Order order) throws Exception{
+        Integer i = lsService.updateOrderById(order);
+        return i;
+    }
 
 
 }

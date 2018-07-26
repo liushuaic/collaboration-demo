@@ -23,12 +23,12 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		<property name="maxUploadSize" value="5242880"></property>
 	</bean>
 
-	<!--&lt;!&ndash; 配置solrServer服务，供数据访问层检索数据使用： &ndash;&gt;
+	<!--&lt;!&ndash; 配置solrServer服务，供数据访问层检索数据使用： &ndash;&gt;-->
 	<bean id="solrServer" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
-		&lt;!&ndash; 配置构造方法 &ndash;&gt;
-		<constructor-arg value="http://192.168.3.151:8080/solr/my_core"/>
+		<!--&lt;!&ndash; 配置构造方法 &ndash;&gt;-->
+		<constructor-arg value="http://192.168.3.168:8080/solr/my_core"/>
 	</bean>
--->
+
 
 	<!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="defaultEncoding">

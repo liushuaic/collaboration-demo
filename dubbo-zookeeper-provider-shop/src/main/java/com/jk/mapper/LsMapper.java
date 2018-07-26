@@ -94,4 +94,15 @@ public interface LsMapper{
     List<Admin> queryAdminByName(@Param("username") String username) throws Exception;
 
     List<Product> queryProduct() throws Exception;
+
+    Order queryOrderAll(@Param("orderid")String orderid) throws Exception;
+
+    /**
+     * 修改编辑状态
+     * @param orderid
+     * @throws Exception
+     */
+    Integer updateStatus(@Param("orderid")String orderid) throws Exception;
+
+    Integer updateOrderById(Order order) throws Exception;
 }

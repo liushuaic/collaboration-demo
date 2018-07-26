@@ -61,4 +61,19 @@ public interface ILsService {
      * 电视查询
      */
     List<Product> queryProduct() throws Exception;
+
+    /**
+     * 点击编辑回显
+     */
+    Order queryOrderAll(String orderid) throws Exception;
+
+
+    /**
+     * 修改编辑状态
+     * @param orderid
+     * @throws Exception
+     */
+    Integer updateStatus(String orderid) throws Exception;
+    Integer updateOrderById(Order order) throws Exception;
+
 }

@@ -93,6 +93,8 @@ public class Order implements Serializable{
     /** 配送方式名称 */
     private String shippingmethodname;
 
+    /**商品重量业务字段*/
+    private String weight;
     /** 地区 */
     private String area;
 
@@ -104,7 +106,8 @@ public class Order implements Serializable{
 
     /** 操作员关联id  Admin  */
     private String operatorid;
-
+    /**操作员名称业务字段*/
+    private String username;
     /** 会员关联id */
     private String memberid;
 
@@ -126,6 +129,77 @@ public class Order implements Serializable{
     /** 收款单Payment 关联id*/
     private String  paymentsid;
 
+    /**商品名称业务字段*/
+    private String name;
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderid='" + orderid + '\'' +
+                ", ordercode='" + ordercode + '\'' +
+                ", orderstatus='" + orderstatus + '\'' +
+                ", paymentstatus='" + paymentstatus + '\'' +
+                ", shippingstatus='" + shippingstatus + '\'' +
+                ", fee=" + fee +
+                ", freight=" + freight +
+                ", promotiondiscount=" + promotiondiscount +
+                ", coupondiscount=" + coupondiscount +
+                ", offsetamount=" + offsetamount +
+                ", amountpaid=" + amountpaid +
+                ", point=" + point +
+                ", consignee='" + consignee + '\'' +
+                ", areaname='" + areaname + '\'' +
+                ", address='" + address + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", phone='" + phone + '\'' +
+                ", isinvoice='" + isinvoice + '\'' +
+                ", invoicetitle='" + invoicetitle + '\'' +
+                ", tax=" + tax +
+                ", memo='" + memo + '\'' +
+                ", promotion='" + promotion + '\'' +
+                ", expire=" + expire +
+                ", createdatetime=" + createdatetime +
+                ", lockexpire=" + lockexpire +
+                ", isallocatedstock='" + isallocatedstock + '\'' +
+                ", paymentmethodname='" + paymentmethodname + '\'' +
+                ", shippingmethodname='" + shippingmethodname + '\'' +
+                ", weight='" + weight + '\'' +
+                ", area='" + area + '\'' +
+                ", paymentmethodid='" + paymentmethodid + '\'' +
+                ", shippingmethodid='" + shippingmethodid + '\'' +
+                ", operatorid='" + operatorid + '\'' +
+                ", username='" + username + '\'' +
+                ", memberid='" + memberid + '\'' +
+                ", couponcodeid='" + couponcodeid + '\'' +
+                ", couponsid='" + couponsid + '\'' +
+                ", orderitemsid='" + orderitemsid + '\'' +
+                ", orderlogsid='" + orderlogsid + '\'' +
+                ", depositsid='" + depositsid + '\'' +
+                ", paymentsid='" + paymentsid + '\'' +
+                ", name='" + name + '\'' +
+                ", refundsid='" + refundsid + '\'' +
+                ", shippingsid='" + shippingsid + '\'' +
+                ", returnsid='" + returnsid + '\'' +
+                ", dayin='" + dayin + '\'' +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
     /** 退款单 Refunds 关联id*/
     private String  refundsid ;
 
@@ -138,6 +212,13 @@ public class Order implements Serializable{
     /**打印*/
     private String dayin;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -485,55 +566,6 @@ public class Order implements Serializable{
 
     public void setDayin(String dayin) {
         this.dayin = dayin;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderid='" + orderid + '\'' +
-                ", ordercode='" + ordercode + '\'' +
-                ", orderstatus='" + orderstatus + '\'' +
-                ", paymentstatus='" + paymentstatus + '\'' +
-                ", shippingstatus='" + shippingstatus + '\'' +
-                ", fee=" + fee +
-                ", freight=" + freight +
-                ", promotiondiscount=" + promotiondiscount +
-                ", coupondiscount=" + coupondiscount +
-                ", offsetamount=" + offsetamount +
-                ", amountpaid=" + amountpaid +
-                ", point=" + point +
-                ", consignee='" + consignee + '\'' +
-                ", areaname='" + areaname + '\'' +
-                ", address='" + address + '\'' +
-                ", zipcode='" + zipcode + '\'' +
-                ", phone='" + phone + '\'' +
-                ", isinvoice='" + isinvoice + '\'' +
-                ", invoicetitle='" + invoicetitle + '\'' +
-                ", tax=" + tax +
-                ", memo='" + memo + '\'' +
-                ", promotion='" + promotion + '\'' +
-                ", expire=" + expire +
-                ", createdatetime='" + createdatetime + '\'' +
-                ", lockexpire=" + lockexpire +
-                ", isallocatedstock='" + isallocatedstock + '\'' +
-                ", paymentmethodname='" + paymentmethodname + '\'' +
-                ", shippingmethodname='" + shippingmethodname + '\'' +
-                ", area='" + area + '\'' +
-                ", paymentmethodid='" + paymentmethodid + '\'' +
-                ", shippingmethodid='" + shippingmethodid + '\'' +
-                ", operatorid='" + operatorid + '\'' +
-                ", memberid='" + memberid + '\'' +
-                ", couponcodeid='" + couponcodeid + '\'' +
-                ", couponsid='" + couponsid + '\'' +
-                ", orderitemsid='" + orderitemsid + '\'' +
-                ", orderlogsid='" + orderlogsid + '\'' +
-                ", depositsid='" + depositsid + '\'' +
-                ", paymentsid='" + paymentsid + '\'' +
-                ", refundsid='" + refundsid + '\'' +
-                ", shippingsid='" + shippingsid + '\'' +
-                ", returnsid='" + returnsid + '\'' +
-                ", dayin='" + dayin + '\'' +
-                '}';
     }
 
     @Override

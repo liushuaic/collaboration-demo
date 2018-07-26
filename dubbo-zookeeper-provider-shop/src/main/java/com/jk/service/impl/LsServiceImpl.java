@@ -133,5 +133,25 @@ public class LsServiceImpl implements ILsService {
         return list;
     }
 
+    @Override
+    public Order queryOrderAll(String orderid) throws Exception {
+        return lsMapper.queryOrderAll(orderid);
+    }
+
+    /**
+     * 修改编辑状态
+     * @param orderid
+     * @throws Exception
+     */
+    @Override
+    public Integer updateStatus(String orderid) throws Exception {
+      return  lsMapper.updateStatus(orderid);
+    }
+
+    @Override
+    public Integer updateOrderById(Order order) throws Exception {
+        return lsMapper.updateOrderById(order);
+    }
+
 
 }
