@@ -20,9 +20,9 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9; IE=8; IE=7; IE=EDGE">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_base.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/images/l_module.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/images/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/images/l_base.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/images/l_module.css">
 
     <script type="text/javascript">
         // 站点服务配置
@@ -37,9 +37,9 @@
             productChannelId: "273690",
         };
     </script>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/jquery.Jcrop.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/member_nav.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/tongshuai/image.tongshuai.com/tongshuai/images/member_myinfo.css">
+    <link rel="stylesheet" href="http://image.tongshuai.com/tongshuai/images/jquery.Jcrop.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/tongshuai/images/member_nav.css">
+    <link rel="stylesheet" type="text/css" href="http://image.tongshuai.com/tongshuai/images/member_myinfo.css">
 </head>
 
 <body>
@@ -92,14 +92,14 @@
                         <!--<li><a href="javascript:;" class="o_u ">我的礼品卡</a></li>-->
                         <li><a href="/message" class="o_u ">我的消息</a><i class="js-messageNav"></i></li>
                         <li class="memeber-nav-middle-title">订单与产品</li>
-                        <li><a href="/order" class="o_u ">我的订单</a></li>
+                        <li><a href="<%=request.getContextPath()%>/wzw/dingdan.jsp" target="dingdan" class="o_u ">我的订单</a></li>
                         <li><a href="/collection" class="o_u ">关注的产品</a></li>
                         <!--<li><a href="javascript:;" class="o_u ">我的产品</a></li>-->
                         <li><a href="/service" class="o_u ">售后服务</a></li>
                         <li><a href="/product_share" class="o_u ">我的评价</a></li>
                         <li class="memeber-nav-middle-title">账户管理</li>
                         <li><a href="/security" class="o_u ">安全设置</a></li>
-                        <li><a href="<%=request.getContextPath()%>/addressController/getAddress.jhtml" target="iframe" class="o_u ">地址管理</a></li>
+                        <li><a href="/address" class="o_u ">地址管理</a></li>
                         <li><a href="/info" class="o_u ">个人信息</a></li>
                         <!--<li><a href="/invoice" class="o_u ">增票资质</a></li>-->
                     </ul>
@@ -116,7 +116,7 @@
         </div>
             <div style="float: right; width: 745px;height:590px;border: 1px solid red">
                 <div class="memeber-homenav-top o_df-show o_md-hide o_xs-hide o_sm-hide" style="height: 100px;width:100%">
-                    <img src="http://image.tongshuai.com/tongshuai/images/member_home-title.jpg" width="740px" height="100px"/>
+                    <img src="<%=request.getContextPath()%>/wzw/index.jpg" width="740px" height="100px"/>
                     <div class="txt">
                         <div class=o_table>
                             <div class="o_cell">
@@ -124,9 +124,12 @@
                                 <h2>统帅用户中心</h2>
                             </div>
                         </div>
-                        <div class="iconfont icon-icon "></div>
+                        <div class="iconfont icon-icon ">
+
+                        </div>
                     </div>
                 </div>
+                <iframe id="dingdan" name="dingdan" src="" frameborder="0" width="750px" scrolling="no" height="500px"></iframe>
                 <iframe id="iframe" name="iframe" src="" frameborder="0" width="750px" scrolling="no" height="500px"></iframe>
                <%-- <div class="memeber-homenav-top o_df-show o_md-hide o_xs-hide o_sm-hide" style="float: right; width: 745px;height:490px;border: 1px solid blue">
 &lt;%&ndash;
@@ -144,12 +147,12 @@
 
 </div>
 </div>
-<script type="text/javascript" src="../../image.tongshuai.com/images/jquery-1.8.3.min.js" tppabs="http://image.tongshuai.com/images/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="../../image.tongshuai.com/images/jquery.cookie.js" tppabs="http://image.tongshuai.com/images/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../image.tongshuai.com/images/l_obox.js" tppabs="http://image.tongshuai.com/images/l_obox.js"></script>
-<script type="text/javascript" src="../../image.tongshuai.com/images/l_module.js" tppabs="http://image.tongshuai.com/images/l_module.js"></script>
-<script type="text/javascript" src="../../image.tongshuai.com/images/l_base.js" tppabs="http://image.tongshuai.com/images/l_base.js"></script>
-<script type="text/javascript" src="../../image.tongshuai.com/images/templete_nav_search.js" tppabs="http://image.tongshuai.com/images/templete_nav_search.js"></script>
+<script type="text/javascript" src="../image.tongshuai.com/images/jquery-1.8.3.min.js" tppabs="http://image.tongshuai.com/images/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../image.tongshuai.com/images/jquery.cookie.js" tppabs="http://image.tongshuai.com/images/jquery.cookie.js"></script>
+<script type="text/javascript" src="../image.tongshuai.com/images/l_obox.js" tppabs="http://image.tongshuai.com/images/l_obox.js"></script>
+<script type="text/javascript" src="../image.tongshuai.com/images/l_module.js" tppabs="http://image.tongshuai.com/images/l_module.js"></script>
+<script type="text/javascript" src="../image.tongshuai.com/images/l_base.js" tppabs="http://image.tongshuai.com/images/l_base.js"></script>
+<script type="text/javascript" src="../image.tongshuai.com/images/templete_nav_search.js" tppabs="http://image.tongshuai.com/images/templete_nav_search.js"></script>
 
 
 <!--<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.jquery.min.js"></script>-->
@@ -161,5 +164,20 @@
 <script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/templet_pagination.js"></script>
 <script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/member_nav.js"></script>
 <script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/templet_member_nav.js"></script>
+
+<!--<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.jquery.min.js"></script>-->
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/jquery.jUploader-1.01.min.js"></script>
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/jquery.Jcrop.min.js"></script>
+
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/swiper-3.4.2.jquery.min.js"></script>
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/templet_pagination.js"></script>
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/member_nav.js"></script>
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/member_order_new.js"></script>
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/templet_member_nav.js"></script>
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/member_order_new.js"></script>
+<script type="text/javascript" src="http://image.tongshuai.com/tongshuai/images/templet_member_order_new.js"></script>
+<script>
+    var coolHtml="http://www.tongshuai.com/cooling/";
+</script>
 </body>
 </html>

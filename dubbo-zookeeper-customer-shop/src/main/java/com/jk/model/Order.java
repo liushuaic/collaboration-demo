@@ -3,7 +3,6 @@ package com.jk.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class Order implements Serializable{
@@ -43,7 +42,7 @@ public class Order implements Serializable{
     private Double amountpaid;
 
     /** 赠送积分 */
-    private Long point;
+    private Integer point;
 
     /** 收货人 */
     private String consignee;
@@ -58,7 +57,14 @@ public class Order implements Serializable{
     private String zipcode;
 
     /** 电话 */
+    private String name;
+
+    /** 产品名称 */
+    private String price;
+
+    /** 产品价格 */
     private String phone;
+
 
     /** 是否开据发票 1 yes  2 no */
     private String isinvoice;
@@ -139,6 +145,84 @@ public class Order implements Serializable{
     /**打印*/
     private String dayin;
 
+    /** 产品关联id */
+    private String productid;
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderid='" + orderid + '\'' +
+                ", ordercode='" + ordercode + '\'' +
+                ", orderstatus='" + orderstatus + '\'' +
+                ", paymentstatus='" + paymentstatus + '\'' +
+                ", shippingstatus='" + shippingstatus + '\'' +
+                ", fee=" + fee +
+                ", freight=" + freight +
+                ", promotiondiscount=" + promotiondiscount +
+                ", coupondiscount=" + coupondiscount +
+                ", offsetamount=" + offsetamount +
+                ", amountpaid=" + amountpaid +
+                ", point=" + point +
+                ", consignee='" + consignee + '\'' +
+                ", areaname='" + areaname + '\'' +
+                ", address='" + address + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", name='" + name + '\'' +
+                ", price='" + price + '\'' +
+                ", phone='" + phone + '\'' +
+                ", isinvoice='" + isinvoice + '\'' +
+                ", invoicetitle='" + invoicetitle + '\'' +
+                ", tax=" + tax +
+                ", memo='" + memo + '\'' +
+                ", promotion='" + promotion + '\'' +
+                ", expire=" + expire +
+                ", createdatetime=" + createdatetime +
+                ", lockexpire=" + lockexpire +
+                ", isallocatedstock='" + isallocatedstock + '\'' +
+                ", paymentmethodname='" + paymentmethodname + '\'' +
+                ", shippingmethodname='" + shippingmethodname + '\'' +
+                ", area='" + area + '\'' +
+                ", paymentmethodid='" + paymentmethodid + '\'' +
+                ", shippingmethodid='" + shippingmethodid + '\'' +
+                ", operatorid='" + operatorid + '\'' +
+                ", memberid='" + memberid + '\'' +
+                ", couponcodeid='" + couponcodeid + '\'' +
+                ", couponsid='" + couponsid + '\'' +
+                ", orderitemsid='" + orderitemsid + '\'' +
+                ", orderlogsid='" + orderlogsid + '\'' +
+                ", depositsid='" + depositsid + '\'' +
+                ", paymentsid='" + paymentsid + '\'' +
+                ", refundsid='" + refundsid + '\'' +
+                ", shippingsid='" + shippingsid + '\'' +
+                ", returnsid='" + returnsid + '\'' +
+                ", dayin='" + dayin + '\'' +
+                ", productid='" + productid + '\'' +
+                '}';
+    }
+
+    public String getProductid() {
+        return productid;
+    }
+
+    public void setProductid(String productid) {
+        this.productid = productid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -232,11 +316,11 @@ public class Order implements Serializable{
         this.amountpaid = amountpaid;
     }
 
-    public Long getPoint() {
+    public Integer getPoint() {
         return point;
     }
 
-    public void setPoint(Long point) {
+    public void setPoint(Integer point) {
         this.point = point;
     }
 
@@ -486,55 +570,6 @@ public class Order implements Serializable{
 
     public void setDayin(String dayin) {
         this.dayin = dayin;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderid='" + orderid + '\'' +
-                ", ordercode='" + ordercode + '\'' +
-                ", orderstatus='" + orderstatus + '\'' +
-                ", paymentstatus='" + paymentstatus + '\'' +
-                ", shippingstatus='" + shippingstatus + '\'' +
-                ", fee=" + fee +
-                ", freight=" + freight +
-                ", promotiondiscount=" + promotiondiscount +
-                ", coupondiscount=" + coupondiscount +
-                ", offsetamount=" + offsetamount +
-                ", amountpaid=" + amountpaid +
-                ", point=" + point +
-                ", consignee='" + consignee + '\'' +
-                ", areaname='" + areaname + '\'' +
-                ", address='" + address + '\'' +
-                ", zipcode='" + zipcode + '\'' +
-                ", phone='" + phone + '\'' +
-                ", isinvoice='" + isinvoice + '\'' +
-                ", invoicetitle='" + invoicetitle + '\'' +
-                ", tax=" + tax +
-                ", memo='" + memo + '\'' +
-                ", promotion='" + promotion + '\'' +
-                ", expire=" + expire +
-                ", createdatetime='" + createdatetime + '\'' +
-                ", lockexpire=" + lockexpire +
-                ", isallocatedstock='" + isallocatedstock + '\'' +
-                ", paymentmethodname='" + paymentmethodname + '\'' +
-                ", shippingmethodname='" + shippingmethodname + '\'' +
-                ", area='" + area + '\'' +
-                ", paymentmethodid='" + paymentmethodid + '\'' +
-                ", shippingmethodid='" + shippingmethodid + '\'' +
-                ", operatorid='" + operatorid + '\'' +
-                ", memberid='" + memberid + '\'' +
-                ", couponcodeid='" + couponcodeid + '\'' +
-                ", couponsid='" + couponsid + '\'' +
-                ", orderitemsid='" + orderitemsid + '\'' +
-                ", orderlogsid='" + orderlogsid + '\'' +
-                ", depositsid='" + depositsid + '\'' +
-                ", paymentsid='" + paymentsid + '\'' +
-                ", refundsid='" + refundsid + '\'' +
-                ", shippingsid='" + shippingsid + '\'' +
-                ", returnsid='" + returnsid + '\'' +
-                ", dayin='" + dayin + '\'' +
-                '}';
     }
 
     @Override

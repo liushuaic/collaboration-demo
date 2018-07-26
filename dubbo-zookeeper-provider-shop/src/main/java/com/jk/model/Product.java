@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-public class Product implements Serializable {
+/**
+ *
+ */
+public class Product implements Serializable{
 
-    private static final long serialVersionUID = 3549537193915083636L;
-
+    private static final long serialVersionUID = 7772919076503626026L;
     /** 编号 主键id */
     private String sn;
 
@@ -29,7 +31,7 @@ public class Product implements Serializable {
     /**
      * 数量
      */
-     private String shuliang;
+    private String shuliang;
 
     /**
      * 已发货数量
@@ -140,7 +142,7 @@ public class Product implements Serializable {
 
     /** 商品分类关联id  productcategory*/
     private String productcategoryid;
-     /* 业务字段 商品分类 名称*/
+    /* 业务字段 商品分类 名称*/
     private  String text;
     /** 品牌id  brand*/
     private String  brandid;
