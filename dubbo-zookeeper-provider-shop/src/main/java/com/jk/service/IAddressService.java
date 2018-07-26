@@ -14,4 +14,8 @@ public interface IAddressService {
 	Address toUpdateAddress(String addid);
 
 	void updateAddress(Address address);
+
+	void updateAddressId(String addid);
+
+
 }
