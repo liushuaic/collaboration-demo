@@ -95,7 +95,7 @@
                                            class="l-btn-lg l-btn-line1 o_df-hide o_md-show o_sm-show o_xs-show login-btn-line js_loginType"
                                            data-login=1>使用动态密码登录</a>
                                         <div class="login-reg">
-                                            <a href="javascript:if(confirm('http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���Ѿ���վ���������ų���������ų���·����ַ��(��ϵͳ�� Teleport Ultra �����ǿ�ѡ��; �μ���Ŀ����, �������ǡ�)  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/'" tppabs="http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/">立即注册</a>
+                                            <a href="<%=request.getContextPath()%>/tongshuai/user.tongshuai.com/reg.jsp">立即注册</a>
                                         </div>
                                         </form>
                                     </div>
@@ -128,7 +128,7 @@
                                            class="l-btn-lg l-btn-line1 o_df-hide o_md-show o_sm-show o_xs-show login-btn-line js_loginType"
                                            data-login=1>使用账号密码登录</a>
                                         <div class="login-reg">
-                                            <a href="javascript:if(confirm('http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���Ѿ���վ���������ų���������ų���·����ַ��(��ϵͳ�� Teleport Ultra �����ǿ�ѡ��; �μ���Ŀ����, �������ǡ�)  \n\n�����ڷ������ϴ���?'))window.location='http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/'" tppabs="http://user.tongshuai.com/ids/ts/reg.jsp?regFrom=tongshuai&returnUrl=http://www.tongshuai.com/">立即注册</a>
+                                            <a href="<%=request.getContextPath()%>/tongshuai/user.tongshuai.com/reg.jsp">立即注册</a>
                                         </div>
                                     </div>
                                 </div>
